@@ -1,7 +1,7 @@
 Objetividad de un argumento para obligar - Humberto Maturana
 
     ->> Prólogo
-        -> Para entender la mota, es necesario comprender la diferencia entre el observador en la experiencia de observar y el ser observado apreciado al observar.
+        -> Para entender la mota, es necesario comprender la diferencia entre el observador en la experiencia de observar y el ser observador, tiende a usar una entidad que existe de manera independiente a si mismo para aceptar una reformulación de la praxis del vivi apreciado al observar.
             -> Es más simple si se mira respecto a la explicación y el explicar, donde la explicación está definida como la herramienta empleada para explicar.
             -> La explicación y lo explicado no son lo mismo sin embargo, están relacionados de manera generativa (Lo explicado proviene de la explicación).
         -> Es primordial entender que la explicación jamás niega lo explicado. Es decir, algo explicado, por ser explicado no deja de ser/funcionar.
@@ -35,3 +35,15 @@ Objetividad de un argumento para obligar - Humberto Maturana
             -> Todo esto desemboca en que, como oyentes, se constituye un critério por el cual se aceptan o rechazan las reformulaciones realizadas.  
                 -> Divertidamente, es lo que está literalmente pasando en el libro.
         |> 3. Caminos Explicativos
+            -> Maturana plantea el concepto de dos diferentes caminos explicativos los cuales dependen de si el observador realiza o no una pregunta por una explicación biológica de sus habilidades cognitivas. 
+                -> En primera medida, está el camino de la objetividad sin paréntesis o objetividad trascendental. 
+                    -> Este tipo de objetividad se da, según Maturana, cuando el observador simplemente acepta su origen biológico sin la búsqueda de este; el observador, asume que la existencia es independiente de lo que este haga. Es decir, se entiende que las cosas existen y pasan sin la necesidad de que este entienda el por qué del que existan o el que existen. (Básicamente, en la objetividad trascendental, el observador no se cuestiona así mismo y por ende acepta que las cosas pasan y existen sin que este tenga que conocerlas).
+                    -> De la misma manera, este tipo de observador, tiende a usar una entidad que existe de manera independiente a si mismo para aceptar una reformulación de la praxis del vivir. Es por esto que se considera que este camino de explicación es ciego o sordo respecto a la participación del observador en lo que se constituye como una explicación 
+                        -> Básicamente, no tiene en cuenta lo que hace el observador en cuanto a la solución de una pregunta se refiere debido a que se busca un elemento independiente del observador para explicar.
+                    -> La consecuencia de este camino de explicación, es que, debido a la necesidad de esta entidad independiente del observador, se tiende a que, todo lo que tenga que ver con la realidad, ser reducido únicamente hacia esta entidad independiente. 
+                    -> Finalmente, se entiende que, debido a esta entidad independiente, este camino entiende que el conocer, o pretender conocer, es una demanda de obediencia a la praxis del vivir del que explica.
+                -> Seguidamente, se encuentra el camino a la objetividad dentro de paréntesis o objetividad constructivista.  
+                    ->  En primera medida, en este camino, el observador acepta que es un sistema viviente, que sus habilidades cognitivas son fenómenos biológicos y que en el caso de querer explicar las mismas, este debe explicar el como ellos surgen como un fenómenos biológico y el como son un sistema viviente.
+                    ->  
+            ->  
+            ->  
