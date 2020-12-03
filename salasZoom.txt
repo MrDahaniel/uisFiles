@@ -1,0 +1,44 @@
+Lunes:
+    Dirección empresarial       12pm - 2pm
+        id: 94620182755
+        ps: 728861
+
+    Bases de datos               2pm - 4pm
+        id: 94637676045
+        ps: 224949
+
+Martes:
+    Análisis numérico            8am - 10am
+        id: 98971902516
+        ps: 597035
+
+    Pensamiento sistémico        2pm - 4pm
+        id: 94986550497
+        ps: 970755
+
+    Sistemas digitales           4pm - 6pm
+        id: 94768093443
+        ps: 318318
+
+Miércoles:
+    Dirección empresarial       12pm - 2pm
+        id: 97937513116
+        ps: 467758
+
+    Bases de datos               2pm - 4pm
+        id: 94113441298
+        ps: 278097
+
+Jueves:
+    Pensamiento sistémico        2pm - 4pm
+        id: 92874358512
+        ps: 291092
+
+    Sistemas digitales           4pm - 6pm
+        id: 93976388774
+        ps: 928060
+
+Viernes:
+    Análisis numérico            8am - 10am
+        id: 98447195171
+        ps: 957027

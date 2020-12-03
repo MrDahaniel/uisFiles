@@ -1,0 +1,36 @@
+
+Cuál idea o aporte de un enfoque administrativo visto en clase le parece MÁS DESACERTADO? describa lo clave del enfoque, su opinión y adicionalmente mencione una situación de una empresa real (referénciela por medio de un enlace a un artículo) en donde vea que ese aporte aún es utilizado y describa   qué malos resultados trae para esa empresa. 
+
+
+No acertado: Cuantitativo
+
+¿Por qué no es acertado?
+
+Uno de los enfoques, o paradigmas, más pragmáticos de la administración es el enfoque cuantitativo. Este se basa en el uso de modelos matemáticos y simulaciones con el fin de predecir el comportamiento general de una organización en cuanto al desarrollo interno de sus procesos internos se refiere. Esto se realiza con el fin de determinar los problemas y aciertos presentes de las operaciones de una organización.
+
+Esto, aunque muy útil en cuanto al desarrollo de las actividades comunes cuya variabilidad es poca, y de esto permitir un mejor manejo de los recursos; este enfoque falla en cuanto la aplicación de situaciones no esperadas o consideradas dentro del desarrollo de los modelos y simulaciones empleadas dejando en territorio desconocido a los administradores no preparados. De la misma manera, la dependencia y el uso de los modelos, pueden descuidar los aspectos cualitativos como lo pueden ser los miembros de la organización en diferentes aspectos, lo cual, en algunos casos, puede terminar en pérdidas en la producción y fallos en el mismo desarrollo de los procesos internos.
+
+Un ejemplo, considerado catastrófico, puede ser el conocido Mars Climate Orbiter (MCO) de la NASA. Este ejemplo, demuestra uno de los problemas que pueden presentar los modelos matemáticos. En este caso, el MCO se destruyó debido a problemas en el manejo de los modelos empleados en cuanto a las unidades de medida empleadas para el control de la sonda, dando como resultado la pérdida de millones de dólares. Cosas como estas, si pueden pasar en la NASA, pueden suceder en empresas y afectar gravemente la toma de decisiones.
+
+Entonces, de esto, consideramos que las ventajas que trae el enfoque cuantitativo, en comparación con las desventajas y los problemas que presenta en algunos casos, consideramos que no es verdaderamente acertado y requeriría el soporte de algún otro enfoque con el fin de funcionar de manera correcta o, incluso, funcionar como herramienta a otros paradigmas administrativos. Es decir, el enfoque cuantitativo no es acertado.
+
+Referencias 
+
+https://blogs.elconfidencial.com/tecnologia/no-me-creas/2013-12-02/el-error-mas-tonto-en-la-historia-de-la-nasa_61243/
+
+https://www.gestiopolis.com/modelos-economico-matematicos-la-decision-empresarial/
+
+http://administracionyestrategia.blogspot.com/2007/07/el-enfoque-cuantitativo-en-la.html
+
+Integrantes:
+
+    Gianfranco Estévez Ruiz - 2183074
+
+    Valentina Galvis Bergsneider - 2182038
+
+    Daniel Delgado Cervantes - 2182066
+
+
+
+Réplica Foro: 
+
