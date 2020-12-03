@@ -29,5 +29,9 @@ Objetividad de un argumento para obligar - Humberto Maturana
         |> 2. Explicaciones
             -> El planteamiento principal de Maturana durante el inicio de este sub-capítulo se basa en las explicaciones y el como estas, de manera tradicional, son empleadas con el fin de responder preguntas. 
                 -> Esto se debe a que las explicaciones son una reformulación de un suceso con el uso de otros sucesos. Es decir, una explicación es una nueva interpretación de eventos presentes en la praxis del vivir (La realidad). 
-                -> 
-            -> 
+                -> De igual manera, en el caso donde una explicación es dada como respuesta a una pregunta, es necesario que la el oyente acepte la reformulación propuesta como una reformulación de su propia praxis del vivir (Es decir, que acepte nuestra interpretación)
+                -> Esto se concluye en el momento que, sea por motivos externos como le vienen siendo el estado del ánimo del oyente, este deja de hacerse la pregunta tras la aceptación de la explicación dada o el rechazo de la misma.
+                    -> Ejemplo de Maturana: "Madre, ¿cómo nací?" (Pág. 19)
+            -> Todo esto desemboca en que, como oyentes, se constituye un critério por el cual se aceptan o rechazan las reformulaciones realizadas.  
+                -> Divertidamente, es lo que está literalmente pasando en el libro.
+        |> 3. Caminos Explicativos
