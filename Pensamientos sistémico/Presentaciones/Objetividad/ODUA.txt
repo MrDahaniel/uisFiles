@@ -1,7 +1,7 @@
 Objetividad de un argumento para obligar - Humberto Maturana
 
     ->> Prólogo
-        -> Para entender la mota, es necesario comprender la diferencia entre el observador en la experiencia de observar y el ser observador, tiende a usar una entidad que existe de manera independiente a si mismo para aceptar una reformulación de la praxis del vivi apreciado al observar.
+        -> Para entender la mota, es necesario comprender la diferencia entre el observador en la experiencia de observar y el ser observador, tiende a usar una entidad que existe de manera independiente a si mismo para aceptar una reformulación de la praxis del vivir apreciado al observar.
             -> Es más simple si se mira respecto a la explicación y el explicar, donde la explicación está definida como la herramienta empleada para explicar.
             -> La explicación y lo explicado no son lo mismo sin embargo, están relacionados de manera generativa (Lo explicado proviene de la explicación).
         -> Es primordial entender que la explicación jamás niega lo explicado. Es decir, algo explicado, por ser explicado no deja de ser/funcionar.
@@ -44,6 +44,10 @@ Objetividad de un argumento para obligar - Humberto Maturana
                     -> Finalmente, se entiende que, debido a esta entidad independiente, este camino entiende que el conocer, o pretender conocer, es una demanda de obediencia a la praxis del vivir del que explica.
                 -> Seguidamente, se encuentra el camino a la objetividad dentro de paréntesis o objetividad constructivista.  
                     ->  En primera medida, en este camino, el observador acepta que es un sistema viviente, que sus habilidades cognitivas son fenómenos biológicos y que en el caso de querer explicar las mismas, este debe explicar el como ellos surgen como un fenómenos biológico y el como son un sistema viviente.
-                    ->  
+                        -> Uno de los principales postulados de Maturana se basa en el que, dentro de este camino de la explicación, nosotros como observadores tenemos que aceptar todas las características que componen un sistema, incluidas las falencias del mismo.
+                            -> Se resalta que una de las principales falencias es la incapacidad de diferenciar dentro de las experiencias lo que es la percepción y la ilusión.
+                                ->  Se da como ejemplo el de la pesca y el como no somos tan diferentes a un salmón que se dejó engañar de una carnada. 
+                            -> De esto se dice que, a diferencia del caminos de objetividad trascendental, el observador no tiene base para poder decir nada sobre ningún objeto 
+            ->  
             ->  
             ->  
