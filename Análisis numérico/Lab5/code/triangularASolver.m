@@ -1,4 +1,4 @@
-function output = triangularSolver(A, B)
+function output = triangularASolver(A, B)
     [vert, hori] = size(A);
     [alt, anc] = size(B);
 
