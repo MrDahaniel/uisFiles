@@ -1,0 +1,14 @@
+Pregunta escrita parcial #1 Pensamiento sistémico
+Daniel Delgado - 2182066
+Laura Hernández - 
+Presentación 5: Objetividad y argumentación 
+
+¿Cómo, es posible pensar sistemáticamente desde la postura de pensamiento sistémico de su exposición y porqué esto es necesario para el Ingeniero de Sistemas-UIS?
+
+Uno de lo planteamientos principales que se desarrollan durante el libro "La Objetividad, un Argumento para obligar" de Humberto Maturana, recae en el como, nosotros, como entes biológicos, percibimos el mundo a través de lo que conocemos con nuestros sentidos. Es a partir de esto que se da inicio a la visión basada en el pensamiento sistémico respecto al como pensamos. Esto se debe a que, tomando consciencia de que somos entes biológicos con sentidos que dependen de nuestro estado, se puede llegar a ver reflejado el como nosotros entramos al mismo modelo organicista planteado por Bertalanffy en cuanto a los conceptos de sistemas se refiere. 
+
+Es con esto que es posible pensar de manera sistemáticamente, a partir del entendimiento que nosotros somos un sistema, llegamos a los problemas relacionados con la posibilidad de una objetividad verdadera o si quiera la apreciación de la realidad de manera objetiva. De la misma manera, extrapolando un poco, llegamos a los problemas en cuanto a las diferentes interpretaciones de la realidad presentes en cada uno de los organismos. Esto escala más hacia los conceptos de sociedades como sistema donde esta objetividad entre paréntesis se vuelve más presente y la necesidad de buscar la unificación de criterios de verdad con el fin de mantener una praxis del vivir respecto al conocimiento relativamente centrada.
+
+De esto, como ingenieros de sistemas UIS, el entendimiento de estos conceptos, especialmente en el planteamiento del desarrollo científico, como lo expresa Maturana, es de gran importancia debido a la necesidad de una relativa objetividad respecto a lo que consideramos como los conocimientos científicos. De la misma manera, más allá del enfoque profesional de la vida del ingeniero de sistemas UIS, la influencia de los conceptos planteados por Maturana, tratan los conceptos del como pensamos y la racionalidad misma de nuestra consciencia de sobre nosotros como entes presentes dentro del sistema conocido como universo.
+
+Es necesario para el Ingeniero de Sistemas -UIS debido al hecho de que se requiere tener un pensamiento sistémico fundamento, en este caso influenciado por la vision de Maturana la cuál  trata de como pensamos y la racionalidad misma de nuestro consciencia de sobre nosotros como entes separados del  universo, y a la vez de nuestras acciónes para así tener una constante retroalimentación de la realidad que nos rodea siendo criticos ante esta 
