@@ -59,7 +59,7 @@ Objetividad de un argumento para obligar - Humberto Maturana
                         -> Cuando múltiples observadores describen lo mismo, puede que las explicaciones son todas absolutamente distintas o iguales pero todas son validas.
                         -> El observador está en un multiverso donde un desacuerdo explicativo es una invitación a una reflexión sobre la coexistencia de realidades explicativas.
         |> 4. Dominios explicativos
-            -> 
+            -> Se determina que para todo dominio de explicaciones definido por el observador, 
             -> 
                 -> 
                     -> 
