@@ -147,3 +147,73 @@ select idComp from envios
 where idProv = "P2" and idArt = "T2";
 
 --22
+    --This one should work, but idk what's wrong with it. Inner queries...
+select * from envios
+where * not in(
+    select e.* from envios as e
+    inner join componentes as c on e.idComp = c.idComp
+    where c.color = "ROJO"
+);
+
+    --This one works tho
+select e.* from envios as e
+left join componentes as c on e.idComp = c.idComp
+where not c.color = "ROJO"
+order by e.idProv, e.idComp, e.idArt;
+
+--23
+select idComp from envios
+where idArt = "T2" and idComp in(
+    select idComp from envios
+    where idArt = "T1"
+);
+
+--24
+select e.idProv, count(*) from envios as e 
+inner join componentes as c on e.idComp = c.idComp
+where c.color = "ROJO"
+group by e.idProv;
+
+--25
+select distinct c.color from componentes as c 
+inner join envios as e on e.idComp = c.idComp
+where e.idProv = "P1";
+
+--26
+select e.*, c.ciudad from envios as e 
+inner join componentes as c on e.idComp = c.idComp
+inner join articulos as a on e.idArt = a.idArt
+inner join proveedores as p on e.idProv = p.idProv
+where c.ciudad = a.ciudad and c.ciudad = p.ciudad;
+
+--27
+select idComp from envios
+group by idComp
+having sum(cantidad) > 500;
+
+--28
+select e.idProv, count(distinct idComp) from envios as e
+inner join proveedores as p on p.idProv = e.idProv
+group by e.idProv
+having count(distinct idComp) <= 2;
+
+--29
+-------------------------------SKIP-------------------------------
+select e.idArt from envios as e
+inner join componentes as c on e.idComp = c.idComp
+where 
+
+--30
+select e.idArt, count(distinct c.idComp), count(distinct e.idComp) from envios as e, componentes as c 
+group by e.idArt
+having count(distinct c.idComp) = count(distinct e.idComp);
+
+--31
+select e.idProv, count(distinct e.idComp) from envios as e 
+inner join componentes as c on e.idComp = c.idComp
+where c.color = "ROJO"
+group by e.idProv
+having count(distinct e.idComp) >= 2;
+
+--32
+-------------------------------SKIP-------------------------------
