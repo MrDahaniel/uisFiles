@@ -1,67 +1,135 @@
 Objetividad de un argumento para obligar - Humberto Maturana
 
-    ->> Prólogo
-        -> Para entender la mota, es necesario comprender la diferencia entre el observador en la experiencia de observar y el ser observador, tiende a usar una entidad que existe de manera independiente a si mismo para aceptar una reformulación de la praxis del vivir apreciado al observar.
-            -> Es más simple si se mira respecto a la explicación y el explicar, donde la explicación está definida como la herramienta empleada para explicar.
-            -> La explicación y lo explicado no son lo mismo sin embargo, están relacionados de manera generativa (Lo explicado proviene de la explicación).
-        -> Es primordial entender que la explicación jamás niega lo explicado. Es decir, algo explicado, por ser explicado no deja de ser/funcionar.
-        -> Como seres consientes tenemos la capacidad de sólo poder experimentar el presente. El pasado y futuro son otros tipos de presente.
-            -> Con el fin de poder referirnos a los conceptos de pasado y futuro, se usa el tiempo que a su vez es una manera de explicar la distinción/diferencia entre presentes. Sin embargo, es a partir de este tipo de explicaciones de las experiencias que llegamos a la reflexión de las mismas dando como resultado el cambio de las mismas experiencias.
-                -> Que cosa más rara...
+        ->> Prólogo
+            -> Para entender la mota, es necesario comprender la diferencia entre el observador en la experiencia de observar y el ser observador, tiende a usar una entidad que existe de manera independiente a si mismo para aceptar una reformulación de la praxis del vivir apreciado al observar.
+                -> Es más simple si se mira respecto a la explicación y el explicar, donde la explicación está definida como la herramienta empleada para explicar.
+                -> La explicación y lo explicado no son lo mismo sin embargo, están relacionados de manera generativa (Lo explicado proviene de la explicación).
+            -> Es primordial entender que la explicación jamás niega lo explicado. Es decir, algo explicado, por ser explicado no deja de ser/funcionar.
+            -> Como seres consientes tenemos la capacidad de sólo poder experimentar el presente. El pasado y futuro son otros tipos de presente.
+                -> Con el fin de poder referirnos a los conceptos de pasado y futuro, se usa el tiempo que a su vez es una manera de explicar la distinción/diferencia entre presentes. Sin embargo, es a partir de este tipo de explicaciones de las experiencias que llegamos a la reflexión de las mismas dando como resultado el cambio de las mismas experiencias.
+                    -> Que cosa más rara...
 
-    ->> Introducción
-        -> De manera inicial, se parte del concepto de la necesidad de que, para cada situación en la cual se busque hacer que alguien concuerde con nosotros o se subyugue a algo sin el uso de la fuerza, se busca el uso de un argumento objetivo o racional.
-            -> Esto se debe a que, por definición, un argumento objetivo, no tiene margen de discusión porque referencia a la verdad (Se realiza bajo el supuesto implícito de una verdad absoluta y universal.).
-                -> En el caso de que alguien niegue este tipo de argumentos, específicamente si estos son nuestros, es considerado arbitrario/absurdo. 
-            -> Maturana cuestiona el hecho de que, acaso porque un argumento está conectado con lo real, o por lo menos como nosotros que planteamos dicho argumento decimos que tiene, ¿es este realmente válido en cuanto a su capacidad de doblegar a alguien con dicho argumento?
-                -> Es decir, ¿Acaso porque algo es "real" debe obligar?
-        -> Maturana dirige esto hacia el concepto de observador como una entidad biológica. Es decir, visto como un modelos organicista.
-            -> Esto es lo que relaciona los planteamientos de Maturana con lo visto en las anteriores presentaciones. La percepción de la realidad para una entidad biológica.
+        ->> Introducción
+            -> De manera inicial, se parte del concepto de la necesidad de que, para cada situación en la cual se busque hacer que alguien concuerde con nosotros o se subyugue a algo sin el uso de la fuerza, se busca el uso de un argumento objetivo o racional.
+                -> Esto se debe a que, por definición, un argumento objetivo, no tiene margen de discusión porque referencia a la verdad (Se realiza bajo el supuesto implícito de una verdad absoluta y universal.).
+                    -> En el caso de que alguien niegue este tipo de argumentos, específicamente si estos son nuestros, es considerado arbitrario/absurdo. 
+                -> Maturana cuestiona el hecho de que, acaso porque un argumento está conectado con lo real, o por lo menos como nosotros que planteamos dicho argumento decimos que tiene, ¿es este realmente válido en cuanto a su capacidad de doblegar a alguien con dicho argumento?
+                    -> Es decir, ¿Acaso porque algo es "real" debe obligar?
+            -> Maturana dirige esto hacia el concepto de observador como una entidad biológica. Es decir, visto como un modelos organicista.
+                -> Esto es lo que relaciona los planteamientos de Maturana con lo visto en las anteriores presentaciones. La percepción de la realidad para una entidad biológica.
 
-    ->> Capítulo 1: La ontología del explicar
-        |> 1. Praxis del vivir
-            -> De manera inicial, se determina el "problema" de la experiencia humana y el como esta se adquiere únicamente a partir de la observación, la conversación y la ejecución. De la misma manera, en realidad estas experiencias provienen de la nada, sin embargo, debido a la explicación, tendemos a ignorar la experiencia y remplazarla por la explicación de la misma.
-                -> Maturana propone el siguiente ejemplo: Cuando se está manejando, y un carro, de la nada, lo adelanta, la experiencia fue que un carro lo adelantó; pasó de la nada. Ahora, la explicación recae con el hecho de que se busca explicar el por qué de la experiencia, en este caso, el carro estaba en un punto ciego o iba rápido y por eso adelantó.
-            -> Es a partir de esto que Maturana hace las siguientes consideraciones respecto a lo anteriormente planteado con el fin de generalizar un poco el asunto:
-                -> El observador se encuentra en la praxis de la vida (O simplemente en la vida) experimentando sucesos y eventos que vienen de ninguna parte.
-                -> De esto vienen las explicaciones de los sucesos los cuales son usados por los observadores para justificar el suceso. Sin embargo, Estas explicaciones son secundarias a la praxis de la vida, es decir, son estrictamente innecesarias incluso si estas afectan de alguna manera al observador.
-                -> La razón de que estas sean secundarias, se decanta en el que estas explicaciones o descripciones no remplazan lo explicado o descrito en ninguna medida. Es decir, la explicación o la descripción no es el suceso, es meramente algo generado a partir del suceso.
-        |> 2. Explicaciones
-            -> El planteamiento principal de Maturana durante el inicio de este sub-capítulo se basa en las explicaciones y el como estas, de manera tradicional, son empleadas con el fin de responder preguntas. 
-                -> Esto se debe a que las explicaciones son una reformulación de un suceso con el uso de otros sucesos. Es decir, una explicación es una nueva interpretación de eventos presentes en la praxis del vivir (La realidad). 
-                -> De igual manera, en el caso donde una explicación es dada como respuesta a una pregunta, es necesario que la el oyente acepte la reformulación propuesta como una reformulación de su propia praxis del vivir (Es decir, que acepte nuestra interpretación)
-                -> Esto se concluye en el momento que, sea por motivos externos como le vienen siendo el estado del ánimo del oyente, este deja de hacerse la pregunta tras la aceptación de la explicación dada o el rechazo de la misma.
-                    -> Ejemplo de Maturana: "Madre, ¿cómo nací?" (Pág. 19)
-            -> Todo esto desemboca en que, como oyentes, se constituye un critério por el cual se aceptan o rechazan las reformulaciones realizadas.  
-                -> Divertidamente, es lo que está literalmente pasando en el libro.
-        |> 3. Caminos Explicativos
-            -> Maturana plantea el concepto de dos diferentes caminos explicativos los cuales dependen de si el observador realiza o no una pregunta por una explicación biológica de sus habilidades cognitivas. 
-                -> En primera medida, está el camino de la objetividad sin paréntesis o objetividad trascendental. 
-                    -> Este tipo de objetividad se da, según Maturana, cuando el observador simplemente acepta su origen biológico sin la búsqueda de este; el observador, asume que la existencia es independiente de lo que este haga. Es decir, se entiende que las cosas existen y pasan sin la necesidad de que este entienda el por qué del que existan o el que existen. (Básicamente, en la objetividad trascendental, el observador no se cuestiona así mismo y por ende acepta que las cosas pasan y existen sin que este tenga que conocerlas).
-                    -> De la misma manera, este tipo de observador, tiende a usar una entidad que existe de manera independiente a si mismo para aceptar una reformulación de la praxis del vivir. Es por esto que se considera que este camino de explicación es ciego o sordo respecto a la participación del observador en lo que se constituye como una explicación 
-                        -> Básicamente, no tiene en cuenta lo que hace el observador en cuanto a la solución de una pregunta se refiere debido a que se busca un elemento independiente del observador para explicar.
-                    -> La consecuencia de este camino de explicación, es que, debido a la necesidad de esta entidad independiente del observador, se tiende a que, todo lo que tenga que ver con la realidad, ser reducido únicamente hacia esta entidad independiente. 
-                    -> Finalmente, se entiende que, debido a esta entidad independiente, este camino entiende que el conocer, o pretender conocer, es una demanda de obediencia a la praxis del vivir del que explica.
-                -> Seguidamente, se encuentra el camino a la objetividad dentro de paréntesis o objetividad constructivista.  
-                    ->  En primera medida, en este camino, el observador acepta que es un sistema viviente, que sus habilidades cognitivas son fenómenos biológicos y que en el caso de querer explicar las mismas, este debe explicar el como ellos surgen como un fenómenos biológico y el como son un sistema viviente.
-                        -> Uno de los principales postulados de Maturana se basa en el que, dentro de este camino de la explicación, nosotros como observadores tenemos que aceptar todas las características que componen un sistema, incluidas las falencias del mismo.
-                            -> Se resalta que una de las principales falencias es la incapacidad de diferenciar dentro de las experiencias lo que es la percepción y la ilusión.
-                                ->  Se da como ejemplo el de la pesca y el como no somos tan diferentes a un salmón que se dejó engañar de una carnada. 
-                            -> De esto se dice que, a diferencia del caminos de objetividad trascendental, el observador no tiene base para poder decir nada sobre ningún objeto.
-                                -> Esto se debe a que el observador, dentro de la objetividad entre paréntesis, la existencia, para el observador, está limitada por lo que este mismo realiza.
-                            ->  Por esto es que se llama entre paréntesis, porque tiene en cuenta al observador en la construcción de la praxis del vivir y está limitada por este mismo.
-                    -> Maturana plantea las tres consecuencias fundamentales de la objetividad constructivista:
-                        -> La primera se relaciona con el dominio dado por el observador para las coherencias operacionales entre su praxis del vivir y lo objetos presentes en esta (Se refiere al como comprendemos los objetos, por ejemplo, de manera física se refiere a términos de masa, distancia y tiempo).
-                        -> La segunda se refiere al como, la aplicación recursiva del dominio de la realidad del observador da cono resultante el critério de aceptación de las reformulaciones de la praxis del vivir (Esto es súper raro pero creo que se refiere a que, el entendimiento de la realidad tras la reflexión de la misma da como resultado el criterio).
-                        -> El tercero se refiere a que, el entendimiento de la realidad es diferente en todos los casos y por eso la experiencia del observador no es igual a lo experimentado, sin embargo, no dejan de ser legítimos dominios de la existencia. 
-                    -> Se define que, para este camino explicativo, las explicaciones son no reduccionistas y no trascendentales debido a que no existe una única explicación final para todo.
-                        -> Básicamente todo es relativo alv
-                        -> Cuando múltiples observadores describen lo mismo, puede que las explicaciones son todas absolutamente distintas o iguales pero todas son validas.
-                        -> El observador está en un multiverso donde un desacuerdo explicativo es una invitación a una reflexión sobre la coexistencia de realidades explicativas.
-        |> 4. Dominios explicativos
-            -> Se determina que para todo dominio de explicaciones definido por el observador, 
-            -> 
+        ->> Capítulo 1: La ontología del explicar
+            |> 1. Praxis del vivir
+                -> De manera inicial, se determina el "problema" de la experiencia humana y el como esta se adquiere únicamente a partir de la observación, la conversación y la ejecución. De la misma manera, en realidad estas experiencias provienen de la nada, sin embargo, debido a la explicación, tendemos a ignorar la experiencia y remplazarla por la explicación de la misma.
+                    -> Maturana propone el siguiente ejemplo: Cuando se está manejando, y un carro, de la nada, lo adelanta, la experiencia fue que un carro lo adelantó; pasó de la nada. Ahora, la explicación recae con el hecho de que se busca explicar el por qué de la experiencia, en este caso, el carro estaba en un punto ciego o iba rápido y por eso adelantó.
+                -> Es a partir de esto que Maturana hace las siguientes consideraciones respecto a lo anteriormente planteado con el fin de generalizar un poco el asunto:
+                    -> El observador se encuentra en la praxis de la vida (O simplemente en la vida) experimentando sucesos y eventos que vienen de ninguna parte.
+                    -> De esto vienen las explicaciones de los sucesos los cuales son usados por los observadores para justificar el suceso. Sin embargo, Estas explicaciones son secundarias a la praxis de la vida, es decir, son estrictamente innecesarias incluso si estas afectan de alguna manera al observador.
+                    -> La razón de que estas sean secundarias, se decanta en el que estas explicaciones o descripciones no remplazan lo explicado o descrito en ninguna medida. Es decir, la explicación o la descripción no es el suceso, es meramente algo generado a partir del suceso.
+            |> 2. Explicaciones
+                -> El planteamiento principal de Maturana durante el inicio de este sub-capítulo se basa en las explicaciones y el como estas, de manera tradicional, son empleadas con el fin de responder preguntas. 
+                    -> Esto se debe a que las explicaciones son una reformulación de un suceso con el uso de otros sucesos. Es decir, una explicación es una nueva interpretación de eventos presentes en la praxis del vivir (La realidad). 
+                    -> De igual manera, en el caso donde una explicación es dada como respuesta a una pregunta, es necesario que la el oyente acepte la reformulación propuesta como una reformulación de su propia praxis del vivir (Es decir, que acepte nuestra interpretación)
+                    -> Esto se concluye en el momento que, sea por motivos externos como le vienen siendo el estado del ánimo del oyente, este deja de hacerse la pregunta tras la aceptación de la explicación dada o el rechazo de la misma.
+                        -> Ejemplo de Maturana: "Madre, ¿cómo nací?" (Pág. 19)
+                -> Todo esto desemboca en que, como oyentes, se constituye un critério por el cual se aceptan o rechazan las reformulaciones realizadas.  
+                    -> Divertidamente, es lo que está literalmente pasando en el libro.
+            |> 3. Caminos Explicativos
+                -> Maturana plantea el concepto de dos diferentes caminos explicativos los cuales dependen de si el observador realiza o no una pregunta por una explicación biológica de sus habilidades cognitivas. 
+                    -> En primera medida, está el camino de la objetividad sin paréntesis o objetividad trascendental. 
+                        -> Este tipo de objetividad se da, según Maturana, cuando el observador simplemente acepta su origen biológico sin la búsqueda de este; el observador, asume que la existencia es independiente de lo que este haga. Es decir, se entiende que las cosas existen y pasan sin la necesidad de que este entienda el por qué del que existan o el que existen. (Básicamente, en la objetividad trascendental, el observador no se cuestiona así mismo y por ende acepta que las cosas pasan y existen sin que este tenga que conocerlas).
+                        -> De la misma manera, este tipo de observador, tiende a usar una entidad que existe de manera independiente a si mismo para aceptar una reformulación de la praxis del vivir. Es por esto que se considera que este camino de explicación es ciego o sordo respecto a la participación del observador en lo que se constituye como una explicación 
+                            -> Básicamente, no tiene en cuenta lo que hace el observador en cuanto a la solución de una pregunta se refiere debido a que se busca un elemento independiente del observador para explicar.
+                        -> La consecuencia de este camino de explicación, es que, debido a la necesidad de esta entidad independiente del observador, se tiende a que, todo lo que tenga que ver con la realidad, ser reducido únicamente hacia esta entidad independiente. 
+                        -> Finalmente, se entiende que, debido a esta entidad independiente, este camino entiende que el conocer, o pretender conocer, es una demanda de obediencia a la praxis del vivir del que explica.
+                    -> Seguidamente, se encuentra el camino a la objetividad dentro de paréntesis o objetividad constructivista.  
+                        ->  En primera medida, en este camino, el observador acepta que es un sistema viviente, que sus habilidades cognitivas son fenómenos biológicos y que en el caso de querer explicar las mismas, este debe explicar el como ellos surgen como un fenómenos biológico y el como son un sistema viviente.
+                            -> Uno de los principales postulados de Maturana se basa en el que, dentro de este camino de la explicación, nosotros como observadores tenemos que aceptar todas las características que componen un sistema, incluidas las falencias del mismo.
+                                -> Se resalta que una de las principales falencias es la incapacidad de diferenciar dentro de las experiencias lo que es la percepción y la ilusión.
+                                    ->  Se da como ejemplo el de la pesca y el como no somos tan diferentes a un salmón que se dejó engañar de una carnada. 
+                                -> De esto se dice que, a diferencia del caminos de objetividad trascendental, el observador no tiene base para poder decir nada sobre ningún objeto.
+                                    -> Esto se debe a que el observador, dentro de la objetividad entre paréntesis, la existencia, para el observador, está limitada por lo que este mismo realiza.
+                                ->  Por esto es que se llama entre paréntesis, porque tiene en cuenta al observador en la construcción de la praxis del vivir y está limitada por este mismo.
+                        -> Maturana plantea las tres consecuencias fundamentales de la objetividad constructivista:
+                            -> La primera se relaciona con el dominio dado por el observador para las coherencias operacionales entre su praxis del vivir y lo objetos presentes en esta (Se refiere al como comprendemos los objetos, por ejemplo, de manera física se refiere a términos de masa, distancia y tiempo).
+                            -> La segunda se refiere al como, la aplicación recursiva del dominio de la realidad del observador da cono resultante el critério de aceptación de las reformulaciones de la praxis del vivir (Esto es súper raro pero creo que se refiere a que, el entendimiento de la realidad tras la reflexión de la misma da como resultado el criterio).
+                            -> El tercero se refiere a que, el entendimiento de la realidad es diferente en todos los casos y por eso la experiencia del observador no es igual a lo experimentado, sin embargo, no dejan de ser legítimos dominios de la existencia. 
+                        -> Se define que, para este camino explicativo, las explicaciones son no reduccionistas y no trascendentales debido a que no existe una única explicación final para todo.
+                            -> Básicamente todo es relativo alv
+                            -> Cuando múltiples observadores describen lo mismo, puede que las explicaciones son todas absolutamente distintas o iguales pero todas son validas.
+                            -> El observador está en un multiverso donde un desacuerdo explicativo es una invitación a una reflexión sobre la coexistencia de realidades explicativas.
+            |> 4. Dominios explicativos
+                -> Inicialmente se determina que, cada observador dentro de su praxis del vivir, tiene como principio un dominio explicativo y criterios de validación los cuales usa con el fin de determinar que explicaciones realizan una reformulación del dominio explicativo 
+                    -> De la misma manera se define que, para un dominio de explicativo particular, un conjunto de acciones que sean consideradas válidas por el observador dentro de este dominio, tiene como resultado un dominio cognitivo.
+                -> La emoción de aceptación, según Maturana, determina en que dominio de explicaciones el observador se encuentra presente. De igual manera, es en este dominio de explicaciones el cual determina los dominios coherentes para el observador en el cual este vive (determina las acciones que considera válidas).
+                -> De todo esto, Maturana busca explicar que, en este orden de ideas, es posible que para varios observadores, estos adopten un mismo, o similar; dominio explicativo con el uso de un criterio de aceptación determinado con el fin de realizar "consensos". 
+                    -> En este caso, se presenta el consenso, según Maturana, científico que se divide en 4 partes/condiciones.
+                        -> A. La especificación del fenómeno que ha de ser explicado como una característica de la praxis del vivir del observador a través de la descripción de lo que él o ella debe hacer para experimentarlo.
+                        -> B. La proposición en la praxis del vivir del observador de un mecanismo que, como una consecuencia de su operación, producirá en él o ella la experiencia del fenómeno por explicar.
+                        -> C. La deducción desde el mecanismo propuesto en y de todas las coherencias operacionales que éste supone en la praxis del vivir del observador, de otro fenómeno, así como de las operaciones que el observador debe hacer en su praxis del vivir para experimentarlo.
+                        -> D. La experimentación por parte del observador de aquellos fenómenos adicionales deducidos en C, en la medida que él o ella ejecuta en su praxis del vivir aquellas operaciones que, de acuerdo con lo que han sido también deducidas en C, serían generadas en ella cuando él o ella las realiza.
+                            ->>> "Son científicos sólo aquellos observadores que usan el criterio de validación de explicaciones científicas para la validación de sus explicaciones." -Maturana
+                -> Uno de los conceptos que Maturana plantea durante sus comentarios es el como, las explicaciones científicas, debido a que estas deben ser generadas por medio de un criterio de validación específico tienen la propiedad de ser, alcanzadas por miembros de un mismo consenso.
+                            ->>> "La ciencia es constitutivamente un dominio de reformulaciones de la praxis del vivir con elementos de la praxis del vivir de una comunidad de observadores estándares." -Maturana  
+                -> De igual manera, una de las principales críticas de Maturana a la actual comunidad científica es la falta de aplicación de este criterio de validación, la aplicación de una visión reduccionista y la falta de una verdadera objetividad en el planteamiento de los planteamientos científicos.
+
+        ->> Capítulo 2: Realidad: Una proposición explicativa
+                -> Objetivo del capítulo: El principal objetivo del capítulo, según como lo plantea Maturana, es mostrar al lector las consecuencias que tiene el ver el mundo alrededor del observador como un ente independiente de todo lo que este hace. 
+                            ->>> "Yo quiero cambiar esto por reflexiones más profundas sobre las consecuencias de aceptar la separación de la experiencia y la explicación de la experiencia" -Maturana 
+            |> 1. Lo real
+                -> De manera inicial, Maturana plantea una cosa bien motosa relacionada con lo anteriormente visto (Consecuencias de ver la realidad como un ente independiente). 
+                    -> En caso de ver la realidad como un suceso independiente del observador, es decir, como algo que simplemente sucede sin importar el como el observador se encuentra en este, esta "realidad" queda como un recurso de validación par los sucesos de la praxis del vivir (Objetividad sin paréntesis)
+                        -> La realidad es una proposición explicativa.
+                        -> La realidad está constituida de entidades que existen independiente de lo que realice el observador.
+                        -> El observador asume que sus habilidades cognitivas son parte de si ignorando su origen biológico. 
+                    -> Por el contrario, en el caso de ver la realidad como el resultado de validar nuestra praxis del vivir y por ende parte de lo que este observador tiene como los dominios de realidad. 
+                        -> La realidad es dependiente de lo que el observador determine en su praxis del vivir. (Objetividad con paréntesis)
+                -> Maturana seguidamente resalta algo interesante sobre la concepción de ambos caminos de la objetividad.
+                    -> Lo principal recae en el que, estos únicamente surgen en cuanto el observador se haya cuestionado, o por lo menos aceptado la pregunta sobre el origen de sus facultades cognitivas como un fenómeno biológico.
+                        -> De esto surgen los dos caminos. En caso de aceptar que los sentidos son fenómenos biológicos, se entrará en la objetividad entre paréntesis. En caso de negarlo, sería objetividad sin paréntesis.  
+                        -> 
+                    -> De esto mismo, se muestra que el observador realmente no cae de manera absoluta en ninguno de los dos caminos de objetividad. 
+                        -> Esto se debe a la emoción de aceptación, introducida en el capítulo anterior, la cual determina como el observador desea validar su praxis del vivir.
+                            ->>> "En la vida diaria normalmente nos movemos inconscientemente de un camino explicativo al otro, en la manera como argumentamos para validad nuestras afirmaciones y explicaciones, y hacemos esto según nuestro flujo emocional en nuestras relaciones interpersonales y deseos." -Maturana 
+            |> 2. Racionalidad
+                -> La primera idea introducida por Maturana durante este segundo segmento del segundo capítulo está relacionado con la razón. Esta, según el autor, es considerada como la lógica operacional del lenguaje y no como una propiedad analizable. En consecuencia, la racionalidad, de manera general, no es la cuestionada sino las premisas y las acciones realizadas.
+                    -> Dentro de la objetividad sin paréntesis, la razón funciona a partir del descubrimiento de lo real. Es decir, busca apegarse a la realidad independiente de si con el fin de validar sus argumentos puesto que, en este camino, la racionalidad es valida por ser racional y por ende, no puede ser negado.
+                        -> La principal consecuencia, según Maturana, recae en el cambio en la función de la racionalidad gracias a la objetividad sin paréntesis.
+                            ->>> "La búsqueda de la realidad es la búsqueda de la condiciones que hacen a un argumento racional, y, por lo tanto, innegable. O en otras palabras, debido a la naturaleza de la racionalidad en el camino explicativo de la objetividad sin paréntesis, en ella la búsqueda de la realidad es la búsqueda de un argumento convincente." -Maturana 
+                    -> En el camino de la objetividad en paréntesis, se presenta una situación diferente a la anterior. 
+                        -> Lo primero a resaltar es la presencia de las emociones las cuales afectan el dominio de la racionalidad del observador. Esto es especialmente apreciable con el ejemplo presentado por Maturana relacionado con las emociones de ira o rabia las cuales pueden nublar el juicio racional del observador debido al cambio en el dominio en el cual este se encuentra. 
+                            -> Debido a esto, se presenta la diferencia con respecto al otro camino de la objetividad. Se deriva que realmente no se puede tener como fin definitivo la búsqueda de un argumento racional verdadero debido a que el dominio racional no es realmente constante para ninguno de los implicados. 
+                    -> Es de esto que Maturana describe realmente el fin al que quieren llegar 2 observadores presentes en el camino de la objetividad en paréntesis, el entendimiento.
+                        -> Los observadores, presentes en el camino de la objetividad en paréntesis buscan un dominio de coexistencia en aceptación mutua, la aceptación de sus desacuerdos con una separación en respeto mutuo o una mutua negación responsable. 
+                            -> Como se puede apreciar, en este camino no se busca dominar o imponer. 
+                -> Resumen dado por Maturana respecto al camino en paréntesis
+                    -> A. La razón constitutivamente no da, y no puede, darnos un acceso a una realidad asumida como independiente
+                    -> B. El poder convincente de la razón que vivimos en nuestras vidas racionales es cultura social, y resulta de nuestra implícita adopción a priori (esto es, no racional) de las premisas constitutivas que especifican las coherencias operacionales de los dominios conversacionales en los cuales aceptamos los argumentos que consideramos como racionalmente válidos.
+                    -> C. No se puede forzar a nadie a través de la razón para aceptar como racionalmente válido un argumento que él o ella no ha aceptado todavía implícitamente como válido, aceptando las premisas constitutivas del dominio conversacional en el cual tiene coherencia operacional.
+                    -> D. Todo lo que podemos hacer en una conversación en la cual no existe un acuerdo previo implícito, es seducir a nuestro interlocutor a aceptar como válidas las premisas básicas que definen el dominio en el cual nuestro argumento es operacionalmente válido.
+            |> 3. Lenguaje 
+                -> La siguiente temática a trabajar durante la duración del capítulo está relacionada con la interacción del lenguaje respecto a los dos caminos de la objetividad. Esto se debe a que, como seres humanos, estamos limitados dentro de las capacidades del lenguaje para poder referirnos a cualquier cosa, incluidos nosotros mismos, debido que este, de una u otra manera, es un fenómeno biológico. 
+                    -> Tomando el camino de la objetividad sin paréntesis, el primer problema con el lenguaje se relaciona con la incapacidad del observador para analizar el lenguaje. Esto se debe a la condición que este le da al lenguaje como un sistema que permite la comunicación sobre entidades independientes de ellos. En términos simples, el lenguaje no es más que una herramienta y por ende no puede ser algo lo cual puede ser reflexionado. 
+                        -> Como resultado, en caso de que el observador determine que el lenguaje es una propiedad constitutiva de si mismo, este únicamente podría describir las características y las condiciones de uso del lenguaje.
+                        -> De la misma manera, en caso de que se defina el lenguaje como parte de una entidad biológica, se necesitará explicar el como el lenguaje es un fenómeno biológico sin la existencia de un dominio explicativo el cual pueda dar cabida por la indeterminación de si mismo como un ser biológico.
+                            -> Una potente incoherencia, es raro de explicar, pero básicamente, no puede explicarse. 
+                    -> Trabajando bajo el camino de la objetividad en paréntesis, según Maturana, sucede algo completamente diferente. Esto se debe principalmente al como el observador, establecido como una unidad viviente cuyas facultades requieren una explicación biológica, por lo que el lenguaje, en ese orden de ideas, caería dentro de esta facultad biológica.
+                        -> Se resaltan las condiciones que deben cumplirse para que el observador tenga en cuenta el lenguaje como parte de sus facultades biológicas. En palabras cortas, se debe entender que el lenguaje es su punto de partida e instrumento para explicar su mismo fenómeno biológico; y que el observador deberá proponer un mecanismo biológico cuya resultante sea el lenguaje. 
+                            ->En este caso, el mecanismo biológico recae en la interacción entre sistemas entre si a través de un medio particular, el cual en este caso, se refiere al lenguaje. 
+            |> 4. Emotividad
+                -> Como principal medida, Maturana resalta que dentro de la cultura occidental existe la negación de las emociones debido a que estas se consideran, de una u otra manera, como una fuente de "acciones arbitrarias que no merecen confianza.". Sin embargo, esta negación de las emociones también es considerado por el autor como una limitación hacia el entendimiento del fenómeno social. 
+                    -> De manera inicial, Maturana determina la existencia de diferentes dominios de coherencias operaciones los cuales poseen cada uno de los animales. Estos dominios, son conocidos como estados de ánimo o emociones.
+                        -> En ese mismo sentido, depende es del dominio de acciones el cual determina la emoción o estado de ánimo en el cual el sistema vivo se encuentra. Las acciones que se consideren válidas para un animal es lo que llamamos emociones y podemos reconocerlas tras comparar nuestros propios dominios de acciones.
+                    -> Haciendo referencia al anterior sub-capítulo, Maturana describe el como el lenguajear, acto de usar el lenguaje; no es directamente afectado por el dominio de acciones en el cual se encuentre. El lenguajeo sucede, sólo que su medio en el cual sucede cambia.
+                    -> De la misma manera, se establece que la lógica, definida como las coherencias operacionales entre la praxis del vivir del observador y coordinaciones de acciones consensuales establecidas por otros sistemas vivientes; no se ve afectada por el estado anímico puesto que no se fluye a través de diferentes lógicas pero si a través de dominios de coordinaciones consensuales diferentes. 
+                            ->>> "Así, estrictamente hablando, la vida humana es siempre un flujo trenzado y confuso de emocionar y racionalidad a través del cual nosotros traemos a la mano diferentes dominios de realidad en nuestras interacciones con otros, explícitamente o implícitamente, en la objetividad con o sin paréntesis, de acuerdo con el flujo de nuestro emocionar." -Maturana
+            |> 5. Conversaciones
+                -> Lo que nosotros conocemos con conversación, se refiere a un flujo de coordinaciones de acciones y emociones que ocurren entre seres humanos gracias a nuestra interacción con el lenguaje.
+                    -> Maturana describe algunos de los distintos tipos de conversaciones que 
+                        -> 
+                        -> 
                 -> 
                     -> 
                         -> 
                             -> 
+                                ->
