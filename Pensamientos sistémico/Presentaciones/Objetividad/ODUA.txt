@@ -125,11 +125,87 @@ Objetividad de un argumento para obligar - Humberto Maturana
                             ->>> "Así, estrictamente hablando, la vida humana es siempre un flujo trenzado y confuso de emocionar y racionalidad a través del cual nosotros traemos a la mano diferentes dominios de realidad en nuestras interacciones con otros, explícitamente o implícitamente, en la objetividad con o sin paréntesis, de acuerdo con el flujo de nuestro emocionar." -Maturana
             |> 5. Conversaciones
                 -> Lo que nosotros conocemos con conversación, se refiere a un flujo de coordinaciones de acciones y emociones que ocurren entre seres humanos gracias a nuestra interacción con el lenguaje.
-                    -> Maturana describe algunos de los distintos tipos de conversaciones que 
-                        -> 
-                        -> 
+                    -> Maturana describe algunos de los distintos tipos de conversaciones que hacen parte de las comunicaciones realizadas entre las personas
+                        -> Conversaciones de coordinaciones de acciones presentes y futuras.
+                            -> Consisten en conversaciones que se componen únicamente de coordinaciones de acciones.
+                                -> "Si tu pones la mesa, yo preparo la cena. / Lo haré con placer."
+                        -> Conversaciones de quejas y disculpas por acuerdos no tomados.
+                            -> Básicamente se refiere a faltas o fallas a conversaciones de coordinaciones de acciones.
+                                -> "Estoy listo ahora. ¿Estás listo? / Lo siento, no puedo hacerlo ahora. / Pero me prometiste / Sí, pero mi madre me está llamando, ¿puedes esperarme?"
+                        -> Conversaciones de deseos y expectativas.
+                            -> Se refiere a conversaciones donde se presenta la descripción de un futuro ignorando las acciones que constituyen a la persona en el presente.
+                                ->  "Después de la elección presidencial seré capaz de impulsar mi programa de reforestación. / Ese será el caso si tu candidato gana. Yo pienso que sin embargo que él no lo hará. / Yo estoy seguro que él ganará; él tiene el respaldo de los trabajadores."
+                        -> Conversaciones de mandos y obediencias.
+                            -> Se refiere a conversaciones donde una figura de autoridad doblega a alguien para que realice una acción la cual este no se encuentra de acuerdo. El resultado de esto es el ceñir con más fuerza la posición de autoridad del que se encuentra al mando.
+                                -> "Juan, ven a resolver este problema en el pizarrón. / Pero no he terminado aún el ejercicio en mi cuaderno. / No importa, te estoy pidiendo que vengas al pizarrón. 
+                        -> Conversaciones de caracterizaciones, atribuciones y evaluaciones.
+                            -> Estas conversaciones se refieren, de manera general, a aquellas en las cuales se realizan descripciones y opiniones sobre las percepciones del espectador. 
+                                -> "¡Aquí estás! Yo te creía una persona que siempre llegaba a la hora. / ¿Qué?, ¿Quieres decir que soy impuntual? Esta es la primera vez que me atraso."
+                        -> Conversaciones de quejas por expectativas incumplidas
+                            -> Estas se relacionan con los casos donde el oyente es culpado del rompimiento de una promesa realizada con anterioridad sobre el cumplimiento de algo prometido.
+                                -> "Tu llegas tarde de nuevo y la comida está recocida. / ¡Pero tu sabes que en esta época del año no puedo llegar más temprano!"
+                    
+            |> 6. El sistema nervioso
                 -> 
                     -> 
                         -> 
                             -> 
                                 ->
+            |> 7. Autoconciencia 
+                -> 
+                    -> 
+                        -> 
+                            -> 
+                                ->
+            |> 8. Epigénesis 
+                -> 
+                    -> 
+                        -> 
+                            -> 
+                                ->
+
+        ->> Capítulo 3: Ontología del conocer
+            |> Observador - observación
+                -> 
+                    -> 
+                        -> 
+                            -> 
+                                ->
+            |> Conocer
+                -> 
+                    -> 
+                        -> 
+                            -> 
+                                ->
+            |> Interacciones de mente y cuerpo
+                -> 
+                    -> 
+                        -> 
+                            -> 
+                                ->
+        ->> Capítulo 4: Lo social y lo ético
+            |> Lo social
+                -> 
+                    -> 
+                        -> 
+                            -> 
+                                ->
+            |> Multiplicidad de dominios de existencia
+                -> 
+                    -> 
+                        -> 
+                            -> 
+                                ->
+            |> Lo ético
+                -> 
+                    -> 
+                        -> 
+                            -> 
+                                ->
+        ->> Capítulo 5: Afirmaciones
+                -> 
+                    -> 
+                        -> 
+                            -> 
+                                ->
+                                
