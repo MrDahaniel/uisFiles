@@ -9,7 +9,7 @@ Objetividad de un argumento para obligar - Humberto Maturana
                 -> Con el fin de poder referirnos a los conceptos de pasado y futuro, se usa el tiempo que a su vez es una manera de explicar la distinción/diferencia entre presentes. Sin embargo, es a partir de este tipo de explicaciones de las experiencias que llegamos a la reflexión de las mismas dando como resultado el cambio de las mismas experiencias.
                     -> Que cosa más rara...
 
-        ->> Introducción
+        ->> Introducción    
             -> De manera inicial, se parte del concepto de la necesidad de que, para cada situación en la cual se busque hacer que alguien concuerde con nosotros o se subyugue a algo sin el uso de la fuerza, se busca el uso de un argumento objetivo o racional.
                 -> Esto se debe a que, por definición, un argumento objetivo, no tiene margen de discusión porque referencia a la verdad (Se realiza bajo el supuesto implícito de una verdad absoluta y universal.).
                     -> En el caso de que alguien niegue este tipo de argumentos, específicamente si estos son nuestros, es considerado arbitrario/absurdo. 
@@ -146,11 +146,12 @@ Objetividad de un argumento para obligar - Humberto Maturana
                                 -> "Tu llegas tarde de nuevo y la comida está recocida. / ¡Pero tu sabes que en esta época del año no puedo llegar más temprano!"
                     
             |> 6. El sistema nervioso
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                ->
+                -> Como primera medida, Maturana resalta el aspecto principal del sistema nervioso de manera general. Él lo describe como una red cerrada de componentes que interactúan entre sí dentro de un sistema de mayor tamaño. En nuestro caso, este sistema nervioso está compuesto de neuronas, células sensoriales y células efectoras. 
+                    -> De la misma manera, resalta el determinismo estructural (Concepto introducido por Maturana que establece que las perturbaciones que puede sufrir un sistema al interactuar con el ambiente están limitadas por la dinámica de interacciones que le permitan su estructura únicamente. El agente ambiental que efectúa la perturbación no tiene nade que ver en ese aspecto.) de nuestro sistema nervioso no nos permite distinguir entre la percepción y la ilusión. 
+                    -> Como segundo punto se establece que, el resultado de las interacciones del sistema nervioso con en ambiente. Esto se debe a que, el sistema nervioso, como parte de un ente vivo, a medida que pasa el tiempo y dependiendo de las interacciones que este perciba con el ambiente, puede modificar su estructura con los componentes.
+                    -> El tercer punto se refiere al como, en la medida en la que hay cambios a la estructura debido a sus interacciones con el ambiente, da como resultado un cambio de estado en el organismo el cual afecta sus interacciones. De esto se concluye que el sistema nervioso de un organismo es el presente de un organismo.
+                    -> Las mismas dinámicas del sistema nervioso se pueden aplicar al lenguaje en tanto este también es un flujo de coordinaciones operacionales. Un ejemplo de esto, como resalta Maturana, está en las matemáticas.
+                    -> Maturana determina que, dadas las condiciones en las que, un organismo participa en un dominio del lenguajeo, este puede puede operar dentro de un flujo de dinámicas internas, llamadas diálogos internos. Esto se generó a partir del sistema nervioso el cual le permitió participar del lenguaje. 
             |> 7. Autoconciencia 
                 -> 
                     -> 
