@@ -52,7 +52,7 @@ Objetividad de un argumento para obligar - Humberto Maturana
                                 ->  Por esto es que se llama entre paréntesis, porque tiene en cuenta al observador en la construcción de la praxis del vivir y está limitada por este mismo.
                         -> Maturana plantea las tres consecuencias fundamentales de la objetividad constructivista:
                             -> La primera se relaciona con el dominio dado por el observador para las coherencias operacionales entre su praxis del vivir y lo objetos presentes en esta (Se refiere al como comprendemos los objetos, por ejemplo, de manera física se refiere a términos de masa, distancia y tiempo).
-                            -> La segunda se refiere al como, la aplicación recursiva del dominio de la realidad del observador da cono resultante el critério de aceptación de las reformulaciones de la praxis del vivir (Esto es súper raro pero creo que se refiere a que, el entendimiento de la realidad tras la reflexión de la misma da como resultado el criterio).
+                            -> La segunda se refiere al como, la aplicación recursiva del dominio de la realidad del observador da como resultante el critério de aceptación de las reformulaciones de la praxis del vivir (Esto es súper raro pero creo que se refiere a que, el entendimiento de la realidad tras la reflexión de la misma da como resultado el criterio).
                             -> El tercero se refiere a que, el entendimiento de la realidad es diferente en todos los casos y por eso la experiencia del observador no es igual a lo experimentado, sin embargo, no dejan de ser legítimos dominios de la existencia. 
                         -> Se define que, para este camino explicativo, las explicaciones son no reduccionistas y no trascendentales debido a que no existe una única explicación final para todo.
                             -> Básicamente todo es relativo alv
@@ -144,7 +144,6 @@ Objetividad de un argumento para obligar - Humberto Maturana
                         -> Conversaciones de quejas por expectativas incumplidas
                             -> Estas se relacionan con los casos donde el oyente es culpado del rompimiento de una promesa realizada con anterioridad sobre el cumplimiento de algo prometido.
                                 -> "Tu llegas tarde de nuevo y la comida está recocida. / ¡Pero tu sabes que en esta época del año no puedo llegar más temprano!"
-                    
             |> 6. El sistema nervioso
                 -> Como primera medida, Maturana resalta el aspecto principal del sistema nervioso de manera general. Él lo describe como una red cerrada de componentes que interactúan entre sí dentro de un sistema de mayor tamaño. En nuestro caso, este sistema nervioso está compuesto de neuronas, células sensoriales y células efectoras. 
                     -> De la misma manera, resalta el determinismo estructural (Concepto introducido por Maturana que establece que las perturbaciones que puede sufrir un sistema al interactuar con el ambiente están limitadas por la dinámica de interacciones que le permitan su estructura únicamente. El agente ambiental que efectúa la perturbación no tiene nade que ver en ese aspecto.) de nuestro sistema nervioso no nos permite distinguir entre la percepción y la ilusión. 
@@ -153,17 +152,23 @@ Objetividad de un argumento para obligar - Humberto Maturana
                     -> Las mismas dinámicas del sistema nervioso se pueden aplicar al lenguaje en tanto este también es un flujo de coordinaciones operacionales. Un ejemplo de esto, como resalta Maturana, está en las matemáticas.
                     -> Maturana determina que, dadas las condiciones en las que, un organismo participa en un dominio del lenguajeo, este puede puede operar dentro de un flujo de dinámicas internas, llamadas diálogos internos. Esto se generó a partir del sistema nervioso el cual le permitió participar del lenguaje. 
             |> 7. Autoconciencia 
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                ->
+                -> La primera afirmación de Maturana respecto a la autoconciencia se relaciona con el lenguaje.
+                    -> La relación con el lenguaje, según Maturana, es tal que el fenómeno de la autoconciencia no puede suceder sin este debido a que, el lenguaje es el mecanismo operacional en el cual ocurre este.
+                -> En este sentido, se puede afirmar que cuando un animal no está en el lenguaje, este no tiene autoconciencia y por ende sólo vive del conocimiento instintivo.
+                    -> Esto se refiere a cosas como cuando un animal camina sin reflexionar sobre qué músculos mover.
+                -> Maturana resalta que el inicio de la autoconciencia da inicio en el momento en el que un observador asegura ser autoconsiente.    
+                    -> Esto se debe a que, en el caso de suceder esto, este observador distingue un comportamiento de otros observadores diferentes a su propio cuerpo. Es decir, el observador reconoce que es una entidad individual a otros observadores.
+                -> "Todo el dominio de la autoconciencia surge como un dominio de recursión en el darse cuenta de uno mismo."
             |> 8. Epigénesis 
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                ->
+                -> El primer comentario sobre la epigénesis de Maturana recae en lo que se conoce como la capacidad del sistema viviente. Esto se refiere que para cualquier sistema viviente, este está limitado dentro de su estructura inicial.
+                    -> Lo que quiere decir Maturana con esto, es que la estructura inicial permite que este haga todo lo que pueda hacer en su historia.
+                -> Se da la definición del determinismo genético como la especificación de los ácidos nucléicos de un futuro en el desarrollo de un organismo.
+                    -> La primera característica de esto se relaciona con los resultados de un sistema viviente. En términos simples, se refiere a que en el caso de que la estructura de un sistema viviente se repita, y las interacciones relevantes se repitan, el resultado de esta entidad viviente se repetirá. 
+                    -> Seguidamente, Maturana se refiere a la distinción que debe realizarse al aprendizaje. Esto se debe a la mala concepción del aprendizaje como una "adaptación" al medio ambiente al cual este pertenece.
+                        -> Maturana resalta que, debido a que un sistema viviente es estructuralmente determinado, nada externo a este puede especificar lo que pasa en él. 
+                                ->>> "El sistema viviente es un sistema estructuralmente determinado y como tal, nada externo a él puede especificar qué pasa en él; de hecho para la operación de un sistema viviente no existe interior o exterior, y no puede hacer una representación de lo que un observador ve como externo a él." 
+                -> En el camino explicativo de la objetividad sin paréntesis, según Maturana, se dice que el aprendizaje es un procesos dirigido por la adaptación. Básicamente, el proceso de aprendizaje se ve como un comentario sobre dos momentos de la epigénesis en el cual no se reconoce el proceso histórico y se asume que existe un mecanismo activo de acomodación.
+                -> Por otro lado, en la objetividad en paréntesis, el aprendizaje es un proceso epigénico puesto que no implica la construcción de una representación del medio ambiente.
 
         ->> Capítulo 3: Ontología del conocer
             |> Observador - observación
