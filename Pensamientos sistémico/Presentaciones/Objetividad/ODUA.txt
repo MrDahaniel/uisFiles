@@ -171,38 +171,37 @@ Objetividad de un argumento para obligar - Humberto Maturana
                 -> Por otro lado, en la objetividad en paréntesis, el aprendizaje es un proceso epigénico puesto que no implica la construcción de una representación del medio ambiente.
 
         ->> Capítulo 3: Ontología del conocer
-            |> Observador - observación
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                ->
-            |> Conocer
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                ->
-            |> Interacciones de mente y cuerpo
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                ->
+                -> Capítulo dedicado principalmente al como conocemos dentro del camino explicativo de la objetividad en paréntesis. En este sentido, se habla de un observador que surge del lenguaje y es consiente que este no existe fuera del lenguaje. (Los límites del lenguaje en todo su esplendor)
+            |> 1. Observador - observación
+                ->  Lo primero que Maturana resalta es la relación entre el observador y la observación. Según Maturana, esta relación, y el surgimiento de ambos; se debe a los cambios estructurales dentro de la comunidad de los observadores. Es decir, las observaciones surgen de los cambios a la praxis del vivir de los espectadores.
+                    -> El primer comentario de Maturana respecto a esto se relaciona con la capacidad del observador en realizar distinciones de las cosas. Debido a que el observador puede operar únicamente dentro de sus dominios de existencia, las distinciones que este realice, en todo momento, son congruentes con las coherencias operacionales del mismo. (Todo lo que el observador haga tiene sentido dentro de su praxis del vivir porque este sólo puede operar en esta.)
+                    -> Lo segundo a resaltar está en que, en el momento que un observador dice que algo es erróneo, se refiere a que la distinción realizada, no tomó lugar en un dominio operacional en el cual se esperaba esta. Es decir, es correcta pero no re hizo desde el mismo punto de vista del observador. 
+                        -> Esto es contrario a lo que sucede en la objetividad sin paréntesis en la cual, en el momento de que cuando el observador dice que algo es erróneo, debido a la percepción de la realidad como algo independiente, se dice que que observador afirma que la distinción realizada está directamente mal. 
+                    -> El tercer punto se relaciona con la corporalidad del observador. Debido a que este realiza todas sus interacciones del lenguaje a través de la corporalidad, puede afirmarse que el corporalidad es un nodo que participa en las conversaciones.
+            |> 2. Conocer
+                -> Maturana hace referencia a la tradición cultural en torno al conocimiento, específicamente al concepto relacionado con que "nuestras acciones deberían ser guiadas por el conocimiento". 
+                    -> Maturana se pregunta: "¿Qué es lo que estamos sosteniendo como observadores cuando sostenemos saber, y saber objetivamente?"
+                        -> Esto en parte tiene relación con lo que se trabajó durante su entrevista en La Belleza de Pensar sobre la tentación de la certidumbre.
+                    -> En concepto de "saber" para Maturana, en este caso, cambia de tal manera que el concepto de "saber" no se refiere a tener la certeza de algo, por el contrario, se refiere a la capacidad de actuar adecuadamente dentro de un dominio operacional.
+                    -> Seguidamente se relaciona el concepto de las comunidades con los dominios cognitivos donde, la manera de ser parte de una comunidad, en términos simples, es la apropiación del critério de validación utilizado por los miembros de la comunidad.
+                    -> Se determina el problema de los desacuerdos dentro de la objetividad sin paréntesis puesto que, en estos casos, el resultado el la negación mutua, lo cual puede llevar a amenazas existenciales. La única salvación recae en la objetividad en paréntesis. 
+            |> 3. Interacciones de mente y cuerpo
+                -> Maturana resalta en la dualidad no intersectada pero conectada en la que vivimos conocidas como la corporalidad y el dominio de la conducta. Con esto se refiere al como el dominio de la conducta puede interactuar a través de la corporalidad. 
+                -> Dentro de la objetividad sin paréntesis se trabaja esta dualidad como una especia de paradoja en la cual se intenta explicar la relación entre las partes sin que estas estén conectadas lo cual rompe la existencia. Nuevamente la solución está en la objetividad entre paréntesis debido a la existencia de mecanismos similares como lo es el lenguajear el cual sucede a través de la corporalidad sin existir en esta.
         ->> Capítulo 4: Lo social y lo ético
-            |> Lo social
+            |> 1. Lo social
                 -> 
                     -> 
                         -> 
                             -> 
                                 ->
-            |> Multiplicidad de dominios de existencia
+            |> 2. Multiplicidad de dominios de existencia
                 -> 
                     -> 
                         -> 
                             -> 
                                 ->
-            |> Lo ético
+            |> 3. Lo ético
                 -> 
                     -> 
                         -> 
