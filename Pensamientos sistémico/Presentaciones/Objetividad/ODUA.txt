@@ -87,7 +87,6 @@ Objetividad de un argumento para obligar - Humberto Maturana
                 -> Maturana seguidamente resalta algo interesante sobre la concepción de ambos caminos de la objetividad.
                     -> Lo principal recae en el que, estos únicamente surgen en cuanto el observador se haya cuestionado, o por lo menos aceptado la pregunta sobre el origen de sus facultades cognitivas como un fenómeno biológico.
                         -> De esto surgen los dos caminos. En caso de aceptar que los sentidos son fenómenos biológicos, se entrará en la objetividad entre paréntesis. En caso de negarlo, sería objetividad sin paréntesis.  
-                        -> 
                     -> De esto mismo, se muestra que el observador realmente no cae de manera absoluta en ninguno de los dos caminos de objetividad. 
                         -> Esto se debe a la emoción de aceptación, introducida en el capítulo anterior, la cual determina como el observador desea validar su praxis del vivir.
                             ->>> "En la vida diaria normalmente nos movemos inconscientemente de un camino explicativo al otro, en la manera como argumentamos para validad nuestras afirmaciones y explicaciones, y hacemos esto según nuestro flujo emocional en nuestras relaciones interpersonales y deseos." -Maturana 
@@ -190,27 +189,47 @@ Objetividad de un argumento para obligar - Humberto Maturana
                 -> Dentro de la objetividad sin paréntesis se trabaja esta dualidad como una especia de paradoja en la cual se intenta explicar la relación entre las partes sin que estas estén conectadas lo cual rompe la existencia. Nuevamente la solución está en la objetividad entre paréntesis debido a la existencia de mecanismos similares como lo es el lenguajear el cual sucede a través de la corporalidad sin existir en esta.
         ->> Capítulo 4: Lo social y lo ético
             |> 1. Lo social
+                -> Aceptación y amor.
+                    -> Se entiende que el concepto de aceptación es básicamente lo que se realiza de manera constante dentro de la vida diaria y se da en diversas situaciones. La aceptación está en todo momento. 
+                        -> Maturana da algunos ejemplos de esto en situaciones como: "Ahora estamos trabajando, no socializando." En la cual se denota la aceptación del compromiso de enfocar acciones con el fin de completar una tarea.
+                    ->  Se busca el entender que todas las interacciones sociales recurrentes siguen un curso hacia la aceptación mutua.
+                        -> Maturana sostiene que estas interacciones sociales recurrentes ocurren debido a la emoción del amor. 
+                            -> Básicamente, según Maturana, el concepto del amor es la emoción en la cual las interacciones sociales o relaciones sociales existen. En este sentido, Maturana no se refiere al amor como bondad sino como el fenómeno biológico en el cual los sistemas vivientes pueden coordinar sus acciones como consecuencia de la aceptación mutua.
+                -> Sistemas sociales.
+                    -> Maturana sostiene que los sistemas sociales son constituidos por sistemas vivientes los cuales, bajo la emoción del amor, desarrollan coordinaciones de acciones de aceptación.
+                    -> De la misma manera, Maturana dice que en el caso de no haber aceptación mutua dentro de un sistemas vivientes, estas interacciones no pueden ser llamadas relaciones o interacciones sociales.
+                        -> La primera consecuencia de esto está en que los sistemas sociales, de una u otra manera, requieren la existencia de sistemas vivos para poder existir. En este sentido, en el caso de que se eliminen o nieguen los sistemas vivos, se destruirían o eliminarían los sistemas sociales.   
+                        -> La segunda se relaciona con el concepto de identidad de clase en el sentido que la identidad define el sistema social. Es decir, un sistema social compuesto de sistemas vivos cuya identidad sea la de un ser humano, dará como resultado un sistema social de seres humanos. De la misma manera, cualquier cosa que niegue la identidad de los componentes, destruye el sistema social.
+                        -> 
+                        -> 
+                    -> 
+                -> 
+                    -> 
+                -> 
+                    -> 
+                -> 
+                    -> 
                 -> 
                     -> 
                         -> 
                             -> 
-                                ->
+                                -> 
             |> 2. Multiplicidad de dominios de existencia
                 -> 
                     -> 
                         -> 
                             -> 
-                                ->
+                                -> 
             |> 3. Lo ético
                 -> 
                     -> 
                         -> 
                             -> 
-                                ->
+                                -> 
         ->> Capítulo 5: Afirmaciones
                 -> 
                     -> 
                         -> 
                             -> 
-                                ->
+                                -> 
                                 
