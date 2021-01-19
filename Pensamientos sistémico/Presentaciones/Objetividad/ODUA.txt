@@ -174,7 +174,7 @@ Objetividad de un argumento para obligar - Humberto Maturana
             |> 1. Observador - observación
                 ->  Lo primero que Maturana resalta es la relación entre el observador y la observación. Según Maturana, esta relación, y el surgimiento de ambos; se debe a los cambios estructurales dentro de la comunidad de los observadores. Es decir, las observaciones surgen de los cambios a la praxis del vivir de los espectadores.
                     -> El primer comentario de Maturana respecto a esto se relaciona con la capacidad del observador en realizar distinciones de las cosas. Debido a que el observador puede operar únicamente dentro de sus dominios de existencia, las distinciones que este realice, en todo momento, son congruentes con las coherencias operacionales del mismo. (Todo lo que el observador haga tiene sentido dentro de su praxis del vivir porque este sólo puede operar en esta.)
-                    -> Lo segundo a resaltar está en que, en el momento que un observador dice que algo es erróneo, se refiere a que la distinción realizada, no tomó lugar en un dominio operacional en el cual se esperaba esta. Es decir, es correcta pero no re hizo desde el mismo punto de vista del observador. 
+                    -> Lo segundo a resaltar está en que, en el momento que un observador dice que algo es erróneo, se refiere a que la distinción realizada, no tomó lugar en un dominio operacional en el cual se esperaba esta. Es decir, es correcta pero no se hizo desde el mismo punto de vista del observador. 
                         -> Esto es contrario a lo que sucede en la objetividad sin paréntesis en la cual, en el momento de que cuando el observador dice que algo es erróneo, debido a la percepción de la realidad como algo independiente, se dice que que observador afirma que la distinción realizada está directamente mal. 
                     -> El tercer punto se relaciona con la corporalidad del observador. Debido a que este realiza todas sus interacciones del lenguaje a través de la corporalidad, puede afirmarse que el corporalidad es un nodo que participa en las conversaciones.
             |> 2. Conocer
@@ -200,26 +200,38 @@ Objetividad de un argumento para obligar - Humberto Maturana
                     -> De la misma manera, Maturana dice que en el caso de no haber aceptación mutua dentro de un sistemas vivientes, estas interacciones no pueden ser llamadas relaciones o interacciones sociales.
                         -> La primera consecuencia de esto está en que los sistemas sociales, de una u otra manera, requieren la existencia de sistemas vivos para poder existir. En este sentido, en el caso de que se eliminen o nieguen los sistemas vivos, se destruirían o eliminarían los sistemas sociales.   
                         -> La segunda se relaciona con el concepto de identidad de clase en el sentido que la identidad define el sistema social. Es decir, un sistema social compuesto de sistemas vivos cuya identidad sea la de un ser humano, dará como resultado un sistema social de seres humanos. De la misma manera, cualquier cosa que niegue la identidad de los componentes, destruye el sistema social.
-                        -> 
-                        -> 
-                    -> 
-                -> 
-                    -> 
-                -> 
-                    -> 
-                -> 
-                    -> 
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                -> 
+                        -> La tercera se refiere al medio por el cual se da este sistema social, es decir, a través de donde se da este mecanismo social. En el caso de las personas, nuestros sistemas sociales, como lo afirma Maturana, surgen únicamente del lenguajeo. 
+                        -> La cuarta está relacionada con los sistemas vivientes y sus interacciones con otros sistemas vivientes. Maturana define que, para un observador, un sistema viviente hace parte de un sistema social si este interactúa con otros sistemas vivientes pertenecientes a dicho sistema social.
+                        -> La quinta y final se relaciona con los casos dentro del sistema social, alguno de los sistemas vivos que hace parte de estos, niega a otros miembros de sistema social aparentando la aceptación de estos, se realiza el juicio de hipocresía. De igual manera, Maturana resalta que la sinceridad es esencial para la estabilidad de un sistema social. 
+                -> Conservación y desintegración de los sistemas sociales.
+                    -> Maturana nos presenta las condiciones necesarias para la conservación de un sistema social. La principal necesidad de un sistema social se relaciona con las interacciones de los mismos miembros de sistema social y su capacidad de trabajar dentro de la conducta del sistema social. En el caso donde los miembros dentro del sistema social actúen por fuera de la búsqueda de la aceptación mutua entre sus miembros, el sistema social se desintegrará.
+                    -> Maturana relata algunas de las consecuencias de estas condiciones.
+                        -> Lo primero se relaciona al ser un sistema viviente el cual hace parte de un sistema social. En este caso, el miembro del sistema, aprende una conducta propia la cual lo identifica como miembro del sistema social. En el caso de que este miembro se apartara de esta conducta, este sería ignorado o tratado como un externo; o tomado como innovador.
+                        -> Se presenta el concepto de los cambios del sistema social. Estos cambios, surgen, de acuerdo con Maturana, a partir de las coordinaciones de acciones que realizan los miembros del sistema social. Es decir, las acciones de los miembros del sistema social definen el sistema social y el como este se comporta respecto a las acciones de sus miembros.
+                        -> Finalmente, se refiere a la naturaleza conservadora, o en contra del cambio; de algunos sistemas sociales, en los cuales un cambio social no es una operacional normal dentro de la conformación del sistema social.
+                -> Sistemas sociales, aceptación y lenguaje.
+                    -> Este sub-sub-capítulo trata principalmente lo relacionado con el lenguaje y los miembros de la sociedad.
+                        -> Lo primero que resalta Maturana es que, como seres vivientes, nuestras interacciones con otros sistemas vivientes dan como resultado una fluidez entre los sistemas sociales dependiendo de las mismas interacciones que el sistema viviente realice.
+                        -> Lo segundo está relacionado con los efectos de las reformulaciones en las praxis del vivir. Básicamente, en términos generales, las reformulaciones afectan la corporalidad y los cambios en la corporalidad afectan las conversaciones.
+                        -> El tercero se refiere al como todas nuestras interacciones dentro de los sistemas sociales tiene un cambio en la corporalidad de cada uno de los integrantes de los diversos sistemas sociales. 
+                -> Emociones y fronteras de los sistemas.
+                    -> Lo primero que resalta Maturana respecto a los sistemas sociales es el hecho de que son sistemas cerrados limitados únicamente por las emociones de estos. En este sentido, la explicación de esto se parte en dos.
+                        -> En la objetividad sin paréntesis, se dice que la razón de estos límites está basado en los argumentos racionales usados para rechazar o aceptar a los nuevos integrantes de un sistema social. Se ignoran las emociones.
+                        -> En la objetividad en paréntesis, se tienen en cuenta que las emociones hacen parte fundamental de la aceptación o negación de los miembros a ingresar dentro de un sistema social.
+                            -> Las barreras de un sistema social sólo podrán ser atravesadas a partir de la seducción emocional.
+                -> Finalmente se resalta el como, como ya había sido determinado anteriormente, un sistema social depende de las coordinaciones de acciones que realizan sus miembros. En este sentido, se dice que los sistemas sociales son normalmente conservadores y sólo buscan algún tipo de cambio después de que algo dentro de sus miembros inicia un cambio en las coordinaciones de acciones de estos.
+                    -> Maturana resalta que este tipo de cambios normalmente son iniciados por: a) las interacciones entre algunos de los miembros del sistema social con miembros de otro sistema social; y b) interacciones que generan una reflexión sobre los conceptos de convivencia humana. 
             |> 2. Multiplicidad de dominios de existencia
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                -> 
+                -> Se hace referencia a las comunidades no sociales. Estas se refieren a las comunidades donde la emoción de aceptación no es el amor.
+                    -> De esto surgen las comunidades de diferentes tipos. Una de las principales nombrada por Maturana es la comunidad laboral. 
+                        -> Este tipo de comunidades no sociales, al igual que las sociales, trabajan bajo las condiciones de respeto mutuo.
+                        -> Y están principalmente orientadas hacia las coordinaciones de acciones para el cumplimiento de un objetivo o una tarea definida. 
+                    -> Seguidamente, se encuentran las comunidades jerárquicas 
+                        -> La emoción de aceptación está mas orientada hacia obediencia de acciones.
+                    -> Maturana hace las siguientes propiedades de estas comunidades.
+                        -> No se intersectan con otras comunidades de manera directa pero nuestras interacciones con estas sí cambia el como nos comportamos respecto a todo.
+                        -> Los sistemas vivientes que interactúan con las comunidades, en términos simples, son el resultado de la historia de las interacciones dentro de las comunidades.
+                        -> Los cambios dentro de las comunidades sólo ocurre como un cambio de la corporalidad de los miembros de la comunidad.
             |> 3. Lo ético
                 -> 
                     -> 
