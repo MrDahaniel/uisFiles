@@ -1,0 +1,12 @@
+Quiz 
+Checkland
+Daniel David Delgado Cervantes - 2182066
+
+1. ¿Por qué Checkland realiza una investigación-acción para resolver los complejos pensamientos blandos basada en la metodología de los sistemas blandos mas NO en el método de los sistemas blandos?
+    La razón de Checkland de llevar acabo la investigación-acción está relacionado con la diferencia entre método y metodología.
+    El MBS el cual se relaciona con los conceptos por los cuales se puede aplicar MBS, es más como una serie de pasos que dan como resultado una misma solución debido a que se ignoran las condiciones y se trabaja bajo un único marco.
+    Esto difiere en cuanto a la metodología en la cual, aunque esta serie de pasos toma lugar, toma en consideración las diferentes condiciones en las cuales se encuentra el sistema lo cual varía las conclusiones a las cuales se llega tras la aplicación de la metodología.
+
+2. SEÑALE DOS DIFERENCIAS FUNDAMANTALES ENTRE LA PROPUESTA DE DEL MVS Y LA MSB 
+    Una de las principales diferencias está en que, la MVS basa sus propuestas en la estructura organizacional mientras que el MSB va más destinado hacia las personas que hacen parte de la organización.
+    De igual manera, puede decirse que el MSB trabaja desde el perspectivismo, mientras que en el MSV la organización es independientemente del observador.

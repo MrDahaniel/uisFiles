@@ -233,15 +233,24 @@ Objetividad de un argumento para obligar - Humberto Maturana
                         -> Los sistemas vivientes que interactúan con las comunidades, en términos simples, son el resultado de la historia de las interacciones dentro de las comunidades.
                         -> Los cambios dentro de las comunidades sólo ocurre como un cambio de la corporalidad de los miembros de la comunidad.
             |> 3. Lo ético
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                -> 
-        ->> Capítulo 5: Afirmaciones
-                -> 
-                    -> 
-                        -> 
-                            -> 
-                                -> 
+                -> El primer planteamiento de esta capítulo se relaciona con las consideraciones éticas y el porque estas se realizan.
+                    -> Maturana resalta que este tipo de planteamientos sólo se realizan cuando existe un quiebre en el respeto humano y se buscan que hayan consecuencias hacia un grupo en particular. Es decir, la ética viene de las emociones y no de la racionalidad.
+                        -> Con esto se refiere que depende del como se vea un problema y que tal le parezca al observador. Si le parece bien, no se hará la distinción; de lo contrario, se hará.
+                        -> De igual manera, se resalta que este tipo de problemas éticos, en el caso de realizar una distinción, tienen de intentar ser justificados desde argumentos sobre valores trascendentales.
+                        -> Todos los reclamos éticos están basados en los sentimientos y no la razón.
+                -> Lo primero para entender el porque la ética es meramente emocional recae en las emociones, está dado en entender que las emociones son un fenómeno biológico propio de la corporalidad. De la misma manera, se debe entender que la cultura no afecta nuestras emociones pero sí el emocionar.
+                    -> Estas emociones, especialmente dentro de la ética, se debe al interés de otros seres humanos (Aunque a veces no humanos también caen dentro de esto).
+                    -> Sin embargo tienden a devaluarse las emociones debido a la búsqueda de estar basados en un fundamento racional. Se ignora el trenzado del emocionar y la racionalidad.
+                -> De igual manera, Maturana describe el origen de nuestras emociones como seres sapientes.
+                    -> Se determina que la razón de existe una razón para la búsqueda del bienestar de otros seres humanos está relacionada con la conservación tanto del fenotipo como la búsqueda de la coexistencia sensual íntima entre grupos de humanos.
+                    -> Nuestras emociones y acciones definen las fronteras de coexistencia entre grupos.
+                -> Se resaltan los límites de interés del bienestar de los seres humanos los cuales están dados por la ubicación de otro ser humano dentro de los distintos sistemas sociales.
+                    -> Esto se refiere a los casos donde realmente no nos interesa el bienestar de otro ser humano debido a su condición de estar dentro de otro sistema social que puede que el observador no considere válido dentro de su praxis del vivir.
+                    -> Es de denotar que cuando un observador externo acepta una posición o conducta ética nuestra, no es que el observador acepte como racional y por ende objetivo argumento, sino que entiende y acepta el dominio existencial trabajado.
+                    -> Finalmente se determina que, a medida que vamos moviéndonos dentro los diferentes dominios sociales, sean sociales o no sociales, nuestra preocupación va cambiando dependiendo de nuestras emociones.
+                ->Maturana resalta los problemas que tiene la cultura moderna. Objetividad sin paréntesis.
+                        ->>> "La cultura moderna occidental a la cual la ciencia moderna pertenece, está sumergida en el camino explicativo de la objetividad sin paréntesis. En este camino explicativo, o como puedo decir ahora, en esta actitud básica de coexistencia -en la cual usualmente intentamos obligar a otro con argumentos que juzgamos que son universales, porque están fundados en la razón, y en los cuales negamos a las emociones su legitimidad básica y las devaluamos-, argumentamos como si la ética tuviera o debería tener un fundamento racional trascendental." - Maturana 
+                    -> El camino de la objetividad sin paréntesis entra en conflictos debido a que se está intentando encontrar una validez simultanea de las emociones y de la razón, cosa que no va a pasar. 
+                        -> Devaluar la empatía es volver a la objetividad sin paréntesis. No se toma responsabilidad por las acciones.
+                -> En la objetividad en paréntesis, debido a que como sistemas vivientes entendemos que podemos vivir en diferentes dominios de existencia, podemos trabajar bajo nuestros fundamentos éticos al igual que se entiende que los intereses éticos van hasta nuestras fronteras operacionales. (Básicamente, no nos extendemos hasta la universalidad y nos concentramos en nuestras emociones y el emocionar.)
                                 
