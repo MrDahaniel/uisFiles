@@ -1,0 +1,163 @@
+\documentclass[english,notitlepage,letterpaper, 10pt]{article} % para articulo en castellano
+\usepackage{cite}
+\usepackage[utf8]{inputenc} % Acepta caracteres en castellano
+\usepackage[spanish]{babel} % silabea palabras castellanas
+\usepackage{amsmath}
+\decimalpoint
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref} % navega por el doc
+\usepackage{graphicx}
+\usepackage{geometry}      % See geometry.pdf to learn the layout options.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{epstopdf}
+\usepackage{fancyhdr} % encabezados y pies de pg
+\usepackage{mathtools}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=shadowbox,
+  language=Matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+  rulesepcolor=\color{blue}
+}
+
+\newcommand{\university}{\normalsize Universidad Industrial de Santander}
+\newcommand{\faculty}{\normalsize  Escuela de Ingenier\'ia de Sistemas e Inform\'atica}
+\newcommand{\codigo}{\normalsize  2182066}
+\newcommand{\grupo}{\normalsize  B2}
+\pagestyle{fancy} 
+\chead{\bfseries Lab. } 
+\lhead{} % si se omite coloca el nombre de la seccion
+\rhead{\today} 
+\lfoot{\it  An\'alisis N\'umerico } 
+\cfoot{\university} 
+\rfoot{\thepage} 
+
+\voffset = -0.25in 
+\textwidth = 7.5in
+\textheight = 9in
+\oddsidemargin = -0.5in
+\headheight = 20pt 
+\headwidth = 7.5in
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0,5pt}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+
+\begin{document}
+
+\title{	\vspace{-12mm}\includegraphics[width=0.2\linewidth]{Logos/UIS.pdf}\\Informe Laboratorio: An\'alisis Num\'erico\\  \centering Pr\'actica No. 6}
+\author{
+  \textbf{Daniel Delgado} \\ \textbf{C\'odigo:} \codigo\\
+  \textbf{Grupo:} \grupo\\
+  \textit{\faculty}\\
+  \textit{\university}}
+\date{\today}
+\maketitle
+
+\section{Introducci\'on}
+
+La interpolación, específicamente la interpolación polinómica, es una práctica la cual permite el encontrar más puntos a partir de un conjunto de puntos datos. Esto puede ser por la mera aproximación de puntos que sigan la tendencia de la función o la generación de un polinómio que se ajuste a un set de puntos dados.
+
+En el presente informe, tratará las interpolaciones polinómicas de Newton y LaGrange y el como estas operan y se diferencian entre ellas. De la misma manera, se buscará entender el como cada una de estas se comporta en un contexto computacional y las ventajas de cada uno de estos.
+
+La compresión de las diferentes maneras de realizar interpolaciones, al igual que el desarrollo de la algoritmia relacionada, son los principales temas a a tratar durante el desarrollo del presente informe, así como la resolución de los problemas propuestos a manera de pregunta orientadora durante el desarrollo del componente práctico del mismo.
+
+\section{Desarrollo}
+
+\begin{enumerate}
+  
+  \item Preguntas propuestas
+  
+    De manera inicial, la guía de trabajo plantea algunas preguntas base con el fin de establecer los conceptos básicos que serán trabajados a lo largo del desarrollo del presente informe.
+
+    \begin{enumerate}
+      \item ¿Qué es la interpolación?
+      
+      En términos simples, la interpolación se define como la obtención de puntos de una función indeterminada a partir de algunos puntos conocidos. Esto se hace comúnmente para la búsqueda de tendencias dadas por algunos datos o con el fin de realizar una aproximación de alguna función hacia algo más simple.
+
+      \item ¿Cómo se calcula un polinomio del Taylor de grado N?
+      
+      Los polinomios de Taylor de grado N, aunque existen varias maneras de calcularlos, dentro de un dominio determinado $[a,b]$, es posible calcularlos a partir de la siguiente sumatoria la cual es usada para aproximar una función:
+
+      \begin{center}
+        \begin{math}
+          f (x) \approx P (x) = \displaystyle\sum_{k=0}^{N} \frac{f^{(k)}(x)}{k!}(x-x_0)^k
+        \end{math}
+      \end{center}
+
+      Es gracias a esto que podemos realizar aproximaciones polinómicas de algunas funciones más complejas como lo vienen siendo las funciones sinusoidales o exponenciales.
+
+      \item ¿Cómo se calculan las interpolaciones de Newton y LaGrange?
+
+      Estas interpolaciones son calculadas de dos maneras bastante diferentes diferentes pero toma datos similares para realizar este proceso.
+      
+      La interpolación de LaGrange se realiza en dos partes, la primera, es el cálculo de los productos de los puntos que serán usados para realizar la generación del polinómio:
+
+      \begin{center}
+        \begin{math}
+          L_i(x) = \displaystyle\prod_{j=0, j \not= i}^{n} \frac{x-x_j}{x_i - x_j}
+        \end{math}
+      \end{center}
+
+      Seguidamente, empleando los valores obtenidos para $L_i$, se calculará el polinómio resultante de la interpolación a partir de la siguiente sumatoria:
+
+      \begin{center}
+        \begin{math}
+          f_n(x)  = \displaystyle\sum_{i=0}^n L_i(x)f(x_i)
+        \end{math}
+      \end{center}
+      
+      En cuanto a la interpolación de Newton, también conocida como diferencias divididas, es calculada a partir del siguiente proceso recursivo:
+
+      \begin{center}
+        \begin{math}
+          \displaystyle f_i(x_0,x_1,x_2,...,x_{i-1},x_i) = \frac{ f_{i-1}(x_0,x_1,...,x_{i-1},x_i)-f_i(x_0,x_1,x_2,...,x_{i-1})}{x_i - x_0}
+        \end{math}
+      \end{center}
+
+      \item ¿Qué aplicaciones tiene la interpolación?
+
+      La interpolación tiene múltiples aplicaciones. Estas aplicaciones están principalmente relacionadas con la búsqueda de una función aproximada a partir de un polinómio de grado n. Estas aproximaciones pueden ser usadas principalmente para la simplificación de cálculos y la reducción de tiempos de computación para funciones donde la precisión no debe ser extremadamente alta.
+
+    \end{enumerate}
+
+\end{enumerate}
+
+
+\newpage
+
+\section{Anexos}
+
+
+\end{document}
+
+

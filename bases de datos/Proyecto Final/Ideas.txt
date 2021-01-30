@@ -1,0 +1,103 @@
+Ideas para proyecto bases:
+
+1. Administrador de hospital
+    Tablas:
+        Personas
+            Pacientes
+                Perfil*
+                Ubicación**
+                EPS*
+                Historial médico*
+            Médico 
+                Perfil*
+                Especialidad*
+                Área
+                Horario*
+            Enfermeras
+                Perfil*
+                Horario*
+            Administrativos       
+                Perfil*
+                Área
+            Ingenieros
+                Perfil*
+                Horario*
+            Técnicos
+                Perfil*
+                Horario*
+            Servicios Generales
+                Tipo
+                Horario*
+
+        Información
+            Perfil
+                Cédula
+                Nombre
+                Apellido
+                Edad
+                Peso 
+                Teléfono
+                Sexo 
+            Especialidad*
+                Id
+                Especialidad
+            Horarios
+                Id 
+                Hora entrada
+                Hora Salida
+            EPS
+                Id
+                Nombre
+            Historial Médicos
+                Documento
+
+        Management
+            Inventario
+                Id
+                Cantidad 
+                Descripción
+            Pedidos
+                Id
+                Item
+                Cantidad
+                Fecha
+            Ordenes de mantenimiento 
+                Id
+                Equipos*
+                Responsable*
+            Equipos
+                Id
+                Tipo
+                Ubicación*
+
+        Lugares
+            Habitaciones
+                Paciente
+                Médico
+                Enfermeras 
+            Cirugías
+                Paciente*
+                Médico*
+            Urgencias
+                Paciente*
+                Médico*
+            UCI
+                Médico*
+                Enfermeras*
+            Área COVID
+                Médico*
+                Enfermeras*          
+            Consultorios
+                Médico*
+
+        Control Pacientes
+            Ingresos 
+                Fecha
+                Hora
+                Ubicación*
+            Salidas
+                Fecha
+                Hora
+
+
+        Total Tablas: 24
