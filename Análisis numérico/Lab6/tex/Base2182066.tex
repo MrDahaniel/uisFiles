@@ -150,8 +150,84 @@ La compresión de las diferentes maneras de realizar interpolaciones, al igual q
 
     \end{enumerate}
 
-\end{enumerate}
+    \item Aplicando
+    
+    \begin{enumerate}
 
+      \item Para encontrar el polinomio cuadrático de LaGrange $P_2(x)$ para la función $y=f(x)=\sqrt{x}$, debemos  realizar siguiente sumatoria:
+
+      \begin{center}
+        \begin{math}
+          P_n(x)  = \displaystyle\sum_{i=0}^n L_i(x)f(x_i)
+        \end{math}
+      \end{center}
+
+      Con el fin de realizar esto, tenemos que encontrar los valores para $L_i(x)$ los cuales son obtenidos a partir del siguiente producto:
+
+      \begin{center}
+        \begin{math}
+          L_i(x) = \displaystyle\prod_{j=0, j \not= i}^{n} \frac{x-x_j}{x_i - x_j}
+        \end{math}
+      \end{center}
+
+      Partiendo de los valores para $x_i$ dados en el enunciado, podemos realizar el cálculo de $L_0(x)$, $L_1(x)$, $L_2(x)$:
+
+      \begin{center}
+        \begin{math}
+          \displaystyle L_0(x) = \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)} = \frac{(x-1.25)(x-1.5)}{(1-1.25)(1-1.5)} = 8(x-1.25)(x-1.5)
+        \end{math} 
+
+        \begin{math}
+          \displaystyle L_1(x) = \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} = \frac{(x-1)(x-1.5)}{(1.25-1)(1.25-1.5)} = -16(x-1)(x-1.5)
+        \end{math}
+
+        \begin{math}
+          \displaystyle L_2(x) = \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_0)} = \frac{(x-1)(x-1.25)}{(1.5-1)(1.5-1.25)} = 8(x-1)(x-1.25)
+        \end{math}
+      \end{center}
+
+      Teniendo ya los valores para $L_i(x)$, podemos expandir la sumatoria planteada inicialmente:
+
+      \begin{center}
+
+        \begin{math}
+          P_2(x)  = \displaystyle\sum_{i=0}^2 L_i(x)f(x_i) = L_0(x) f(x_0) + L_1(x) f(x_1) + L_2(x) f(x_2) 
+        \end{math}
+
+        \begin{math}
+          P_2(x) = 8(x-1.25)(x-1.5) \cdot f(1) + [-16(x-1)(x-1.5)] \cdot f(1.25) + 8(x-1)(x-1.25) \cdot f(1.5)
+        \end{math}
+
+      \end{center}
+
+      Y evaluando los valores de la función en los diferentes valores de x dados:
+
+      \begin{center}
+        \begin{math}
+          P_2(x) = 8(x-1.25)(x-1.5) \cdot 1 + [-16(x-1)(x-1.5)] \cdot 1.1180339 + 8(x-1)(x-1.25) \cdot 1.2247448
+        \end{math}
+      \end{center}
+
+      Y simplificando, dando nuestro resultado final para el polinomio de LaGrange:
+
+      \begin{center}
+        \begin{math}
+          P_2(x) = 8 (x-1.25)(x-1.5) - 17.8885438 (x-1)(x-1.5)  + 9.7979589 (x-1)(x-1.25) 
+        \end{math}
+      \end{center}
+
+      \item Para encontrar los valores indeterminados de la tabla dada, será necesario, a partir de los valores que tenemos en la tabla, usar la regla recursiva de las diferencias divididas. Esta está definida de la siguiente manera:
+      
+      \begin{center}
+        \begin{math}
+          f[x_{k-j},x_{k-j+1}, ..., x_{k}] = \displaystyle \frac{ f[x_{k-j+1}, ..., x_{k}]- f[x_{k-j}, ..., x_{k-1}]}{x_k-x_{k-j}}
+        \end{math}
+      \end{center}
+
+
+    \end{enumerate}
+
+\end{enumerate}
 
 \newpage
 
