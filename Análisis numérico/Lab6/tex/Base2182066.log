@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  31 JAN 2021 00:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  2 FEB 2021 23:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -111,6 +111,13 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
+) (c:/texlive/2020/texmf-dist/tex/latex/here/here.sty) (c:/texlive/2020/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count266
+\float@exts=\toks23
+\float@box=\box49
+\@float@everytoks=\toks24
+\@floatcapt=\box50
 ) (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -136,7 +143,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 ) (c:/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks23
+\KV@toks@=\toks25
 ) (c:/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 ) (c:/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -153,8 +160,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen149
-\Hy@linkcounter=\count266
-\Hy@pagecounter=\count267
+\Hy@linkcounter=\count267
+\Hy@pagecounter=\count268
  (c:/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -164,7 +171,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (c:/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count268
+\Hy@SavedSpaceFactor=\count269
 Package hyperref Info: Hyper figures OFF on input line 4464.
 Package hyperref Info: Link nesting OFF on input line 4469.
 Package hyperref Info: Hyper index ON on input line 4472.
@@ -172,7 +179,7 @@ Package hyperref Info: Plain pages OFF on input line 4479.
 Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count269
+\c@Hy@tempcnt=\count270
  (c:/texlive/2020/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -184,7 +191,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (c:/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count270
+\Fld@menulength=\count271
 \Field@Width=\dimen151
 \Fld@charsize=\dimen152
 Package hyperref Info: Hyper figures OFF on input line 6347.
@@ -200,9 +207,9 @@ LaTeX Info: Redefining \pageref on input line 6421.
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi package
 with kernel methods
 )
-\Hy@abspage=\count271
-\c@Item=\count272
-\c@Hfootnote=\count273
+\Hy@abspage=\count272
+\c@Item=\count273
+\c@Hfootnote=\count274
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (c:/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -211,8 +218,8 @@ File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
 with kernel methods
 )
-\Fld@listcount=\count274
-\c@bookmark@seq@number=\count275
+\Fld@listcount=\count275
+\c@bookmark@seq@number=\count276
  (c:/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
  (c:/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -241,9 +248,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count276
-\Gm@cntv=\count277
-\c@Gm@tempcnt=\count278
+\Gm@cnth=\count277
+\Gm@cntv=\count278
+\c@Gm@tempcnt=\count279
 \Gm@bindingoffset=\dimen155
 \Gm@wd@mp=\dimen156
 \Gm@odd@mp=\dimen157
@@ -252,7 +259,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen160
 \Gm@layouthoffset=\dimen161
 \Gm@layoutvoffset=\dimen162
-\Gm@dimlist=\toks24
+\Gm@dimlist=\toks26
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
 Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
  (c:/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
@@ -280,15 +287,15 @@ Package: fancyhdr 2021/01/04 v4.0 Extensive control of page headers and footers
 Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
  (c:/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count279
-\calc@Bcount=\count280
+\calc@Acount=\count280
+\calc@Bcount=\count281
 \calc@Adimen=\dimen163
 \calc@Bdimen=\dimen164
 \calc@Askip=\skip62
 \calc@Bskip=\skip63
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count281
+\calc@Ccount=\count282
 \calc@Cskip=\skip64
 ) (c:/texlive/2020/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
@@ -297,7 +304,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count282
+\g_MT_multlinerow_int=\count283
 \l_MT_multwidth_dim=\dimen165
 \origjot=\skip65
 \l_MT_shortvdotswithinadjustabove_dim=\dimen166
@@ -306,26 +313,26 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
 \l_MT_below_intertext_sep=\dimen169
 \l_MT_above_shortintertext_sep=\dimen170
 \l_MT_below_shortintertext_sep=\dimen171
-\xmathstrut@box=\box49
+\xmathstrut@box=\box51
 \xmathstrut@dim=\dimen172
 ) (c:/texlive/2020/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count283
-\lst@gtempboxa=\box50
-\lst@token=\toks25
-\lst@length=\count284
+\lst@mode=\count284
+\lst@gtempboxa=\box52
+\lst@token=\toks27
+\lst@length=\count285
 \lst@currlwidth=\dimen173
-\lst@column=\count285
-\lst@pos=\count286
+\lst@column=\count286
+\lst@pos=\count287
 \lst@lostspace=\dimen174
 \lst@width=\dimen175
-\lst@newlines=\count287
-\lst@lineno=\count288
+\lst@newlines=\count288
+\lst@lineno=\count289
 \lst@maxwidth=\dimen176
  (c:/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count289
-\lst@skipnumbers=\count290
-\lst@framebox=\box51
+\c@lstnumber=\count290
+\lst@skipnumbers=\count291
+\lst@framebox=\box53
 ) (c:/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
@@ -340,33 +347,33 @@ Package color Info: Driver file: pdftex.def on input line 147.
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count291
-\l__pdf_internal_box=\box52
+\l__kernel_color_stack_int=\count292
+\l__pdf_internal_box=\box54
 ) (c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `Base2182066.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Info: Redefining \. on input line 75.
-LaTeX Info: Redefining \% on input line 75.
-Package hyperref Info: Link coloring OFF on input line 75.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Info: Redefining \. on input line 77.
+LaTeX Info: Redefining \% on input line 77.
+Package hyperref Info: Link coloring OFF on input line 77.
  (c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (c:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -374,28 +381,28 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count292
+\c@section@level=\count293
 )
-LaTeX Info: Redefining \ref on input line 75.
-LaTeX Info: Redefining \pageref on input line 75.
-LaTeX Info: Redefining \nameref on input line 75.
+LaTeX Info: Redefining \ref on input line 77.
+LaTeX Info: Redefining \pageref on input line 77.
+LaTeX Info: Redefining \nameref on input line 77.
  (c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.out) (c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.out)
 \@outlinefile=\write3
 \openout3 = `Base2182066.out'.
 
  (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count293
+\scratchcounter=\count294
 \scratchdimen=\dimen177
-\scratchbox=\box53
-\nofMPsegments=\count294
-\nofMParguments=\count295
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count296
+\scratchbox=\box55
+\nofMPsegments=\count295
+\nofMParguments=\count296
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count297
 \MPscratchDim=\dimen178
-\MPnumerator=\count297
-\makeMPintoPDFobject=\count298
-\everyMPtoPDFconversion=\toks27
+\MPnumerator=\count298
+\makeMPintoPDFobject=\count299
+\everyMPtoPDFconversion=\toks29
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -431,22 +438,22 @@ LaTeX Info: Redefining \nameref on input line 75.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count299
+\c@lstlisting=\count300
 <Logos/UIS.pdf, id=16, 64.533pt x 31.29825pt>
 File: Logos/UIS.pdf Graphic file (type pdf)
 <use Logos/UIS.pdf>
-Package pdftex.def Info: Logos/UIS.pdf  used on input line 85.
+Package pdftex.def Info: Logos/UIS.pdf  used on input line 87.
 (pdftex.def)             Requested size: 108.40334pt x 52.57637pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
  (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Logos/UIS.pdf>] [2] [3] [4] (c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.aux
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Logos/UIS.pdf>] [2] [3] [4] [5] (c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -454,18 +461,18 @@ Package rerunfilecheck Info: File `Base2182066.out' has not changed.
 (rerunfilecheck)             Checksum: BCAE8863B7CD1A855EE511FAD572B4E7;136.
  ) 
 Here is how much of TeX's memory you used:
- 10204 strings out of 479304
- 151016 string characters out of 5871219
- 683479 words of memory out of 5000000
- 27196 multiletter control sequences out of 15000+600000
+ 10277 strings out of 479304
+ 152056 string characters out of 5871219
+ 689122 words of memory out of 5000000
+ 27260 multiletter control sequences out of 15000+600000
  411986 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,11n,74p,482b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.pdf" (4 pages, 141481 bytes).
+ 71i,12n,74p,482b,624s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.pdf" (5 pages, 153484 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
  30 words of extra memory for PDF output out of 10000 (max. 10000000)
 

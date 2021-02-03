@@ -48,7 +48,7 @@ Ideas para proyecto bases:
             EPS
                 Id
                 Nombre
-            Historial Médicos
+            Historial Médico
                 Documento
 
         Management
@@ -67,7 +67,7 @@ Ideas para proyecto bases:
                 Responsable*
             Equipos
                 Id
-                Tipo
+                Tipo*
                 Ubicación*
 
         Lugares

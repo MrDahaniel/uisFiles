@@ -1,0 +1,19 @@
+Metodología de sistemas blandos: Caso 1
+    Contexto de la situación:
+        -> Inicios de 1990
+            -> Hace ya 30 años, algo para resaltar del año es la aún joven edad de la tecnología para esta época
+        -> Fusión de los hospitales Royal Victoria Infirmary, en Newcastle; y Hexham General, que es un pequeño hospital a 25 millas.
+            -> Lo principal a distinguir, recae en la distancia entre las sedes del ahora único hospital. Esto, en términos simples, es un problema el cual es necesario resolver debido a la necesidad de comunicación entre lo que está pasando en cada sede.
+            -> Con el fin de solventar los problemas que general el tener un único hospital con dos sedes a una distancia relativamente considerable, se plantea la necesidad de un sistema de información el cual permita la coordinación de acciones entre los dos hospitales.
+        -> Durante este tiempo, la NHS, estaba trabajando bajo un modelo de contratos el cual requería encontrar compradores para sus servicios de más de £70m. Esto requería que, de alguna manera, el sistema ayudara a llevar, a los compradores de los servicios del hospital, la atención médica necesaria.
+        -> Con el fin de dar apoyo al desarrollo del sistema de información, se buscó el uso de MSB con el fin de ajustar tanto el diseño del sistema y las necesidades que este cubriría en torno no a lo que la administración pensara que es importante, sino a lo que los equipos de trabajo compuesto de médicos necesitara.
+    
+    Aplicando MSB:
+        -> Como se había nombrado antes, lo que se buscaba era adaptar el sistema de información de tal manera en la que sirviera para facilitar el proveer los servicios de salud, que eran requeridos para poder completar los contratos necesarios para cubrir los costos del hospital; al igual que adaptarse a los usuarios de este sistema que, en este caso, serían los profesionales (Médicos, enfermeros, administrativos, etc.).
+            -> Esto se dio a partir de la creación de 40 diferentes grupos de trabajo compuestos por unas pocas personas con el fin de identificar el propósito base de los dos hospitales al igual que las actividades y la información que debe estar presente en ambos sitios con el fin de evitar asimetrías del conocimiento.
+        -> Algo que se ha de tener en cuenta en esta situación es que los profesionales escogidos para el desarrollo del MSB, no conocían con antelación el concepto, en este sentido, fue necesario trabajar no desde la vista de un problemas sino desde las tareas primarias. Esto permitió que cada grupo modificara el modelo general de un hospital dado por Checkland a partir de lo que ellos consideraran importante desde sus experiencias. Es menester resaltar que, debido a las condiciones, se enfocó el análisis hacia CATWOE y las características E para el modelado.
+
+        CATWOE:
+        ->
+        ->
+            ->

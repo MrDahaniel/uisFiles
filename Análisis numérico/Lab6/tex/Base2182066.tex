@@ -12,6 +12,8 @@
   \array{#1}}
 \makeatother
 
+\usepackage{here}
+
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{hyperref} % navega por el doc
@@ -222,6 +224,126 @@ La compresión de las diferentes maneras de realizar interpolaciones, al igual q
         \begin{math}
           f[x_{k-j},x_{k-j+1}, ..., x_{k}] = \displaystyle \frac{ f[x_{k-j+1}, ..., x_{k}]- f[x_{k-j}, ..., x_{k-1}]}{x_k-x_{k-j}}
         \end{math}
+      \end{center}
+
+      En este sentido, para poder encontrar los valores indeterminados en la tabla, vamos a requerir las siguientes "versiones" de las diferencias divididas:
+
+      \begin{center}
+        \begin{math}
+          k_0 \rightarrow f[x_0] = f(x_0)
+        \end{math}
+
+        \begin{math}
+          k_1 \rightarrow f[x_1,x_0] = \displaystyle \frac{f[x_1]-f[x_0]}{x_1 - x_0}
+        \end{math}
+
+        \begin{math}
+          k_2 \rightarrow f[x_2,x_1,x_0] = \displaystyle \frac{f[x_2,x_1]-f[x_1,x_0]}{x_2 - x_0}
+        \end{math}
+
+        \begin{math}
+          k_3 \rightarrow f[x_3,x_2,x_1,x_0] = \displaystyle \frac{f[x_3,x_2,x_1] - f[x_2,x_1,x_0]}{x_3 - x_0}
+        \end{math}
+
+      Seguidamente, vamos a darle nombres a cada uno de los valores indeterminados con el fin de ubicarnos mejor:
+
+      \begin{center}
+        \begin{table}[H]
+
+          \centering
+          \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+    
+           \hline  
+           $x_k$ & $f[x_k]$ & $f[,]$ & $f[,,]$ & $f[,,,]$    \\ \hline
+          $x_0 = 1.0$ & 3.5   & -      & -       & -         \\ \hline
+          $x_1 = 1.5$ & $x_a$ & $x_b$  & -       & -         \\ \hline
+          $x_2 = 3.5$ & 103   & 45.5   & 11.4    & -         \\ \hline
+          $x_3 = 5.0$ & 491.5 & 2.125  & 61      & $x_c$     \\ \hline
+    
+          \end{tabular}
+        \end{table}
+      \end{center}
+
+      \end{center}
+
+      El primer valor que podemos calcular es $x_c$ debido a que conocemos los dos valores necesarios para el cálculo de este:
+
+      \begin{center}
+        \begin{math}
+          f[x_3,x_2,x_1,x_0] = \displaystyle \frac{f[x_3,x_2,x_1] - f[x_2,x_1,x_0]}{x_3 - x_0}
+        \end{math}
+
+        \begin{math}
+          f[5,3.5,1.5,1] = \displaystyle \frac{f[5,3.5,1.5] - f[3.5,1.5,1]}{5 - 1}
+        \end{math}
+
+        \begin{math}
+          f[5,3.5,1.5,1] = \displaystyle \frac{61 - 11.4}{5 - 1}
+        \end{math}
+
+        \begin{math}
+          f[5,3.5,1.5,1] = \displaystyle \frac{49.6}{4} = \frac{62}{5} = 12.4 = x_c
+        \end{math}
+      \end{center}
+
+      Para calcular los valores de $x_a$ y $x_b$, tendremos, es posible desperjarlos de las siguientes ecuaciones:
+
+      \begin{center}
+        \begin{math}
+          11.4 = f[3.5,1.5,1] = \displaystyle \frac{f[3.5,1.5]-f[1.5,1]}{3.5 - 1}
+        \end{math}
+
+        \begin{math}
+          11.4 = \displaystyle \frac{f[3.5,1.5]-f[1.5,1]}{2.5}
+        \end{math}
+
+        \begin{table}[H]
+          \centering
+          \begin{tabular}{cc}
+            $ f[1.5,1] = \displaystyle \frac{f[1.5]-f[1]}{1.5-1}$ & $ f[3.5,1.5] = \displaystyle \frac{f[3.5]-f[1.5]}{3.5-1.5}$ \\ 
+            $x_b = \displaystyle 2(x_a-3.5)$ & $ 45.5 = \displaystyle \frac{103-x_a}{2} $ \\
+          \end{tabular}
+        \end{table}
+
+        \begin{math}
+          45.5 = \frac{103-x_a}{2}
+        \end{math}
+
+        \begin{math}
+          91 = 103 - x_a
+        \end{math}
+
+        \begin{math}
+          x_a = 103 - 91 = 12
+        \end{math}
+
+        \begin{math}
+          x_b = \displaystyle 2(x_a-3.5)
+        \end{math}
+
+        \begin{math}
+          x_b = 2((12)-3.5) = 2(8.5) = 17
+        \end{math}
+
+      \end{center}
+
+      Ya con los valores despejados, podemos remplazar en la tabla para completarla:
+
+      \begin{center}
+        \begin{table}[H]
+
+          \centering
+          \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+    
+           \hline  
+           $x_k$ & $f[x_k]$ & $f[,]$ & $f[,,]$ & $f[,,,]$    \\ \hline
+          $x_0 = 1.0$ & 3.5   & -      & -       & -         \\ \hline
+          $x_1 = 1.5$ & 12    & 17     & -       & -         \\ \hline
+          $x_2 = 3.5$ & 103   & 45.5   & 11.4    & -         \\ \hline
+          $x_3 = 5.0$ & 491.5 & 2.125  & 61      & 12.4      \\ \hline
+    
+          \end{tabular}
+        \end{table}
       \end{center}
 
 
