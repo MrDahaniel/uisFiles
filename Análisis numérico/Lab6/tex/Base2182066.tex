@@ -258,7 +258,7 @@ La compresión de las diferentes maneras de realizar interpolaciones, al igual q
           $x_0 = 1.0$ & 3.5   & -      & -       & -         \\ \hline
           $x_1 = 1.5$ & $x_a$ & $x_b$  & -       & -         \\ \hline
           $x_2 = 3.5$ & 103   & 45.5   & 11.4    & -         \\ \hline
-          $x_3 = 5.0$ & 491.5 & 2.125  & 61      & $x_c$     \\ \hline
+          $x_3 = 5.0$ & 491.5 & 259  & 61      & $x_c$     \\ \hline
     
           \end{tabular}
         \end{table}
@@ -340,15 +340,74 @@ La compresión de las diferentes maneras de realizar interpolaciones, al igual q
           $x_0 = 1.0$ & 3.5   & -      & -       & -         \\ \hline
           $x_1 = 1.5$ & 12    & 17     & -       & -         \\ \hline
           $x_2 = 3.5$ & 103   & 45.5   & 11.4    & -         \\ \hline
-          $x_3 = 5.0$ & 491.5 & 2.125  & 61      & 12.4      \\ \hline
+          $x_3 = 5.0$ & 491.5 & 259    & 61      & 12.4      \\ \hline
     
           \end{tabular}
         \end{table}
       \end{center}
+      
+    \end{enumerate}
+    
+    \item Implementando
+    
+    \begin{enumerate}
+      \item De manera inicial, se plantea la necesidad de tener un algoritmo el cual realice el cálculo de un polinómio de LaGrange a partir de una cantidad n de puntos dada. Con el fin de dar solución a esto, se desarrolló la función \texttt{lagrangePoly(pointMatrix)} la cual permite calcular el polinomio de LaGrange correspondiente a unos puntos dados.
+      
+      \begin{lstlisting}
+function output = lagrangePoly(pointMatrix)
+    [vS, hS] = size(pointMatrix);
+    output = NaN;
+    if(hS == 2 && vS > 1) %%Las entradas son correctas cuando los puntos son de (x,y)
+        for index = 1:vS
+            tempFun = @(x) 1;
+            for pain = 1:vS
+                if(pain == index)
+                    %%  skip!
+                else
+                    tempFun = @(x) tempFun(x) * ((x-pointMatrix(pain,1))/(pointMatrix(index,1) - pointMatrix(pain,1)));
+                end
+            end
+            L{index} = tempFun;
+        end
+        fullFunc = @(x) 0;
+        for finex = 1:vS
+            fullFunc = @(x) fullFunc(x) + pointMatrix(finex,2) * L{finex}(x);
+        end
+        output = fullFunc;
+    end
+end
+      \end{lstlisting}
 
+      Este proceso se realiza en 3 partes. La primera es un verificación básica de la forma de la matriz de entrada, de tamaño $n \times 2$, donde n es mayor a 1. La segunda la cual se basa en el cálculo de los valores de $L_i(x)$. Esto se realiza de una manera, aunque poco eficiente por la necesidad de 2 ciclos iterativos, simple de entender. 
+
+      Inicialmente se define una función anónima temporal \texttt{tempfun = @(x) 1}, esta se usará para poder guardar los valores de $L_i(x)$. Seguidamente, dentro del segundo ciclo iterativo, se realizará el cálculo de todos los valores que compondrán $L_i$ y se evitarán los valores donde daría un valor dividido entre 0.
+
+      \begin{lstlisting}
+for index = 1:vS
+        tempFun = @(x) 1;
+  for pain = 1:vS
+      if(pain == index)
+          %%  skip!
+      else
+          tempFun = @(x) tempFun(x) * ((x-pointMatrix(pain,1))/(pointMatrix(index,1) - pointMatrix(pain,1)));
+      end
+  end
+  L{index} = tempFun;
+end
+      \end{lstlisting}
+      
+      Tras calcular todos los valores respectos de $L_i(x)$, en la tercera parte, se construirá la función final en el tercer y último ciclo iterativo en la cual se multiplicarán los valores calculados de $L_i(x)$ con los valores de $f(x)$ correspondientes.
+
+      \begin{lstlisting}
+  fullFunc = @(x) 0;
+    for finex = 1:vS
+      fullFunc = @(x) fullFunc(x) + pointMatrix(finex,2) * L{finex}(x);
+    end
+  output = fullFunc;
+end
+      \end{lstlisting}
 
     \end{enumerate}
-
 \end{enumerate}
 
 \newpage
