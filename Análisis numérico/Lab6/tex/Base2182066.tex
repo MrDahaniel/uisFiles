@@ -87,11 +87,11 @@
 
 \section{Introducci\'on}
 
-La interpolación, específicamente la interpolación polinómica, es una práctica la cual permite el encontrar más puntos a partir de un conjunto de puntos datos. Esto puede ser por la mera aproximación de puntos que sigan la tendencia de la función o la generación de un polinómio que se ajuste a un set de puntos dados.
+La interpolación, específicamente la interpolación polinómica, es una práctica la cual permite el encontrar más una función a partir de un conjunto de puntos dados. Esto puede ser por seguimiento de la tendencia de una función o la generación de un polinómio que se ajuste a un set de puntos dados.
 
-En el presente informe, tratará las interpolaciones polinómicas de Newton y LaGrange y el como estas operan y se diferencian entre ellas. De la misma manera, se buscará entender el como cada una de estas se comporta en un contexto computacional y las ventajas de cada uno de estos.
+En el presente informe, tratará las interpolaciones polinómicas de Newton y LaGrange además el como estas operan y se diferencian entre ellas. De la misma manera, se buscará entender el como cada una de estas se comporta en un contexto computacional y las ventajas respectivas.
 
-La compresión de las diferentes maneras de realizar interpolaciones, al igual que el desarrollo de la algoritmia relacionada, son los principales temas a a tratar durante el desarrollo del presente informe, así como la resolución de los problemas propuestos a manera de pregunta orientadora durante el desarrollo del componente práctico del mismo.
+La compresión de las diferentes maneras de realizar interpolaciones, al igual que el desarrollo de la algoritmia relacionada, son los principales temas a a tratar durante el desarrollo del presente informe, así como la resolución de los problemas propuestos a manera de pregunta orientadora del componente práctico del mismo.
 
 \section{Desarrollo}
 
@@ -355,23 +355,25 @@ La compresión de las diferentes maneras de realizar interpolaciones, al igual q
       
       \begin{lstlisting}
 function output = lagrangePoly(pointMatrix)
+    syms x
     [vS, hS] = size(pointMatrix);
     output = NaN;
     if(hS == 2 && vS > 1) %%Las entradas son correctas cuando los puntos son de (x,y)
+        L = [];
         for index = 1:vS
-            tempFun = @(x) 1;
+            tempFun = 1;
             for pain = 1:vS
                 if(pain == index)
-                    %%  skip!
+                    %%  Skip!
                 else
-                    tempFun = @(x) tempFun(x) * ((x-pointMatrix(pain,1))/(pointMatrix(index,1) - pointMatrix(pain,1)));
+                    tempFun = tempFun * ((x-pointMatrix(pain,1))/(pointMatrix(index,1) - pointMatrix(pain,1)));
                 end
             end
-            L{index} = tempFun;
+            L = [L tempFun];
         end
-        fullFunc = @(x) 0;
+        fullFunc = 0;
         for finex = 1:vS
-            fullFunc = @(x) fullFunc(x) + pointMatrix(finex,2) * L{finex}(x);
+            fullFunc = fullFunc + pointMatrix(finex,2) * L(finex);
         end
         output = fullFunc;
     end
@@ -383,36 +385,434 @@ end
       Inicialmente se define una función anónima temporal \texttt{tempfun = @(x) 1}, esta se usará para poder guardar los valores de $L_i(x)$. Seguidamente, dentro del segundo ciclo iterativo, se realizará el cálculo de todos los valores que compondrán $L_i$ y se evitarán los valores donde daría un valor dividido entre 0.
 
       \begin{lstlisting}
+L = [];
 for index = 1:vS
-        tempFun = @(x) 1;
-  for pain = 1:vS
-      if(pain == index)
-          %%  skip!
-      else
-          tempFun = @(x) tempFun(x) * ((x-pointMatrix(pain,1))/(pointMatrix(index,1) - pointMatrix(pain,1)));
-      end
-  end
-  L{index} = tempFun;
+    tempFun = 1;
+    for pain = 1:vS
+        if(pain == index)
+            %%  Skip!
+        else
+            tempFun = tempFun * ((x-pointMatrix(pain,1))/(pointMatrix(index,1) - pointMatrix(pain,1)));
+        end
+    end
+    L = [L tempFun];
 end
       \end{lstlisting}
       
       Tras calcular todos los valores respectos de $L_i(x)$, en la tercera parte, se construirá la función final en el tercer y último ciclo iterativo en la cual se multiplicarán los valores calculados de $L_i(x)$ con los valores de $f(x)$ correspondientes.
 
       \begin{lstlisting}
-  fullFunc = @(x) 0;
-    for finex = 1:vS
-      fullFunc = @(x) fullFunc(x) + pointMatrix(finex,2) * L{finex}(x);
-    end
-  output = fullFunc;
+fullFunc = 0;
+for finex = 1:vS
+    fullFunc = fullFunc + pointMatrix(finex,2) * L(finex);
+end
+output = fullFunc;
+      \end{lstlisting}
+
+      \item De igual manera, se pide la realización de un algoritmo el cual pueda realizar el cálculo de un polinomio de Newton a partir de un mismo set de n puntos dados. De la misma manera que con el problema anterior, se desarrolló la función \texttt{newtonPoly(pointMatrix)} la cual realiza el cálculo de un polinomio de Newton.
+      
+      \begin{lstlisting}
+function output = newtonPoly(pointMatrix)
+    syms x
+    [vS, hS] = size(pointMatrix);
+    output = NaN;
+    if(hS == 2) %%Las entradas son correctas cuando los puntos son de (x,y)
+        funTrix = zeros(vS,vS);
+        for starex = 1:vS
+            funTrix(starex,1) = pointMatrix(starex,2);
+        end
+        for index = 2:vS
+            for pain = index:vS
+                funTrix(pain,index) = ((funTrix(pain,index-1)-funTrix(pain-1,index-1))/
+                    (pointMatrix(pain,1)-pointMatrix((pain - index + 1), 1)));
+            end
+        end
+        fullFunc = funTrix(1,1);
+        fullFuncAux = 1;
+        for fintrex = 2:vS 
+            fullFuncAux = fullFuncAux * (x-pointMatrix(fintrex-1,1));
+            fullFunc = fullFunc + funTrix(fintrex, fintrex) * fullFuncAux;
+        end
+        output = fullFunc;
+    end 
 end
       \end{lstlisting}
 
+      Este proceso se realiza en 4 ciclos iterativos los cuales pueden repartirse en 3 partes. La primera parte del proceso crea una matriz del tamaño de la cantidad de puntos dados como entrada, seguidamente llena la primera columna con los valores $y$ respectivos para cada uno de los puntos. Esto se hace con el fin de calcular cada una de las diferencias divididas necesarias para el polinómio.
+
+      \begin{lstlisting}
+funTrix = zeros(vS,vS);
+for starex = 1:vS
+    funTrix(starex,1) = pointMatrix(starex,2);
+end  
+      \end{lstlisting}
+
+      En la segunda parte, se realizará como tal el cálculo de los valores de las diferencias divididas siguiendo la regla de iteración dada para los polinomios de Newton:
+
+      \begin{lstlisting}
+for index = 2:vS
+    for pain = index:vS
+        funTrix(pain,index) = ((funTrix(pain,index-1)-funTrix(pain-1,index-1))/
+            (pointMatrix(pain,1)-pointMatrix((pain - index + 1), 1)));
+    end
+end
+      \end{lstlisting}
+
+      Finalmente, en la tercera etapa, se construirá la función final de tal manera en la que la función tenga como salida una función simbólica la cual tendrá la forma de un polinomio de Newton.
+
+      \begin{lstlisting}
+fullFunc = funTrix(1,1);
+fullFuncAux = 1;
+for fintrex = 2:vS 
+    fullFuncAux = fullFuncAux * (x-pointMatrix(fintrex-1,1));
+    fullFunc = fullFunc + funTrix(fintrex, fintrex) * fullFuncAux;
+end
+output = fullFunc;
+      \end{lstlisting}
+      
+      \item A continuación, aplicando las funciones desarrolladas en los puntos anteriores, se nos pide desarrollar un polinomio de LaGrange y de Newton basándose en la función $f(x) = 3 \sin (\pi x / 6)$ para los puntos $x_0 = 0$, $x_1 = 1$, $x_2 = 2$, $x_3 = 3$, and $x_4 = 4$.
+      
+      Con el fin de realizar esto, se desarrollaron 2 scripts para la ejecución de cada una de estas funciones. En el caso del polinómio de LaGrange, se empleó \texttt{lagrangeRunner.m}. Este script, en términos simples, definirá la función $f(x)$ al igual que los puntos a usar para el cálculo del polinomio y ejecutará \texttt{lagrangePoly(pointMatrix)} con los respectivos valores.
+
+      \begin{lstlisting}
+f = @(x) 3 * sin(pi*x/6);
+pointMatrix = [0 f(0); 1 f(1); 2 f(2); 3 f(3); 4 f(4)];
+
+lagrangeP = lagrangePoly(pointMatrix)
+      \end{lstlisting}
+
+      Tras la ejecución en la consola, el script da como resultado la siguiente función. Como es posible observar, es posible ver la forma de polinómio de LaGrange en el resultado.
+
+      \begin{lstlisting}
+lagrangeP =
+
+(3*3^(1/2)*x*(x/2 - 2)*(x - 1)*(x - 3))/4 - x*(x/2 - 1/2)*(x - 2)*(x - 4) - (3*x*(x/2 - 3/2)*(x/3 - 4/3)*(x - 2))/2 + (3*3^(1/2)*x*(x/2 - 1)*(x/3 - 1/3)*(x - 3))/8
+      \end{lstlisting}
+
+      En cuanto al polinomio de Newton, se desarrolló básicamente lo mismo pero para el script \texttt{newtonRunner.m} el cual cumple las mismas características del anterior.
+
+      \begin{lstlisting}
+f = @(x) 3 * sin(pi*x/6);
+pointMatrix = [0 f(0); 1 f(1); 2 f(2); 3 f(3); 4 f(4)];
+
+newtonP = newtonPoly(pointMatrix)
+      \end{lstlisting}
+
+      De igual manera, tras la ejecución en consola, el output de este da como resultado la siguiente función que cumple con la típica forma de un polinomio de Newton.
+
+      \begin{lstlisting}
+newtonP =
+
+(3*x)/2 - (905051912390271*x*(x - 1))/4503599627370496 - (441695988904705*x*(x - 1)*(x - 2))/9007199254740992 + (8960769158908629*x*(x - 1)*(x - 2)*(x - 3))/1152921504606846976
+      \end{lstlisting}
+
+      \item Finalmente, con el fin de comprobar el funcionamiento de las funciones, se pedía la graficación de cada una de las funciones comparándolas con la función original. En este sentido, nuevamente, se desarrollaron 2 scripts los cuales generarían las gráficas respectivas de cada uno de los polinomios obtenidos anteriormente.
+      
+      Empezando con el de LaGrange, se desarrolló el script \texttt{lagraph.m}. Este script graficaría tanto la función calculada como la función original al igual que los puntos datos.
+
+      \begin{lstlisting}
+syms x
+
+dom = linspace(-3, 7);
+
+orig = @(x) 3 * sin(pi*x/6);
+
+inter = matlabFunction((3*3^(1/2)*x*(x/2 - 2)*(x - 1)*(x - 3))/4 - x*(x/2 - 1/2)*(x - 2)*(x - 4) - (3*x*(x/2 - 3/2)*(x/3 - 4/3)*(x - 2))/2 + (3*3^(1/2)*x*(x/2 - 1)*(x/3 - 1/3)*(x - 3))/8);
+
+
+plot(dom, inter(dom))
+hold on
+plot(dom, orig(dom))
+hold on
+axis([-3, 7, -4, 4])
+line([0,0], ylim, 'Color', 'k', 'LineWidth', 2)
+line(xlim, [0,0], 'Color', 'k', 'LineWidth', 2) 
+grid on
+
+plot(0,orig(0),'*')
+plot(1,orig(1),'*')
+plot(2,orig(2),'*')
+plot(3,orig(3),'*')
+plot(4,orig(4),'*')
+      \end{lstlisting}
+
+      Tras la ejecución del script, se generará la figura \ref{taco} la cual muestra la cercanía entre la función original y la función interpolada.
+
+      \begin{center}
+        \begin{figure}[H]
+          \centering
+          \includegraphics{Images/lagraph.png}
+          \caption{Gráfica del polinomio de LaGrange}
+          \label{taco}
+        \end{figure}
+      \end{center}
+
+      Como es posible observar, ambas gráficas, especialmente entre los valores dados, existe una gran cercanía de las 2 gráficas. En este sentido, podemos afirmar que dentro de los puntos dados, la interpolación efectivamente tiene un alto nivel de precisión.
+
+      En cuanto al polinomio de Newton, se desarrolló \texttt{newtong.m} el cual, en términos simples, realiza las mismas instrucciones que \texttt{lagraph.m} pero para el resultado de \texttt{newtonPoly(pointMatrix)}.
+
+      \begin{lstlisting}
+syms x
+
+dom = linspace(-3, 7);
+
+orig = @(x) 3 * sin(pi*x/6);
+
+inter = matlabFunction((3*x)/2 - (905051912390271*x*(x - 1))/4503599627370496 - (441695988904705*x*(x - 1)*(x - 2))/9007199254740992 + (8960769158908629*x*(x - 1)*(x - 2)*(x - 3))/1152921504606846976);
+
+
+plot(dom, inter(dom))
+hold on
+plot(dom, orig(dom))
+hold on
+axis([-3, 7, -4, 4])
+line([0,0], ylim, 'Color', 'k', 'LineWidth', 2)
+line(xlim, [0,0], 'Color', 'k', 'LineWidth', 2) 
+grid on
+
+plot(0,orig(0),'*')
+plot(1,orig(1),'*')
+plot(2,orig(2),'*')
+plot(3,orig(3),'*')
+plot(4,orig(4),'*')
+      \end{lstlisting}
+
+      Tras la ejecución del script, se genera la figura \ref{ugh} en la cual, al igual que con le polinomio de LaGrange, podemos observar el como esta tiene una alta cercanía con la función original.
+
+      \begin{center}
+        \begin{figure}[H]
+          \centering
+          \includegraphics{Images/newtong.png}
+          \caption{Gráfica del polinomio de Newton}
+          \label{ugh}
+        \end{figure}
+      \end{center}
+
+      Como es posible apreciar, y al igual que en la figura \ref{taco}, la cercanía entre las 2 gráficas sugiere que las interpolaciones realizadas tienen un alto grado de precisión dentro de los puntos que fueron inicialmente dados para la construcción del polinomio de Newton.
     \end{enumerate}
+
+    \item Interpretando
+    
+    Para finalizar, se pide encontrar el grado del polinomio de Taylor $P_N(x)$ el cual permita aproximar $\cos(33 \pi / 32)$ para un error menor de $10^{-6}$ cuando $x_o = \pi$. Para realizar esto, debemos partir de la función que nos permite calcular el error de manera inicial. 
+
+    \begin{center}
+      \begin{math}
+        E_N(x) = \displaystyle \frac{f^{(N+1)}(c)}{(N+1)!} (x-x_0)^{(N+1)}
+      \end{math}
+    \end{center}
+
+    A partir de esto, podemos realizar algunos remplazos dentro de la ecuación. Lo primero es nuestra función y el valor de x, estos valores pueden ser fácilmente determiados mirando a la ecuación a aproximar. Para $\cos (33 \pi / 32)$, podemos ver que el valor de $x$ es $33 \pi /32$ y que nuestra función es $\cos(x)$. 
+
+    \begin{center}
+      \begin{math}
+        E_N(\frac{33 \pi}{32}) = \displaystyle \frac{\cos^{(N+1)}(c)}{(N+1)!} \textstyle (\frac{ \pi}{32})^{(N+1)}
+      \end{math}
+    \end{center}
+
+    Para N = 1 , para c se tomará el valor de $\pi$ puesto es que es el máximo valor que el denominador puede tomar. 
+
+    \begin{center}
+      \begin{math}
+        E_1(\frac{33 \pi}{32}) = \displaystyle \frac{\cos''(\pi)}{2!} \textstyle (\frac{ \pi}{32})^{(2)}
+      \end{math}
+
+      \begin{math}
+        E_1(\frac{33 \pi}{32}) = \displaystyle \frac{-\cos(\frac{33 \pi}{32})}{2!} \textstyle (\frac{ \pi}{32})^{(2)} = 0.00453149880662 > 10^{-6}
+      \end{math}
+    \end{center}
+
+    Para N = 2, c tomará el valor de $\frac{33 \pi}{32}$ para así maximizar nuevamente el error. 
+
+    \begin{center}
+      \begin{math}
+        E_2(\frac{33 \pi}{32}) = \displaystyle \frac{\cos^{(3)}(\pi)}{(3)!} \textstyle (\frac{ \pi}{32})^{(3)}
+      \end{math}
+
+      \begin{math}
+        E_2(\frac{33 \pi}{32}) = \displaystyle \frac{\sin(\pi)}{(3)!} \textstyle (\frac{ \pi}{32})^{(3)} = 0.0000140947889013 > 10^{-6}
+      \end{math}
+    \end{center}
+
+    Para N = 3, c tomará el valor de $\pi$ para así maximizar nuevamente el error. 
+
+    \begin{center}
+      \begin{math}
+        E_3(\frac{33 \pi}{32}) = \displaystyle \frac{\cos^{(4)}(\pi)}{(4)!} \textstyle (\frac{ \pi}{32})^{(4)}
+      \end{math}
+    \end{center}
+
+    \begin{center}
+      \begin{math}
+        E_3(\frac{33 \pi}{32}) = \displaystyle \frac{\cos(\pi)}{(4)!} \textstyle (\frac{ \pi}{32})^{(4)} = 0.00000340593371579 > 10^{-6}
+      \end{math}
+    \end{center}
+
+    Para N = 4, c tomará el valor de $\frac{33 \pi}{32}$ para así maximizar nuevamente el error. 
+
+    \begin{center}
+      \begin{math}
+        E_4(\frac{33 \pi}{32}) = \displaystyle \frac{\cos^{(5)}(\frac{33 \pi}{32})}{(5)!} \textstyle (\frac{ \pi}{32})^{(5)}
+      \end{math}
+    \end{center}
+
+    \begin{center}
+      \begin{math}
+        E_4(\frac{33 \pi}{32}) = \displaystyle \frac{-\sin(\frac{33 \pi}{32})}{(5)!} \textstyle (\frac{\pi}{32})^{(5)}) = 3.3545519141 \times 10^{-7} < 10^{-6}
+      \end{math}
+    \end{center}
+
+    Entonces, como podemos ver, el grado para el cual el error de la aproximación de Taylor para $\cos(\frac{33 \pi}{32})$ es N = 4 en donde el error obtenido es $3.3545519141 \times 10^{-7} $.
+
 \end{enumerate}
 
 \newpage
 
 \section{Anexos}
+
+\texttt{lagrangePoly.m}
+\begin{lstlisting}
+function output = lagrangePoly(pointMatrix)
+    
+    syms x
+
+    [vS, hS] = size(pointMatrix);
+
+    output = NaN;
+
+    if(hS == 2 && vS > 1) %%Las entradas son correctas cuando los puntos son de (x,y)
+        L = [];
+        for index = 1:vS
+            tempFun = 1;
+            for pain = 1:vS
+                if(pain == index)
+                    %%  Skip!
+                else
+                    tempFun = tempFun * ((x-pointMatrix(pain,1))/(pointMatrix(index,1) - pointMatrix(pain,1)));
+                end
+            end
+            L = [L tempFun];
+        end
+
+        fullFunc = 0;
+
+        for finex = 1:vS
+            fullFunc = fullFunc + pointMatrix(finex,2) * L(finex);
+        end
+
+        output = fullFunc;
+
+    end
+
+end
+\end{lstlisting}
+
+\texttt{newtonPoly.m}
+\begin{lstlisting}
+function output = newtonPoly(pointMatrix)
+
+    syms x
+
+    [vS, hS] = size(pointMatrix);
+
+    output = NaN;
+
+    if(hS == 2) %%Las entradas son correctas cuando los puntos son de (x,y)
+
+        funTrix = zeros(vS,vS);
+
+        for starex = 1:vS
+            funTrix(starex,1) = pointMatrix(starex,2);
+        end
+        
+        for index = 2:vS
+            for pain = index:vS
+                funTrix(pain,index) = ((funTrix(pain,index-1)-funTrix(pain-1,index-1))/(pointMatrix(pain,1)-pointMatrix((pain - index + 1), 1)));
+            end
+        end
+
+        fullFunc = funTrix(1,1);
+        fullFuncAux = 1;
+
+        for fintrex = 2:vS 
+            fullFuncAux = fullFuncAux * (x-pointMatrix(fintrex-1,1));
+            fullFunc = fullFunc + funTrix(fintrex, fintrex) * fullFuncAux;
+        end
+
+        output = fullFunc;
+    end 
+end
+\end{lstlisting}
+
+\texttt{lagrangeRunner.m}
+\begin{lstlisting}
+f = @(x) 3 * sin(pi*x/6);
+pointMatrix = [0 f(0); 1 f(1); 2 f(2); 3 f(3); 4 f(4)];
+  
+lagrangeP = lagrangePoly(pointMatrix)
+\end{lstlisting}
+
+\texttt{newtonRunner.m}
+\begin{lstlisting}
+f = @(x) 3 * sin(pi*x/6);
+pointMatrix = [0 f(0); 1 f(1); 2 f(2); 3 f(3); 4 f(4)];
+
+newtonP = newtonPoly(pointMatrix)
+\end{lstlisting}
+
+\texttt{lagraph.m}
+\begin{lstlisting}
+syms x
+
+dom = linspace(-3, 7);
+
+orig = @(x) 3 * sin(pi*x/6);
+
+inter = matlabFunction((3*3^(1/2)*x*(x/2 - 2)*(x - 1)*(x - 3))/4 - x*(x/2 - 1/2)*(x - 2)*(x - 4) - (3*x*(x/2 - 3/2)*(x/3 - 4/3)*(x - 2))/2 + (3*3^(1/2)*x*(x/2 - 1)*(x/3 - 1/3)*(x - 3))/8);
+
+
+plot(dom, inter(dom))
+hold on
+plot(dom, orig(dom))
+hold on
+axis([-3, 7, -4, 4])
+line([0,0], ylim, 'Color', 'k', 'LineWidth', 2)
+line(xlim, [0,0], 'Color', 'k', 'LineWidth', 2) 
+grid on
+
+plot(0,orig(0),'*')
+plot(1,orig(1),'*')
+plot(2,orig(2),'*')
+plot(3,orig(3),'*')
+plot(4,orig(4),'*')
+\end{lstlisting}
+
+\texttt{newtong.m}
+\begin{lstlisting}
+syms x
+
+dom = linspace(-3, 7);
+
+orig = @(x) 3 * sin(pi*x/6);
+
+inter = matlabFunction((3*x)/2 - (905051912390271*x*(x - 1))/4503599627370496 - (441695988904705*x*(x - 1)*(x - 2))/9007199254740992 + (8960769158908629*x*(x - 1)*(x - 2)*(x - 3))/1152921504606846976);
+
+
+plot(dom, inter(dom))
+hold on
+plot(dom, orig(dom))
+hold on
+axis([-3, 7, -4, 4])
+line([0,0], ylim, 'Color', 'k', 'LineWidth', 2)
+line(xlim, [0,0], 'Color', 'k', 'LineWidth', 2) 
+grid on
+
+plot(0,orig(0),'*')
+plot(1,orig(1),'*')
+plot(2,orig(2),'*')
+plot(3,orig(3),'*')
+plot(4,orig(4),'*')
+
+\end{lstlisting}
 
 
 \end{document}

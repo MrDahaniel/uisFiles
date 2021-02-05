@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  4 FEB 2021 00:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  4 FEB 2021 23:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -453,7 +453,19 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Logos/UIS.pdf>] [2] [3] [4] [5] [6] (c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.aux
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Logos/UIS.pdf>] [2] [3] [4] [5] [6]
+<Images/lagraph.png, id=177, 421.575pt x 316.18124pt>
+File: Images/lagraph.png Graphic file (type png)
+<use Images/lagraph.png>
+Package pdftex.def Info: Images/lagraph.png  used on input line 544.
+(pdftex.def)             Requested size: 421.57396pt x 316.18047pt.
+ [7] [8 <c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Images/lagraph.png (PNG copy)>]
+<Images/newtong.png, id=238, 421.575pt x 316.18124pt>
+File: Images/newtong.png Graphic file (type png)
+<use Images/newtong.png>
+Package pdftex.def Info: Images/newtong.png  used on input line 585.
+(pdftex.def)             Requested size: 421.57396pt x 316.18047pt.
+ [9 <c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Images/newtong.png (PNG copy)>] [10] [11] [12] [13] (c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -461,18 +473,18 @@ Package rerunfilecheck Info: File `Base2182066.out' has not changed.
 (rerunfilecheck)             Checksum: BCAE8863B7CD1A855EE511FAD572B4E7;136.
  ) 
 Here is how much of TeX's memory you used:
- 11169 strings out of 479304
- 161186 string characters out of 5871219
- 749122 words of memory out of 5000000
- 28101 multiletter control sequences out of 15000+600000
+ 11458 strings out of 479304
+ 165420 string characters out of 5871219
+ 798122 words of memory out of 5000000
+ 28134 multiletter control sequences out of 15000+600000
  413866 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,74p,482b,2068s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,74p,501b,2076s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.pdf" (6 pages, 194839 bytes).
+Output written on "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab6/tex/Base2182066.pdf" (13 pages, 253516 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
- 62 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 514 PDF objects out of 1000 (max. 8388607)
+ 475 compressed objects within 5 object streams
+ 314 named destinations out of 1000 (max. 500000)
+ 40 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,7 @@
 function output = newtonPoly(pointMatrix)
 
+    syms x
+
     [vS, hS] = size(pointMatrix);
 
     output = NaN;
@@ -18,15 +20,14 @@ function output = newtonPoly(pointMatrix)
             end
         end
 
-        fullFunc = @(x) funTrix(1,1);
-        fullFuncAux = @(x) 1;
+        fullFunc = funTrix(1,1);
+        fullFuncAux = 1;
 
         for fintrex = 2:vS 
-            fullFuncAux = @(x) fullFuncAux(x) * (x-pointMatrix(fintrex-1,1));
-            fullFunc = @(x) fullFunc(x) + funTrix(fintrex, fintrex) * fullFuncAux(x) ;
+            fullFuncAux = fullFuncAux * (x-pointMatrix(fintrex-1,1));
+            fullFunc = fullFunc + funTrix(fintrex, fintrex) * fullFuncAux;
         end
 
         output = fullFunc;
-
     end 
 end
