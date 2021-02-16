@@ -1,0 +1,284 @@
+\documentclass[english,notitlepage,letterpaper, 10pt]{article} % para articulo en castellano
+\usepackage{cite}
+\usepackage[utf8]{inputenc} % Acepta caracteres en castellano
+\usepackage[spanish]{babel} % silabea palabras castellanas
+\usepackage{amsmath}
+\decimalpoint
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\usepackage{here}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref} % navega por el doc
+\usepackage{graphicx}
+\usepackage{geometry}      % See geometry.pdf to learn the layout options.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{epstopdf}
+\usepackage{fancyhdr} % encabezados y pies de pg
+\usepackage{mathtools}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage[shortlabels]{enumitem}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=shadowbox,
+  language=Matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+  rulesepcolor=\color{blue}
+}
+
+\newcommand{\university}{\normalsize Universidad Industrial de Santander}
+\newcommand{\faculty}{\normalsize  Escuela de Ingenier\'ia de Sistemas e Inform\'atica}
+\newcommand{\codigo}{\normalsize  2182066}
+\newcommand{\grupo}{\normalsize  B2}
+\pagestyle{fancy} 
+\chead{\bfseries Lab. } 
+\lhead{} % si se omite coloca el nombre de la seccion
+\rhead{\today} 
+\lfoot{\it  An\'alisis N\'umerico } 
+\cfoot{\university} 
+\rfoot{\thepage} 
+
+\voffset = -0.25in 
+\textwidth = 7.5in
+\textheight = 9in
+\oddsidemargin = -0.5in
+\headheight = 20pt 
+\headwidth = 7.5in
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0,5pt}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+
+\begin{document}
+
+\title{	\vspace{-12mm}\includegraphics[width=0.2\linewidth]{Logos/UIS.pdf}\\Informe Laboratorio: An\'alisis Num\'erico\\  \centering Pr\'actica No. 7}
+\author{
+  \textbf{Daniel Delgado} \\ \textbf{C\'odigo:} \codigo\\
+  \textbf{Grupo:} \grupo\\
+  \textit{\faculty}\\
+  \textit{\university}}
+\date{\today}
+\maketitle
+
+\section{Introducción}
+
+
+\section{Desarrollo}
+
+\subsection{Aplicando}
+
+\begin{enumerate}
+  \item Aproximaciones
+
+  \begin{enumerate}[a)] 
+    \item Para realizar la aproximación de la segunda derivada de cos(x) con $h=0.01$ para $x=1$, necesitamos realizar el siguiente cálculo:  
+    
+    
+    \begin{center}  
+      \begin{math}  
+        f''(x) = \displaystyle \frac{f(x+h)-2f(x)+f(x-h)}{h^2}  
+      \end{math}  
+      
+      \begin{math}  
+        f''(1) = \displaystyle \frac{\cos(1+0.05)-2\cos(1)+\cos(1-0.05)}{0.05^2}  
+      \end{math}  
+      
+      \begin{math}  
+        f''(1) = \displaystyle \frac{\cos(1.05)-2\cos(1)+\cos(0.95)}{0.05^2}  
+      \end{math}  
+    \end{center}  
+    
+    Ejecutando en una terminal de MatLab con \texttt{format long} para realizar la aproximación:  
+    
+    \begin{lstlisting}  
+      val = (cos(1.05)-2*cos(1)+cos(0.95))/(0.05^2) 
+      
+      val =       
+      
+      -0.540189752267617  
+    \end{lstlisting}  
+    
+    \begin{center}  
+      \begin{math}  
+        f''(1) = -0.540189752267617 
+      \end{math}  
+    \end{center}  
+    
+    \item De igual manera, para realizar la aproximación de la segunda derivada de $\cos(x)$ con $h=0.01$ para $x=1$, se realiza el siguiente cálculo:  
+    
+    \begin{center}  
+      \begin{math}  
+        f''(x) = \displaystyle \frac{f(x+h)-2f(x)+f(x-h)}{h^2}  
+      \end{math}  
+      
+      \begin{math}  
+        f''(1) = \displaystyle \frac{\cos(1+0.01)-2\cos(1)+\cos(1-0.01)}{0.01^2}  
+      \end{math}  
+      
+      \begin{math}  
+        f''(1) = \displaystyle \frac{\cos(1.01)-2\cos(1)+\cos(0.99)}{0.01^2}  
+      \end{math}  
+    \end{center}  
+    
+    Que al ejecutar en una terminal de MatLab con el mismo formato anterior, da como resultado: 
+    
+    \begin{lstlisting}  
+      val = (cos(1.01)-2*cos(1)+cos(0.99))/(0.01^2)   
+      
+      val = 
+      
+      -0.540297803365286  
+    \end{lstlisting}  
+    
+    \begin{center}  
+      \begin{math}  
+        f''(1) =  -0.540297803365286  
+      \end{math}  
+    \end{center}  
+    
+    \item Ahora, para realizar la aproximación de la segunda derivada con la versión alterna de la ecuación, tenemos que realizar el siguiente proceso: 
+    
+    \begin{center}  
+      \begin{math}  
+        f''(x) = \displaystyle \frac{-f(x+2h)+16f(x+h)-30f(x)+16f(x-h)-f(x-2h)}{12h^2}  
+      \end{math}  
+      
+      \begin{math}  
+        f''(1) = \displaystyle \frac{-\cos(1+2(0.1))+16\cos(1+0.1)-30\cos(1)+16\cos(1-0.1)-\cos(1-2(0.1))}{12(0.1)^2} 
+      \end{math}  
+      
+      \begin{math}  
+        f''(1) = \displaystyle \frac{-\cos(1.2))+16\cos(1.1)-30\cos(1)+16\cos(0.9)-\cos(0.8))}{12(0.1)^2} 
+      \end{math}  
+    \end{center}  
+    
+    Aplicando el formato \texttt{long} a la terminal, y ejecutando para obtener el resultado respectivo, nos da como resultado: 
+    
+    \begin{lstlisting}  
+      val = (-cos(1.2)+16*cos(1.1)-30*cos(1)+16*cos(0.9)-cos(0.8))/(12*(0.1^2)) 
+      
+      val = 
+      
+      -0.540301706068029  
+    \end{lstlisting}  
+    
+    \begin{center}  
+      \begin{math}  
+        f''(1) = -0.540301706068029 
+      \end{math}  
+    \end{center}  
+    
+    \item Ahora, partiendo de cada uno de los resultados obtenidos, podemos realizar la comparación respecto al valor real, o aproximado de manera directa por MatLab. Como primera medida, tenemos que calcular la segunda derivada para la función $\cos(x)$. 
+    
+    \begin{center}  
+      $f(x) = \cos(x),$ \\  
+      $f'(x) = -\sin(x),$ \\  
+      $f''(x) = -\cos(x)$ 
+    \end{center}  
+    
+    Entonces, ejecutando en una terminal de MatLab: 
+    
+    \begin{lstlisting}  
+      -cos(1)   
+      
+      ans = 
+      
+      -0.540302305868140  
+    \end{lstlisting}  
+    
+    A partir de este valor, podemos calcular el error relativo para cada uno de los valores calculados anterior mente:  
+    
+    \begin{center}  
+      \begin{math}  
+        Er_a = \displaystyle \left| \frac{-0.540189752267617-(-0.540302305868140)}{-0.540302305868140} \right| \times 100 = 0.020831597292951\% 
+      \end{math}  
+      
+      \begin{math}  
+        Er_b = \displaystyle \left| \frac{-0.540297803365286-(-0.540302305868140)}{-0.540302305868140} \right| \times 100 = -8.333303051082726 \times 10^{-4} \%  
+      \end{math}  
+      
+      \begin{math}  
+        Er_c = \displaystyle \left| \frac{-0.540301706068029-(-0.540302305868140)}{-0.540302305868140} \right| \times 100 = -1.110119472948147 \times 10^{-4} \%  
+      \end{math}  
+    \end{center}  
+    
+    Entonces, ya con estos valores, podemos observar que, de los resultados aproximados, el que presenta el menor error relativo, es el tercer valor $Er_c$ con un error de tan solo el $-1.110119472948147 \times 10^{-4} \%$. Es decir que, para este caso, es este valor que presenta mayor precisión en el cálculo de la aproximación.  
+    
+    \end{enumerate}
+
+  \item Diferenciación numérica
+  
+    Dada una función $f''(x)$, se nos pide realiza una aproximación para $x = -3.5$ con $h = 0.05$. Para realizar esto, se nos da una tabla con diferentes valores y la propiedad para esta función que dice $f''(x) = f''(-x+0.5)$. Finalmente, se nos recuerda que, para $f''(x) \approx \frac{2f_0-5f_1+4f_2-f_3}{h^2}$.
+
+    De manera inicial, es identificar los valores, que se van a emplear para realizar el cálculo de la aproximación. El primer valor que podemos tomar es $f_0$ que, para este caso, sería $f''(-3.5)$. Partiendo de la propiedad de la función, tenemos que:
+
+    \begin{center}
+      \begin{math}
+        f_0 \rightarrow -3.5 = -x + 0.5 \rightarrow -3.5 - 0.5 = -x \rightarrow 4 = x
+      \end{math}
+    \end{center}
+
+
+    Teniendo este valor definido, podemos realizar el remplazo dentro de la ecuación dada para así realizar la aproximación de $f''(-3.5)$:
+
+    \begin{center}
+      $f_0 = f(4) = 0.629492 $ \\
+      $f_1 = f(4.05) = 0.610192 $ \\
+      $f_2 = f(4.1) = 0.592710 $ \\
+      $f_3 = f(4.15) = 0.577125 $ \\
+    \end{center}
+
+    \begin{center}
+      \begin{math}
+        f''(-3.5) \approx \displaystyle \frac{2f_0-5f_1+4f_2-f_3}{h^2} = \frac{2(0.629492)-5(0.610192)+4(0.592710)-0.577125}{0.05^2}
+      \end{math}
+    \end{center}
+
+    Que, ejecutando en una terminal de MatLab:
+
+    \begin{lstlisting}
+      (2*(0.629492)-5*(0.610192)+4*(0.592710)-0.577125)/(0.05^2) 
+
+      ans =
+      
+      0.695600000000018
+    \end{lstlisting}
+    
+    \begin{center}
+      \begin{math}
+        f''(x) \approx  0.695600000000018
+      \end{math}
+    \end{center}
+
+  \end{enumerate}
+  
+  \end{document}
+  
+  
+  

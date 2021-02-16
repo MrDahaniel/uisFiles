@@ -1,0 +1,5 @@
+Quiz casos MSB
+Daniel David Delgado Cervantes - 2182066
+
+Para el caso 4 tomado como ejemplo para de la aplicación de la metodología de sistemas blandos, podemos decir que efectivamente lo desarrollado dentro de aquella empresa de tecnología hace parte de MSB en tanto se buscaba el desarrollo de una solución a los problemas que presentaba el departamento de ID. 
+Esta solución fue trabajada bajo la visión de MSB puesto que la manera en la que se realizó la identificación de los problemas, al igual que la solución a la cual se llegó, fue a partir de las interacciones entre los grupos relacionados con el fin de dar cabida a las necesidades de todos los implicados.

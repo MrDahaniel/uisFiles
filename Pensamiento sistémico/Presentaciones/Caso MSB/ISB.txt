@@ -1,0 +1,39 @@
+
+Notas presentación MSB:
+
+    Aplicación de MSB:
+        -> Identificación de los clientes
+            -> Los investigadores de la compañía (Repartidos en los diferentes sectores de la empresa)
+        -> Creación de grupos de trabajo de 20 personas.
+
+        Primera reunión:
+            -> Determinación de roles y los procesos importantes dentro de la empresa.
+                -> Discusión de la ambigüedad de ID en cuanto a la información.
+                -> La misión de ID
+                    -> La aplicación de información e IT a las actividades de laboratorio, y la integración de información provista basada en IT en aquellas actividades de manera que son innovadoras y costo-efectivas y que a la vez son parte natural de un plan de investigación, tanto globalmente como en detalles. 
+                    -> La diferencia entre la realidad y lo dicho en la misión mostraban que efectivamente era necesaria una reorganización para dar cabida a la misión.
+            -> Paquetes de información
+                -> Es el concepto traído al foco debido al como esto permite que ID proveyera la información al igual que la capacidad del investigador de hacerlo por si mismo.
+                -> Discusiones sobre el concepto llevó a la conclusión que "lo que el investigador necesita es más importante que el uso de la tecnología por parte de ID"
+
+        Talleres:
+            -> Diseño de talleres de un sólo día con el fin de discutir las interacciones entre ID y los investigadores y el como el nuevo sistema de información debería ser desarrollado para dar cabida a las necesidades de todos los involucrados. 
+                -> De esto se crearon modelos relevantes para los laboratorios de los investigadores. 
+            -> El propósito de la actividad recaía principalmente en la construcción de una vista simétrica de las interacciones de los investigadores e ID dentro de todos los miembros. (Primera reunión)
+            -> En la segunda reunión se repite lo mismo con otro grupo de investigadores y miembros de ID junto con la ayuda de alguien de Id que podía explicar la carta de los servicios que ID podía proveer.}
+
+            Identificación de problemas:
+                -> la visión de los investigadores que su trabajo siempre generaba más datos e información de lo que jamás se había incluido en los reportes de investigación. ¿Podría ID hacer recuperable el material en archivos personales y computadoras de laboratorio? 
+
+        -> Fue a partir de esto que Eva formuló un plan para continuar con la reorganización del departamento de ID. En primera medida se buscaba que ID1 pudiera cumplir con un rol un poco más amplio en tanto al desarrollo de las actividades internas de la compañía.
+        -> Es necesario resaltar uno de los problemas que tuvieron durante el desarrollo del plan de la reorganización en tanto los superiores de Eva no querían, o se resistieron a la reorganización. Esto se debe a que el cambio duele.
+        -> Establecimiento del concepto de mercado de información. Con esto, se refiere a la existencia de un local permanente dentro de ID en el cual está toda la tecnología desarrollada dentro de la compañía al igual que demostraciones de la misma. Esta es descrita por los jefes de laboratorio como "Una plataforma permanente de dialogo."
+
+     Salidas de MSB: 
+        -> El cambio organizacional finalmente tomó lugar a través del concepto del mercado de información.
+        -> Un nuevo factor a tener en cuenta para el desarrollo de MSB, ¿Qué es culturalmente aceptado?
+
+    Conclusiones:
+        -> En este caso, al igual que en los anteriores, es posibles apreciar el como MSB es verdaderamente una metodología y no un método como tal. Esto se debe a la capacidad de MSB de adaptarse a cada una de las situaciones en las que esta sea necesario aplicarla para la solución de problemas. 
+
+        -> De la misma manera, existe el entendimiento que MSB está orientado hacia los problemas.
