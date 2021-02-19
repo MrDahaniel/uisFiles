@@ -1,9 +1,9 @@
-PWD c:/Users/danie/Desktop/uisFiles/Pensamientos sist�mico/Presentaciones/Objetividad/Informe
+PWD c:/Users/danie/Desktop/uisFiles/Pensamiento sist�mico/Presentaciones/Objetividad/Informe
 INPUT c:/texlive/2020/texmf.cnf
 INPUT c:/texlive/2020/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.tex
-OUTPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.log
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.tex
+OUTPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.log
 INPUT c:/texlive/2020/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2020/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2020/texmf-dist/tex/latex/base/article.cls
@@ -177,10 +177,10 @@ INPUT c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
-OUTPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
+OUTPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
 INPUT c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -202,12 +202,12 @@ INPUT c:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT c:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT c:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
-OUTPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.pdf
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
+OUTPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.pdf
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -222,7 +222,7 @@ INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT c:/Users/danie/Desktop/uisFiles/Pensamientos sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
+INPUT c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
 INPUT c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb

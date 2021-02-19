@@ -77,7 +77,7 @@
 
 \begin{document}
 
-\title{	\vspace{-12mm}\includegraphics[width=0.2\linewidth]{Logos/UIS.pdf}\\Informe Laboratorio: An\'alisis Num\'erico\\  \centering Pr\'actica No. 7}
+\title{	\vspace{-12mm}\includegraphics[width=0.2\linewidth]{Logos/UIS.pdf}\\Informe Laboratorio: An\'alisis Num\'erico\\  \centering Pr\'actica No. 8}
 \author{
   \textbf{Daniel Delgado} \\ \textbf{C\'odigo:} \codigo\\
   \textbf{Grupo:} \grupo\\
@@ -88,6 +88,9 @@
 
 \section{Introducción}
 
+La diferenciación numérica es una de las partes fundamentales en cuanto se refiere al desarrollo de diferentes problemas matemáticos. Algunos de estos problemas están relacionados con los modelos de ecuaciones diferenciales y derivaciones parciales. En este sentido, la compresión de algunas de las técnicas de diferenciación numérica tiene gran relevancia en cuanto al desarrollo matemático se refiere.
+
+La compresión de las diferentes maneras de realizar diferenciaciones numéricas, al igual que el desarrollo de la algoritmia relacionada, son los principales temas a a tratar durante el desarrollo del presente informe, así como la resolución de los problemas propuestos a manera de pregunta orientadora del componente práctico del mismo.
 
 \section{Desarrollo}
 
@@ -102,15 +105,15 @@
     
     \begin{center}  
       \begin{math}  
-        f''(x) = \displaystyle \frac{f(x+h)-2f(x)+f(x-h)}{h^2}  
+        f''(x) = \displaystyle \frac{f(x+h)-2f(x)+f(x-h)}{h^2} + \frac{4\varepsilon}{h^2} + \frac{h^2 f^{(4)(c)}}{12}
       \end{math}  
       
       \begin{math}  
-        f''(1) = \displaystyle \frac{\cos(1+0.05)-2\cos(1)+\cos(1-0.05)}{0.05^2}  
+        f''(1) = \displaystyle \frac{\cos(1+0.05)-2\cos(1)+\cos(1-0.05)}{0.05^2}  + \frac{4\times 10^{-9}}{0.05^2} + \frac{0.05^2 \cos(0)}{12}
       \end{math}  
       
       \begin{math}  
-        f''(1) = \displaystyle \frac{\cos(1.05)-2\cos(1)+\cos(0.95)}{0.05^2}  
+        f''(1) = \displaystyle \frac{\cos(1.05)-2\cos(1)+\cos(0.95)}{0.05^2}  + \frac{4\times 10^{-9}}{0.05^2} + \frac{0.05^2}{12}
       \end{math}  
     \end{center}  
     
@@ -122,27 +125,37 @@
       val =       
       
       -0.540189752267617  
+
+      err = 4*10^(-9)/(0.05^2) + (0.05^2)/12
+
+      err = 
+      
+      2.099333333333334e-04
     \end{lstlisting}  
     
+    Sumando estos valores, obtendremos la aproximación correspondiente:
+
     \begin{center}  
       \begin{math}  
-        f''(1) = -0.540189752267617 
+        f''(1) = -0.539979818934283
       \end{math}  
     \end{center}  
+
+
     
     \item De igual manera, para realizar la aproximación de la segunda derivada de $\cos(x)$ con $h=0.01$ para $x=1$, se realiza el siguiente cálculo:  
     
     \begin{center}  
       \begin{math}  
-        f''(x) = \displaystyle \frac{f(x+h)-2f(x)+f(x-h)}{h^2}  
+        f''(x) = \displaystyle \frac{f(x+h)-2f(x)+f(x-h)}{h^2} + \frac{4\varepsilon}{h^2} + \frac{h^2 f^{(4)(c)}}{12}
       \end{math}  
       
       \begin{math}  
-        f''(1) = \displaystyle \frac{\cos(1+0.01)-2\cos(1)+\cos(1-0.01)}{0.01^2}  
+        f''(1) = \displaystyle \frac{\cos(1+0.01)-2\cos(1)+\cos(1-0.01)}{0.01^2} + \frac{4\times 10^{-9}}{0.01^2} + \frac{0.01^2 \cos(0)}{12}
       \end{math}  
       
       \begin{math}  
-        f''(1) = \displaystyle \frac{\cos(1.01)-2\cos(1)+\cos(0.99)}{0.01^2}  
+        f''(1) = \displaystyle \frac{\cos(1.01)-2\cos(1)+\cos(0.99)}{0.01^2} + \frac{4\times 10^{-9}}{0.01^2} + \frac{0.01^2}{12}
       \end{math}  
     \end{center}  
     
@@ -153,12 +166,20 @@
       
       val = 
       
-      -0.540297803365286  
+      -0.540297803365286 
+
+      err = 4*10^(-9)/(0.01^2) + (0.01^2)/12        
+
+      err =
+
+      4.833333333333333e-05
     \end{lstlisting}  
+
+    Sumando estos valores, obtendremos la aproximación correspondiente:
     
     \begin{center}  
       \begin{math}  
-        f''(1) =  -0.540297803365286  
+        f''(1) =  -0.540249470031953  
       \end{math}  
     \end{center}  
     
@@ -166,15 +187,15 @@
     
     \begin{center}  
       \begin{math}  
-        f''(x) = \displaystyle \frac{-f(x+2h)+16f(x+h)-30f(x)+16f(x-h)-f(x-2h)}{12h^2}  
+        f''(x) = \displaystyle \frac{-f(x+2h)+16f(x+h)-30f(x)+16f(x-h)-f(x-2h)}{12h^2} + \frac{12\varepsilon}{3h^2} + \frac{h^4 f^{(6)}(c)}{90}
       \end{math}  
       
       \begin{math}  
-        f''(1) = \displaystyle \frac{-\cos(1+2(0.1))+16\cos(1+0.1)-30\cos(1)+16\cos(1-0.1)-\cos(1-2(0.1))}{12(0.1)^2} 
+        f''(1) = \displaystyle \frac{-\cos(1+2(0.1))+16\cos(1+0.1)-30\cos(1)+16\cos(1-0.1)-\cos(1-2(0.1))}{12(0.1)^2} + \frac{12\times10^{-9}}{3(0.1)^2} + \frac{-(0.1)^4\cos(0)}{90}
       \end{math}  
       
       \begin{math}  
-        f''(1) = \displaystyle \frac{-\cos(1.2))+16\cos(1.1)-30\cos(1)+16\cos(0.9)-\cos(0.8))}{12(0.1)^2} 
+        f''(1) = \displaystyle \frac{-\cos(1.2))+16\cos(1.1)-30\cos(1)+16\cos(0.9)-\cos(0.8))}{12(0.1)^2} + \frac{12\times10^{-9}}{3(0.1)^2} + \frac{(0.1)^4}{90}
       \end{math}  
     \end{center}  
     
@@ -186,11 +207,19 @@
       val = 
       
       -0.540301706068029  
-    \end{lstlisting}  
+
+      err = 12*10^(-9)/(3*0.1^2)+((0.1)^4)/90  
+
+      err =
+
+      1.511111111111111e-06
+    \end{lstlisting} 
+    
+    Sumando estos valores, obtendremos la aproximación correspondiente:
     
     \begin{center}  
       \begin{math}  
-        f''(1) = -0.540301706068029 
+        f''(1) = -0.540300194956918
       \end{math}  
     \end{center}  
     
@@ -216,19 +245,19 @@
     
     \begin{center}  
       \begin{math}  
-        Er_a = \displaystyle \left| \frac{-0.540189752267617-(-0.540302305868140)}{-0.540302305868140} \right| \times 100 = 0.020831597292951\% 
+        Er_a = \displaystyle \left| \frac{-0.539979818934283-(-0.540302305868140)}{-0.540302305868140} \right| \times 100 = 0.059686388592917\% 
       \end{math}  
       
       \begin{math}  
-        Er_b = \displaystyle \left| \frac{-0.540297803365286-(-0.540302305868140)}{-0.540302305868140} \right| \times 100 = -8.333303051082726 \times 10^{-4} \%  
+        Er_b = \displaystyle \left| \frac{-0.540249470031953-(-0.540302305868140)}{-0.540302305868140} \right| \times 100 =  -0.009778939607168\% 
       \end{math}  
       
       \begin{math}  
-        Er_c = \displaystyle \left| \frac{-0.540301706068029-(-0.540302305868140)}{-0.540302305868140} \right| \times 100 = -1.110119472948147 \times 10^{-4} \%  
+        Er_c = \displaystyle \left| \frac{-0.540300194956918-(-0.540302305868140)}{-0.540302305868140} \right| \times 100 = -3.906907668384156 \times 10^{-4} \% 
       \end{math}  
     \end{center}  
     
-    Entonces, ya con estos valores, podemos observar que, de los resultados aproximados, el que presenta el menor error relativo, es el tercer valor $Er_c$ con un error de tan solo el $-1.110119472948147 \times 10^{-4} \%$. Es decir que, para este caso, es este valor que presenta mayor precisión en el cálculo de la aproximación.  
+    Entonces, ya con estos valores, podemos observar que, de los resultados aproximados, el que presenta el menor error relativo, es el tercer valor $Er_c$ con un error de tan solo el $-3.906907668384156 \times 10^{-4} \%$. Es decir que, para este caso, es este valor que presenta mayor precisión en el cálculo de la aproximación.  
     
     \end{enumerate}
 
@@ -277,6 +306,149 @@
     \end{center}
 
   \end{enumerate}
+
+    \subsection{Implementando}
+    
+    Para realizar el siguiente punto, fue necesario modificar la función dada \texttt{difflim(f,x,toler)}, y modificarla en para convertirla en \texttt{difflim(f,x,toler,h1)}. Las modificaciones realizadas pueden verse en las líneas 3, 4 y 111 en los cuales los valores fueron cambiados para poder calcular las aproximaciones de la mejor manera posible.
+
+    \begin{lstlisting}
+      function [L,n]= difflim(f,x,toler,h1)
+
+      max1=150000;
+      h=h1;
+      H(1)=h;
+      D(1)=(feval(f,x+h)-feval(f,x-h))/(2*h);
+      E(1)=0;
+      R(1)=0;
+
+      for n=1:2
+          h = h-1e-10;
+          H(n+1)=h ;
+          D(n+1)=(feval(f,x+h)-feval(f,x-h))/(2*h);
+          E(n+1)=abs (D(n+1)-D(n));
+          R(n+1)=2*E(n+1)*(abs(D(n+1))+abs(D(n))+eps);
+      end
+
+      n=2;
+
+      while ((E(n)>E(n+1))&&(R(n)>toler))&&n<max1
+          h=h/10;
+          H(n+2)=h ;
+          D(n+2)=(feval(f,x+h)-feval(f,x-h))/(2*h);
+          E(n+2)=abs(D(n+2)-D(n+1)) ;
+          R(n+2)=2*E(n+2)*(abs(D(n+2))+abs(D(n+1))+eps);
+          n=n+1;
+      end
+
+      n=length (D)-1;
+      L=[H' D' E'];
+    \end{lstlisting}
+
+    Esta función, permitiría realizar las aproximaciones respectivas para cada uno de los literales dados.
+
+    \begin{enumerate}[a)]
+      \item $f(x) = \displaystyle 60x^45-32x^33+233x^5-47x^2-77$, $x= \displaystyle \frac{1}{\sqrt{3}}$
+      
+      Para esta primera función, se ejecutó en una terminal de Matlab los siguientes comandos:
+
+      \begin{lstlisting}
+        f1 = @(x) (60*x^(45))-(32*x^(33))+(233*x^(5))-(47*x^(2))-77;
+        x1 = 1/sqrt(3);        
+        [L,n] = difflim(f1,x1,0,1e-4);
+        apr = L(n,2)
+        err = L(n,3)
+      \end{lstlisting}
+
+      Tras esto, se obtuvieron los valores \texttt{apr = 75.1735} y \texttt{err = 5.2580e-13}.
+      
+      \item $f(x) = \displaystyle \tan \left( \cos \left( \frac{\sqrt{5}+\sin(x)}{1+x^2} \right) \right)$, $x = \displaystyle \frac{1+\sqrt{5}}{3}$
+      
+      El mismo proceso fue desarrollado para el segundo literal. En una terminal se ejecutó lo siguiente:
+
+      \begin{lstlisting}
+        f2 = @(x) tan(cos((sqrt(5)+sin(x))/(1+x^2)));
+        x2 = (1+sqrt(5))/3;
+        [L,n] = difflim(f2,x2,0,1e-1);
+        apr = L(n,2)
+        err = L(n,3)
+      \end{lstlisting}
+
+      Tras esto, se obtuvieron los valores \texttt{apr = 1.2291} y \texttt{err =  9.8477e-13}.
+
+      \item $f(x) = \displaystyle \sin(x^3-7x^2+6x+8)$, $x= \displaystyle \frac{1-\sqrt{5}}{2}$
+      
+      El mismo proceso fue desarrollado para el último literal. En una terminal se ejecutó lo siguiente:
+
+      \begin{lstlisting}
+        f3 = @(x) sin((x^3)-(7*x^2)+(6*x)+8);
+        x3 = (1 - sqrt(5)) / 2;
+        [L,n] = difflim(f3,x3,0,1e-4);
+        aprox = L(n,2)
+        error = L(n,3)
+      \end{lstlisting}
+
+      Tras esto, se obtuvieron los valores \texttt{apr = 2.9655} y \texttt{err = 6.3949e-13}.
+
+    \end{enumerate}
+
+  \newpage
+
+  \section{Anexos}
+
+  \texttt{difflim.m}
+
+  \begin{lstlisting}
+  
+    function [L,n]= difflim(f,x,toler,h1)
+
+    %Input - f is the function input as a string `f'
+    % - x is the differentiation point
+    % - toler is the desired tolerance
+    % - d is the value for h
+    % Output - L = [H' D' E'] : H is the vector of step sizes
+    % D is the vector of approximate derivatives
+    % E is the vector of error bounds
+    % - n is the coordinate of the "best approximation"
+    % NUMERICAL METHODS: MATLAB Program
+    % ( c ) 1999 by John H. Mathews and Kurtis D. Fink
+    % To accompany the textbook:
+    % NUMERICAL METHODS Using MATLAB,
+    % by John H. Mathews and Kurtis D. Fink
+    % ISBN 0 132700425 , (c) 1999
+    % PRENTICE HALL, INC.
+    % Upper Saddle River , NJ 07458
+    
+    max1=150000;
+    h=h1;
+    H(1)=h;
+    D(1)=(feval(f,x+h)-feval(f,x-h))/(2*h);
+    E(1)=0;
+    R(1)=0;
+    
+    for n=1:2
+        h = h-1e-10;
+        H(n+1)=h ;
+        D(n+1)=(feval(f,x+h)-feval(f,x-h))/(2*h);
+        E(n+1)=abs (D(n+1)-D(n));
+        R(n+1)=2*E(n+1)*(abs(D(n+1))+abs(D(n))+eps);
+    end
+    
+    n=2;
+    
+    while ((E(n)>E(n+1))&&(R(n)>toler))&&n<max1
+        h=h/10;
+        H(n+2)=h ;
+        D(n+2)=(feval(f,x+h)-feval(f,x-h))/(2*h);
+        E(n+2)=abs(D(n+2)-D(n+1)) ;
+        R(n+2)=2*E(n+2)*(abs(D(n+2))+abs(D(n+1))+eps);
+        n=n+1;
+    end
+    
+    n=length (D)-1;
+    L=[H' D' E'];
+
+  \end{lstlisting}
+
   
   \end{document}
   

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  16 FEB 2021 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  18 FEB 2021 19:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -447,7 +447,7 @@ LaTeX Info: Redefining \nameref on input line 78.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count302
-<Logos/UIS.pdf, id=16, 64.533pt x 31.29825pt>
+<Logos/UIS.pdf, id=24, 64.533pt x 31.29825pt>
 File: Logos/UIS.pdf Graphic file (type pdf)
 <use Logos/UIS.pdf>
 Package pdftex.def Info: Logos/UIS.pdf  used on input line 88.
@@ -461,26 +461,26 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 88.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Logos/UIS.pdf>] [2] [3] (c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.aux
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Logos/UIS.pdf>] [2] [3] [4] [5] [6] (c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 Package rerunfilecheck Info: File `Base2182066.out' has not changed.
-(rerunfilecheck)             Checksum: A35A54C8FB644225B5F0AE9C3DE200BF;153.
+(rerunfilecheck)             Checksum: 48C651B462117DEBD48644BEC9DFFAFA;256.
  ) 
 Here is how much of TeX's memory you used:
- 11441 strings out of 479304
- 166048 string characters out of 5871219
- 707625 words of memory out of 5000000
- 28391 multiletter control sequences out of 15000+600000
- 412620 words of font info for 63 fonts, out of 8000000 for 9000
+ 11599 strings out of 479304
+ 168119 string characters out of 5871219
+ 812625 words of memory out of 5000000
+ 28422 multiletter control sequences out of 15000+600000
+ 413866 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,74p,436b,2124s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,74p,502b,1944s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.pdf" (3 pages, 168160 bytes).
+Output written on "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.pdf" (6 pages, 195422 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 307 PDF objects out of 1000 (max. 8388607)
+ 280 compressed objects within 3 object streams
+ 167 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

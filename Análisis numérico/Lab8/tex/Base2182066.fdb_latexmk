@@ -1,10 +1,11 @@
 # Fdb version 3
-["pdflatex"] 1613515062 "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.tex" "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.pdf" "Base2182066" 1613517926
-  "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.aux" 1613515063 1181 92ca047c56b05c352a978b9970a68335 ""
-  "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.tex" 1613517925 9418 899a57b7b8a81b0755353d93bcd33ec2 ""
+["pdflatex"] 1613696071 "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.tex" "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.pdf" "Base2182066" 1613696073
+  "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.aux" 1613696073 1404 a37767b5cbf6dcb77177b017ffb7e0bc ""
+  "c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.tex" 1613696070 15698 d03a4be5a9e76c17925289091649ff5d ""
   "c:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1610730852 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1610727621 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1610727621 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
+  "c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1610727621 996 a18840b13b499c08ac2de96a99eda4bc ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1610727621 916 f87d7c45f9c908e672703b83b72241a3 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1610727621 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1610727621 928 2dc8d444221b7a635bb58038579b861a ""
@@ -17,6 +18,7 @@
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1610729074 1524 4414a8315f39513458b80dfc63bff03a ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1610729074 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1610729074 1520 eccf95517727cb11801f4f1aee3a21b4 ""
+  "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1610729074 1524 d89e2d087a9828407a196f428428ef4a ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1610729074 1288 655e228510b4c2a1abe905c368440826 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1610729074 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1610729074 1300 b62933e007d01cfd073f79b963c01526 ""
@@ -25,6 +27,7 @@
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1610729074 1124 6c73e740cf17375f03eec0ee63599741 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1610729074 1116 933a60c408fc0a863a92debe84b2d294 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1610729074 1120 8b7d695260f3cff42e636090a8002094 ""
+  "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1610729074 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1610729074 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1610729074 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1610729074 768 1321e9409b4137d6fb428ac9dc956269 ""

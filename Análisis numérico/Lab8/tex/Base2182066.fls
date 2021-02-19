@@ -771,6 +771,11 @@ INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
 INPUT c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.aux
 INPUT c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.out
 INPUT c:/Users/danie/Desktop/uisFiles/Análisis numérico/Lab8/tex/Base2182066.out
