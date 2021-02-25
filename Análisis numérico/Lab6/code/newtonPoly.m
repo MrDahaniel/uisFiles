@@ -22,7 +22,7 @@ function output = newtonPoly(pointMatrix)
 
         fullFunc = funTrix(1,1);
         fullFuncAux = 1;
-        funTrix
+        funTrix;
 
         for fintrex = 2:vS 
             fullFuncAux = fullFuncAux * (x-pointMatrix(fintrex-1,1));

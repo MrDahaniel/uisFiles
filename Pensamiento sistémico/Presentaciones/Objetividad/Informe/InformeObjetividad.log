@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  18 FEB 2021 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  24 FEB 2021 21:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -187,23 +187,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 29.
 [1
 
-{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf>] [2] [3] [4] [5] [6] [7] [8] (c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf>] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] (c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 3333 strings out of 479304
- 49530 string characters out of 5871219
- 360961 words of memory out of 5000000
- 20517 multiletter control sequences out of 15000+600000
- 407723 words of font info for 41 fonts, out of 8000000 for 9000
+ 3340 strings out of 479304
+ 49605 string characters out of 5871219
+ 361963 words of memory out of 5000000
+ 20523 multiletter control sequences out of 15000+600000
+ 408024 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,7n,74p,977b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.pdf" (8 pages, 98480 bytes).
+ 68i,7n,74p,1128b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.pdf" (12 pages, 127630 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
