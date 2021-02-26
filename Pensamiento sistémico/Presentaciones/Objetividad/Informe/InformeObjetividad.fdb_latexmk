@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1614219499 "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.tex" "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.pdf" "InformeObjetividad" 1614219500
-  "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux" 1614219500 2720 7d91efadc89abd60f0325971c9048fa3 ""
-  "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.tex" 1614219498 42367 1e83c9ec471bea2dd152df4b725f3c55 ""
+["pdflatex"] 1614257624 "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.tex" "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.pdf" "InformeObjetividad" 1614258482
+  "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux" 1614257625 2721 e8066418b4c35c68fff60c51d4b27b3f ""
+  "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.tex" 1614258481 42534 3acc4ee55ff1fa85a038e378c644ee72 ""
   "c:/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1610730852 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1610729074 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm" 1610729074 1300 63a6111ee6274895728663cf4b4e7e81 ""
@@ -35,6 +35,7 @@
   "c:/texlive/2020/texmf-dist/tex/latex/base/size10.clo" 1610732196 8449 a72d5d4e612221b46000c3d71724e0ef ""
   "c:/texlive/2020/texmf-dist/tex/latex/enumitem/enumitem.sty" 1610730284 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1610730329 13886 d1306dcf79a944f6988e688c1785f9ce ""
+  "c:/texlive/2020/texmf-dist/tex/latex/float/float.sty" 1610730779 6749 16d2656a1984957e674b149555f1ea1d ""
   "c:/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty" 1610731082 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1610731294 1224 978390e9c2234eab29404bc21b268d1e ""
   "c:/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def" 1610731295 19103 48d29b6e2a64cb717117ef65f107b404 ""
@@ -42,6 +43,7 @@
   "c:/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty" 1610731290 7919 20fdfdd783821971c55bc8ee918cbe63 ""
   "c:/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty" 1610731290 2590 e3b24ff953e5b58d924f163d25380312 ""
   "c:/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty" 1610731290 3976 d7fa7d81d2870d509d25b17d0245e735 ""
+  "c:/texlive/2020/texmf-dist/tex/latex/here/here.sty" 1610731483 439 d908692e0f19922874ccfe2bf35addc7 ""
   "c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1610732137 24157 3d92be7d5afb895841a9597378bac15c ""
   "c:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1610732313 678 4792914a8f45be57bb98413425e4c7af ""
   "c:/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty" 1610735479 22913 a27d7908fc6f0385466454a966a316eb ""
@@ -51,5 +53,5 @@
   "c:/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1610741112 2568065 8f3c605f2c3b426f304261691fbce404 ""
   "c:/texlive/2020/texmf.cnf" 1610740968 713 614551405fc44b98efbf516466e3c909 ""
   (generated)
-  "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.log"
   "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.pdf"
+  "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.log"

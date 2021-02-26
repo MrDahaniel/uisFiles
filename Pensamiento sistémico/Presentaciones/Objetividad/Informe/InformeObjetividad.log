@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  24 FEB 2021 21:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.1.15)  25 FEB 2021 07:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -95,45 +95,52 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layouthoffset=\dimen149
 \Gm@layoutvoffset=\dimen150
 \Gm@dimlist=\toks20
+) (c:/texlive/2020/texmf-dist/tex/latex/here/here.sty) (c:/texlive/2020/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count193
+\float@exts=\toks21
+\float@box=\box48
+\@float@everytoks=\toks22
+\@floatcapt=\box49
 ) (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count193
-\l__pdf_internal_box=\box48
+\l__kernel_color_stack_int=\count194
+\l__pdf_internal_box=\box50
 ) (c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
 \openout1 = `InformeObjetividad.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Info: Redefining \. on input line 27.
-LaTeX Info: Redefining \% on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
  (c:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count194
+\scratchcounter=\count195
 \scratchdimen=\dimen151
-\scratchbox=\box49
-\nofMPsegments=\count195
-\nofMParguments=\count196
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count197
+\scratchbox=\box51
+\nofMPsegments=\count196
+\nofMParguments=\count197
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count198
 \MPscratchDim=\dimen152
-\MPnumerator=\count198
-\makeMPintoPDFobject=\count199
-\everyMPtoPDFconversion=\toks22
+\MPnumerator=\count199
+\makeMPintoPDFobject=\count266
+\everyMPtoPDFconversion=\toks24
 ) (c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -177,33 +184,39 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 <Logos/UIS.pdf, id=1, 64.533pt x 31.29825pt>
 File: Logos/UIS.pdf Graphic file (type pdf)
 <use Logos/UIS.pdf>
-Package pdftex.def Info: Logos/UIS.pdf  used on input line 29.
+Package pdftex.def Info: Logos/UIS.pdf  used on input line 30.
 (pdftex.def)             Requested size: 140.92793pt x 68.35104pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 29.
+(Font)              <12> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 29.
+(Font)              <8> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 29.
+(Font)              <6> on input line 30.
 [1
 
-{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf>] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] (c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
+{c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/UIS.pdf>] [2]
+<Logos/diagrama.jpeg, id=17, 476.78125pt x 456.70625pt>
+File: Logos/diagrama.jpeg Graphic file (type jpg)
+<use Logos/diagrama.jpeg>
+Package pdftex.def Info: Logos/diagrama.jpeg  used on input line 68.
+(pdftex.def)             Requested size: 328.82707pt x 314.99524pt.
+ [3 <c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/Logos/diagrama.jpeg>] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] (c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 3340 strings out of 479304
- 49605 string characters out of 5871219
- 361963 words of memory out of 5000000
- 20523 multiletter control sequences out of 15000+600000
+ 3419 strings out of 479304
+ 50766 string characters out of 5871219
+ 363565 words of memory out of 5000000
+ 20592 multiletter control sequences out of 15000+600000
  408024 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,7n,74p,1128b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.pdf" (12 pages, 127630 bytes).
+Output written on "c:/Users/danie/Desktop/uisFiles/Pensamiento sistémico/Presentaciones/Objetividad/Informe/InformeObjetividad.pdf" (13 pages, 182232 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 79 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

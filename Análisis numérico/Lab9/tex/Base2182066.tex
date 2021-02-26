@@ -1,0 +1,356 @@
+\documentclass[english,notitlepage,letterpaper, 10pt]{article} % para articulo en castellano
+\usepackage{cite}
+\usepackage[utf8]{inputenc} % Acepta caracteres en castellano
+\usepackage[spanish]{babel} % silabea palabras castellanas
+\usepackage{amsmath}
+\decimalpoint
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\usepackage{here}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref} % navega por el doc
+\usepackage{graphicx}
+\usepackage{geometry}      % See geometry.pdf to learn the layout options.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{epstopdf}
+\usepackage{fancyhdr} % encabezados y pies de pg
+\usepackage{mathtools}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage[shortlabels]{enumitem}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=shadowbox,
+  language=Matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+  rulesepcolor=\color{blue}
+}
+
+\newcommand{\university}{\normalsize Universidad Industrial de Santander}
+\newcommand{\faculty}{\normalsize  Escuela de Ingenier\'ia de Sistemas e Inform\'atica}
+\newcommand{\codigo}{\normalsize  2182066}
+\newcommand{\grupo}{\normalsize  B2}
+\pagestyle{fancy} 
+\chead{\bfseries Lab. } 
+\lhead{} % si se omite coloca el nombre de la seccion
+\rhead{\today} 
+\lfoot{\it  An\'alisis N\'umerico } 
+\cfoot{\university} 
+\rfoot{\thepage} 
+
+\voffset = -0.25in 
+\textwidth = 7.5in
+\textheight = 9in
+\oddsidemargin = -0.5in
+\headheight = 20pt 
+\headwidth = 7.5in
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0,5pt}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+
+\begin{document}
+
+\title{	\vspace{-12mm}\includegraphics[width=0.2\linewidth]{Logos/UIS.pdf}\\Informe Laboratorio: An\'alisis Num\'erico\\  \centering Pr\'actica No. 8}
+\author{
+  \textbf{Daniel Delgado} \\ \textbf{C\'odigo:} \codigo\\
+  \textbf{Grupo:} \grupo\\
+  \textit{\faculty}\\
+  \textit{\university}}
+\date{\today}
+\maketitle
+
+\section{Introducción}
+
+La aproximación de las integrales definidas es una de las partes fundamentales en la solución de diferentes problemas de la vida real. Esto va en diferentes áreas que van desde la estadística hasta el cálculo de diferentes sólidos. En este sentido, el entendimiento de estos conceptos es realmente importantes para el desarrollo de la identidad matemática.
+
+La compresión de las diferentes maneras de aproximar integrales, al igual que el desarrollo de la algoritmia relacionada, son los principales temas a a tratar durante el desarrollo del presente informe, así como la resolución de los problemas propuestos a manera de pregunta orientadora del componente práctico del mismo.
+
+\section{Desarrollo}
+
+\subsection{Aplicando} \label{aplicando}
+
+\begin{enumerate}[a)]
+  \item Integrar $f(x) = x \ln(x)$ entre $[1,2]$ con trapezoides y $h = 0.25$.
+  
+  \begin{center}
+    \begin{math}
+      \displaystyle \int_a^b f(x) \approx \sum_{k=1}^{n} \frac{f(x_{k-1})+f(x_k)}{2} \Delta x
+    \end{math}
+
+    $x_0 = 1$ \\
+    $x_1 = 1.25$ \\
+    $x_2 = 1.5$ \\
+    $x_3 = 1.75$ \\
+    $x_4 = 2$ \\
+
+    \begin{math}
+      \displaystyle \int_1^2 x\ln(x) \approx \sum_{k=1}^{4} \frac{f(x_{k-1})+f(x_k)}{2} 0.25
+    \end{math}
+
+    \begin{math}
+      \displaystyle \int_1^2 x\ln(x) \approx \frac{0.25}{2} [f(x_0)+2f(x_1)+2f(x_2)+2f(x_3)+f(x_4)]
+    \end{math}
+    
+    \begin{math}
+      \displaystyle \int_1^2 x\ln(x) \approx 0.125[1\ln(1)+2(1.25)\ln(1.25)+2(1.5)\ln(1.5)+2(1.75)\ln(1.75)+(2)\ln(2)]
+    \end{math}
+
+    \begin{math}
+      \displaystyle \int_1^2 x\ln(x) \approx  0.125[2.5\ln(1.25)+3\ln(1.5)+3.5\ln(1.75)+2\ln(2)]
+    \end{math}
+
+    \begin{math}
+      \displaystyle \int_1^2 x\ln(x) \approx 0.639900477688
+    \end{math}
+  \end{center}
+  
+  \item Integrar $f(x) = x \ln(x)$ entre $[1,2]$ con la regla de Simpson y $h = 0.25$.
+
+  \begin{center}
+    \begin{math}
+      \displaystyle \int_a^b x\ln(x) \approx \frac{b-a}{6} \left( f(a) + 4f\left( \frac{a+b}{2} \right) + f(b) \right)
+    \end{math}
+
+    \begin{math}
+      \displaystyle \int_1^2 x\ln(x) \approx \frac{2-1}{6} \left( f(1) + 4 f \left( \frac{1+2}{2} \right)  + f(2) \right)
+    \end{math}
+
+    \begin{math}
+      \displaystyle \int_1^2 x\ln(x) \approx \frac{1}{6} \left( (1)\ln(1) + 4 \left( \frac{3}{2} \right)  \ln\left( \frac{3}{2} \right) + 2\ln(2) \right)
+    \end{math}
+
+    \begin{math}
+      \displaystyle \int_1^2 x\ln(x) \approx 0.636514168295
+    \end{math}
+  \end{center}
+  
+\end{enumerate}
+
+\subsection{Implementando} \label{Implementando}
+  Con el fin de cumplir los objetivos de la práctica del laboratorio, se pide el desarrollo de la algoritmia relacionada con la aplicación de las reglas del trapecio compuesta y la regla de Simpson compuesta. 
+\begin{enumerate}[a)]
+  \item En el caso de la regla del trapecio compuesta, se desarrolló \texttt{compositeTrapezoid(f,M,a,b)}. Esta función, realizaba la aproximación de la integral para una función f dada en el intervalo [a,b]. 
+  
+  \begin{lstlisting}
+function output = compositeTrapezoid(f, M, a, b)
+    if (isa(f, 'function_handle') && (M > 0))
+        h = (b-a)/M;
+        sumPart = 0;
+        xk = a;
+
+        for index = 1:M
+            sumPart = sumPart + f(xk);
+            xk = xk + h;
+        end
+
+        output = (h/2)*(f(a)+f(b))+h*sumPart;
+    end
+end
+  \end{lstlisting}
+
+  De manera inicial, realiza una verificación de los parámetros dados además de realizar el cálculo de $h = \frac{b-a}{M}$ e inicializa las variables \texttt{xk} y \texttt{sumPart}. Finalmente, ingresa a un ciclo iterativo el cual realiza la sumatoria correspondiente y da salida a la función con la aproximación tras la suma de las partes calculadas.
+
+  Con el fin de comprobar el correcto funcionamiento de esta, y aprovechando las aproximaciones realizadas en la sección \ref{aplicando}, se ejecutó la función en una terminal de MatLab con los mismos parámetros:
+
+  \begin{lstlisting}
+>> compositeTrapezoid(@(x) x*log(x), 5, 1, 2)
+
+ans =
+
+   0.638603196719876
+  \end{lstlisting}
+
+  De esto, como es posible apreciar, da como resultado una aproximación cercana a la integral en el intervalo [1,2] para la función $f(x) = x \ln(x)$.
+
+  \item Un proceso similar se realizó para la regla de Simpson compuesta. Con el fin de dar cabida a los requerimientos, se desarrolló la función \texttt{compositeSimpson(f, M, a, b)}, la cual, como su nombre lo indica, realiza la aproximación de una integral para una función f dada en el intervalo [a,b] empleando la regla de Simpson compuesta.
+  
+   \begin{lstlisting}
+function output = compositeSimpson(f, M, a, b)
+    if (isa(f, 'function_handle') && (M > 0))
+        sumPart  = 0;
+        sumPart2 = 0;
+        h = (b-a)/(2*M);
+
+        for k = 1:(M-1)
+            sumPart = sumPart + f(a+2*k*h);
+        end
+
+        for k = 1:M
+            sumPart2 = sumPart2 + f(a+(2*k-1)*h);
+        end
+
+        output = (h/3) * (f(a) +  f(b) + 2*sumPart + 4*sumPart2);
+    end
+end
+   \end{lstlisting}
+
+    Esta función realiza un proceso similar a la anterior función, inicialmente realiza las comprobaciones de los parámetros datos, seguidamente inicializa, en ese caso, las sentencias for para realizar los cálculos de las sumatorias respectivas, y finalmente, construye la aproximación para la integral.
+
+    Con el fin de comprobar el funcionamiento de la función, se repetirá el mismo proceso para ver que se esté realizando la aproximación de manera correcta. En este sentido, se ejecutó la función en una terminal de MatLab.
+
+    \begin{lstlisting}
+>> compositeSimpson(@(x) x*log(x), 5, 1, 2)
+
+ans =
+
+   0.636294774145023
+    \end{lstlisting}
+
+    De esto, como es posible apreciar, da como resultado una aproximación cercana a la integral en el intervalo [1,2] para la función $f(x) = x \ln(x)$.
+
+\end{enumerate}
+
+\subsection{Interpretando}
+
+    Con el fin de demostrar las aplicaciones que tienen las reglas del trapecio y Simpson, se nos presenta un problema en al cual de bebemos calcular la probabilidad de que una máquina falle. En este caso, se nos dice que la probabilidad de que la máquina falle está dada por $\Phi(x) = \frac{1}{2}+(1/\sqrt{2\pi}) \int_0^x e^{-t^2/2}$.
+
+    Entonces, se nos pregunta que para dicha máquina, ¿cuál es la probabilidad de que esta falle un total de 5 veces?
+
+    Para resolver esto, empleando las funciones creadas en la sección \ref{Implementando}, podemos ejecutar las funciones de la siguiente manera:
+
+    \begin{lstlisting}
+>> compositeSimpson(@(x) exp(1)^(-(x^2)/2), 5, 0, 5)
+
+ans =
+
+    1.253313328468611
+
+>> compositeTrapezoid(@(x) exp(1)^(-(x^2)/2), 5, 0, 5)
+
+ans =
+
+    2.253312265441977
+    \end{lstlisting}
+
+    Como es posible de denotar, existe una gran diferencia entre los valores calculados por cada una de las funciones para una misma aproximación. Esto se debe al como se desarrolla el cálculo de la integral en cada una de las funciones en cuanto se refiere a la forma de calcular la aproximación. 
+
+    Cabe resaltar que, entre las dos funciones, para $M=5$, la Simpson compuesta es la que tiene una mejor aproximación real a la integral, sin embargo, en el caso de aumentar drásticamente $M$, digamos $M=12000000$, la aproximación realizada por la función en mucho mejor en comparación.
+
+    Ahora, para calcular la probabilidad que se de un fallo en la máquina, simplemente tenemos que remplazar en la ecuación dada.
+
+    \begin{center}
+      \begin{math}
+        \displaystyle \Phi(x) = \frac{1}{2}+\frac{1}{\sqrt{2\pi}} \cdot \int^5_0 e^{-\frac{t^2}{2}} 
+      \end{math}
+
+      \begin{math}
+        \displaystyle \Phi_{Simpson}(x) = \frac{1}{2}+\frac{1.253313328468611}{\sqrt{2\pi}} = 0.999999677317
+      \end{math}
+
+      \begin{math}
+        \displaystyle \Phi_{Trapecio}(x) = \frac{1}{2} + \frac{2.253312265441977}{\sqrt{2\pi}} = 1.39894153363 
+      \end{math}
+    \end{center}
+
+    De esto, partiendo de lo ya nombrado respecto a la función \texttt{compositeTrapezoid(f,M,a,b)}, lo que nos dejaría sólo con el valor calculado por la regla de Simpson compuesta, podemos decir que para la máquina, existe una probabilidad del $0.999999677317$ de que tenga un total de 5 fallos.
+
+\section{Anexos}
+
+    \texttt{compositeTrapezoid.m}
+
+    \begin{lstlisting}
+function output = compositeTrapezoid(f, M, a, b)
+    if (isa(f, 'function_handle') && (M > 0))
+        h = (b-a)/M;
+        sumPart = 0;
+        xk = a;
+
+        for index = 1:M
+            sumPart = sumPart + f(xk);
+            xk = xk + h;
+        end
+
+        output = (h/2)*(f(a)+f(b))+h*sumPart;
+    end
+end
+    \end{lstlisting}
+
+    \texttt{compositeSimpson.m}
+
+    \begin{lstlisting}
+function output = compositeSimpson(f, M, a, b)
+    if (isa(f, 'function_handle') && (M > 0))
+        sumPart  = 0;
+        sumPart2 = 0;
+        h = (b-a)/(2*M);
+
+        for k = 1:(M-1)
+            sumPart = sumPart + f(a+2*k*h);
+        end
+
+        for k = 1:M
+            sumPart2 = sumPart2 + f(a+(2*k-1)*h);
+        end
+
+        output = (h/3) * (f(a) +  f(b) + 2*sumPart + 4*sumPart2);
+    end
+end
+   \end{lstlisting}
+
+   \texttt{trapezoidTester}
+
+   \begin{lstlisting}
+>> compositeTrapezoid(@(x) x*log(x), 5, 1, 2)
+
+ans =
+
+   0.638603196719876
+   \end{lstlisting}
+
+   \texttt{simponTester}
+
+   \begin{lstlisting}
+>> compositeSimpson(@(x) x*log(x), 5, 1, 2)
+
+ans =
+
+   0.636294774145023
+   \end{lstlisting}
+
+   \texttt{machineProbabilty}
+  
+  \begin{lstlisting}
+>> compositeSimpson(@(x) exp(1)^(-(x^2)/2), 5, 0, 5)
+
+ans =
+
+    1.253313328468611
+
+>> compositeTrapezoid(@(x) exp(1)^(-(x^2)/2), 5, 0, 5)
+
+ans =
+
+    2.253312265441977
+    \end{lstlisting}
+
+\end{document}
+  
+  
+  
