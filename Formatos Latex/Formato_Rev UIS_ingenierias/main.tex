@@ -1,0 +1,299 @@
+\documentclass[10pt,letterpaper,twoside,twocolumn]{article}   %tipo de doc
+%------------------ PAQUETES PRINCIPALES ------------------------------
+\usepackage[T1]{fontenc}                          %especificando fuente
+\usepackage[utf8]{inputenc}                       %codificacion
+\usepackage[spanish,english]{babel}               %idioma del documento
+\usepackage{scrbase}                              %paquete KOMA-script 
+\usepackage{caption}                              %modificacion del caption para imagenes y tablas
+\DeclareCaptionLabelSeparator{point}{. }
+\captionsetup{labelsep=point}
+\usepackage{pdfpages}                             %agregar header en pdf
+\usepackage{amsmath}                              %ec.matematicas
+\usepackage{amsfonts}                             %ec.matematicas
+\usepackage{amssymb}                              %ec.matematicas
+\usepackage{mathtext}                             %caracteres especiales ec. matem.
+\usepackage{amsthm}                               %paquete matematico
+\usepackage{makeidx}                              %gen. de indices
+\usepackage{graphicx}                             %insertar imagenes
+\usepackage{epsfig}                               %insertar imagenes
+\usepackage{lmodern}                              %fuente del doc
+\usepackage{kpfonts}                              %fuente del doc
+\usepackage{bm}                                   %negrita en ec.
+\usepackage{booktabs}                             %paquete de tablas
+\usepackage{tabularx}                             %paquete de tablas
+\usepackage{dcolumn}                              %paquete de tablas
+\usepackage{latexsym}                             %paquete de simbolos
+\usepackage{algorithm}                            %paquete para escribir algoritmos
+\usepackage{fancyhdr}                             %Fancy Header / Footer (encabezado y pie de pag)
+\usepackage{ragged2e}                             %justificado del texto
+\usepackage{titlesec}                             %para modificar el formato del titulos
+\usepackage{url}                                  %URL en bibliografia
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\setlength{\parindent}{0cm}                       %quitar sangría
+\raggedbottom
+%-------------------PIE DE PAG Y OTROS DEL DOCUMENTO (NO MODIFICAR) ------------
+% usado el \thispagestyle para la primera pag y \pagestyle para las demas
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}
+\lhead[\vspace{1ex}\thepage]{{\vspace{1ex} \footnotesize Titulo en el idioma en que se presenta el articulo}}
+\chead[]{}
+\rhead[\vspace{1ex} \footnotesize{Autor1(A.Apellido), Autor2, Autor3}]{\vspace{1ex} \includegraphics[scale=0.18]{LogoUIS_Ingenierias.jpg} \qquad {\thepage} }
+\lfoot[]{}
+\cfoot[]{}
+\rfoot[]{}
+\fancypagestyle{Primera_Pagina}{
+\lfoot{ISSN Printed: 1657 - 4583, ISSN Online: 2145 – 8456, CC BY-ND 4.0}
+\cfoot[]{}
+\rfoot[]{}
+}
+%-------------------- DOCUMENTO -----------------------------
+\begin{document}
+\selectlanguage{spanish}
+%------------ COMANDOS DE ARTICULO (NO MODIFICAR) ---------------------------
+\thispagestyle{Primera_Pagina}
+\input{Formatos_UIS}
+%------------------INGRESE TITULOS Y RESUMENES ----------------
+\twocolumn[{
+\thispagestyle{Primera_Pagina}
+\encabezadoUIS % no modificar
+\titulos{El estado de la metodología de sistemas blandos en los últimos 10 años.}{
+The state of soft systems methodology in the last 10 years. }
+\autores{Daniel Delgado Cervantes$^{1}$, Laura Hernández Pérez$^{2}$} 
+\infoautores{
+$^{1}$Escuela de Ingeniería de Sistemas, Universidad Industrial de Santander. Correo electrónico: daniel2182066@correo.uis.edu.co\\
+$^{2}$Escuela de Ingeniería de Sistemas, Universidad Industrial de Santander. Correo electrónico: \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\\
+}
+
+\resumenESP{Al final}
+\palabrasESP{estilo; formato; indicaciones; plantilla modelo; versión 2019.}
+
+\resumenING{Al final}
+\palabrasING{formatting; guidelines; sample template; style; version 2019.}
+}]
+% ------------------ DESARROLLO DEL ARTICULO---------------------
+\section{Introducción}
+La metodología de sistemas blandos (MSB), es una manera de realizar, en términos generales, modelados de organizaciones con el fin de resolver problemas internos de la organización o realizar cambios en la misma teniendo en cuenta las interacciones de los integrantes de la organización tanto entre ellos como con sus superiores e incluso clientes. Esta fue desarrollada inicialmente entre los años 1960 y 1980 como parte de una investigación de Peter Checkland en respuesta a las técnicas de investigación de operaciones las cuales fallaban en dar cabida a los sistemas u organizaciones donde el componente social interno tiene un gran impacto \ref{Checkland2000}. 
+
+Entonces, partiendo de sus diversas aplicaciones dentro de una gran cantidad de áreas, se consideró importante el entender el interés investigativo de la metodología de sistemas blandos. Con este fin, se realizó una búsqueda general sobre MSB en la base de datos \textit{Scopus}, con el fin de apreciar las tendencias sobre los artículos presentes. Partiendo de la ecuación de búsqueda \texttt{TITLE-ABS-KEY ( "Soft Systems Methodology" )  AND  PUBYEAR  <  2021 }, lo primero en apreciar está en la cantidad de artículos presentes en la base de datos. Desde 1979 hasta el año 2020, hay un total de 1061 documentos en la base de datos. De igual manera, realizando un análisis cienciométrico de los valores obtenidos, es posible apreciar que, año tras año, existe una tendencia al aumento de la cantidad de artículos producidos, como es posible apreciar en la figura \ref{yearResults}. De esto, es posible entender que existe un aumento en la popularidad de sea la aplicación de la metodología de sistemas blandos o la investigación del mismo.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{Images/Scopus-Analyze-Year.jpg}
+  \caption{Cantidad de artículos por año. Scopus}
+  \label{yearResults}
+\end{figure}
+
+Centrando un poco hacia el intervalo de tiempo trabajado en el presente artículo, podemos ver que 
+
+
+
+\section{Formato}
+\subsection{Márgenes e interlineado}
+El margen superior del artículo debe ser de 2,0 cm, todos los demás (inferior, izquierdo, derecho) deben ser de 2,5 cm. Se debe usar un interlineado sencillo (1,0). El cuerpo del artículo debe estar diagramado a dos columnas de 8 cm de ancho y 0,59 cm de espaciado.
+\subsection{Títulos}
+El formato de la \textit{Revista UIS Ingenierías} contempla los siguientes tipos de título:
+\subsubsection{Título de sección}
+Se usa para rotular las secciones del documento. Debe numerarse con un número arábigo, que aumenta de manera consecutiva con cada sección rotulada (p. ej. 1, 2, 3...). Asimismo, debe estar escrito en negrita y alineado a la izquierda. El texto que sigue a este tipo de título debe iniciar a un (1) salto de línea. 
+
+\subsubsection{Título de subsección}
+Se usa para rotular las subsecciones del documento. Deben numerarse con un número arábigo de una cifra decimal, que aumenta de manera consecutiva con cada subsección rotulada  (p. ej. 1.1, 1.2...). Asimismo, debe estar escrito en negrita y alineado a la izquierda. El texto que sigue a este tipo de título debe iniciar a un (1) salto de línea. Estilo Heading 2.
+
+\subsubsection{Título de subsubsección}
+Se usa para rotular las subsubsecciones del documento. Deben numerarse con un número arábigo de dos cifras decimales, que aumenta de manera consecutiva con cada subsección rotulada (p. ej. 1.1.1., 1.2.1...). Asimismo, debe estar escrito con la primera letra en mayúscula, en negrita y estar justificado.
+
+\subsection{Figuras y tablas}
+Todas las figuras y las tablas deben ocupar el ancho completo de la columna y deben insertarse en línea con el texto y estar centradas. En lo posible debe evitarse el formato panorámico que ocupa las dos columnas. En caso de necesitar introducir una tabla o una figura de gran tamaño, se sugiere usar una página completa para ubicarla, o insertar un cuadro de texto sin borde, de 16,5 cm de ancho, y con alineación del texto Top and Bottom (ver figura 1). Los datos presentados en las figuras y en las tablas deben ser completamente legibles y comprensibles. En el caso de presentar imágenes o gráficos, estos deben tener una resolución mínima de 300 dpi. Y, además, de incluirse en el texto, deben enviarse por separado en un archivo adjunto. Tanto figuras como tablas deben citarse dentro del texto utilizando referencias cruzadas (p. ej., figura 2) y estar debidamente rotuladas como se indica a continuación:
+
+
+\subsubsection{Figuras}
+La descripción de una figura debe identificar, de manera concreta, los datos contenidos en ella. Esta descripción se ubica debajo del recurso, a un salto de línea, alineada al centro y escrita en tamaño 10. Debe iniciar con la palabra 'Figura' y un número arábigo, que aumenta de manera consecutiva con cada figura rotulada, seguido de punto (.). Tanto la palabra 'Figura' como el número y la descripción se escriben con formato normal. \\
+\\
+
+\begin{figure*}
+  \centering
+    \reflectbox{%
+      \includegraphics[width=\textwidth]{Figure1}}
+  \caption{Figura a doble columna.}
+\end{figure*}
+
+
+Si la descripción incluye varias partes, cada una de estas debe identificarse con una letra en minúscula entre paréntesis (p. ej. (a), (b)...). Después de la descripción, debe indicarse la fuente de la figura. Si es de elaboración de los autores, debe indicarse escribiendo 'elaboración propia'. En caso de haber sido tomada de alguna fuente, debe indicarse la autoría de la fuente. Sin embargo, esta no se referencia en la lista de referencias al final del documento.\\
+\\
+Cuando el título, la descripción o la fuente debe ir centrado. A continuación se ilustra un ejemplo, para una mayor comprensión:
+%insertar imagen
+
+\begin{figure}
+  \centering
+    \reflectbox{%
+      \includegraphics[width=0.5\textwidth]{Figure1}}
+  \caption{Figura en una coulmna.}
+\end{figure}
+
+\subsubsection{Tablas}
+El título de una tabla se ubica encima de esta, en tamaño 10 y centrado. Se debe escribir la palabra 'Tabla', seguida de un número arábigo que aumenta de manera consecutiva con cada tabla rotulada. \\
+\\
+En cuanto a la fuente, esta se escribe debajo de la tabla a un salto de línea, siguiendo el mismo formato indicado para las figuras. Al igual que en las figuras, si la descripción incluye varias partes, cada una de estas debe identificarse con una letra en minúscula entre paréntesis. A continuación, se muestra un ejemplo:\\
+
+\begin{table}[H]
+    \caption{La (a) descripción del (b) contenido}
+    \centering
+    \begin{tabular}{c c }
+        \hline
+        \multicolumn{2}{c}{\textbf{Tabla modelo}} \\
+        \hline
+        Contenido 1 & Contenido 2 \\
+        \hline
+        X & X \\
+        \hline
+    \end{tabular}
+    \label{tab:Tabla Ejemplo}\\
+    Fuente: elaboración propia
+\end{table}
+\subsection{Ecuaciones}
+Las ecuaciones deben numerarse de manera consecutiva, con un número arábigo entre paréntesis, que aumenta de manera consecutiva con cada ecuación. Asimismo, debe utilizarse referencias cruzadas para citar dentro del texto usando la etiqueta Equation, p. ej. la ecuación (1).
+\\
+Las ecuaciones deben seguir las convenciones estándares para la redacción en matemáticas, relacionadas a continuación.
+\subsubsection{Uso de itálica o cursiva}
+Se deben usar letras itálicas (cursivas) para expresar variables escalares y constantes. 
+\subsubsection{Uso de negrita}
+Para expresar vectores, deben usarse letras en minúscula y negrita. Para el caso de las matrices, se deben usar letras mayúsculas en negrita. \\
+\\
+A continuación se ilustra un ejemplo:
+\begin{equation}
+\int_{\Omega} \bm{\varepsilon} \left( \textbf{V} \right) ^{T} \textbf{D} \bm{\varepsilon} \left( \textbf{u} \right) d \Omega = \int_{\Omega} \textbf{V}^{T} \textbf{b} d \Omega + \int_{\Gamma N} \textbf{V}^{\textbf{T}}\textbf{t} d \Gamma
+\end{equation}
+\subsection{Estructura}
+Todo artículo enviado a la RUI debe seguir la siguiente estructura, para ser aceptado:
+\begin{itemize}
+\item Encabezado
+\item Resumen y palabras clave (es-en)
+\item Introducción
+\item Método(s), metodología
+\item Resultados
+\item Conclusiones
+\item Recomendaciones
+\item Agradecimientos
+\item Referencias
+\end{itemize}
+No es obligatorio usar los rótulos sugeridos, pero sí es preciso que en el artículo se incluyan los métodos o la metodología y los resultados, y que a partir de estos se generen unas conclusiones y recomendaciones. Se recomienda a los autores revisar \cite{villagran2009algunas}, \cite{ferriols2005publicar}, \cite{henriquez2004elaboracion}, \cite{guillen1997estructura}, para tener una idea más clara de cómo escribir de manera apropiada un artículo científico original.
+\subsection{Encabezado}
+El encabezado comprende el título del artículo y el pie de autor. A continuación se especifica el formato de las partes mencionadas
+\subsubsection{Título}
+El título debe contener el menor número de palabras posible, la extensión ideal es de 75 a 100 caracteres, y de 10 a 15 palabras, no se deben usar los signos de admiración, el punto y coma y las barras (''/ '' ), sí se puede utilizar comas, paréntesis, signos de interrogación y dos puntos, no usar abreviaturas. Este debe escribirse tanto en español como en inglés, centrado, en tamaño 18 y negrita. Únicamente inician con mayúscula la primera palabra y los nombres propios.
+\subsubsection{Pie de autor}
+Se ubica a tres (3) saltos de línea del título. En él se indican los nombres de cada uno de los autores, y a dos saltos de línea se incluye la afiliación institucional (grupo de inv. y unidad académica), la locación de la institución a la que se encuentran vinculados y el correo de contacto de cada uno de los autores. En cuanto a la afiliación institucional, es necesario escribir el nombre 'Grupo de investigación' y acrónimo, p. ej.  Grupo de Investigación en Sistemas de Energía Eléctrica (Gisel). Si el autor no está vinculado a un grupo de investigación, solo debe ingresar los demás datos. Por otra parte, la 'Unidad académica' hace referencia a la Escuela, Departamento o Facultad a la que se encuentra vinculado el autor.\\
+Los datos de esta sección deben estar centrados en tamaño 10. Los nombres de los autores se escriben completos, en negrita, los apellidos se separan por guion p. ej. Nombre Primer Apellido-Segundo Apellido. \\
+Los datos relacionados con la fecha de recepción, aceptación y emisión de versión final son para uso exclusivo de la editorial de la revista.
+\subsection{Resumen y palabras clave}
+El resumen del artículo se debe estructurar en un solo párrafo. No debe contener citaciones ni fórmulas matemáticas, ni exceder las 150 palabras. Este debe ser de tipo analítico y en él se deben registrar la finalidad, el alcance, los métodos, los principales resultados y conclusiones del trabajo de investigación \cite{silva2010resumen}, \cite{diez2007resumen}.\\
+\\
+A un salto de línea del resumen se deben escribir las palabras clave. Estas corresponden a los términos de indexación del contenido del artículo. Deben aparecer en orden alfabético, en minúscula, salvo si se trata de nombres propios, y estar separadas por punto y coma (;).\\
+\\
+El número de palabras clave debe oscilar entre 3 y 10. Se recomienda utilizar términos incluidos en tesauros del área, como por ejemplo el del Institute of Electrical and Electronics Engineering (IEEE).\\
+\\
+Tanto el resumen como las palabras clave deben escribirse en español y en inglés: abstract / keywords.\\
+\\
+Los títulos 'Resumen', 'Abstract', 'Palabras clave' y 'Keywords' se deben escribir según el formato de un título de sección.
+\subsection{Introducción}
+La introducción debe organizarse en forma de embudo, es decir, se debe partir de las generalidades del área de investigación hasta llegar a las particularidades del trabajo realizado \cite{rico2011introduccion}, \cite{mejia2008pautas}.\\
+\\
+En ella se pone en diálogo la literatura de investigación primaria relevante, citando las fuentes discutidas, con aquello que el autor comprende del problema que está investigando. En esta sección del texto deben plantearse las hipótesis o preguntas propuestas por el autor, así como el alcance de la investigación. El título de la introducción se escribe según el formato de un título de sección.
+\subsection{Método(s), metodología}
+El artículo debe explicar claramente los procedimientos utilizados para el desarrollo de la investigación y la obtención de los resultados presentados. Se debe presentar el objeto, mencionar las circunstancias en que se realizó el estudio y la manera en que este se estructuró.\\
+\\
+El título de esta sección se escribe según el formato de un titulo de sección.
+\subsection{Resultados}
+Se deben mostrar los principales resultados obtenidos, a la luz del estado del arte. Los resultados deben estar estrechamente relacionados con la introducción y los métodos o metodología, a través de las preguntas,  hipótesis o fuentes referenciadas. Estos deben registrarse en un orden secuencial lógico y acompañarse, preferiblemente, de material gráfico como figuras, tablas y cuadros que permitan organizar la información de forma clara y sintética. Este material debe interpretarse para facilitar su comprensión. No se debe registrar la misma información en figuras y tablas, y deben evitarse las iteraciones innecesarias.\\
+\\
+La discusión de los resultados puede estar integrada a esta sección o puede escribirse en una sección aparte. El título de los resultados (y de la discusión, si es el caso) se escribe según el formato de un título de sección.
+\subsection{Conclusiones}
+En las conclusiones los autores deben interpretar tanto el desarrollo de su investigación como los resultados, con el fin de determinar el alcance de la investigación y su impacto en la comprensión del problema, fenómeno u objeto estudiado. El título de las conclusiones se escribe según el formato de un titulo de sección.
+\subsection{Recomendaciones}
+Las recomendaciones son las indicaciones que un autor considera que los investigadores del área deben tener en cuenta para ampliar el alcance e impacto de las futuras investigaciones. Estas pueden estar integradas a las conclusiones o escribirse en una sección aparte. El formato del título sigue el formato de un titulo de sección.
+\subsection{Agradecimientos}
+Los agradecimientos son opcionales. En caso de incluirse, estos deben dirigirse a las personas, organizaciones o instituciones que aportaron de alguna manera al desarrollo de la investigación reportada. El título obedece al formato de título de sección y deben ir sin numeración.
+\subsection{Referencias}
+El título obedece al formato de título de sección y deben ir sin numeración. El estilo de referencias utilizado a lo largo del texto debe ser uniforme. El sistema de referenciación utilizado por la \textit{Revista UIS Ingenierías} corresponde al estilo de citación IEEE, el cual permite referenciar sin alterar la sintaxis del texto. Se recomienda relacionar el doi en cada cita.\\
+\\
+A continuación se relacionan las formas básicas de citación de los ocho (8) tipos de fuente más comunes. \\
+\\
+Debe tenerse en cuenta que cuando la obra citada tenga más de tres (3) autores, se escribe el primero, seguido de la locución latina et \textit{al}.
+\subsection*{Artículos científicos}
+Formato base\\
+\\
+$[$1$]$ N. Apellido, "Título del artículo", Título de la revista, (si es muy largo, abreviado), vol. x, no. x, pp. xxx-xxx, año. doi:\\
+\\
+Ejemplos\\
+\\
+$[$1$]$ C. Aguirre, M. Rincón-Joya, J. Barba-Ortega, "Cadena infinita de átomos y cadena de Coulomb: método tight binding", \textit{Rev. UIS Ing.}, vol. 18, no. 2, pp. 11-16, 2019. doi: 10.18273/revuin.v18n2-2019001
+\subsection*{Libros}
+Formato base\\
+\\
+$[$1$]$ N.N. Apellido, \textit{Título del libro.} Ciudad, País: Editorial, año.\\
+\\
+Ejemplo:\\
+\\
+$[$1$]$ K.C. Budka, J.G. Deshpande y M. Thottan, \textit{Communication Networks for Smart Grids: Making Smart Grid Real.} UK: Springer-Verlag, 2014.
+\subsection*{Capitulos de libros}
+Formato base\\
+\\
+$[$1$]$ N.N. Apellido, "Título de capítulo en el libro", en \textit{nombre del libro}, Ciudad, País: Editorial, año.\\
+\\
+Ejemplo:\\
+\\
+$[$1$]$ S. Easterbrook, J. Singer, M.-A. Storey, y D. Damian, "Selecting empirical methods for software engineering research", en \textit{Guide to Advanced Empirical Software Engineering}, London: Springer London, 2008, pp. 285-311.
+\subsection*{Ponencias en memorias o eventos académicos}
+Formato base\\
+\\
+$[$1$]$ N. Apellido, "Título de la ponencia", en \textit{Nombre del evento}, Ciudad en que se realizó el evento, año, pp. xx-xx. doi: xxxxxxxxxxx\\
+\\
+Ejemplo:\\
+\\
+$[$1$]$ S. P. Bingulac, "On the compatibility of adaptive controllers", en \textit{Proc. 4th Annu. Allerton Conf. Circuit and Systems Theory}, New York, 1994, pp. 8$-$16. doi: 10.1109.XXX.123456
+\subsection*{Tesis y disertaciones}
+Formato base\\
+\\
+$[$1$]$ N.N. Apellido, "Título de la tesis", Tipo de tesis, Departamento o Escuela, Universidad, año.\\
+\\
+Ejemplos:\\
+\\
+$[$1$]$ J. O. Williams, "Narrow-band analyzer", tesis doctoral, Harvard Univ., Cambridge, MA, 1993.\\
+\\
+$[$2$]$ J. León García, "Desarrollo de un nuevo sistema de gestión total del laboratorio de materiales de una fábrica de vehículos", trabajo de fin de grado, Univ. Púb. Navarra, 2015. \\
+\\
+$[$3$]$ S. Novio Vázquez, "Inference of thermal models for sensors", trabajo de fin de máster, Univ Pol. Catalunya, 2016.
+\subsection*{Informes técnicos}
+Formato base\\
+\\
+$[$1$]$ N.N. Apellido, "Título del informe", entidad que lo emite, ciudad, codigo del informe, año.\\
+\\
+Ejemplos:\\
+\\
+$[$1$]$ E. E. Reber, R. L. Michell, y C. J. Carter, $"$Oxygen absorption in the earth's atmosphere", Aerospace Corp., Los Angeles, CA, USA, Tech. Rep. TR0200 (4230$-$46) 3, nov. 1988.\\
+\\
+$[$2$]$ J. H. Davis y J. R. Cogdell, $"$Calibration program for the 16$-$foot antenna", Elect. Eng. Res. Lab., Univ. Texas, Austin, Tech. Memo. NGL$-$006$-$69$-$ 3, abr. 1987.
+\subsection*{Normas o estándares}
+Formato base\\
+\\
+$[$1$]$ Título de la norma o estándar, número de la norma, fecha\\
+\\
+Ejemplo\\
+\\
+$[$1$]$ \textit{IEEE Criteria for Class IE Electric Systems}, IEEE Standard 308, 1969.\\
+\\
+\subsection*{Páginas web completas}
+Formato base\\
+\\
+$[$1$]$ Nombre del propietario de la pagina, "titulo de la información", año.$[$En línea$]$. Disponible en: pag web. $[$Accedido: día$-$mes$-$año$]$\\
+\\
+Ejemplo:\\
+\\
+$[$1$]$ Institute of Electrical and Electronics Engineers, "IEEE $-$ The world's largest technical professional organization dedicated to advancing technology for the benefit of humanity", 2016. $[$En línea$]$. Disponible en: $https://www.ieee.org/index.html.$ $[$Accedido: 27$-$jun$-$2016$]$
+
+%bibliografia
+\bibliographystyle{IEEEtran}
+\bibliography{BiblioTexto}
+
+\end{document}

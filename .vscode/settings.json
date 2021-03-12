@@ -5,6 +5,7 @@
         "epigénesis",
         "lenguajear",
         "lenguajeo",
+        "modeling",
         "motosa",
         "nesis"
     ],
@@ -12,5 +13,9 @@
         "introducci",
         "on"
     ],
-    "workbench.colorTheme": "BeardedTheme Black & Gold"
+    "workbench.colorTheme": "BeardedTheme Black & Gold",
+    "cSpell.enableFiletypes": [
+        "latex"
+    ],
+    "cSpell.enabled": true
 }

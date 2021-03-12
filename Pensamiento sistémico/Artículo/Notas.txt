@@ -1,0 +1,54 @@
+
+Artículo para revista: Pensamiento sistémico
+
+Artículo (por grupo) cómo para presentarlo a una revista (seleccionar una para seguir sus orientaciones y normas). Con tal fin cada grupo, de cada exposición, debe escribir una síntesis que le será base para el artículo relacionado con todo lo planteado durante el curso.  Además,el artículo debe contemplar al menos dos referencias bibliográficas de cada tema (de cada uno de las exposiciones), una del orden nacional y otra del orden internacional. Del conjunto de las referencias al menos 3 referencias deben ser seleccionadas de las bases de datos de la biblioteca.  Este artículo será presentado a la manera de una ponencia al final del curso(última semana).Otras orientaciones para esta tarea se plantearán en clase.
+
+Título provisional:
+    El estado de la metodología de sistemas blandos de los últimos 10 años.
+
+Temáticas a trabajar:
+    Modelado conceptual (Conceptual Modeling [CM])
+        -> Development of the conceptual model of energy and utility management in textile processing: A soft systems approach.
+        -> Integrating soft systems methodology to aid simulation conceptual modeling
+
+    Desarrollo Sostenible
+        -> Participatory Design and Technologies for Sustainable Development: an Approach from Action Research.
+        -> A systemic approach to biomass energy development: Thailand’s path towards sustainable development.
+
+    Economía y problemas financieros
+        -> Knowledge management model and measurement of intellectual capital in the financial sector
+        -> A systems methodology to solve economical-financial problems (SMEFP)
+     
+    Desarrollo de software
+        -> Design of Standard Operating Procedure for Requirement Engineering in Software Development: Case Study Data Processing Integration Subdirectorate Statistics Indonesia.
+        -> Uncovering the failure of Agile framework implementation using SSM-based action research.
+
+
+
+
+
+Estructura planeada:
+    Introducción:
+        Explicar que es el MSB, el origen y las aplicaciones que este tiene en los distintos campos.
+        Realizar cienciometría 
+            En términos generales, hablar de la cantidad de artículos presentes en la base de datos de Scopus para mostrar en términos generales el cambio en interés del tema.
+            Centrar en las tendencias de artículos en los últimos 10 años (2010-2020). Mostrar el crecimiento o lo que sea que esté pasando respecto a la cantidad de artículos.
+        Justificar el artículo 
+            Básicamente decir que, debido a los resultados obtenidos después de realizar la cienciometría, se considera pertinente realizar la revisión de la bibliografía en donde las metodología de sistemas blandos es aplicada. 
+
+    Objetivos:
+        Definir los objetivos del artículo de revisión
+            ¿Qué queremos cumplir con el artículo?
+
+    Metodología:
+        Determinar las temáticas a resaltar
+            Sistemas de información
+            Solución de conflictos
+        ¿Cómo fue la selección de los artículos?
+            Revisión por año
+
+    Desarrollo:
+        Como tal hablar de los temas tratados en cada uno de los artículos correspondientes. The fun...
+
+    Conclusiones:
+        Parla

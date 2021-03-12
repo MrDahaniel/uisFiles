@@ -1,0 +1,52 @@
+\newcommand{\titulos}[2]{
+\begin{center}
+\vspace{4ex}
+{\LARGE \textbf{#1}}\\
+\hrulefill \\
+\vspace{1ex}
+{\LARGE \textbf{#2}}
+\end{center}
+}
+\newcommand{\autores}[1]{
+\vspace{1ex}\begin{center}
+\textbf{#1}
+\end{center}
+}
+\newcommand{\infoautores}[1]{
+\vspace{0ex}\begin{center}
+#1
+\end{center}
+}
+\newcommand{\resumenESP}[1]{\textbf{Resumen:}\\
+\\
+#1\\
+\\}
+\newcommand{\resumenING}[1]{\textbf{Abstract:}\\
+\\
+#1\\
+\\}
+\newcommand{\palabrasESP}[1]{\textbf{Palabras clave:} #1\\
+\\}
+\newcommand{\palabrasING}[1]{\textbf{Keywords:} #1\\
+\\}
+\newcommand{\fechas}[3]{
+\begin{center}
+Recibido: #1. Aceptado: #2. Versión final: #3.\\
+\end{center} 
+}
+\newcommand{\encabezadoUIS}{
+\begin{center}
+ \includepdf[pages={1}]{HeaderUIS_Ingenierias.pdf}
+\end{center}
+}
+% modificacion de los labels para los titutlos y subtitulos
+%\titleformat{comando}{formato}{formato del texto}{formato del label}{separacion}{antes}{dps}
+\titleformat{\section}[block]{\normalsize\bfseries}{\normalsize\bfseries\thesection}{0.1cm}{}{}
+\titleformat{\subsection}[block]{\normalsize\bfseries}{\normalsize\bfseries\thesubsection}{0.1cm}{}{}
+\titleformat{\subsubsection}[block]{\normalsize\bfseries}{\normalsize\bfseries\thesubsubsection}{0.1cm}{}{}
+% modificacion de los labels para las tablas y figuras
+%\renewcaptionname{idioma}{\comando}{nombre nuevo}
+\renewcaptionname{english}{\figurename}{Figure}
+\renewcaptionname{english}{\tablename}{Table}
+\renewcaptionname{spanish}{\figurename}{Figura}
+\renewcaptionname{spanish}{\tablename}{Tabla}

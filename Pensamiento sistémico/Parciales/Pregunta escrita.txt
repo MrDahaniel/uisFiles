@@ -1,0 +1,15 @@
+Pregunta escrita
+Pensamiento sistémico: Parcial 2 
+
+Grupo 4
+Daniel David Delgado Cervantes - 2182066
+Laura Alexandra Hernández Pérez - 2182054
+
+¿Por qué es necesario, para la práctica de la ingeniería de sistemas, comprender la relación Pensamiento Sistémico-Ingeniería de Sistemas? Ilustre una situación donde esto se evidencia.
+
+    Una de las relaciones más importantes que presenta la ingeniería de sistemas con alguno de los paradigmas que la componen es la que presenta con el pensamiento sistémico. En términos simples, esto se debe a que, en cuanto a la teoría, gran parte de las ideas que trabaja la ingeniería de sistemas están basadas en las diferentes ramas que parten del abandono de las ideas mecanicistas     como única manera de ver el mundo, hacia la comprensión de las interacciones entre todos los organismos que componen nuestras vidas diarias.
+
+    En el caso de centrar lo más hacia lo trabajado en clase, la relación de pensamiento sistémico con la ingeniería de sistemas se manejo a lo largo de las diversas exposiciones, se pudo ampliar el hecho de la relación entre las diversas ramas y sistemas para la interpretación del comportamiento de dichos factores a estudio, para tener como fin la resolución de problemas diarios.
+
+
+Así mismo el sistema de información se contempla desde el punto de vista donde se relaciono más afín desde la metodología de sistemas blandos donde se enfatizaba reiteradas veces en el sistemas de información que tenía similitudes con MSB, ya que dicho sistema trabaja por medio de la vinculación y retro-alimentación de áreas de trabajo conjunto donde se maneja un mismo conjunto de datos.
