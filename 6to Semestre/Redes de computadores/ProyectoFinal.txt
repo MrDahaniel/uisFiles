@@ -1,0 +1,15 @@
+
+Avance del proyecto:
+    Introducción:
+        - ¿Qué es?
+        - ¿Para qué sirve?
+        - Estado del arte
+
+    Herramientas
+        - ¿Qué se usa?
+            - Frameworks
+            - Hardware
+        - 
+    ¿Cómo se implementa?
+        - Detalles
+
