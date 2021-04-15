@@ -17,7 +17,7 @@ Martes:
         ps: 644970
 
 Miércoles:
-    Estadistica                      8 am - 10 pm
+    Estadística                      8 am - 10 pm
         id: 98997086847
         ps: 690022
 
@@ -39,7 +39,7 @@ Jueves:
         ps: 867928
 
 Viernes:
-    Estadistica                      8 am - 10 pm
+    Estadística                      8 am - 10 pm
        id: 87879953300 
        ps: 507503
 

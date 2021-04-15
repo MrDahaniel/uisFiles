@@ -1,0 +1,18 @@
+LOS GIGANTES DE SAN FRANCISCO GANAN EN GRANDE CON LA TECNOLOGÍA DE LA INFORMACIÓN
+
+- Equipo de béisbol de Gringolandia.
+    - Campeones de la liga nacional
+    - Campeones de la liga mundial 
+    - Están mamadísimos básicamente
+
+- Dentro del béisbol una de las cosas importantes son las estadísticas. 
+    - Aplicando un sistema de video que registra hits y posiciones dentro del campo, empezaron a analizar las estadísticas defensivas del propio equipo.
+        - Parte de las estadísticas registradas van desde la velocidad de los jugadores, el tiempo de respuesta al igual que la dificultad de atrapada.
+    
+- De igual manera, los sistemas de información no han sido aplicados únicamente para el desarrollo del deporte como tal, cosas como información sobre aficionados en tanto a las compras de boletos y actividad en redes sociales. 
+    - Pioneros en el ajuste dinámico de boletos para los partidos.
+        - Estos dependen del interés del público hacia un partido en específico.
+        - Esto les ha permitido vender el 100% de los boletos desde el 2010.
+    - Creación de un sistema de reventa de boletos.
+        - Nada abusable ni nada pff
+    - WiFi gratis
