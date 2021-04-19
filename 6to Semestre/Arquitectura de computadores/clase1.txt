@@ -1,0 +1,6 @@
+Clase 1: Arquitectura de Computadores
+    ¿Qué búsca la arquitectura de computadores?
+        El máximo rendimiento de la parte computacional dentro de las posibilidades. Esto depende de los requerimientos que se hayan definidos dentro del momento inicial del desarrollo.
+
+    Abstracción:
+        La abstracción se refiere  

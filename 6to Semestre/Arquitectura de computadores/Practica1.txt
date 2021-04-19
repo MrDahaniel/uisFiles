@@ -1,0 +1,24 @@
+Parte 1:
+
+Daniel David Delgado Cervantes - 2182066
+Es un estudiante de sexto semestre de ingeniería de sistemas de la Universidad Industrial de Santander. Posee un gran interés en los diferentes aspectos del desarrollo web al igual que los diferentes lenguajes de programación con paradigmas funcionales como Elixir y Haskell. Aspira a seguir su desarrollo profesional con una maestría en ingeniería de software y dedicarse a tiempo completo como desarrollador web a nivel fullstack.
+Javascript bad. 
+
+Enlaces de interés:
+https://mrdahaniel.github.io
+https://github.com/MrDahaniel
+https://twitter.com/MrDanisaur
+
+Parte 2:
+1. ¿Qué es lo más trascendental para usted en esta charla? (Responda en menos de 12 lineas, tamaño de letra 12 ptx)
+
+    Dentro de todas las temáticas presentadas en el transcurso de la charla, lo más trascendental que se presentó está relacionado con lo verdaderamente antigua que realmente son los conceptos base de la computación. Esto se debe a que, partiendo que el consenso social está que la computación es algo más moderno, el ver que realmente el origen de las partes fundamentales de la tecnología de la cual hoy en día damos por sentado, data de hace más de 400 años, nos muestra que la computación ha sido algo que la humanidad ha trabajado y no algo que surgió básicamente "de la nada". 
+
+2. ¿Qué situaciones "cotidianas" encuentra hoy en día en las máquinas de cómputo que prevalecen desde los primeros días de esas primeras máquinas de computación?
+
+    La situación que prevalece entre las máquinas de antaño con las que tenemos a nuestra disposición en la actualidad, está relacionada principalmente con el funcionamiento de estas como tal. Esto se debe a los conceptos lógico-aritméticos que aún emplean las máquinas de cómputo puesto estas aún trabajan bajo la mismas premisas matemáticas que fueron fundamentadas hace ya tanto tiempo.
+
+3. Compare las principales características de su teléfono celular o del PC que tiene junto a usted al momento de hacer este informe (capacidad de memoria, almacenamiento, consumo energético, capacidad de procesamiento e incluso complejidad), con las de esas máquinas pioneras. ¿Cuales han sido los cambios más dramáticos?.
+4. Hoy en día se habla mucho de la cuarta revolución industrial y la transformación digital. ¿Qué es cada una de ellas? . Suponiendo que se gradúa mañana ¿Tiene claro (o no) como hacer parte de esas transformaciones? . Justifique su respuesta.
+5. En este momento hay una discusión entre expertos que afirman que actualmente la pandemia aceleró esa transformación digital y otros que dicen que ha sido todo lo contrario. Como grupo, ¿Cuál es su punto de vista?.
+6. Al ver el recorrido histórico de la arquitectura y organización de computadores (Ver las diapositivas respectivas y la bibliografía) ¿Cual creen, para ustedes como grupo, que ha sido el aporte más significativo que ha influido en la computación actual? Justifique su respuesta

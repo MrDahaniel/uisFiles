@@ -12,13 +12,10 @@
         "nesis",
         "papers"
     ],
-    "cSpell.ignoreWords": [
-        "introducci",
-        "on"
-    ],
-    "workbench.colorTheme": "BeardedTheme Black & Gold",
+    "workbench.colorTheme": "Theme³",
     "cSpell.enableFiletypes": [
         "latex"
     ],
-    "cSpell.enabled": true
+    "cSpell.enabled": true,
+    ""
 }
