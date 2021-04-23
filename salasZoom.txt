@@ -33,7 +33,11 @@ Jueves:
     Arquitectura de computadores     7 am -  9 am
         id: 94333000043
         ps: 055755
-
+        
+    Programación en la web			 2 pm -  4 pm
+		id: 96833126525
+		ps: 912858
+		
     Astronomía planetaria            6 pm -  8 pm
         id: 92904756222
         ps: 867928

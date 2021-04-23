@@ -1,0 +1,45 @@
+1. Cuentas creadas
+    Usuarios:
+        MrDahaniel
+        valegb13
+        CarlosASantosS
+
+    Repositorio creado:
+        github.com/MrDahaniel/Taller2Web
+
+4. Clone realizado
+    Usando GitHubCli
+        gh repo clone MrDahaniel/Taller2Web
+
+5. 
+    Estudiante A: Daniel 
+    Estudiante B: Valentina
+    Estudiante C: Carlos
+
+    Archivo creado y montado en el repositorio.
+        Commit code: d0755cb
+
+6.
+    git log Estudiante A:
+
+        commit 3ba98e3a01a18398fe8dd821e3dabe723315951f (HEAD -> main, origin/main, origin/HEAD)
+        Author: dnl <danieldavid2001@gmail.com>
+        Date:   Thu Apr 22 15:09:53 2021 -0500
+
+            Commit primer archivo
+
+        commit d0755cbde3916c851c693f04fe6f34776efb60b9
+        Author: MrDahaniel <50049583+MrDahaniel@users.noreply.github.com>
+        Date:   Thu Apr 22 15:04:19 2021 -0500
+
+            Initial commit
+
+    git log Estudiante B y C:
+
+        commit d0755cbde3916c851c693f04fe6f34776efb60b9
+        Author: MrDahaniel <50049583+MrDahaniel@users.noreply.github.com>
+        Date:   Thu Apr 22 15:04:19 2021 -0500
+
+            Initial commit
+
+7.

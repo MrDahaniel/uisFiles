@@ -1,0 +1,21 @@
+1. ¿Cual es la diferencia entre los códigos 200, 204, 304, 500?
+
+    Código 200:
+        El código 200 hace referencia a un estado correcto de la página web, es decir, el contenido fue cargado correctamente.
+    Código 204:
+        Este código hace referencia a que, aunque el procesamiento fue correcto, el contenido no retornó nada. 
+    Código 304: 
+        Este se refiere a que, desde la última carga, no ha sido realizado ningún cambio en la página web.
+    Código 500:
+        Este es un error genérico del servidor, no es específico puesto no se pudo determinar el causante.
+
+2. 
+
+3. Parámetros Google Maps
+    Tomando un enlace de Google Maps, por ejemplo: https://www.google.com/maps/@7.0684633,-73.0995525,15z, podemos ver 3 parámetros que pueden ser modificados. Estos hacen referencia a la longitud, latitud y la cantidad de zoom en el mapa.
+
+4. 
+    
+5.
+
+6. 

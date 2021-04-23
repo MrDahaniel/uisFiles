@@ -1,0 +1,22 @@
+Tabla:
+    Dato:
+        Está definido como un valor cuantitativo o cualitativo el cual representa algo. 
+        Estos describen hechos empíricos.
+
+        Ejemplos: 
+            Edades: 51, 23, 12, 13, 59, 23, 43, 32
+            Alturas: 158, 188, 149, 169, 180
+    Información:
+        Esto se refiere a la interpretación de un conjunto de datos, es decir, darles algún sentido.
+        Normalmente se refiere a los datos analizados.
+
+        Ejemplos: 
+            El promedio de las edades.
+            La mediana de las alturas
+
+    Conocimiento:
+        El conocimiento está relacionado con la interiorización de la información dada al igual que la aplicación de esta.
+
+        Ejemplos:
+            El entender el significado de las edades como promedio.
+            El aplicar la información sobre la mediana para responder a un problema dado.
