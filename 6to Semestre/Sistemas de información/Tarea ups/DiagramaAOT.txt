@@ -1,0 +1,55 @@
+Tarea SI-I
+    Diagrama AOT:
+        Administración:
+            - Envíos a bajas tarifas
+            - Accesibilidad de la información de los paquetes por parte del cliente
+            - Eficiencia en los envíos
+
+        Tecnología:
+            - Sistema de códigos de barras
+            - Sensores de velocidad y ubicación
+            - Dispositivos de Adquisición de Información de Entrega (DIAD)
+            - Sistema de Rastreo de paquetes
+            - Sistemas de Administración de Pedidos
+
+        Organización:
+            - Envíos rápidos, seguros y baratos.
+            - UPS Supply Chain Solutions
+
+        Sistemas de Información:
+            - Cálculo de las rutas más eficientes
+            - Ubicación de los paquetes 
+            - Calculo de tarifas de envío
+            - Información del código de barras
+
+        Soluciones de negocio:
+            - Confianza de los clientes
+            - Incremento de ingresos
+
+        Retos del negocio:
+            - Alta competencia: FedEx, DHL, etc.
+            - Mantener los precios bajos
+
+    Preguntas Home Depot:
+        ¿Qué problemas y desafíos experimentó Home Depot?
+            De los principales problemas que Home Depot estaba enfrentándose estaba, en primera instancia, la incapacidad de la organización en adoptar herramientas tecnológicas que les facilitara el trabajo al igual que el acceso a la información por parte de los clientes. Esto es especialmente visible en cuanto Home Depot no tenía implementados ningún tipo de presciencia en el internet, no tenía un sistema de inventario automatizado ni mucho menos la infraestructura que le permitiera comunicarse con las diferentes tiendas.
+
+            De igual manera, estos tuvieron problemas en cuanto al público objetivo que estos buscaban apelar debido a la diversificación indiscriminada de los diferentes artículos presentes en las tiendas, al igual que la saturación de las mismas dentro de las áreas urbanas.
+
+        Describa la relación entre administración, organización y tecnología en Home Depot. ¿Cómo cambió esta relación con el tiempo?
+            Inicialmente la relación entre la administración y la tecnología era realmente nula, esto se debe principalmente a la falta de interés en la implementación de esta dentro de los procesos administrativos y de la organización.
+            
+            Tras el cambio de la gerencia, se inicio un intento de realizar adopciones tanto de herramientas de software y de hardware en términos de realizar mejoras al como estaba manejando las ventas por internet y en algunos casos un sistema de inventario. Esto, sin embargo, no fue suficiente y termino siento algo ya anticuado para la época en comparación con la competencia.
+
+            En la siguiente época de gerencia, si, finalmente se dió una unión entre las 3 ramas las cuales le permitieron a Home Depot el regreso al trono que Lowe's había tomado de ellos. En este sentido, aunque manteniendo los mismos objetivos administrativos, el enfoque organizacional en cuanto a la centralización de las tiendas y la tecnología aplicada permitía una mejoría en estos aspectos.
+
+        ¿Qué tan responsable fue la gerencia de Home Depot de sus problemas? ¿Qué hay sobre el rol de la tecnología y los factores organizacionales?
+            La gerencia de Home Depot era uno de los principales problemas, esta realmente nunca realizó un esfuerzo de realizar mejorías dentro de la compañía a nivel tecnológico y se estancó en el papeléo y lápices. De la misma manera, los factores organizacionales como lo era la descentralización de las tiendas que, aunque inició siendo algo positivo para la empresa, termino siendo parte de los problemas que estaban afectando a las tiendas. 
+
+            Afortunadamente, los cambios realizados por las futuras gerencias de Home Depot, realizaron cambios relevantes para los problemas a los cuales se enfrentaba a la empresa.
+
+        Mark Holifield, vicepresidente de la cadena de suministro de Home Depot, observó que la empresa no tenía la tecnología más vanguardista pero de todas formas podía realizar un cambio importante en su cadena de suministro. Debata sobre las implicaciones de esta aseveración.
+            Esta aseveración hacía referencia principalmente al cambio que podría realizarse en cuanto a la predicción de la demanda de los diferentes productos gracias a la implementación de un software con la capacidad de realizar predicciones respecto a la demanda de los compradores.
+
+            En este sentido, relegó gran parte del control del restablecimiento de inventario a los RDC que, con ayuda del software, realizaban los envíos según la demanda de los diferentes productos iba aumentando con el fin de siempre tener existencias de los diferentes productos durante todo el año, incluso en condiciones anómalas.
+
