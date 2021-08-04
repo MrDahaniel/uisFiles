@@ -1,8 +1,10 @@
 {
     "cSpell.words": [
+        "Docs",
         "Lachaise",
+        "Lotus",
+        "Sharepoint",
         "cuestionamiento",
-        "epig",
         "epigénesis",
         "lenguajear",
         "lenguajeo",
@@ -11,11 +13,6 @@
         "mr",
         "nesis",
         "papers"
-    ],
-    "workbench.colorTheme": "Theme³",
-    "cSpell.enableFiletypes": [
-        "latex"
-    ],
-    "cSpell.enabled": true,
-    ""
+    ]
+    
 }

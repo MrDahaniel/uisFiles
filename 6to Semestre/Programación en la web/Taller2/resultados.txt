@@ -2,7 +2,6 @@
     Usuarios:
         MrDahaniel
         valegb13
-        CarlosASantosS
 
     Repositorio creado:
         github.com/MrDahaniel/Taller2Web
@@ -14,7 +13,6 @@
 5. 
     Estudiante A: Daniel 
     Estudiante B: Valentina
-    Estudiante C: Carlos
 
     Archivo creado y montado en el repositorio.
         Commit code: d0755cb
