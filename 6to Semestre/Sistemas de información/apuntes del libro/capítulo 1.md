@@ -60,7 +60,44 @@ Dentro de la compañía el uso de las tabletas con funciones administrativas ger
 
 ### La empresa digital emergente
 
+La empresa digital, en términos generales, se refiere a aquella empresa cuyas relaciones, al igual que una gran parte de sus procesos de negocio, están albergadas en plataformas digitales.
+
+Dentro de las características principales de estas empresas digitales, está la flexibilidad que les permite responder a los cambiantes entornos de los mercado; el desplazamiento en tiempo y espacio que permite a la ejecución 24/7 de los negocios y la posibilidad de trabajar desde cualquier parte, respectivamente.
+
+<br />
+<br />
+
 ### Objetivos de negocios estratégicos de los sistemas de información
+
+La principal razón, por la cual los sistemas de información se han convertido casi que en uno de los pilares clave dentro de las organizaciones hoy en día, recae en el impacto de estos dentro de los negocios. Sectores económicos completos no existirían sin los sistemas de información. Otros tendrían problemas en operar sin los sistemas de información de la actualidad. Es gracias a las grandes inversiones realizadas en las áreas de tecnología que les permitió a las empresas adaptarse a las diferentes estratégias corporativas con el fin de cumplir con sus objetivos organizacionales.
+
+#### Excelencia operacional
+
+De los principales objetivos está la excelencia operacional. Es decir, la perfección en la ejecución de las diferentes tareas a realizar en términos de eficiencia y eficacia. En este sentido, los sistemas de información están para alcanzar esta excelencia operacional a organizaciones de todo tipo.
+
+> "Walmart, la cadena de tiendas de venta al detalle más grande de la Tierra, ejemplifica el poder de los sistemas de información junto con sus brillantes prácticas de negocios y su gerencia de apoyo para obtener una eficiencia operacional a nivel mundial. En el año fiscal 2014 obtuvo $473 mil millones en ventas —casi una décima parte de las ventas al detalle en Estados Unidos— en gran parte debido a su sistema Retail Link, que enlaza digitalmente a sus proveedores con cada una de sus tiendas. Tan pronto como un cliente compra un artículo, el proveedor que lo supervisa sabe que debe enviar un reemplazo a los anaqueles."
+
+#### Nuevos productos, servicios y modelos de negocios
+
+En este sentido, se refiere a que, gracias a los sistemas de información, se han posibilitado diferentes productos, servicios y negocios.
+
+> Apple Inc. transformó un antiguo modelo de negocios de distribución de música basado en discos de vinilo, cintas y CDs, en un modelo de distribución legal en línea a partir de su propia plataforma de tecnología iPod.
+
+#### Intimidad con clientes y proveedores
+
+Una de las nuevas posibilidades que traen consigo los sistemas de información está en la posibilidad de conocer mejor a los clientes y a sus proveedores de manera más cercana. Esto, a parte de mejores relaciones, permite mejores ventas gracias a la intimidad que se da entre las organizaciones y sus clientes.
+
+#### Toma de decisiones mejorada
+
+Una de las cosas que los sistemas de información trajeron consigo era una facilidad en el acceso a la información pertinente para la toma de decisiones. Es decir, se pasó de una época en la que se dependía de "de las proyecciones, las mejores suposiciones y de la suerte" a una donde es posible tener la información actual y en tiempo real sobre el mercado o la organización.
+
+#### Ventaja competitiva
+
+Los sistemas de información ha permitido a las organizaciones ganar diversas ventajas competitivas. La reducción de precios al igual que una mejor comunicación son aspectos que dan puntos positivos y generan más ventas para las organizaciones.
+
+#### Sobrevivencia
+
+De igual manera, los sistemas de información son adoptados dentro de las organizaciones como una medida de supervivencia. Es decir, realizan inversiones con el fin de responder a cambios que se dan en un nivel industrial.
 
 ## 1.2 ¿Qué es un sistema de información? ¿cómo funciona? ¿cuáles son sus componentes de administración, organización y tecnología, y por qué los activos complementarios son esenciales para asegurar que los sistemas de información proporcionen un valor genuino para las organizaciones?
 

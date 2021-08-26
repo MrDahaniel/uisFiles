@@ -16,9 +16,13 @@ Un PenTest, o prueba de penetración, es un tipo de cíberataque simulado y auto
 
 En este sentido, el PenTesting, es una herramienta invaluable en cuanto a medir la seguridad de una red se refiere puesto que este permite conocer las falencias de seguridad sin tener que exponer la red, y más importante, información sensible; y corregir los problemas antes que se presenten.
 
+El PenTest, se realiza, normalmente, en cuatro partes. Recolección de información, análisis de vulnerabilidades, _olfateo_ y suplantación de tráfico, y pruebas de estrés.
+
 #### IDS
 
 IDS, o _Intruder Detection System_ por sus siglas en inglés, es definido como una herramienta de seguridad informática la cual está encargada de realizar monitoreo de los eventos que ocurren dentro de la red con el fin de detectar cualquier tipo de acceso no autorizado al sistema. ²
+
+> Monitoreo de la red
 
 ### ¿Para qué sirve?
 

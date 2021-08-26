@@ -42,5 +42,45 @@ CHIP ALU {
         ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:
-   // Put you code here:
+    // zx, convierte x en 0
+    // Usando un Mux16, podemos pasar la entrada x a 0 en caso de que zx sea 1 con b igual a 0
+    Mux16(a=x, sel=zx, out=xzero);
+    // nx, niega x
+    // Usando un simple Not16, podemos pasar x a x' 
+    Not16(in=xzero, out=nxzero);
+    // Ahora, tenemos que escoger entre el zx o el nx, 
+    // usando un Mux entre xzero y nxzero con zx de selector
+    // podemos escoger cual de los 2 usar
+    Mux16(a=xzero, b=nxzero, sel=nx, out=xsel);
+    
+    // Se repite el mismo proceso de x pero con y
+    Mux16(a=y, sel=zy, out=yzero);
+    Not16(in=yzero, out=nyzero);
+    Mux16(a=yzero, b=nyzero, sel=ny, out=ysel);
+    
+    // Ahora para f, usando un Add16, podemos llegar a x + y
+    Add16(a=xsel, b=ysel, out=xyadd);
+    // En el caso de hacer x & y, usando un And16, es posible hacerlo
+    And16(a=xsel, b=ysel, out=xyand);
+    // ahora, usando otro Mux, podemos seleccionar cual de las 2 operaciones dejamos pasar hacia la salida
+    Mux16(a=xyand, b=xyadd, sel=f, out=fxy);
+
+    // no nos inidica el caso de querer negar la salida, entonces, realizamos la negación
+    // y usando no como selector en un Mux16, elegimos cual salida queremos 
+    Not16(in=fxy, out=nfxy);
+    // Aquí es donde el satisfacer zr y ng complican un poco las cosas
+    // para ng necesitamos el bit más a las izquierda ya que este indica si la salida es negativa o positiva
+    // Es decir, podemos extraerlo y usarlo como nuestro ng
+    // En el caso de zr, tenemos que asegurar que todos los 16 bits son 0.
+    // La única manera de hacer esto es comparar todos los numeros usando un OR y esperando
+    // que la salida sea 0. Para esto, es necesario emplear un Or8Way que toma entradas de 8 bits
+    // y da una salida de un único bit.
+    Mux16(a=fxy, b=nfxy, sel=no, out=out, out[15]=ng, out[0..7]=derout, out[8..15]=izqout);
+
+    Or8Way(in=derout, out=deror);
+    Or8Way(in=izqout, out=izqor);
+    Or(a=deror, b=izqor, out=orout); 
+    
+    // Aquí, si el numero es 0 tendriamos 0, hay que negarlo para obtener zr
+    Not(in=orout, out=zr);
 }
