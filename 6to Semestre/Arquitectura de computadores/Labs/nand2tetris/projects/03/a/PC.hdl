@@ -16,5 +16,18 @@ CHIP PC {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // Lo primero está en la selección de una de las 4 opciones que tenemos,
+    // Usando 3 Mux, podemos seleccionar cual de todas las operaciones queremos realizar
+
+    // Para hacerla 0, dejarla, sumar o hacer el reset.
+	Mux16(a=regRet, b=incOut, sel=inc, out=mux1Out);
+	Mux16(a=mux1Out, b=in, sel=load,out=mux2Out);
+	Mux16(a=mux2Out, b[0..15]=false, sel=reset, out=mux3Out);
+
+    // Aquí se realiza el incremento en el caso de que eso sea lo que sea seleccionado
+    Inc16(in=regRet,out=incOut);
+
+    // Aquí realizarmos el guardado en memeoria
+	Register(in=mux3Out, load=true,out=out,out=regRet);
+	
 }

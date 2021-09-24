@@ -27,5 +27,18 @@ CHIP Memory {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // Lo primero es seleccionar lo que se va a hacer
+    // a y b se refieren a la memoria, c a la pantalla y d al teclado 
+    DMux4Way(in=load, sel=address[13..14], a=rama, b=ramb, c=scr, d=kbd); 
+    // Como a y b se refieren a lo mismo, 
+    // usamos un OR para unificar la selección
+    Or(a=rama, b=ramb, out=ram); 
+    // Ram de 16kbits, entrada IN, ram y el resto de la dirección
+    RAM16K(in=in, load=ram, address=address[0..13], out=rout);
+    // teclado y su salida
+    Keyboard(out=kout);
+    // Pantalla, similar a la RAM 
+    Screen(in=in, load=scr, address=address[0..12], out=sout);
+    // Ahora para la salida, le pasamos todo a un Mux4Way16 para codificar
+    Mux4Way16(a=rout, b=rout, c=sout, d=kout, sel=address[13..14], out=out);
 }

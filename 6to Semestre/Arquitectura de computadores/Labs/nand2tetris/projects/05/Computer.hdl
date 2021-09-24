@@ -19,5 +19,16 @@ CHIP Computer {
     IN reset;
 
     PARTS:
-    // Put your code here:
+    // Compuesto de 3 partes: ROM, CPU Y Memory
+    // La dirección de sale de pc (outPc) de la CPU
+    // y la salida es la instrucción a ejecutar, es decir, instruction (ins)
+    ROM32K(address=outPc, out=ins);
+    // CPU toma de entrada inM que viene de la Memory (inM)
+    // las instrucciones de ROM (ins)
+    // El reset de reset
+    // y las salidas pasan a la memoria
+    CPU(inM=inM, instruction=ins, reset=reset, outM=outM, writeM=outwriteIntoM, addressM=outAddrM, pc=outPc);
+    // pasa la salida M como entrada 
+    // la orden de escribir en M, writeM (outwriteIntoM) y la dirección de M de addressM (outAddrM)
+    Memory(in=outM, load=outwriteIntoM, address=outAddrM, out=inM);
 }

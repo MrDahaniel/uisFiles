@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>no title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}/**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}.emoji {
+  height: 0.8em;
+}@font-face{font-family:'Raleway';font-style:italic;font-weight:400;src:local('Raleway Italic'),local('Raleway-Italic'),url(https://fonts.gstatic.com/s/raleway/v14/1Ptsg8zYS_SKggPNyCg4TYFv.ttf) format('truetype')}@font-face{font-family:'Raleway';font-style:italic;font-weight:700;src:local('Raleway Bold Italic'),local('Raleway-BoldItalic'),url(https://fonts.gstatic.com/s/raleway/v14/1Ptpg8zYS_SKggPNyCgw9qR_AtCe.ttf) format('truetype')}@font-face{font-family:'Raleway';font-style:normal;font-weight:400;src:local('Raleway'),local('Raleway-Regular'),url(https://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0ISg.ttf) format('truetype')}@font-face{font-family:'Raleway';font-style:normal;font-weight:700;src:local('Raleway Bold'),local('Raleway-Bold'),url(https://fonts.gstatic.com/s/raleway/v14/1Ptrg8zYS_SKggPNwJYtWqZPBQ.ttf) format('truetype')}body{background:#fcfcfc;color:#111;font-family:'Raleway',sans-serif;font-weight:400;font-size:16px}body h1,body h2,body h3,body h4,body h5,body h6,body table,body li,body .mathjax-exps,body .math{color:#111;font-family:'Raleway',sans-serif}body h1{font-weight:normal;line-height:4rem;margin:0 0 1.75rem;padding:20px 30px;text-align:center;text-transform:uppercase;margin-top:4rem}body h2{font-weight:normal;line-height:3rem;margin:0 0 1.9375rem;padding:0 30px;text-align:center;text-transform:uppercase;margin-top:3rem}body h3{font-weight:normal}body h4{font-weight:normal}body h5{font-size:1.125rem;font-weight:normal}body h6{font-size:1rem;font-weight:bold}body p{color:#111;font-size:1rem;line-height:1.75rem;margin:0 0 1.25rem}body blockquote{margin-left:1rem;margin-right:0;padding:.5em}body h1{font-size:2.827rem}body h2{font-size:1.999rem}body h3{font-size:1.413rem}body h4{font-size:1.25rem}body h5{font-size:1.15rem}body h6{font-size:1rem}body a{color:#990000;text-decoration:none}body a:hover{text-decoration:underline}body table{margin-bottom:20px}body table th,body table td{padding:8px;line-height:1.25rem;vertical-align:top;border-top:1px solid #ddd}body table th{font-weight:bold}body table thead th{vertical-align:bottom}body table caption+thead tr:first-child th,body table caption+thead tr:first-child td,body table colgroup+thead tr:first-child th,body table colgroup+thead tr:first-child td,body table thead:first-child tr:first-child th,body table thead:first-child tr:first-child td{border-top:0}body table tbody+tbody{border-top:2px solid #ddd}body code{padding:.5em;color:inherit;border:1px solid #ccc;padding:.1em;font-size:.9em;margin-left:.2em;margin-right:.2em}body pre>code{border:none}body li>p{margin-top:0;margin-bottom:0}body .task-list{padding-left:0}body .task-list-item{list-style:none;margin-left:-2.4em}body .task-list-item input{top:3px;margin-right:1.6em}body .task-list-item input:before{content:"";display:inline-block;width:1rem;height:1rem;vertical-align:middle;text-align:center;border:1px solid gray;background-color:#fdfdfd;margin-left:0;margin-top:-0.8rem}body .task-list-item input:checked:before,body .task-list-item input[checked]:before{content:'\25FC';font-size:.8125rem;line-height:.9375rem;margin-top:-1rem}@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm){body .task-list-item input:before{margin-top:-0.2rem}body .task-list-item input:checked:before,body .task-list-item input[checked]:before{margin-top:-0.2rem}}body blockquote{margin:0 0 1.11111rem;padding:.5rem 1.11111rem 0 1.05556rem;border-left:1px solid gray;background-color:#ededed}body blockquote,body blockquote p{line-height:1.6;color:#6f6f6f}body img{max-width:100%}body kbd{color:#111}
+    /* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+    </style>
+    
+  </head>
+  <body for="html-export">
+    <div class="mume markdown-preview">
+    <html><head></head><body><div><h2 class="mume-header" id="astronom%C3%ADa-planetaria">Astronom&#xED;a Planetaria</h2>
+
+<p>La clase de Astronom&#xED;a Planetaria con El Gran Bastini es bastante <em>particular</em>. Cualquiera que entrara al aula buscando aquella experiencia netamente acad&#xE9;mica que es de esperar de la gran mayor&#xED;a de las clases universitarias, llenas de f&#xF3;rmulas, ecuaciones, complejos conceptos, terminolog&#xED;a que s&#xF3;lo El or&#xE1;culo de Delfos podr&#xED;a descifrar; quedar&#xED;a perplejo de lo <em>particular</em> que es en realidad.</p>
+<p>Es tan <em>particular</em> que, incluso esta rese&#xF1;a, que para prop&#xF3;sitos pr&#xE1;cticos intentar&#xE1; narrar la experiencia que es asistir a las diferentes sesiones de esta clase, no podr&#xE1; hacerle justicia alguna a lo que es realmente estar a la merced de las explicaciones del <em>Dotor</em> Juan.</p>
+<p>Esperaba en la sala a que nos diera ingreso, algo nervioso. Al entrar, lo primero que se posaba en nuestras pantallas era Starman.</p>
+<p>Tras la breve intromisi&#xF3;n musical de David Bowie, y una ligera contextualizaci&#xF3;n sobre las costumbres derivadas de la pandemia, iniciaron las presentaciones de todos los asistentes. He de confesar que me sent&#xED;a bastante emocionado, Valentina me hab&#xED;a aplicado presi&#xF3;n social para matriculara con ella en el mismo grupo. Me hab&#xED;a contado varias cosas respecto a la clase y lo <em>particular</em> que era. Ten&#xED;a grandes expectativas.</p>
+<p>Poco a poco, cada uno de los estudiantes se estaban presentando. Las interacciones con el profe eran de lo m&#xE1;s interesantes, aunque los temas eran relativamente estandarizados, las peque&#xF1;as conversaciones que surg&#xED;an entre Bastini y la persona que estaba siendo <em>entrevistada</em> eran bastante interesantes. Ya s&#xF3;lo con eso, ten&#xED;a mi atenci&#xF3;n.</p>
+<p>Eventualmente lleg&#xF3; mi turno, no era nada verdaderamente diferente al inicio. Una simple conversaci&#xF3;n. Aunque, a diferencia del resto, por comentar algo del Challenger, termin&#xE9; con una tarea extra de la que espero que no se acuerde.</p>
+<p>Terminadas las presentaciones, y durante las siguientes clases, fue donde entramos en materia.</p>
+<p>Cada clase estaba compuesta de diversos temas, aunque todos relacionados con el infinito espacio sobre nuestras cabezas, el recorrido de estos estaba m&#xE1;s guiado por los diferentes intereses e ideas que surg&#xED;an al inicio de cada clase.</p>
+<p>Las diferencias entre meteoros, b&#xF3;lidos y los meteoritos; Elon Musk y SpaceX; Starman; las influencias de David Bowie; &#xBF;Si hay un universo hay un uni-poema?; 2001: A Space Odyssey y sus efectos espaciales pr&#xE1;cticos; misiones espaciales; una breve historia de la astronom&#xED;a; las estrellas; rayos, truenos, centellas y en que se parecen a los meteoros, b&#xF3;lidos y meteoritos; cortrometrajes que me hicieron llorar un poquito; los exoplanetas y como detectarlos; objetos que vienen de m&#xE1;s all&#xE1; de nuestro sistemas solar; velas espaciales; la luna y sus miles de nombres; la oposici&#xF3;n de los planetas; materia oscura; y cientos de temas m&#xE1;s que rondan las mentes de cada uno de los asistentes a la clase.</p>
+<p>Normalmente, tantos temas y tantos datos ya hubieran encontrado el oscuro espacio en mi mente en el cual va el conocimiento a olvidarse, pero, tanta interacci&#xF3;n con el <em>Dotor</em> y el como introduce cada concepto de la manera m&#xE1;s pr&#xE1;ctica y visual permitieron que se mantuvieran en mi mente incluso en tiempos de estallido social. Estaba buceando entre todas las tem&#xE1;ticas.</p>
+<p>Incluso ahora, en medio de estar escribiendo esto, surgen dudas en mi mente sobre el espacio. Preguntas sobre telescopios, de la formaci&#xF3;n de galaxias, de las diferencias entre cuerpos celestes, &#xBF;Qu&#xE9; diablos era Oumuamua? y m&#xE1;s cosas que podr&#xE9; explorar dentro de la clase de Astronom&#xED;a.</p>
+<p>Entonces, &#xBF;Por qu&#xE9; la clase es tan <em>particular</em>? Es simple en realidad.</p>
+<p>Es tan particular porque es <em>la</em> clase de Astronom&#xED;a Planetaria y la &#xFA;nica forma de verlo es subirse al cohete del Gran Bastini y perderse entre los astros.</p>
+<p style="text-align: right">Daniel David Delgado Cervantes <br> 2182066</p>
+</div></body></html>
+    </div>
+  </body>
+</html>

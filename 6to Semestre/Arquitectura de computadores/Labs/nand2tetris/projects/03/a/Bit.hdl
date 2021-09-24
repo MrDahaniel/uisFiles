@@ -14,5 +14,10 @@ CHIP Bit {
     OUT out;
 
     PARTS:
-    // Put your code here:
+    // Lo primero es tener en cuenta la entrada de los datos
+    // Cuando load es 1, carga in; cuando es 0, mantiene el valor de salida del DFF
+    // Usando un Mux, podemos pasar la entrada del in o la del DFF dependiendo de el estado de load
+    Mux(a=dffOut, b=in, sel=load, out=muxOut);
+    // Con el fin de "guardar" bits, usamos la salida del DFF para la entrada a del Mux y así mantener el valor anterior del DFF
+    DFF(in=muxOut, out=dffOut, out=out);
 }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>skeleton CSS</title>
+        <link rel="stylesheet" href="skeleton.css" type="text/css" />
+        <link rel="stylesheet" href="extra.css" type="text/css" />
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>User Registration</h1>
+            <hr />
+        </div>
+        <div class="container">
+            <form action="">
+                <div class="row">
+                    <div class="six columns">
+                        <label for="nombre">Nombre</label>
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder="Nombre"
+                            id="nombre"
+                            autocomplete="off"
+                            onchange="validateFieldLength(this.id, this.value, 0, 25)"
+                        />
+                    </div>
+                    <div class="six columns">
+                        <label for="apellido">Apellido</label>
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder="Apellido"
+                            id="apellido"
+                            autocomplete="off"
+                            onchange="validateFieldLength(this.id, this.value, 0, 25)"
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                        <label for="dir">Dirección</label>
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder="Dirección"
+                            id="dir"
+                            autocomplete="off"
+                            onchange="validateFieldDir(this.id, this.value)"
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="cc">Cédula</label>
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder="Cédula"
+                            id="cc"
+                            autocomplete="off"
+                            onchange="validateFieldLength(this.id, this.value, 10, 20)"
+                        />
+                    </div>
+                    <div class="six columns">
+                        <label for="pass">Contraseña</label>
+                        <input
+                            class="u-full-width"
+                            type="password"
+                            placeholder="Contraseña"
+                            id="pass"
+                            autocomplete="off"
+                            onchange="validatePassword(this.id, this.value)"
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="email">Email</label>
+                        <input
+                            class="u-full-width"
+                            type="email"
+                            placeholder="Email"
+                            id="email"
+                            autocomplete="off"
+                            onchange="validateFieldLength(this.id, this.value, 0, 120)"
+                        />
+                    </div>
+                    <div class="six columns">
+                        <label for="tel">Teléfono</label>
+                        <input
+                            class="u-full-width"
+                            type="text"
+                            placeholder="Teléfono"
+                            id="tel"
+                            autocomplete="off"
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="likes">Likes</label>
+                    <div class="two columns">
+                        <label for="">Favorite Color</label>
+                        <div class="twelve columns">
+                            <input type="radio" name="color" id="" value="Red"> Red </input>
+                        </div>
+                        <div class="twelve columns">
+                            <input type="radio" name="color" id="" value="Blue"> Blue </input>
+                        </div>
+                        <div class="twelve columns">
+                            <input type="radio" name="color" id="" value="Red"> Green </input>
+                        </div>
+                    </div>
+                    <div class="two columns">
+                        <label for="">Favorite Brand</label>
+                        <div class="twelve columns">
+                            <input type="radio" name="brand" id="" value="Mazda"> Mazda 
+                        </div>
+                        <div class="twelve columns">
+                            <input type="radio" name="brand" id="" value="Chevrolet"> Chevrolet 
+                        </div>
+                        <div class="twelve columns">
+                            <input type="radio" name="brand" id="" value="Renault"> Renault 
+                        </div>
+                    </div>
+                    <div class="two columns">
+                        <label for="">Favorite Style</label>
+                        <div class="twelve columns">
+                            <input type="radio" name="style" id="" value="Sedan"> Sedan
+                        </div>
+                        <div class="twelve columns">
+                            <input type="radio" name="style" id="" value="SUV"> SUV 
+                        </div>
+                        <div class="twelve columns">
+                            <input type="radio" name="style" id="" value="Hatchback"> Hatchback 
+                        </div>
+                    </div>
+                    <div class="four columns">
+                        <label for="value">Price Range</label>
+                        <input type="range" name="value" id="">
+                        <input type="range" name="value" id="">
+                    </div>
+                </div>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </body>
+</html>

@@ -27,17 +27,121 @@
 
 CHIP CPU {
 
-    IN  inM[16],         // M value input  (M = contents of RAM[A])
-        instruction[16], // Instruction for execution
-        reset;           // Signals whether to re-start the current
-                         // program (reset==1) or continue executing
-                         // the current program (reset==0).
+IN  inM[16],         // M value input  (M = contents of RAM[A])
+    instruction[16], // Instruction for execution
+    reset;           // Signals whether to re-start the current
+                     // program (reset==1) or continue executing
+                     // the current program (reset==0).
 
-    OUT outM[16],        // M value output
-        writeM,          // Write to M? 
-        addressM[15],    // Address in data memory (of M)
-        pc[15];          // address of next instruction
+OUT outM[16],        // M value output
+    writeM,          // Write to M? 
+    addressM[15],    // Address in data memory (of M)
+    pc[15];          // address of next instruction
 
-    PARTS:
-    // Put your code here:
+PARTS:
+    // Lo primero es el OpCode (instruction[15])
+    // Si OpCode = 0, sería una instrucción tipo A
+    // Si OpCode = 1, sería una instrucción tipo C
+    // Una de las cosas relevantes está en que, las instrucciones A
+    // Pueden venir como entrada o como salida de la ALU
+    // Para que sea salida de la ALU, deberá entrar una instrucción C
+    // Por lo que podemos tomar nuestro OpCode que seleccione
+    // el pin a en el caso de que la instrucción sea una tipo A
+    // o el pin B en el caso de que esta venga de la ALU como resultado de una 
+    // instrucción C
+    Mux16(a=instruction, b=aluOut, sel=instruction[15], out=muxInsOut);
+    // El registro A sólo debe abrirse en 2 ocasiones, 
+    // cuando tengamos una instrucción A en la entrada (K)
+    // y cuando el bit destino (instruction[5]) lo indique (G)
+    // Es decir:
+    // K | G | ARegister open?
+    // 0 | 0 |       1
+    // 0 | 1 |       1
+    // 1 | 0 |       0
+    // 1 | 1 |       1 
+    // Para alcanzar esto, lo más sencillo es realizar K' OR G
+    // lo cual nos daría la salida exacta que estamos buscando 
+    Not(in=instruction[15], out=notK);
+    Or(a=notK, b=instruction[5], out=openAReg);
+    // Ahora con el bit de control correcto, podemos pasar
+    // la salida de nuestro Mux al ARegister.
+    // La salida de este ARegister sería
+    // AddressM, que es nuestro valor de salida del chip 
+    // Y ARegOut que es nuestra salida
+    ARegister(in=muxInsOut, load=openAReg, out=ARegOut, out[0..14]=addressM);
+    // La siguiente parte es la entrada de inM o de la salida del ARegister
+    // Nuevamente esto se realizará con un Mux16 que toma como entradas
+    // ARegOut y inM.
+    // Lo que determina cual de estas 2 será tomada como entrada son 
+    // el OpCode y el bit a- de la instrucción (instruction[12])
+    // En caso de que la instrucción sea una instrucción tipo C
+    // y el bit a- sea 1, se pasará a la ALU inM, en cualquier
+    // otro escenario, se pasará el valor de ARegOut.
+    And(a=instruction[15], b=instruction[12], out=ARegA);
+    Mux16(a=ARegOut, b=inM, sel=ARegA, out=ARegAMuxOut);
+    // Ahora realizamos lo mismo con el DRegister, este
+    // toma de entrada la salida de la ALU y como control
+    // tiene que ser una instrucción C (OpCode = 1) y que el 
+    // bit destino de D (instruction[4]), por lo que usando una AND
+    // tendremos el valor necesario para realizar el load de DRegister
+    And(a=instruction[15], b=instruction[4], out=openDReg);
+    DRegister(in=aluOut, load=openDReg, out=DRegOut);
+    // Ahora, la ALU toma como entrada la salida del DRegister
+    // y la selección realizada por el Mux entre inM y AReg
+    // y de los demás valores de entrada, se toman cada uno de los bits de instruction
+    // del 6 al 11 (los bits c de la instrucción).
+    ALU(
+        x=DRegOut, 
+        y=ARegAMuxOut, 
+        out=aluOut, 
+        out=outM,
+        zx=instruction[11],
+        nx=instruction[10],
+        zy=instruction[9],
+        ny=instruction[8],
+        f=instruction[7],
+        no=instruction[6],
+        zr=zrOut,
+        ng=ngOut
+    );
+    // Al igual que ARegister y DRegister, para poder escribir 
+    // en memoria tiene que ser una instrucción tipo C y que el 
+    // bit de destino sea 1. Usando un And podemos tener el valor
+    // de control si hay que escribir en M (writeM).
+    And(a=instruction[15], b=instruction[3], out=writeM);
+    // La parte final está relacionado con las señales de control 
+    // relacionadas con el PC y el reset
+    // Las salidas del ALU nos dicen si el valor es negativo o 
+    // si es igual a 0.
+    // Lo primero es ver los saltos condicionales
+    // Lo primero es saber si es una instrucción C
+    // y comparar con los valores J (0..2)
+    // Cada uno nos da uno de los saltos 
+    And(a=instruction[15], b=instruction[0], out=jgt); // Mayor que 0
+    And(a=instruction[15], b=instruction[1], out=jeq); // Igual a 0
+    And(a=instruction[15], b=instruction[2], out=jlt); // Menor que 0
+    
+    // Negamos ambas ngOut y zrOut para el salto jgt
+    // Que ambas sean, antes de ser negadas 0, implica que es mayor que 0
+    // Es decir, que negarlas, al momento de pasarlas por el And,
+    // nos dice que es mayor que 0
+    Not(in=ngOut, out=nng);
+    Not(in=zrOut, out=nzr); 
+    And(a=nng, b=nzr, out=nngnzrout);
+    And(a=jgt, b=nngnzrout, out=ldjgt);
+
+    // Ahora en el caso de que sea sea 0, tendremos jeq = 1 y zrOut = 1, 
+    // es válido el salto
+    And(a=jeq, b=zrOut, out=ldjeq);
+
+    // Mismo caso para el menor que, si es negativo, y el salto está
+    // pasa como 1
+    And(a=jlt, b=ngOut, out=ldjlt);
+    
+    // Unificamos todos los loads
+    Or(a=ldjgt, b=ldjeq, out=loadgteq);
+    Or(a=ldjlt, b=loadgteq, out=load);
+
+    // Pasamos el reset, el load, y la salida del ARegister y damos como salida pc
+    PC(in=ARegOut, load=load, inc=true, reset=reset, out[0..14]=pc);
 }
