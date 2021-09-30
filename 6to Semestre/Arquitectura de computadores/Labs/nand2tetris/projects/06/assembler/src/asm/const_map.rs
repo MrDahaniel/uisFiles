@@ -1,8 +1,8 @@
 use std::{borrow::BorrowMut, collections::HashMap};
 
-pub fn get_symbols() -> &'static mut HashMap<&'static str, usize> {
-    return symbols.borrow_mut();
-}
+// pub fn get_symbols() -> &'static mut HashMap<&'static str, usize> {
+//     return symbols.borrow_mut();
+// }
 
 pub fn get_comp() -> HashMap<&'static str, &'static str> {
     // Que demora en copiar esta tabla ugh

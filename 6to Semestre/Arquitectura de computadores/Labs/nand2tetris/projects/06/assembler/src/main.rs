@@ -1,6 +1,7 @@
 pub mod asm;
 
 use regex;
+use std::borrow::BorrowMut;
 use std::collections::HashMap;
 use std::env;
 use std::fmt::Error;
@@ -16,20 +17,65 @@ enum R {
 struct HackParser {
     cur_mem_pos: usize,
     parser_info: ParserInfo,
+    reader: Option<BufReader<File>>,
+    out_file: Option<&'static mut File>,
 }
 
 impl HackParser {
-    pub fn new() -> HackParser {
+    pub fn new(path: String) -> HackParser {
         HackParser {
             cur_mem_pos: 15,
             parser_info: ParserInfo::default(),
+            reader: None,
+            out_file: None,
         }
+    }
+
+    pub fn assemble(self, path: String) -> R {
+        match self.load_file(path) {
+            R::Ok => (),
+            R::Err => return R::Err,
+        }
+
+        match self.parse_file() {
+            R::Ok => (),
+            R::Err => {
+                println!("Error parsing file!");
+                return R::Err;
+            }
+        }
+
+        R::Ok
+    }
+
+    fn load_file(self, path: String) -> R {
+        match File::open(path) {
+            Ok(file) => self.reader = Some(BufReader::new(file)),
+            Err(_) => {
+                println!("Error! File not found.");
+                return R::Err;
+            }
+        }
+
+        match File::create(path.replace(".asm", ".hack")) {
+            Ok(out_file) => self.out_file,
+            Err(_) => {
+                println!("Error! File not found.");
+                return R::Err;
+            }
+        };
+
+        R::Ok
+    }
+
+    fn parse_file(self) -> R {
+        R::Ok
     }
 
     fn selector(self, instruction: &'static str) {
         match instruction.strip_prefix("@") {
             Some(ins) => self.parse_a_type(instruction),
-            None => ,
+            None => {}
         }
     }
 
@@ -103,7 +149,8 @@ impl Default for ParserInfo {
                 ("R15", 15),
             ]
             .into_iter()
-            .collect(),
+            .collect::<HashMap<&str, usize>>()
+            .borrow_mut(),
             jump: vec![
                 ("null", "000"),
                 ("JGT", "001"),
@@ -233,23 +280,6 @@ enum Instruction {
 fn main() {
     let args: Vec<String> = env::args().collect();
     let path = &args[1];
-    let reader: BufReader<File>;
 
-    match File::open(path) {
-        Ok(file) => reader = BufReader::new(file),
-        Err(_) => {
-            println!("Error! File not found.");
-            return;
-        }
-    }
-
-    let mut out_file: File = match File::create(path.replace(".asm", ".hack")) {
-        Ok(out_file) => out_file,
-        Err(_) => {
-            println!("Error! File not found.");
-            return;
-        }
-    };
-
-    asm::assembler::assemble(reader, out_file);
+    // asm::assembler::assemble(reader, out_file);
 }
