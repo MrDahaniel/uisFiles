@@ -16,6 +16,10 @@ Martes:
         id: 96779931480
         ps: 644970
 
+    Programación de web				 2 pm -  4 pm
+		id: 96779931480
+    	ps: 644970
+
 Miércoles:
     Estadística                      8 am - 10 pm
         id: 98997086847

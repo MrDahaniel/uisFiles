@@ -1,0 +1,117 @@
+######## R1
+enable
+configure terminal
+interface fastEthernet 0/1
+ip address 192.168.4.1 255.255.255.0
+no shut
+exit
+
+interface fastEthernet 0/0
+ip address 192.168.5.145 255.255.255.248
+no shut
+exit
+
+ip route 192.168.0.0 255.255.252.0 fastEthernet 0/0 192.168.5.146 3
+ip route 192.168.5.0 255.255.255.128 fastEthernet 0/0 192.168.5.146 3
+exit
+show ip route static
+copy running-config startup-config
+
+######## R2
+enable
+configure terminal
+interface fastEthernet 0/1
+ip address 192.168.0.1 255.255.252.0
+no shut
+exit
+
+interface fastEthernet 0/0
+ip address 192.168.5.153 255.255.255.248
+no shut
+exit
+
+ip route 192.168.4.0 255.255.255.0 fastEthernet 0/0 192.168.5.154 3
+ip route 192.168.5.0 255.255.255.128 fastEthernet 0/0 192.168.5.154 3
+exit
+show ip route static
+copy running-config startup-config
+
+######## R3
+enable
+configure terminal
+interface fastEthernet 0/1
+ip address 192.168.5.1 255.255.255.128
+no shut
+exit
+
+interface fastEthernet 0/0
+ip address 192.168.5.161 255.255.255.248
+no shut
+exit
+
+ip route 192.168.0.0 255.255.252.0 fastEthernet 0/0 192.168.5.162 3
+ip route 192.168.4.0 255.255.255.0 fastEthernet 0/0 192.168.5.162 3
+exit
+show ip route static
+copy running-config startup-config
+
+######## R4
+enable
+configure terminal
+interface fastEthernet 0/0
+ip address 192.168.5.146 255.255.255.248
+no shut
+exit
+
+interface fastEthernet 0/1
+ip address 192.168.5.129 255.255.255.240
+no shut
+exit
+
+ip route 192.168.4.0 255.255.255.0 fastEthernet 0/0 192.168.5.145 2
+ip route 192.168.0.0 255.255.252.0 fastEthernet 0/1 192.168.5.130 3
+ip route 192.168.5.0 255.255.255.128 fastEthernet 0/1 192.168.5.131 3
+exit
+show ip route static
+copy running-config startup-config
+
+######## R5
+enable
+configure terminal
+interface fastEthernet 0/0
+ip address 192.168.5.154 255.255.255.248
+no shut
+exit
+
+interface fastEthernet 0/1
+ip address 192.168.5.130 255.255.255.240
+no shut
+exit
+
+ip route 192.168.4.0 255.255.255.0 fastEthernet 0/1 192.168.5.129 3
+ip route 192.168.0.0 255.255.252.0 fastEthernet 0/0 192.168.5.153 2
+ip route 192.168.5.0 255.255.255.128 fastEthernet 0/1 192.168.5.131 3
+exit
+show ip route static
+copy running-config startup-config
+
+######## R6
+enable
+configure terminal
+interface fastEthernet 0/0
+ip address 192.168.5.162 255.255.255.248
+no shut
+exit
+
+interface fastEthernet 0/1
+ip address 192.168.5.131 255.255.255.240
+no shut
+exit
+
+ip route 192.168.4.0 255.255.255.0 fastEthernet 0/1 192.168.5.129 3
+ip route 192.168.0.0 255.255.252.0 fastEthernet 0/1 192.168.5.130 3
+ip route 192.168.5.0 255.255.255.128 fastEthernet 0/0 192.168.5.161 2
+exit
+show ip route static
+copy running-config startup-config
+
