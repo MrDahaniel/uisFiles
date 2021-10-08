@@ -1,120 +1,200 @@
-pub mod asm;
-
-use regex;
-use std::borrow::BorrowMut;
 use std::collections::HashMap;
 use std::env;
-use std::fmt::Error;
 use std::fs::File;
-use std::io::BufReader;
-use std::result::Result;
+use std::io::{BufRead, BufReader, Write};
 
-enum R {
-    Ok,
-    Err,
+#[derive(Debug)]
+enum Instruction {
+    Label,
+    TypeA,
+    TypeC,
 }
 
 struct HackParser {
     cur_mem_pos: usize,
     parser_info: ParserInfo,
-    reader: Option<BufReader<File>>,
-    out_file: Option<&'static mut File>,
 }
 
 impl HackParser {
-    pub fn new(path: String) -> HackParser {
+    pub fn new() -> HackParser {
         HackParser {
             cur_mem_pos: 15,
             parser_info: ParserInfo::default(),
-            reader: None,
-            out_file: None,
         }
     }
 
-    pub fn assemble(self, path: String) -> R {
-        match self.load_file(path) {
-            R::Ok => (),
-            R::Err => return R::Err,
-        }
+    pub fn assemble(&mut self, path: &str) {
+        let mut reader: BufReader<File> =
+            BufReader::new(File::open(&path).expect("Error! File not found"));
 
-        match self.parse_file() {
-            R::Ok => (),
-            R::Err => {
-                println!("Error parsing file!");
-                return R::Err;
-            }
-        }
+        self.handle_labels(&mut reader);
 
-        R::Ok
+        let mut reader: BufReader<File> =
+            BufReader::new(File::open(&path).expect("Error! File not found"));
+        let mut out_file: File =
+            File::create(&path.replace(".asm", ".hack")).expect("Error! Could not create file");
+
+        self.parse_file(&mut reader, &mut out_file);
     }
 
-    fn load_file(self, path: String) -> R {
-        match File::open(path) {
-            Ok(file) => self.reader = Some(BufReader::new(file)),
-            Err(_) => {
-                println!("Error! File not found.");
-                return R::Err;
+    fn handle_labels(&mut self, reader: &mut BufReader<File>) {
+        let mut index = 0;
+
+        for line in reader.lines() {
+            match line {
+                Ok(instruction) => match self.selector(&instruction) {
+                    Some(Instruction::Label) => {
+                        self.add_to_table(instruction[1..instruction.len() - 1].to_string(), index);
+                    }
+                    Some(_) => index += 1,
+                    None => (),
+                },
+                Err(_) => (),
             }
         }
+    }
 
-        match File::create(path.replace(".asm", ".hack")) {
-            Ok(out_file) => self.out_file,
-            Err(_) => {
-                println!("Error! File not found.");
-                return R::Err;
+    fn parse_file(&mut self, reader: &mut BufReader<File>, out_file: &mut File) {
+        for line in reader.lines() {
+            match line {
+                Ok(instruction) => match self.selector(&instruction) {
+                    Some(Instruction::TypeA) => {
+                        out_file
+                            .write_fmt(format_args!(
+                                "{}\n",
+                                self.parse_type_a(&self.format_line(&instruction).unwrap())
+                            ))
+                            .unwrap();
+                    }
+                    Some(Instruction::TypeC) => {
+                        out_file
+                            .write_fmt(format_args!("{}\n", self.parse_type_c(&instruction)))
+                            .unwrap();
+                    }
+                    Some(Instruction::Label) => (),
+                    None => (),
+                },
+                Err(_) => todo!(),
             }
+        }
+    }
+
+    fn selector(&self, instruction: &str) -> Option<Instruction> {
+        let inst = match self.format_line(instruction) {
+            Some(formatted) => match formatted.chars().next() {
+                Some('@') => Some(Instruction::TypeA),
+                Some('(') => Some(Instruction::Label),
+                Some(_) => Some(Instruction::TypeC),
+                None => None,
+            },
+            None => None,
         };
-
-        R::Ok
+        inst
     }
 
-    fn parse_file(self) -> R {
-        R::Ok
-    }
-
-    fn selector(self, instruction: &'static str) {
-        match instruction.strip_prefix("@") {
-            Some(ins) => self.parse_a_type(instruction),
-            None => {}
+    fn format_line(&self, unformated: &str) -> Option<String> {
+        match unformated.split("//").next() {
+            Some("") => None,
+            Some(line) => Some(line.trim().to_string()),
+            None => None,
         }
     }
 
-    fn parse_a_type(self, instruction: &'static str) {}
+    fn add_to_table(&mut self, k: String, pos: usize) {
+        self.parser_info.add_to_table(k, pos);
+    }
 
-    fn add_to_table(self, k: &'static str) {
-        self.cur_mem_pos += 1;
-        match self.parser_info.add_to_table(k, self.cur_mem_pos) {
-            R::Ok => (),
-            R::Err => {
-                self.cur_mem_pos -= 1;
+    fn parse_type_a(&mut self, type_a: &String) -> String {
+        let type_a = &type_a.replace("@", "");
+
+        match type_a.parse::<usize>().is_ok() {
+            true => {
+                let bin_a = format!("{:b}", type_a.parse::<usize>().unwrap());
+                format!("{}{}", "0".repeat(16 - bin_a.len()), bin_a)
             }
-        };
+            false => match self.parser_info.symb.get(type_a) {
+                Some(value) => {
+                    let bin_a = format!("{:b}", value);
+                    format!("{}{}", "0".repeat(16 - bin_a.len()), bin_a)
+                }
+                None => {
+                    self.cur_mem_pos += 1;
+                    self.add_to_table(type_a.clone(), self.cur_mem_pos);
+                    let bin_a = format!("{:b}", self.cur_mem_pos);
+                    format!("{}{}", "0".repeat(16 - bin_a.len()), bin_a)
+                }
+            },
+        }
+    }
+
+    fn parse_type_c(&self, type_c: &String) -> String {
+        let type_c = &self.format_line(type_c).unwrap();
+        let normalized = self.normalize_type_c(type_c);
+
+        let split = normalized.split("=").collect::<Vec<&str>>();
+        let rem = split[1].split(";").collect::<Vec<&str>>();
+
+        let dest = self
+            .parser_info
+            .dest
+            .get(split[0].trim())
+            .expect("DEST ERROR");
+        let comp = self
+            .parser_info
+            .comp
+            .get(rem[0].trim())
+            .expect("COMP ERROR");
+        let jump = self
+            .parser_info
+            .jump
+            .get(rem[1].trim())
+            .expect("JUMP ERROR");
+
+        format!("111{}{}{}", comp, dest, jump)
+    }
+
+    fn normalize_type_c(&self, type_c: &String) -> String {
+        let half_normalized: String;
+        let normalized: String;
+
+        if !type_c.contains("=") {
+            half_normalized = format!("{}{}", "none=", type_c);
+        } else {
+            half_normalized = type_c.clone();
+        }
+
+        if !type_c.contains(";") {
+            normalized = format!("{}{}", half_normalized, ";none");
+        } else {
+            normalized = half_normalized.clone();
+        }
+
+        return normalized;
     }
 }
 
 struct ParserInfo {
-    pub symb: &'static mut HashMap<&'static str, usize>,
-    pub jump: HashMap<&'static str, &'static str>,
-    pub dest: HashMap<&'static str, &'static str>,
-    pub comp: HashMap<&'static str, &'static str>,
+    symb: HashMap<String, usize>,
+    jump: HashMap<String, String>,
+    dest: HashMap<String, String>,
+    comp: HashMap<String, String>,
 }
 
 impl ParserInfo {
-    pub fn new() -> ParserInfo {
+    pub fn _new() -> ParserInfo {
         ParserInfo {
-            symb: &mut HashMap::new(),
+            symb: HashMap::new(),
             jump: HashMap::new(),
             dest: HashMap::new(),
             comp: HashMap::new(),
         }
     }
 
-    pub fn add_to_table(self, k: &'static str, pos: usize) -> R {
-        match self.symb.get(k) {
-            Some(_) => R::Err,
+    pub fn add_to_table(&mut self, k: String, pos: usize) {
+        match self.symb.get(&k) {
+            Some(_) => (),
             None => {
                 self.symb.insert(k, pos);
-                R::Ok
             }
         }
     }
@@ -124,162 +204,96 @@ impl Default for ParserInfo {
     fn default() -> ParserInfo {
         ParserInfo {
             symb: vec![
-                ("SP", 0),
-                ("LCL", 1),
-                ("ARG", 2),
-                ("THIS", 3),
-                ("THAT", 4),
-                ("SCREEN", 16384),
-                ("KBD", 24576),
-                ("R0", 0),
-                ("R1", 1),
-                ("R2", 2),
-                ("R3", 3),
-                ("R4", 4),
-                ("R5", 5),
-                ("R6", 6),
-                ("R7", 7),
-                ("R8", 8),
-                ("R9", 9),
-                ("R10", 10),
-                ("R11", 11),
-                ("R12", 12),
-                ("R13", 13),
-                ("R14", 14),
-                ("R15", 15),
+                ("SP".to_string(), 0),
+                ("LCL".to_string(), 1),
+                ("ARG".to_string(), 2),
+                ("THIS".to_string(), 3),
+                ("THAT".to_string(), 4),
+                ("SCREEN".to_string(), 16384),
+                ("KBD".to_string(), 24576),
+                ("R0".to_string(), 0),
+                ("R1".to_string(), 1),
+                ("R2".to_string(), 2),
+                ("R3".to_string(), 3),
+                ("R4".to_string(), 4),
+                ("R5".to_string(), 5),
+                ("R6".to_string(), 6),
+                ("R7".to_string(), 7),
+                ("R8".to_string(), 8),
+                ("R9".to_string(), 9),
+                ("R10".to_string(), 10),
+                ("R11".to_string(), 11),
+                ("R12".to_string(), 12),
+                ("R13".to_string(), 13),
+                ("R14".to_string(), 14),
+                ("R15".to_string(), 15),
             ]
             .into_iter()
-            .collect::<HashMap<&str, usize>>()
-            .borrow_mut(),
+            .collect(),
             jump: vec![
-                ("null", "000"),
-                ("JGT", "001"),
-                ("JEQ", "010"),
-                ("JGE", "011"),
-                ("JLT", "100"),
-                ("JNE", "101"),
-                ("JLE", "110"),
-                ("JMP", "111"),
+                ("none".to_string(), "000".to_string()),
+                ("JGT".to_string(), "001".to_string()),
+                ("JEQ".to_string(), "010".to_string()),
+                ("JGE".to_string(), "011".to_string()),
+                ("JLT".to_string(), "100".to_string()),
+                ("JNE".to_string(), "101".to_string()),
+                ("JLE".to_string(), "110".to_string()),
+                ("JMP".to_string(), "111".to_string()),
             ]
             .into_iter()
             .collect(),
             dest: vec![
-                ("none", "000"),
-                ("M", "001"),
-                ("D", "010"),
-                ("A", "100"),
-                ("MD", "011"),
-                ("AM", "101"),
-                ("AD", "110"),
-                ("AMD", "111"),
+                ("none".to_string(), "000".to_string()),
+                ("M".to_string(), "001".to_string()),
+                ("D".to_string(), "010".to_string()),
+                ("A".to_string(), "100".to_string()),
+                ("MD".to_string(), "011".to_string()),
+                ("AM".to_string(), "101".to_string()),
+                ("AD".to_string(), "110".to_string()),
+                ("AMD".to_string(), "111".to_string()),
             ]
             .into_iter()
             .collect(),
             comp: vec![
-                ("0", "0101010"),
-                ("1", "0111111"),
-                ("-1", "0111010"),
-                ("D", "0001100"),
-                ("A", "0110000"),
-                ("!D", "0001101"),
-                ("!A", "0110001"),
-                ("-D", "0001111"),
-                ("-A", "0110011"),
-                ("D+1", "0011111"),
-                ("A+1", "0110111"),
-                ("D-1", "0001110"),
-                ("A-1", "0110010"),
-                ("D+A", "0000010"),
-                ("D-A", "0010011"),
-                ("A-D", "0000111"),
-                ("D&A", "0000000"),
-                ("D|A", "0010101"),
-                ("M", "1110000"),
-                ("!M", "1110001"),
-                ("-M", "1110011"),
-                ("M+1", "1110111"),
-                ("M-1", "1110010"),
-                ("D+M", "1000010"),
-                ("D-M", "1010011"),
-                ("M-D", "1000111"),
-                ("D&M", "1000000"),
-                ("D|M", "1010101"),
+                ("none".to_string(), "1111111".to_string()),
+                ("0".to_string(), "0101010".to_string()),
+                ("1".to_string(), "0111111".to_string()),
+                ("-1".to_string(), "0111010".to_string()),
+                ("D".to_string(), "0001100".to_string()),
+                ("A".to_string(), "0110000".to_string()),
+                ("!D".to_string(), "0001101".to_string()),
+                ("!A".to_string(), "0110001".to_string()),
+                ("-D".to_string(), "0001111".to_string()),
+                ("-A".to_string(), "0110011".to_string()),
+                ("D+1".to_string(), "0011111".to_string()),
+                ("A+1".to_string(), "0110111".to_string()),
+                ("D-1".to_string(), "0001110".to_string()),
+                ("A-1".to_string(), "0110010".to_string()),
+                ("D+A".to_string(), "0000010".to_string()),
+                ("D-A".to_string(), "0010011".to_string()),
+                ("A-D".to_string(), "0000111".to_string()),
+                ("D&A".to_string(), "0000000".to_string()),
+                ("D|A".to_string(), "0010101".to_string()),
+                ("M".to_string(), "1110000".to_string()),
+                ("!M".to_string(), "1110001".to_string()),
+                ("-M".to_string(), "1110011".to_string()),
+                ("M+1".to_string(), "1110111".to_string()),
+                ("M-1".to_string(), "1110010".to_string()),
+                ("D+M".to_string(), "1000010".to_string()),
+                ("D-M".to_string(), "1010011".to_string()),
+                ("M-D".to_string(), "1000111".to_string()),
+                ("D&M".to_string(), "1000000".to_string()),
+                ("D|M".to_string(), "1010101".to_string()),
             ]
             .into_iter()
             .collect(),
         }
     }
-}
-
-struct TypeAIns {
-    address: String,
-}
-
-impl TypeAIns {
-    pub fn new(address: String) -> Result<TypeAIns, Error> {
-        let re = regex::Regex::new("/^0[0-1]+/gm").unwrap();
-        match address.len() {
-            16 => match re.is_match(&address) {
-                true => Ok(TypeAIns { address }),
-                false => Err(Error::default()),
-            },
-            _ => Err(Error::default()),
-        }
-    }
-
-    pub fn to_string(self) -> String {
-        self.address
-    }
-
-    pub fn format(self, unformated_string: String) -> Result<TypeAIns, Error> {
-        let re = regex::Regex::new("/[0-1]+/gm").unwrap();
-        match unformated_string.len() <= 16 && re.is_match(&unformated_string) {
-            true => Ok(TypeAIns {
-                address: format!(
-                    "{}{}",
-                    "0".repeat(16 - unformated_string.len()),
-                    unformated_string
-                ),
-            }),
-            false => Err(Error::default()),
-        }
-    }
-
-    pub fn from_usize(self, uaddress: usize) -> Result<TypeAIns, Error> {
-        self.format(format!("{:b}", uaddress))
-    }
-}
-
-struct TypeCIns {
-    header: String,
-    comp: String,
-    dest: String,
-    jump: String,
-}
-
-impl TypeCIns {
-    pub fn new(comp: String, dest: String, jump: String) -> TypeCIns {
-        TypeCIns {
-            header: String::from("111"),
-            comp,
-            dest,
-            jump,
-        }
-    }
-
-    pub fn to_string(self) -> String {
-        format!("{}{}{}{}", self.header, self.comp, self.dest, self.jump)
-    }
-}
-
-enum Instruction {
-    TypeA(TypeAIns),
-    TypeC(TypeCIns),
 }
 
 fn main() {
     let args: Vec<String> = env::args().collect();
     let path = &args[1];
 
-    // asm::assembler::assemble(reader, out_file);
+    HackParser::new().assemble(&path);
 }
