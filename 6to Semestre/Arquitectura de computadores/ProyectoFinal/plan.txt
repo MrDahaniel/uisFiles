@@ -1,0 +1,89 @@
+Planeación de documento final de arquitectura de computadores
+
+Abstract
+    - Contextualización general del problema
+    - Explicación del problema
+        - ¿Qué se debe resolver?
+        - Resumido
+    - Explicación de la metodología
+        - ¿Qué características tomamos en cuenta para escoger las piezas?
+        - ¿Cuales eran nuestros criterios de aceptación?
+    - Resultados obtenidos
+        - ¿Qué encontramos?
+        - ¿Resolvemos el problema?
+
+Introducción
+    - Visualización científica
+        -
+    - Similar al abstract, quitar los resultados y hablar un poco más de lo que se hizo
+    - Plantear el problema
+        - Contextualización de la situación
+        - ¿Qué necesitan?
+        - ¿Qué buscan solucionar?
+        - ¿Qué criterios tenemos?
+
+Metodología
+    - ¿Qué criterio de selección usamos?
+    - ¿Qué información, o datos, nos parecian de mayor peso?
+    - ¿Cómo se realizaba la comparación entre componentes?
+
+Siendo así, se inicio con la determinación de los requerimientos del sistema en cuestión. Lo primero fue determinar cual sería nuestra solución en cuento a procesamiento gráfico. 
+
+Desarrollo
+    Selección de los componentes
+        - Introducción a las secciones en el cual se realiza el análisis de cada una de las piezas
+        - Uso de un proveedor
+            - Nos permite evitar los posibles problemas logísticos que implica realizar compras
+            - De igual manera, nos permite tener de manera centrada una resolución de problemas en cuanto a garantías se refiere.
+            - En simultaneo, nos permite tener acceso a partes que, por problemas mundiales, son escasas y cuyos precios son extremadamente elevados en comparación a lo que realmente debería ser.
+        - THINKMATE
+            - En este orden de ideas, escogimos THINKMATE ya que, dentro de todos los OEMs (Original Equipment Manufacturer), fuera de ser una compañía con más de 35 años de experiencia en el desarrollo de servidores para diferentes compañías y universidades, nos da una gran flexibilidad en cuanto a las opciones que podemos escoger en cuanto a componentes se refiere.
+    
+        CPU (Intel® vs AMD®)
+            - Limitaciones del budget vs Performance
+                - La principal limitación se encuentra en la solución en cuanto a las GPU que ibamos a implementar para el momento. 
+                - Lo primero a considerar para la selección de los componentes eran las especificaciones de cada uno de estos en relacion al budget total
+
+                Intel® Xeon® vs AMD®
+                    - De las primeras opciones que miramos, se encontraban las opciones de el equipo azul en cuanto a CPUs se refiere. Para nuestras aplicaciones, era claro que necesitariamos emplear los Intel® Xeon®. Esta familia, comercialmente orientada a servidores y workstations, sería nuestra primera opción en cuanto a las CPU que empleariamos ser refiere.
+                    
+                    Segunda y Tercera Generación
+                        - Lo primero a resaltar está en la existencia de las 2 generaciones de procesadores Xeon® que se encuentran en el mercado a día de hoy. Ambas opciones fueron consideradas para nuestros propósitos 
+
+
+                    - hablar de las características que de cada uno de los componentes
+                    - Hablar del problema verdadero en cuanto al budget se refiere
+                    - 
+
+
+        Memoria ()
+
+        Motherboard (CPU dependant)
+
+        GPU (4 x NVIDIA® A100 vs 8 x NVIDIA® A40)
+
+        Tarjeta de Red
+
+        Almacenamiento
+
+        Adaptación del entorno y otros
+
+
+    GPU
+        Partiendo de que la principal necesidad de la empresa, que es la realización de visualización científica, es menester una gran capacidad de procesamiento gráfico. Adicionalmente, es necesario, especialmente por el énfasis en procesamiento en paralelo, una gran disponibilidad de núcleos CUDA que permita la ejecución de este tipo de aplicaciones.
+
+    CPU 
+        La principal característica de nuestra CPU a escoger, sea capaz de soportar la solución gráfica que vayamos a escoger. Es decir, es necesario que la cantidad de lanes debe ser suficiente para abarcar la cantidad de GPUs empleadas. En igual medida, es de interés, especialmente para HPC, una alta cantidad de cores y threads que permitan una facilidad en la ejecución de las diferentes aplicaciones.
+
+    RAM
+        El caso de la memoria existen no existen realmente condiciones especiales. En este caso los factores discriminantes están dados por la máxima cantidad que soporte la CPU seleccionada y a la mayor velocidad disponible. De manera ideal, la cantidad de módulos debe ser suficiente para poder llenar los canales disponibles con el fin de aprovechar los beneficios que viene de emplearlos en su totalidad.
+    
+    Network 
+        Las capacidades de red de la máquina tienen que se suficientes para poder realizar operaciones dentro de la red tanto privada como académica. Es por esto que se espera que se tengan las capacidades de red necesarias para realizar estas operaciones.
+        
+    Almacenamiento
+        El almacenamiento, debido a la configuración que estamos manejando, realmente no cae dentro de las principales preocupaciones puesto que gran parte de la información será manejada en red. En este sentido, sólo se tiene pensado en priorizar el disco de arranque al igual que el almacenamiento necesario para la configuración y las aplicaciones del dispositivo.
+
+    Barebones
+        El principal enfoque de debe tener el barebones está en la capacidad de integrar todos los componentes seleccionados. De igual manera, es necesario que se pueda surtir de poder a todos los elementos para la correcta operación de los mismos.
+    

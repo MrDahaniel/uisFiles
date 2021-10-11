@@ -1,0 +1,179 @@
+\documentclass[conference,onecolumn]{IEEEtran}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[spanish]{babelbib}
+\usepackage[spanish]{babel}
+\usepackage{algorithmic}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{cite}
+\usepackage{here}
+\usepackage{url}
+
+\IEEEoverridecommandlockouts
+\onehalfspacing
+
+\ifCLASSINFOpdf
+\else
+\fi
+
+\makeatletter
+\newcommand{\linebreakand}{%
+    \end{@IEEEauthorhalign}
+    \hfill\mbox{}\par
+    \mbox{}\hfill\begin{@IEEEauthorhalign}
+}
+\makeatother
+
+\newcommand{\cen}{\centering}
+
+\title{Título Pendiente}
+
+\author{
+    \IEEEauthorblockN{1\textsuperscript{ro} Cristhian Díaz}
+    \IEEEauthorblockA{\textit{Escuela de Ingeniería de Sistemas} \\
+    \textit{Universidad Industrial de Santander}\\
+    Bucaramanga, Colombia \\
+    andresdiaz0608@gmail.com}
+    \and
+
+    \IEEEauthorblockN{2\textsuperscript{do} Diego Lozada}
+    \IEEEauthorblockA{\textit{Escuela de Ingeniería de Sistemas} \\
+    \textit{Universidad Industrial de Santander}\\
+    Bucaramanga, Colombia \\
+    lonidian@hotmail.com}
+
+    \linebreakand
+    
+    \IEEEauthorblockN{4\textsuperscript{to} Daniel Delgado}
+    \IEEEauthorblockA{\textit{Escuela de Ingeniería de Sistemas} \\
+    \textit{Universidad Industrial de Santander}\\
+    Bucaramanga, Colombia \\
+    danieldavid2001@gmail.com}
+    
+    \and
+    \IEEEauthorblockN{3\textsuperscript{ro} Hendrik López}
+    \IEEEauthorblockA{\textit{Escuela de Ingeniería de Sistemas} \\
+    \textit{Universidad Industrial de Santander}\\
+    Bucaramanga, Colombia \\
+    hendriklop2106@hotmail.com}
+}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Pan
+\end{abstract}
+
+{
+    \begin{center}
+        \textbf{\small Abstract}
+    \end{center}
+
+    \hspace*{0.7cm} 
+    \small The abstract
+    \medbreak
+}
+
+\begin{IEEEkeywords}
+    component, formatting, style, styling, insert
+\end{IEEEkeywords}
+
+\section{Introducción}
+En las ciencias de la computación, la Visualización se refiere al como, con el uso de computadores y diferentes herramientas de software, podemos transformar grandes cantidades de datos recolectados en diferentes elementos gráficos que permiten una mayor compresión de la información recopilada \cite[Pág. 150]{vis}. Es gracias a la Visualización Computacional, por la cual el realizar análisis de los datos recolectados en simulaciones, o a partir de sensores, se convierten en tareas considerablemente más sencillas que el tratar de encontrar patrones y tendencia en cientos de mediciones y cifras replegadas en una hoja de cálculo. Dentro de la visualización, hay multiples ramas las cuales poseen diferentes enfoques y aplicaciones específicas dependiendo de lo que se requiera realizar al igual que el origen de los datos a trabajar. Una de estas ramas, y la más relevante para el presente documento, es la rama de la visualización científica (SciVis). En esta, el enfoque está principalmente orientado a la visualización de fenómenos tridimensionales, que competen a la medicina, meteorología, biología, el sector energético, entre otros \cite{SciVis}. En consecuencia, al ser la visualización científica una de las herramientas más importantes en cuanto al tratamiento de datos, existe una alta demanda por este tipo de servicios al igual que los equipos necesarios para llevarse a cabo. \medbreak \medbreak
+
+Uno de estos casos es el que compete al presente documento. Se plantea el caso de una empresa pequeña, similar a una \textit{Spin-Off} universitaria, la cual realiza el desarrollo de aplicaciones para visualización científica orientadas principalmente al sector energético de \textit{Oil and Gas}. Debido a esto, esta organización requiere de una solución para poder realizar diferentes tipos de visualizaciones inmersivas con el uso de tecnología de Realidad Virtual (VR) tipo CAVE (\textit{Cave automatic virtual environment}). De igual manera, es de resaltar que los desarrollos están siendo realizados con diferentes lenguajes de programación, tales como C/C++, CUDA, JAVA, Python y R; directivas, OpenACC, OpenCL, Matlab; las librerias, OpenGL y OpenCV; al igual que compiladores, ambientes de desarrollo y ejecución conocidos. De igual manera, dentro de estos requerimientos iniciales, se plantea la necesidad de soportar computación de alto rendimiento (HPC) y paralelismo al igual que la posibilidad de tener una alta calidad gráfica sin despreciar las aplicaciones en CUDA; asimismo se necesita una capacidad de red considerable debido a las conexiones hacia una red privada y una académica.
+\cite{arqCom} \medbreak \medbreak
+
+Partiendo de esto, en el presente documento se realizará el diseño, al igual que la cotización, de una posible solución a la problemática a la que esta empresa se enfrenta. Esto se realizará a partir del planteamiento de un equipo computacional cuyos componentes, seleccionados a partir de las especificaciones y características individuales de cada una de las partes, teniendo en cuenta la limitación del presupuesto dado; permitan el correcto desarrollo de las actividades de la empresa. \medbreak \medbreak
+
+\section{Objetivos}
+\subsection{Objetivo General}
+
+\begin{itemize}
+    \item Diseñar un sistema de computo que permita a la empresa la visualización de la ejecución de procesos de visualización científica en un ambiente de realidad virtual tipo CAVE. \medbreak
+\end{itemize}
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}
+    \item Definir los requerimientos que se adapten de mejor manera a la problemática.presentada por la empresa \medbreak
+    \item Identificar los componentes que cumplan con los requerimientos establecidos.\medbreak
+    \item evaluar los proveedores cumpliendo con las especificaciones técnicas y las limitaciones de presupuesto dadas. \medbreak
+\end{itemize}
+
+\section{Metodología}
+
+Para el desarrollo de la solución propuesta al problema planteado por la empresa, fue necesario tener en cuenta varios factores y condiciones a las cuales debíamos apegarnos para satisfacer la problemática planteada. En este sentido, se realizó el desarrollo en 3 partes. La determinación de los requerimientos, la identificación de los componentes adecuados, y la cotización de los mismos.
+
+Siendo así, se inicio con la determinación de los requerimientos del sistema en cuestión. Estos han sido propuestos de manera genérica con el fin de dar cabida a la comparación de multiples componentes mientras se cumplen las expectativas del sistema. Estas se presentan en el cuadro \ref{tab:ReqTable}.
+
+\begin{longtable}[c]{|c|l|c|}
+    \hline
+    \rowcolor[HTML]{9B9B9B} 
+    Categoría &
+      \multicolumn{1}{c|}{\cellcolor[HTML]{9B9B9B}Descripción} &
+      Requisitos \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    GPU &
+      \begin{tabular}[c]{@{}l@{}}Partiendo de que la principal necesidad de la empresa, \\ que es la realización de visualización científica, es \\ menester una gran capacidad de procesamiento gráfico. \\ Adicionalmente, es necesario, especialmente por el énfasis \\ en procesamiento en paralelo, una gran disponibilidad de \\ núcleos CUDA que permita la ejecución de este tipo de \\ aplicaciones.\end{tabular} &
+      \begin{tabular}[c]{@{}c@{}}Gran cantidad de GPU RAM.\\ Gran cantidad de CUDA cores.\\ Alto ancho de banda de memoria.\end{tabular} \\ \hline
+    CPU &
+      \begin{tabular}[c]{@{}l@{}}La principal característica de nuestra CPU a escoger, sea \\ capaz de soportar la solución gráfica que vayamos a escoger. \\ Es decir, es necesario que la cantidad de lanes debe ser\\ suficiente para abarcar la cantidad de GPUs empleadas. En \\ igual medida, es de interés, especialmente para HPC, una \\ alta cantidad de cores y threads que permitan una facilidad \\ en la ejecución de las diferentes aplicaciones.\end{tabular} &
+      \begin{tabular}[c]{@{}c@{}}Multiples Cores y Threads.\\ Gran cantidad de PCI Lanes.\\ Alta capacidad de cache.\\ TDP relativamente bajo.\\ Alta frecuencia de operación.\end{tabular} \\ \hline
+    RAM &
+      \begin{tabular}[c]{@{}l@{}}El caso de la memoria existen no existen realmente \\ condiciones especiales. En este caso los factores \\ discriminantes están dados por la máxima cantidad que \\ soporte la CPU seleccionada y a la mayor velocidad disponible. \\ De manera ideal, la cantidad de módulos debe ser suficiente \\ para poder llenar los canales disponibles con el fin de \\ aprovechar los beneficios que viene de emplearlos en su \\ totalidad.\end{tabular} &
+      \begin{tabular}[c]{@{}c@{}}Memoria registrada.\\ Alta frecuencia de operación.\\ Alta densidad de memoria.\end{tabular} \\ \hline
+    Network &
+      \begin{tabular}[c]{@{}l@{}}Las capacidades de red de la máquina tienen que se suficientes \\ para poder realizar operaciones dentro de la red tanto privada \\ como académica. Es por esto que se espera que se tengan las \\ capacidades de red necesarias para realizar estas operaciones.\end{tabular} &
+      \begin{tabular}[c]{@{}c@{}}Capacidad para 10 Gigabit Ethernet.\\ Soporte para conexiones RJ45 y SFP+.\end{tabular} \\ \hline
+    Almacenamiento &
+      \begin{tabular}[c]{@{}l@{}}El almacenamiento, debido a la configuración que estamos\\ manejando, realmente no cae dentro de las principales \\ preocupaciones puesto que gran parte de la información será \\ manejada en red. En este sentido, sólo se tiene pensado en \\ priorizar el disco de arranque al igual que el almacenamiento \\ necesario para la configuración y las aplicaciones del dispositivo.\end{tabular} &
+      \begin{tabular}[c]{@{}c@{}}Alta velocidad read/write\\ Capacidad media.\end{tabular} \\ \hline
+    Barebones\footnote{Barebones se refiere a los componentes del chasis, la tarjeta madre y las PSU que serán empleadas para el sistema. \cite{barebones}} &
+      \begin{tabular}[c]{@{}l@{}}El principal enfoque de debe tener el barebones está en la \\ capacidad de integrar todos los componentes seleccionados. \\ De igual manera, es necesario que se pueda surtir de poder a \\ todos los elementos para la correcta operación de los mismos.\end{tabular} &
+      \begin{tabular}[c]{@{}c@{}}PSU redundantes.\\ Compatibilidad con el procesador \\ y la solución gráfica seleccionada.\\ Suficientes puertos para RAM y\\ PCIe.\end{tabular} \\ \hline
+    \caption{Descripción de los requisitos del sistema}
+    \label{tab:ReqTable}\\
+\end{longtable}
+
+A partir de lo realizado en la primera parte, se empezó así la selección de algunas de las partes que cumplen con las características establecidas para el sistema en cuestión. Tras esto, se realizaron las comparaciones respectivas entre cada una de las partes para así determinar cual era la parte más adecuada. \medbreak \medbreak
+
+Finalmente, se realizó la evaluación de los distintos proveedores los cuales pudieran cumplir con las configuraciones diseñadas teniendo en cuenta las limitaciones presupuestales establecidas al igual que los precios de envio, las diferentes garantías y condiciones de cada uno de los proveedores.
+
+\section{Desarrollo}
+
+\subsection{Subsection Heading Here}
+Subsection text here.
+
+\subsubsection{Subsubsection Heading Here}
+Subsubsection text here.
+
+\section{Limitaciones}
+
+\section{Conclusión}
+The conclusion goes here.
+
+\appendices
+\section{Proof of the First Zonklar Equation}
+Appendix one text goes here.
+
+\section{}
+Appendix two text goes here.
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+
+\end{document}

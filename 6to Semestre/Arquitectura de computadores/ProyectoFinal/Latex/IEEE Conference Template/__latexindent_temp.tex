@@ -1,0 +1,155 @@
+\documentclass[conference,onecolumn]{IEEEtran}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[spanish]{babelbib}
+\usepackage[spanish]{babel}
+\usepackage{algorithmic}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{cite}
+\usepackage{here}
+\usepackage{url}
+
+\IEEEoverridecommandlockouts
+\onehalfspacing
+
+\ifCLASSINFOpdf
+\else
+\fi
+
+\makeatletter
+\newcommand{\linebreakand}{%
+    \end{@IEEEauthorhalign}
+    \hfill\mbox{}\par
+    \mbox{}\hfill\begin{@IEEEauthorhalign}
+}
+\makeatother
+
+\newcommand{\cen}{\centering}
+
+\title{Título Pendiente}
+
+\author{
+    \IEEEauthorblockN{1\textsuperscript{ro} Cristhian Díaz}
+    \IEEEauthorblockA{\textit{Escuela de Ingeniería de Sistemas} \\
+    \textit{Universidad Industrial de Santander}\\
+    Bucaramanga, Colombia \\
+    andresdiaz0608@gmail.com}
+    \and
+
+    \IEEEauthorblockN{2\textsuperscript{do} Diego Lozada}
+    \IEEEauthorblockA{\textit{Escuela de Ingeniería de Sistemas} \\
+    \textit{Universidad Industrial de Santander}\\
+    Bucaramanga, Colombia \\
+    lonidian@hotmail.com}
+
+    \linebreakand
+    
+    \IEEEauthorblockN{4\textsuperscript{to} Daniel Delgado}
+    \IEEEauthorblockA{\textit{Escuela de Ingeniería de Sistemas} \\
+    \textit{Universidad Industrial de Santander}\\
+    Bucaramanga, Colombia \\
+    danieldavid2001@gmail.com}
+    
+    \and
+    \IEEEauthorblockN{3\textsuperscript{ro} Hendrik López}
+    \IEEEauthorblockA{\textit{Escuela de Ingeniería de Sistemas} \\
+    \textit{Universidad Industrial de Santander}\\
+    Bucaramanga, Colombia \\
+    hendriklop2106@hotmail.com}
+}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Pan
+\end{abstract}
+
+{
+    \begin{center}
+        \textbf{\small Abstract}
+    \end{center}
+
+    \hspace*{0.7cm} 
+    \small The abstract
+    \medbreak
+}
+
+\begin{IEEEkeywords}
+    component, formatting, style, styling, insert
+\end{IEEEkeywords}
+
+\section{Introducción}
+En las ciencias de la computación, la Visualización se refiere al como, con el uso de computadores y diferentes herramientas de software, podemos transformar grandes cantidades de datos recolectados en diferentes elementos gráficos que permiten una mayor compresión de la información recopilada \cite[Pág. 150]{vis}. Es gracias a la Visualización Computacional, por la cual el realizar análisis de los datos recolectados en simulaciones, o a partir de sensores, se convierten en tareas considerablemente más sencillas que el tratar de encontrar patrones y tendencia en cientos de mediciones y cifras replegadas en una hoja de cálculo. Dentro de la visualización, hay multiples ramas las cuales poseen diferentes enfoques y aplicaciones específicas dependiendo de lo que se requiera realizar al igual que el origen de los datos a trabajar. Una de estas ramas, y la más relevante para el presente documento, es la rama de la visualización científica (SciVis). En esta, el enfoque está principalmente orientado a la visualización de fenómenos tridimensionales, que competen a la medicina, meteorología, biología, el sector energético, entre otros \cite{SciVis}. En consecuencia, al ser la visualización científica una de las herramientas más importantes en cuanto al tratamiento de datos, existe una alta demanda por este tipo de servicios al igual que los equipos necesarios para llevarse a cabo. \medbreak \medbreak
+
+Uno de estos casos es el que compete al presente documento. Se nos plantea el caso de una empresa pequeña, similar a una \textit{Spin-Off} universitaria, la cual realiza el desarrollo de aplicaciones para visualización científica orientadas principalmente al sector energético de \textit{Oil and Gas}. Debido a esto, esta organización requiere de una solución para poder realizar diferentes tipos de visualizaciones inmersivas con el uso de tecnología de Realidad Virtual (VR) tipo CAVE (\textit{Cave automatic virtual environment}). De igual manera, es de resaltar que los desarrollos están siendo realizados con diferentes lenguajes de programación, tales como C/C++, CUDA, JAVA, Python y R; directivas, OpenACC, OpenCL, Matlab; las librerias, OpenGL y OpenCV; la igual que compiladores, ambientes de desarrollo y ejecución conocidos. De igual manera, dentro de estos requerimientos iniciales, se plantea la necesidad de soportar computación de alto rendimiento (HPC) y paralelismo al igual que la posibilidad de tener una alta calidad gráfica sin despreciar las aplicaciones en CUDA.
+\cite{arqCom} \medbreak \medbreak
+
+Partiendo de esto, en el presente documento se realizará el diseño, al igual que la cotización, de una posible solución a la problemática a la que esta empresa se enfrenta. Esto se realizará a partir del planteamiento de un equipo computacional cuyos componentes, seleccionados a partir de las especificaciones y características individuales de cada una de las partes, teniendo en cuenta la limitación del presupuesto dado; permitan el correcto desarrollo de las actividades de la empresa. \medbreak \medbreak
+
+\section{Objetivos}
+\subsection{Objetivo General}
+
+\begin{itemize}
+    \item Diseñar un sistema de computo que permita a la empresa la visualización de la ejecución de procesos de visualización científica en un ambiente de realidad virtual tipo CAVE. \medbreak
+\end{itemize}
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}
+    \item Definir los requerimientos que se adapten de mejor manera a la problemática.presentada por la empresa \medbreak
+    \item Identificar los componentes que cumplan con los requerimientos establecidos.\medbreak
+    \item evaluar los proveedores cumpliendo con las especificaciones técnicas y las limitaciones de presupuesto dadas. \medbreak
+\end{itemize}
+
+\section{Metodología}
+
+Para el desarrollo de la solución propuesta al problema planteado por la empresa, fue necesario tener en cuenta varios factores y condiciones a las cuales debíamos apegarnos para satisfacer la problemática planteada. En este sentido, se realizó el desarrollo en 3 partes. La determinación de los requerimientos, la identificación de los componentes adecuados, y la cotización de los mismos.
+
+Siendo así, se inicio con la determinación de los requerimientos del sistema en cuestión. Estos se presentan en la tabla a continuación.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|}
+        \hline
+        Componente & Descripción & Requerimiento \\ \hline
+                          &  &  \\ \hline
+                          &  &  \\ \hline
+                          &  &  \\ \hline
+                          &  &  \\ \hline
+        \end{tabular}
+    \medbreak
+    \caption{\label{tab:ReqTable}Descripción de los requisitos del sistema}
+\end{table}
+
+
+\section{Desarrollo}
+
+\subsection{Subsection Heading Here}
+Subsection text here.
+
+\subsubsection{Subsubsection Heading Here}
+Subsubsection text here.
+
+\section{Conclusión}
+The conclusion goes here.
+
+\appendices
+\section{Proof of the First Zonklar Equation}
+Appendix one text goes here.
+
+\section{}
+Appendix two text goes here.
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+
+\end{document}
