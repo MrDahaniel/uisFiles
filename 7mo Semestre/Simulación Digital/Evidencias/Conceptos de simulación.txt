@@ -1,0 +1,25 @@
+Evidencia de clase: Conceptos de Simulación
+
+a) Un ecosistema compuesto por varias especies animales y vegetales, y por recursos (agua, luz, etc.).
+
+    I. En este caso, la manera más eficiente para la la realización de del estudio de este sistema, según se ve, es la realización de una simulación. Esto de debe al gran tamaño del sistema, razones éticas, al igual que la misma dificultad de recolectar los datos del mismo. 
+
+    II. En este sentido, y partiendo de la gran cantidad de interacciones dentro del ecosistema, la simulación debe ser dinámica en cuanto nos interesa el ver el como va evolucionando el ambiente. Debe ser estocástico en cuanto siempre está en juego los diferentes resultados de las interacciones entre las especies. Y finalmente, discreto en cuanto nos estariamos refiriendo a cantidad de individuos de una especie, etc.
+
+b) Una glorieta en la que convergen varias calles, y que frecuentemente presenta atascos.
+
+    I. En este caso, la manera más eficiente en términos de recolección de datos al igual que el montaje del sistema, es la experimentación con el sistema real. Esto facilitaría el análisis de los problemas y evitaría el gran costo que sería el modelar todo el sistema vial que converge a la glorieta.
+
+    II. En este caso, se debería considerar el usar una simulación dinámica puesto que nos interesan los momentos en los que se generan atascos y el como estos van comportandose respecto al tiempo (Si desaparecen, si se atascan más, etc.). También debería ser un modelo estocástico debido a que es necesario representar las decisiones de los conductores en el momento de manejar. Finalmente, debería ser basado en eventos puesto tenemos un interés en los eventos que toman lugar dentro de la glorieta en términos de tiempo, volumen de autos, etc.
+
+c) El servicio de urgencias de un hospital, que se encuentra en funcionamiento.
+
+    I. Por motivos éticos, y con el fin de evitar perturbar el funcionamiento actual del sistema de salud, se podría usar tanto un modelo físico del sistema el cual permitiría ver las posibles interacciones dentro del sistema o incluso una simulación en el caso de que el tamaño de la sala de urgencias sea relativamente pequeña. 
+
+    II. En este caso, nos interesa un modelados dinámico en cuanto nos interesa ver el comportamiento de la sala de urgencias a medida que esta avanza. De igual manera, se espera que el comportamiento sea estocástico en cuanto a la evolución de los problemas dentro de la sala de urgencias puede verse alterado al igual que la existencia de variaciones en tiempo de respuesta y las acciones tomadas. Finalmente, se esperaría que esté basado en eventos puesto nos interesa saber los tiempos de espera al igual que la cantidad de personas, staff y otros que se encuentren en el momento determinado.
+
+d) Un circuito eléctrico con resistencias, inductores, capacitores y transistores.
+
+    I. En este caso, puesto que existen maneras de describir los circuitos de manera bastante fiable, la opción más clara es el uso de los diferentes métodos analíticos que permiten describir el comportamiento de cada uno de los elementos de los circuitos.
+
+    II. En este caso nos interesa que el modelado sea estático puesto que no deberían existir puntos en los cuales el comportamiento de los componentes se vea alterado de alguna manera. De igual medida, debería ser determinístico puesto que el comportamiento debería siempre el mismo. Finalmente, debería ser un modelado continuo en cuanto tenemos valores continuos para cosas como la resistencia, voltajes, amperajes, etc.
