@@ -1,25 +1,40 @@
 {
     "cSpell.words": [
+        "brutedns",
         "cuestionamiento",
         "determinísticos",
         "Docs",
         "epigénesis",
         "EPYC",
+        "hosteando",
+        "Kioptrix",
         "Lachaise",
         "lenguajear",
         "lenguajeo",
+        "localnet",
         "Lotus",
+        "metapache",
         "modeling",
         "motosa",
         "mr",
         "nesis",
+        "nikto",
+        "nmap",
+        "OSINT",
         "Pads",
         "papers",
         "Phones",
         "planogramas",
+        "rcpbind",
         "Sharepoint",
         "Sobrevivencia",
+        "theharvester",
         "THINKMATE",
+        "twiki",
+        "whois",
         "Xeon"
+    ],
+    "cSpell.ignoreWords": [
+        "Metasploitable"
     ]
 }
