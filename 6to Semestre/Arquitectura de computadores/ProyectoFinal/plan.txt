@@ -87,3 +87,17 @@ Desarrollo
     Barebones
         El principal enfoque de debe tener el barebones está en la capacidad de integrar todos los componentes seleccionados. De igual manera, es necesario que se pueda surtir de poder a todos los elementos para la correcta operación de los mismos.
     
+
+    Plan Desarrollo
+        For all subsections
+            Lo principal es contextualizar las partes y mostrar todas las opciones que tenemos.
+            Seguido de esto, nos interesa saber cuales son las características más relevantes de cada una de estas.
+
+        CPU
+            En este caso nos toca elegir la familia con la cual se desarrollará el PC.
+            En este sentido se presentarán las características generales de cada una de las partes. 
+            
+            Para Intel®, se analizaron las familias de procesadores Xeon®. En este caso, eran principalmente interesantes las familias de Xeon® Scalable Platinum. Esto se debe el enfoque principal que realiza intel en cuanto a las aplicaciones de HPC. 
+            (https://www.intel.com/content/www/us/en/high-performance-computing/hpc-3rd-gen-xeon-product-brief.html)
+
+            En el caso de Ryzen Epyc Milan, serían las PCIe lanes al igual que la relativa alta cantidad de núcleos, threads y cache que poseen la mayoría de las opciones.  
