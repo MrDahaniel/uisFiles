@@ -56,3 +56,26 @@ Sumado a esto, está la posibilidad de experimentar nuevos escenarios sobre los 
 -   Modelos estocásticos
 -   Modelos Continuos
 -   Modelos Discretos
+
+## Formalismos de modelos matemáticos
+
+Se refiere al como es la definición de nuestro sistema en términos matemáticos.
+
+### Formalismo DESS
+
+Se refiere a un sistema el cual está dado, o definido, por sistemas de ecuaciones diferenciales. En estos casos nos referimos a estas ecuaciones diferenciales las cuales representan las diferentes características del sistema.
+
+#### Características de los DESS
+
+-   Son sistemas dinámicos.
+-   Tiempo y variables continuas.
+-   Usualmente determinístico. En el caso de no serlo, estaríamos hablando de un sistema caótico.
+
+#### Ejemplos de DESS - Sistemas físicos
+
+-   Modelos mecánicos (Sistemas masa-resorte amortiguado).
+-   Modelos eléctricos (Circuitos RLC).
+-   Modelos de fluidos.
+-   Modelos térmicos.
+
+###

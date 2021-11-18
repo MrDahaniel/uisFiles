@@ -53,4 +53,56 @@ Tras la realización de las actividades, tendremos diferentes productos o result
 -   Especificación de algoritmos
 
 ## Implementación
-Es el momento en que se realiza como tal el desarrollo del software. Es en esta parte en la cual, basado en el diseño determinado, se realiza la creación del software con el uso de diferentes herramientas.   
+
+Es el momento en que se realiza como tal el desarrollo del software. Es en esta parte en la cual, basado en el diseño determinado, se realiza la creación del software con el uso de diferentes herramientas.
+
+# Ingeniería de Requerimientos
+
+La definición de requerimientos es una de las partes principales dentro del ciclo de vida del desarrollo. Es en esta parte en la cual se realiza la definición de las necesidades del cliente.
+
+## Definir requerimientos
+
+Esto se define como una serie de actividades la cual, al final del caso, terminaría con la definición de las necesidades del cliente las cuales deberían ser resueltas con el desarrollo de la solución.
+
+###
+
+![alt](img/cir.png)
+
+### Stakeholders
+
+En este caso se refiere principalmente a las personas que tienen algún interés hacia el software en términos generales. Las personas que están involucradas, normalmente, van desde los administradores hasta los usuarios, clientes y los mismos desarrolladores.
+
+Todos los Stakeholders, en la gran cantidad de los casos, van a tener puntos de vista diferentes en el como deben realizar las cosas dentro del desarrollo.
+
+### Impacto de los requerimientos
+
+#### Legales
+
+Se refiere a la base legal, o los contratos, entre el cliente y la empresa de desarrollo. Es desde de donde se trabaja. Si está mal definido, puede afectar el desarrollo final del software.
+
+#### Económicos
+
+El costo asociado con requerimientos errados o no tenidos en cuenta. Simpre tiene un precio no tener en cuenta algo.
+
+#### Sociales
+
+El como una mala definición puede afectar a las personas. En todo sentido.
+
+### Propiedades de los requerimientos
+
+![alt](img/req.png)
+
+#### Problemas posibles
+
+Pueden existir muchos problemas por los cuales pueden presentarse problemas más adelante. Ambiguedad, inconsistencias, malas estructuras, que no sea legible o comprensible, o hayan sobre-especificaciones, _cháchara_ o redundancias.
+
+### Dificultades para cumplir con las propiedades de los requerimientos
+
+-   Los clientes casi nunca siempre no saben lo que quieren.
+-   Los deseos y necesidades de los clientes evolucionan.
+-   Existen conflictos internos.
+-   Ciertos problemas no son tan fáciles de entender.
+-   Falta de entendimiento del problema.
+
+### Resumen de todo sobre requerimientos
+![alt](img/res.png)
