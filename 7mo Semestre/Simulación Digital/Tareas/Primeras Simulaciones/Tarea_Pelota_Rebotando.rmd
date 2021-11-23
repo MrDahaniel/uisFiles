@@ -1,0 +1,305 @@
+# **Pelota Rebotando**
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+```
+
+
+## Definición de nuestro sistema
+
+\begin{align}
+\large
+  \dot{x}(t) = v(t)
+\end{align}
+
+\begin{align}
+\large
+  \dot{v}(t) =
+  \begin{cases}
+    -\frac{b_a}{m} \cdot v(t) - g & \text{si  $x(t) > 0$} \\
+    -\frac{k}{m} \cdot x(t) -\frac{b}{m} \cdot v(t) - g & \text{si $x(t) \leq 0$}
+  \end{cases}
+\end{align}
+
+# **Desarrollo Analítico**
+---
+
+Lo primero a realizar para poder desarrollar la solución analítica de nuestro problema está en realizar el análisis por partes del problema. Para ir en orden, analicemos las caídas primero.
+
+1. Caída libre
+
+Al tener como altura inicial $S(0) = 10$, tenemos que usar la ecuación $\dot{v}(t) = -\frac{b_a}{m} \cdot v(t) - g$ para poder determinar la aceleración. Para poder determinar la aceleración respecto al tiempo, gracias a las condiciones iniciales que nos dan ($v(0)=0$, $S(0)=10$)
+
+Remplazando por las constantes dadas para el sistema ($b_a = 0.1$, $m = 1$, $g = 9.8$), tenemos la ecuación resultante:
+
+\begin{align}
+    \dot{v}(t) = -\frac{0.1}{1} \cdot v(t) - 9.8 \\
+    10 \cdot \ddot{x}(t) = - \dot{x}(t) - 98
+\end{align}
+
+Despejamos a la izquierda para igualar a $0$ nuestra ecuacion:
+
+\begin{align}
+    10 \cdot \ddot{x}(t) + \dot{x}(t) + 98 = 0
+\end{align}
+
+Y aplicamos la transformada de Laplace a ambos lados
+
+\begin{align}
+    \mathscr{L}[10 \cdot \ddot{x}(t) + \dot{x}(t) + 98] = \mathscr{L}[0]
+\end{align} 
+\begin{align}
+    \mathscr{L}[10 \cdot \ddot{x}(t)] + \mathscr{L}[\dot{x}(t)] +  \mathscr{L}[98] =  \mathscr{L}[0] 
+\end{align}
+\begin{align}
+    \frac{98}{s} + 10s^2 \cdot (\mathscr{L}[x(t)](s)) - s \cdot x(0) - \dot{x}(0) + s \cdot 
+    (\mathscr{L}[x(t)](s)) - x(0) = 0
+\end{align}
+\begin{align}
+    \mathscr{L}[x(t)](s)) \cdot (10s^2 + s) - x(0) \cdot (s+1) + \frac{98}{s} - \dot{x}(0) =0 
+\end{align}
+\begin{align}
+    \mathscr{L}[x(t)](s)) = \frac{-\frac{98}{s} + \dot{x}(0) + (s+1) \cdot x(0)}{10s^2+s}
+\end{align}
+\begin{align}
+    \mathscr{L}[x(t)](s)) = \frac{-98 + s \cdot \dot{x}(0) + s \cdot (s+1) \cdot x(0)}{s^2(10s+1)}
+\end{align}
+
+Aplicamos fracciones parciales
+
+\begin{align}
+    \mathscr{L}[x(t)](s)) = -\frac{98}{s^2} + \frac{980}{s} - \frac{9800}{10s+1} + \frac{x(0)}{s} + \frac{10 \cdot 
+    \dot{x}(0)}{s} - \frac{100 \cdot \dot{x}(0)}{10s+1} 
+\end{align}
+
+Aplicamos la trasnformada inversa de Laplace
+
+\begin{align}
+    \mathscr{L}^{-1}[\mathscr{L}[x(t)](s))] = \mathscr{L}^{-1}\left[-\frac{98}{s^2} + \frac{980}{s} - 
+    \frac{9800}{10s+1} + \frac{x(0)}{s} + \frac{10 \cdot \dot{x}(0)}{s} - \frac{100 \cdot \dot{x}(0)}{10s+1} \right]
+\end{align}
+\begin{align}
+    x(t) = -98t + 980 - 980 \cdot e^{-t/10}+x(0)+10 \cdot \dot{x}(0)- 10 \cdot e^{-t/10} \cdot \dot{x(0)}
+\end{align}
+
+Simplificamos
+\begin{align}
+    x(t) = -98t + (10 \cdot \dot{x}(0) + 980) \cdot (1 - e^{-t/10}) + x(0)
+\end{align}
+
+Y remplazamos las condiciones iniciales
+
+\begin{align}
+    x(t) = -98t + (10 \cdot 0 + 980) \cdot (1 - e^{-t/10}) + 10
+\end{align}
+
+Lo que nos deja con la ecuación:
+
+\begin{align}
+    x(t) = -98t + 990 - 980 \cdot e^{-t/10}
+\end{align}
+
+ 2. Rebote
+
+Tenemos que usar la ecuación $-\frac{k}{m} \cdot x(t) -\frac{b}{m} \cdot v(t) - g$ para asi determinar la aceleración al momento de realizar el rebote. Para poder determinar la aceleración respecto al tiempo, gracias a las condiciones otorgadas por la anterior ecuacion tenemos que nos dan ($v(t_{1})=0$, $S(t_{1})=0$)
+
+Remplazando por las constantes dadas para el sistema ($b = 30$, $m = 1$, $g = 9.8$ y $k=100000$), tenemos la ecuación resultante:
+
+\begin{align}
+    \dot{v}(t) = -1000000\cdot x(t)-{300}\cdot v(t) - 9.8
+\end{align}
+\begin{align}
+    \ddot{x}(t)+{300} \dot{x}(t)+1000000\cdot x(t)= - 9.8
+\end{align}
+
+Implementaremos el metodo de coeficientes indeterminados para calcular el resultado de la ecuación diferencial. Para esto tenemos en cuenta que la solución se encuentra conformada por:
+
+\begin{align}
+    x = x_{c} + x_{p}
+\end{align}
+
+Para dar solución a nuestra ecuación diferencial debemos igualarla a $0$:
+
+\begin{align}
+    \ddot{x}(t)+{300} \dot{x}(t) +1000000\cdot x(t)= 0
+\end{align}
+
+Cambiamos las variables de las derivadas por variables del mismo nivel de potencia:
+
+\begin{align}
+    m^{2}+300\cdot m+1000000= 0
+\end{align}
+
+Tomaremos la ecuación universal para encontrar solución a el problema de factorización, obteniendo el siguiente resultado:
+
+\begin{align}
+    x = \frac{-b \pm \sqrt{b^{2}-4 \cdot a \cdot c}}{2\cdot a}
+\end{align}
+\begin{align}
+    x = \frac{-300 \pm \sqrt{300^{2}-4 \cdot 1 \cdot 1000000}}{2\cdot 1} 
+\end{align}
+\begin{align}
+    x = \frac{-300 \pm \sqrt{90000-4000000}}{2} 
+\end{align}
+\begin{align}
+    x = \frac{-300 \pm \sqrt{-3100000}}{2}
+\end{align}
+
+Teniendo en cuenta las reglas del metodo de coeficientes indeterminados tenemos una solución de la forma:
+
+\begin{align}
+    x_{c} = C_{1}\cdot e^{\alpha}\cdot cos({\beta \cdot x}) + C_{2}\cdot e^{\alpha}\cdot sen({\beta \cdot x})
+\end{align}
+
+Basandonos en esto, la solución complementaria quedaría de la siguiente manera:
+
+\begin{align}
+    x_{c} = C_{1}\cdot e^{-300}\cdot cos({\sqrt{3100000\cdot x}}) + C_{2}\cdot e^{-300}\cdot sen({\sqrt{3100000\cdot x}})
+\end{align}
+
+Teniendo la solución complementaria estructurada, realizaremos el proceso para encontrar la solución particular. Tomaremos el caso donde $y_{p}= A$. Teniendo esto en cuenta, se obtiene el siguiente resultado:
+
+\begin{align}
+    x_{p} = A
+\end{align}
+\begin{align}
+    \dot{x_{p}} = 0
+\end{align}
+\begin{align}
+    \ddot{x_{p}} = 0
+\end{align}
+
+Reemplazando en la ecuación diferencial tenemos:
+
+\begin{align}
+    0+{300} \cdot 0+1000000\cdot A= - 9.8
+\end{align}
+\begin{align}
+    1000000\cdot A= - 9.8
+\end{align}
+\begin{align}
+    A = \frac{-9.8}{1000000}
+\end{align}
+\begin{align}
+    A = - \frac{49}{5000000}
+\end{align}
+
+Ahora se unen las dos respuestas obtenidas para encontrar la solución general de la ecuación diferencial:
+
+\begin{align}
+    x_{c} = C_{1}\cdot e^{-300}\cdot cos({\sqrt{3100000\cdot x}}) + C_{2}\cdot e^{-300}\cdot sen({\sqrt{3100000\cdot x}}) - \frac{49}{5000000}
+\end{align}
+
+Por motivos de simplicidad, para la solución particular se omitirá el proceso ya que es demasiado extenso el proceso, teniendo esto en cuenta, la solución obtenida es la siguiente:
+
+\begin{align}
+    x = \frac{\frac{147\cdot sen(50\cdot \sqrt{391\cdot x})}{5000000\cdot \sqrt{391}} + \frac{49\cdot cos(50\cdot \sqrt{391\cdot x})}{5000000}}{e^{150\cdot x}} - \frac{49}{5000000}
+\end{align}
+
+# **Desarrollo de la simulación**
+---
+
+Importamos las librerías de `numpy` y `matplot`
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+Definimos nuestro delta general, el tiempo y los parámetros de la simulación.
+
+```{python}
+delta = 0.000001 # Delta con el que se trabajará durante toda la simulación
+tiempoTotal = 10 # segundos
+
+# Constantes dadas para la definición del sistema
+ba = 0.1
+m = 1
+b = 30
+g = 9.8
+k = 100000
+```
+
+A partir de esto, calculamos la cantidad de puntos que vamos a trabajar y definimos los espacios lineales para el tiempo (Discretización del tiempo).
+
+```{python}
+nSteps = int(tiempoTotal/delta) 
+tSpace = np.linspace(0, tiempoTotal, nSteps + 1)
+
+print(f"Cantidad de pasos de tiempo: {nSteps}")
+
+print(f"Espacio lineal de tiempo: {tSpace}")
+```
+
+Ahora tenemos que declarar nuestro sistema definido por ecuaciones de diferencias. 
+
+```{python}
+# Declaramos la función de la aceleración
+def acceleration(position, speed, ba = ba, b = b, m = m, k = k, g = g):
+    if position > 0:
+        return -(ba/m) * speed - g
+    else:
+        return -(k/m) * position - (b/m) * speed - g
+
+# No es necesario declarar funciones de Velocidad (v(t) = a(t) * t) ni posición (s(t) = v(t) * t)
+# Por lo que estas dependen directamente de la aceleración y no prensentan condiciones especiales
+```
+
+A partir de nuestra función de aceleración (`acceleration`), podemos realizar nuestra simulación.
+
+```{python}
+# Establecemos nuestras condiciones iniciales
+v = 0 # m/s
+s = 10 # m
+a = 0
+
+# Creamos los vectores que contienen los valores calculados de aceleración, velocidad y posición
+all_v = np.zeros(nSteps) # Vector de las velocidades
+all_s = np.zeros(nSteps) # Vector de las posiciones
+all_a = np.zeros(nSteps) # Vector de las aceleraciones
+
+for indx in range(nSteps):
+    # Primero calculamos la aceleración
+    a = acceleration(s, v)
+    # Calculamos la posición 
+    s = s + v * delta
+    # Y finalmente la velocidad para la siguiente iteración
+    v = v + a * delta
+
+    # Y registramos todos los valores calculados en los vectores correspondientes
+    all_s[indx] = s
+    all_a[indx] = a
+    all_v[indx] = v
+
+```
+
+Ahora, realizamos la graficación de nuestros valores simulados
+
+```{python}
+plt.rcParams["figure.figsize"] = (30,10)
+```
+
+```{python}
+plt.plot(tSpace[:-1], all_a)
+plt.ylabel("Aceleracion")
+plt.xlabel("Tiempo")
+plt.grid()
+plt.show()
+```
+
+```{python}
+plt.plot(tSpace[:-1], all_v)
+plt.ylabel("Velocidad")
+plt.xlabel("Tiempo")
+plt.grid()
+plt.show()
+```
+
+```{python}
+plt.plot(tSpace[:-1], all_s, color= "green")
+plt.ylabel("Posicion")
+plt.xlabel("Tiempo")
+plt.grid()
+plt.show()
+```
