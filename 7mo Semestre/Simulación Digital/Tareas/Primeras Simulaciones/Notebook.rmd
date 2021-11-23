@@ -1,0 +1,31 @@
+```{r, setup, include=FALSE}
+library(reticulate)
+```
+
+# **Tarea: Pelota Rebotando**
+
+
+
+### Definición de nuestro sistema
+
+\begin{align}
+\large
+  \dot{x} = v(t)
+\end{align}
+
+\begin{align}
+\large
+  \dot{v}(t) =
+  \begin{cases}
+    -\frac{b_a}{m} \cdot v(t) - g & \text{si  $x(t) > 0$} \\
+    -\frac{k}{m} \cdot x(t) -\frac{b}{m} \cdot v(t) - g & \text{si $x(t) \leq 0$}
+  \end{cases}
+\end{align}
+
+```{python}
+# importamos las librerías pertienentes
+import matplotlib.pyplot as plt
+import numpy as np
+
+print("Hello world")
+```
