@@ -7,16 +7,15 @@ Una de las estructuras de datos básicas en el lenguaje `R` son los **vectores**
 La manera más simple de crear un vector es usando el constructor `vector()` o `c()` .
 
 ```{R}
-y <- vector(1, 2, 3) # Creando un vector con vector()
-print(y)
-x <- c(1, 2, 3) # Creando un vector con c()
+x <- c(1, 2, 3) # Creando un vector con los elementos 1, 2 y 3.
 print(x)
 ```
 
 Aunque en esencia son lo mismo, y ambos crean un vector, `c()` es más a la combinación (_combine_) de elementos que genera un vector y no un vector como tal. Esto puede ser usado para unir vectores, y como resultado, agregar elementos a un vector.
 
 ```{R}
-y <- c(vector(1, 2, 3), 4)
+y <- c(c(1, 2, 3), 4)
 print(y)
-x <- c(vector(1, 2, 3), vector(4, 5, 6))
+x <- c(c(1, 2, 3), c(4, 5, 6))
+print(x)
 ```
