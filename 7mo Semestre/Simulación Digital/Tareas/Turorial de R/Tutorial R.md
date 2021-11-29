@@ -1,0 +1,21 @@
+## 2. Vectores en R: Creación, indexación, edición.
+
+Una de las estructuras de datos básicas en el lenguaje `R` son los **vectores**. Esta estructura, en esencia, es una especie de _lista_ la cual contiene elementos de un único tipo. Estas son particularmente útiles para la agrupación de elementos.
+
+#### Ejemplo 1: Creando un vector básico
+
+La manera más simple de crear un vector es usando el constructor `vector()` o `c()` .
+
+```{R}
+y = vector(1, 2, 3) # Creando un vector con vector()
+print(y)
+x = c(1, 2, 3) # Creando un vector con c()
+print(x)
+```
+
+Aunque en esencia son lo mismo, y ambos crean un vector, `c()` es más a la combinación (_combine_) de elementos que genera un vector y no un vector como tal. Esto puede ser usado para unir vectores, y como resultado, agregar elementos a un vector.
+
+```{R}
+y = c(vector(1,2,3), 4)
+x =
+```
