@@ -2,20 +2,468 @@
 
 Una de las estructuras de datos básicas en el lenguaje `R` son los **vectores**. Esta estructura, en esencia, es una especie de _lista_ la cual contiene elementos de un único tipo. Estas son particularmente útiles para la agrupación de elementos.
 
-#### Ejemplo 1: Creando un vector básico
+### 2.1 Interacciones básicas
 
-La manera más simple de crear un vector es usando el constructor `vector()` o `c()` .
+La manera más simple de crear un vector es usando el constructor `c()`.
+
+#### `Ejemplo 1: Creando un vector básico`
 
 ```{R}
 x <- c(1, 2, 3) # Creando un vector con los elementos 1, 2 y 3.
 print(x)
 ```
 
-Aunque en esencia son lo mismo, y ambos crean un vector, `c()` es más a la combinación (_combine_) de elementos que genera un vector y no un vector como tal. Esto puede ser usado para unir vectores, y como resultado, agregar elementos a un vector.
+Una de las cosas a considerar, y resaltar, en el momento de usar vectores; está en el hecho de que esta estructura de datos solamente puede agrupar elementos de un mismo tipo. Es decir, un vector sólo podrá contener datos de tipo `int` o `float` pero no ambos. En caso de tratar de crear un vector con diferentes tipos de datos, `R` tratará de alterar el tipo de dato de un vector para que estos sean todos iguales.
+
+#### `Ejemplo 2: Tratando de crear vectores con distintos tipos`
 
 ```{R}
-y <- c(c(1, 2, 3), 4)
-print(y)
-x <- c(c(1, 2, 3), c(4, 5, 6))
+x <- c(1, 1.5, 3, 4) # Tratamos de crear un vector con 3 int y un float
 print(x)
 ```
+
+Como podemos ver, el vector resultante, al intentar añadir un elemento de un tipo distinto; tiene como resultado la afectación de todos los elementos del vector con el fin de que este contenga un único tipo. Otro ejemplo más agresivo de esto puede verse a continuación:
+
+```{R}
+x <- c(1, 2.5, TRUE, "Fizz") # Tratamos de crear un vector con un int, un float, un bool y un string
+print(x)
+```
+
+Como podemos ver, al tratar de crear el vector con un tipo `str`, `R` busca unificar los datos convirtiendo todos los datos en el vector en `str`.
+
+#### `Ejemplo 3: Agregando elementos y uniendo vectores`
+
+El constructor `c()` se refiere a la combinación (_combine_) de elementos que genera un vector. Esto puede ser usado para unir vectores, y así mismo, agregar elementos a un vector. De esta manera, podemos agregar o combinar vectores con el fin de realizar diferentes tratamientos de datos.
+
+```{R}
+y <- c(c(1, 2, 3), 4) # agregamos el elemento 4 al vector (1,2,3)
+print(y)
+x <- c(c(1, 2), c(3, 4)) # Unimos los vectores (1,2) y (3,4)
+print(x)
+```
+
+Retomando del punto anterior, esto también afecta a los vectores que combinemos o les agregamos elementos. Es decir, el agregar datos de otro tipo, afectará a todos los datos del vector resultante. Esto pude ser peligroso en el caso de que algún valor erroneo sea agregado a un vector cuando no debía serlo, dañando así los datos registrados.
+
+```{R}
+y <- c(c(1, 2, 3), TRUE) # Agregamos un booleano, y se convierte en un entero
+print(y)
+z <- c(c(1.1, 2.2, 3.3), "Fizz") # Agregamos un str y ahora todos son str
+print(z)
+x <- c(c(TRUE, FALSE, TRUE, TRUE), c(1, 2)) # Agregamos un vector de enteros y se perdieron los booleanos
+print(x)
+```
+
+### 2.2 Modificando Y Accesando A Los Datos
+
+Una de las cosas más importantes de los vectores está en el como vemos los datos y modificamos los mismos. La manera más simple de hacer ambas cosas está en el usar indices. Todo vector tiene un número el cual representa uno de sus elementos empezando desde 1. A partir de esto, podemos ver cada uno de los elementos del vector de manera individual o un rango.
+
+#### `Ejemplo 4: Usando indices`
+
+```{R}
+x <- c(1, 2, 3, 4, 5) # Creamos un vector con 5 elementos
+print(x[3]) # Podemos acceder al tercer elemento del vector usando [3]
+print(x[1:3]) # O podemos acceder desde el primero al tercer elemento usando [1:3]
+```
+
+De esta misma manera podemos modificar los valores de un vector con sus indices. Esto puede hacerse usando tanto rangos como indices individuales.
+
+```{R}
+x <- c(1, 2, 3, 4, 5) # Creamos un vector con 5 elementos
+x[1] <- 5 # Podemos cambiar el valor del primer elemento asignando con su índice
+print(x)
+x[4:5] <- 2 # De igual manera podemos cambiar los valores de los elementos 4 y 5
+print(x)
+```
+
+Estos mismos indices pueden usarse para realizar tratamientos de datos para cada uno de los elementos de los vectores.
+
+```{R}
+x <- c(1, 2, 3, 4, 5, 6, 7, 8) # Creamos un vector con 8 elementos
+y <- x[1:4] / 2 # Dividimos los elementos del 1 al 4 entre 2
+print(y)
+z <- x[5:8]**2 # Elevamos los elementos del 5 al 8 al cuadrado
+print(z)
+```
+
+Otra manera en la que se puede modificar un vector está en la eliminación de datos del mismo. Aunque existen varias maneras de hacerlo, las 2 maneras principales está usando indices y filtrando. En el caso de asignar, pasando el índice negativo del elemento a eliminar. Esto también funciona con rangos de indices.
+
+#### `Ejemplo 5: Eliminando datos`
+
+```{R}
+x <- c(1, 2, 3, 4, 5, 6, 7, 8)
+y <- x[-4] # Eliminamos cuarto elemento
+print(y)
+z <- x[-(4:8)] # Eliminamos del cuarto al octavo elemento
+print(z)
+```
+
+En el caso de querer eliminar algunos elementos específicos, podemos usar la función `setdiff` para poder eliminar los elementos.
+
+```{R}
+x <- c(1, 2, 3, 4, 5, 6, 7, 8) # Nuestro vector original
+y <- c(1, 3, 5) # El vector que contiene los elementos a eliminar
+z <- setdiff(x, y) # Los pasamos la función lo que eliminaría los elementos del vector
+print(z)
+```
+
+### 2.3 Más vectores
+
+En `R` existen otras maneras de crear vectores. Una de estas está en usar los mismos rangos para crear vectores de elementos enteros con un inicio y un fin. Es decir, crear un elemento de 5 a 10 con todos los números enteros entre ellos.
+
+#### `Ejemplo 6: Usando rangos`
+
+```{R}
+x <- 5:10 # Usando : podemos crear un vector con elementos entre un inicio y un fin
+print(x)
+y <- 1:6
+print(y)
+z <- 1:50
+print(z)
+```
+
+Aplicando este misma idea, podemos secuencias usando un paso determinado entre número y número. Esto es especialmente útil para la creación de espacios lineales usados en simulaciones y gráficas.
+
+#### `Ejemplo 7: Espacios lineales`
+
+```{R}
+x <- seq(1, 5, 0.5) # Creamos un vector del 1 al 5 con un paso de 0.5
+print(x)
+y <- seq(3, 7, 2) # Un vector del 3 al 7 con un paso de 2
+print(y)
+z <- seq(0, 0.3, 0.03) # Creamos un vector del 0 al 0.3 con un paso de 0.03
+print(z)
+```
+
+### 2.4 Vectores Aplicados
+
+Una de las maneras que podemos aprovechar los vectores es creado un **Generador Lineal Congruencial** para generar números _pseudoaletorios_.
+
+#### `Ejemplo 8: Generador Lineal Congruencial`
+
+```{R}
+x <- c() # Lo primero es crear un vector vacío
+seed <- 41 # Y establecemos las variables y constantes del generador
+a <- 7**5
+m <- 2**16 - 1
+k <- 10
+for (i in 1:10) { # Vamos a iterar sobre un vector de 10 elementos
+    seed <- (a * seed + k) %% m
+    x <- c(x, seed)
+}
+print(x)
+```
+
+De esta manera, podemos generar número aleatorios y guardarlos en un vector para luego usarlos en alguna otra operación o función.
+
+## 3. Listas y matrices en R. Operaciones matriciales
+
+Siguiendo con la temática, de estructuras de datos, tenemos otras 2 estructuras de datos en `R` las cuales cumples diferentes funciones en cuanto al tratamiento y la agrupación de datos.
+
+### 3.1 Listas: Un vector avanzado con varios tipos de dato
+
+El primero, las listas, es una extensión de un vector en cuanto quita la condición de un único tipo de dato al igual que añadir más funcionalidades. Siendo así, para poder crear una lista, podemos hacer uso de el constructor correspondiente `list()`.
+
+#### 3.1.1 Nociones Básicas De Las Listas
+
+##### `Ejemplo 1: Creación de Listas`
+
+```{R}
+x <- list() # De esta manera podemos crear una lista vacía
+print(x)
+y <- list(1, TRUE, "Fizz", 3.1) # Y así podemos crear una lista con datos de cualquier tipo
+print(y)
+```
+
+De esta manera, podemos crear listas en `R` de manera casi que análoga a como lo realizabamos con los vectores. Ahora, veamos algunas de las propiedades y características de las listas. Una de las primeras a resaltar está con la posibilidad de darle nombre a cada una de los datos que estamos guardando en la lista. Esto es especialmente útil cuando tenemos, por ejemplo, una lista de vectores.
+
+##### `Ejemplo 2: Listas con nombres`
+
+```{R}
+x <- list("Edades" = c(15, 17, 13), "Alturas" = c(1.68, 1.75, 1.40)) # Creamos una lista dando nombre a cada uno de los elementos
+print(x)
+y <- list(c(15, 17, 13), c(1.68, 1.75, 1.40)) # O podemos crear la lista
+names(y) <- c("Grados", "Metros") # Y luego añadir los nombres
+print(y)
+```
+
+De esta manera, podemos nombrar los diferentes datos presentes en la lista. Esto, a parte de mejorar la lectura de los elementos de un lista, facilita el acceso a cada uno de los elementos en comparación a los indices que manejabamos en los vectores. De esta manera, en caso de tener muchos datos, no sería un problema puesto podemos usar el nombre del elemento para acceder a él.
+
+#### 3.1.2 Accediendo A Las Datos De La Lista
+
+##### `Ejemplo 3: Usando nombres como indices`
+
+```{R}
+x <- list("Años" = c(2001, 2004, 2008), "Bisiesto" = c(FALSE, TRUE, TRUE)) # Tenemos esta lista
+print(x$Año) # Y usando x$[Nombre] podemos acceder a los datos correspondientes
+```
+
+De esta manera, en casos como tener muchas columnas, los nombres permitirían el fácil acceso a los datos. Sin embargo, aún así se puede acceder a estos usando los indices de cada uno de estos como se hacía con los vectores.
+
+```{R}
+print(x[2])
+```
+
+En cuanto a la modificación de los datos, esta funciona bastante simular a como lo hacía con los vectores, aunque, también tenemos otras opciones para hacerlo. Lo primero está en el añadir datos a un vector. La manera más directa es usando `c()` como lo haciamos con los vectores para unir listas y añadir datos a estas.
+
+#### 3.1.3 Modificando Listas
+
+##### `Ejemplo 4: Unir y añadir`
+
+```{R}
+x <- list("Edades" = c(15, 17, 13), "Alturas" = c(1.68, 1.75, 1.40))
+y <- list("Años" = c(2001, 2004, 2008), "Bisiesto" = c(FALSE, TRUE, TRUE)) # Teniendo 2 vectores, podemos crear
+z <- c(x, y) # De esta manera, estamos combinando 2 listas en una sola
+print(z)
+```
+
+De igual manera, podemos añadir elementos a una lista. Es de resaltar que, al hacerlo de esta manera y no darle un nombre al elemento, el nuevo elemento no tendrá un nombre asignado y se le dará su índice correspondiente a la posición en la que se encuentre.
+
+```{R}
+k <- c(x, "Gravedad" = 9.8)
+print(k)
+```
+
+Una manera alterna de añadir elementos a la lista es usando la misma manera de acceder al índice del vector. De esta manera, se le asignará de manera más clara el nombre al nuevo elemento añadido.
+
+```{R}
+x$Fecha <- "01/01/2000"
+print(x)
+```
+
+Ahora, en el caso de querer eliminar elementos de una lista, tendremos que asignar `NULL` al elemento correspondiente para eliminarlo. En caso de no tener nombre, se puede borrar de la misma manera que se hacía en el caso de los vectores usando indices negativos.
+
+```{R}
+x$Edades <- NULL # Asignamos NULL a Edades
+print(x)
+y <- x[-1] # Eliminamos el primer elemento de la lista, que en este caso sería Alturas
+print(y)
+```
+
+Algo a resaltar está en que, en estos casos, las maneras en las que estamos modificando la lista es bastante diferentes. En el caso de realizar asignaciones usando `$`, estamos mutando la lista como tal, es decir, estamos modificando directamente la lista original. En el caso de usar indices, o `c()`, estamos es sacando una copia de la lista original y añadiendo, o borrando, el elemento correspondiente.
+
+### 3.2 Matrices
+
+Las matrices, como era de esperar, pueden verse como vectores de n > 1 dimensiones. En el caso de `R` estas son, normalmente, de 2 dimensiones y pueden verse, en cierta medida, como una serie de vectores en un gran vector. La creación de matrices puede hacerse con el constructor `matrix()`
+
+#### 3.2.1 Nociones Básicas
+
+##### `Ejemplo 1: Creando una matriz`
+
+```{R}
+x <- matrix(0, nrow = 4, ncol = 3) # De esta manera podemos crear una matriz de 4 filas y 3 columnas llena de ceros
+print(x)
+```
+
+A partir de esto podemos crear una matriz de cualquier tamaño que sea necesario. En el caso de no especificar las dimensiones de la matriz. se creará una matriz con n elementos y una única columna.
+
+```{R}
+x <- matrix(1:4)
+print(x)
+```
+
+Así mismo, en el caso de especificar únicamente una sola de las dimensiones de la matriz, se generará una matriz cuadrada de $n\times n$.
+
+```{R}
+x <- matrix(1:4, nrow = 2)
+print(x)
+```
+
+Otra de las maneras de crear matrices en `R` está en usar los constructores `cbind()` y `rbind()`. Estos, a diferencia de `matrix()`, crean matrices a partir de vectores de un mismo tamaño los cuales podemos organizar por columnas, `cbind()`; o por filas, `rbind()`.
+
+##### `Ejemplo 2: Otras formas`
+
+```{R}
+x <- cbind(c(1, 2, 3, 4), c(5, 6, 7, 8)) # Creamos una matriz orientado a las columnas
+print(x)
+y <- rbind(c(9, 10, 11, 12), c(13, 14, 15, 16)) # Y en este caso una orientada a las filas
+print(y)
+```
+
+Como podemos ver, usando estos constructores, podemos controlar más fácilmente el como se generan cada uno de los número dentro de la matriz en comparación al constructor original. Ahora, otra opción para crear una matriz está con la función `dim()`. Esta función permite tomar un vector y reorganizarlo, o redimensionarlo; en una matriz de $m\times n$
+
+```{R}
+x <- c(1, 2, 3, 4, 5, 6, 7, 8) # Creamos un vector
+dim(x) <- c(2, 4) # Y lo pasamos por la función dim(x) = otro vector de 2 elementos
+print(x)
+```
+
+Algo destacable de que pasemos unas dimensiones demasiado grandes para la cantidad de datos dada, en cualquiera de las formas, y se repetiran valores de los dados con el fin de llenar los espacios faltantes. Esta repetición se realizará de manera periodica.
+
+```{R}
+x <- matrix(1:4, nrow = 3) # Creamos un vector 3x3 con 4 elementos
+print(x)
+```
+
+Por el contrario, en el caso de que tratemos de crear una matriz con más elementos de los que tenga disponible, se creará la matriz con elementos recortados.
+
+```{R}
+x <- matrix(1:16, nrow = 3, ncol = 3) # tratamos de crear una matriz de 16 elementos de 3x3
+print(x)
+```
+
+De igual manera, podemos crear matrices especiales, como la matriz identidad, o matrices diagonales; usando el constructor `diag()`. A partir de este, podremos sin problema alguno, crear estas matrices.
+
+```{R}
+x <- diag(4) # Pasando sólo un número entero como parametro, podremos generar una matriz identidad del tamaño del parametro
+print(x)
+y <- diag(c(23, 4, 5, 1)) #  En el caso de pasar un vector, estaríamos creando un vector diagonal con los elementos de este
+print(y)
+```
+
+#### 3.2.2 Propiedades De Filas Y Columnas
+
+Algo que también nos permiten las matrices, similar a las listas, está en la posibilidad de nombrar cada una de las filas y columnas. Esto puede hacerse de 2 maneras, en el constructor o usando las propiedades correspondientes.
+
+##### `Ejemplo 4: Nombrando columnas y filas`
+
+```{R}
+x <- matrix(1:4, nrow = 2, dimnames = list(c("X", "Y"), c("Cantidad", "Altura")))
+print(x) # Pasando una lista al parametro dimnames, con los nombres de las filas y luego las columnas
+```
+
+En el caso de querer modificar los nombres de las filas y columnas, podemos usar el parametro `colnames()` y `rownames()` para así modificar o establecerlos de manera inicial.
+
+```{R}
+colnames(x) <- c("Estado", "ID")
+print(x)
+rownames(x) <- c("Colección A", "Colección B")
+```
+
+#### 3.2.3 Accediendo y Modificando Datos Del Vector
+
+Una de las partes importante en cuanto a los vectores está en poder acceder a los datos y modificar los mismos en caso de ser necesario. Esto primero se puede conseguir de varias maneras. Lo primero está en la posibilidad de acceder a las filas y las columnas de la matriz.
+
+##### `Ejemplo 5: Accediendo a los datos`
+
+```{R}
+x <- matrix(1:9, nrow = 3, dimnames = list(c("X", "Y", "Z"), c("Cantidad", "Altura", "Temperatura")))
+print(x[1, ]) # Podemos acceder a la primera fila de la matrix
+print(x[, 2]) # A la segunda columna
+print(x[1:2, ]) # De la fila 1 a la 2
+print(x[, 2:3]) # De la columna 2 a la 3
+print(x[2, 1]) # O al elemento que está en la segunda fila y la  primera columna
+```
+
+De esta manera podemos acceder a los valores del vector usando los índices correspondientes. Sin embargo, y aprovechando los nombres dados a tanto columnas como filas, también es posible acceder a cada uno de estos usando el nombre dado.
+
+```{R}
+x <- matrix(1:9, nrow = 3, dimnames = list(c("X", "Y", "Z"), c("Cantidad", "Altura", "Temperatura")))
+print(x["X", ]) # Podemos acceder a la fila "X"
+print(x[, "Altura"]) # A la columna "Altura"
+print(x["Y", "Cantidad"]) # Y al elemento en la fila "Y" y la columna "Cantidad"
+```
+
+De esta misma manera podemos realizar la modificación de los datos de la matriz. Usando tanto indices como los nombres, podemos realizar modificaciones a los valores presentes en la estructura.
+
+```{R}
+x <- matrix(1:9, nrow = 3, dimnames = list(c("X", "Y", "Z"), c("Cantidad", "Altura", "Temperatura")))
+x["X", "Cantidad"] <- 10 # Usando los nombres de la fila y la columna
+print(x)
+x[2, 3] <- 15 # Usando los indices de la matriz
+print(x)
+x[, 1:2] <- 0 # Usando un rango de indices
+print(x)
+```
+
+#### 3.2.4 Operaciones Matriciales
+
+Uno de los principales intereses en el usar matrices está en la realización de operaciones matriciales. En el caso de `R`, estas operaciones matriciales pueden realizarse de manera relativamente intuitiva. Empecemos con las operaciones algebraicas.
+
+##### `Ejemplo 6: Algebra Matricial`
+
+En cuanto a las operaciones matriciales, la suma y resta sólo tienen que cumplir con la condición de tener ser matrices del mismo tamaño.
+
+```{R}
+x <- matrix(1:9, nrow = 3)
+y <- matrix(10:18, nrow = 3)
+z <- x + y # Usando el operador de suma, podemos realizar una suma matricial
+print(z)
+w <- y - x # En el caso de la resta, esto se puede hacer de igual manera que con el operador de la resta
+print(w)
+```
+
+Ahora, en el caso de querer realizar operaciones de suma, o resta, entre 2 matrices de diferente tamaño, `R` no lo permitirá.
+
+```R
+x <- matrix(1:9, nrow = 3)
+y <- matrix(10:18, nrow = 2)
+z <- x + y
+```
+
+```
+Error in x + y : non-conformable arrays
+```
+
+De igual manera, tenemos la multiplicación matricial. En este caso, nos interesa que las matrices tengan un mismo número de columnas y de filas correspondientemente. En el caso de que no sea así, como es de esperarse, `R` no permitirá la operación.
+
+```{R}
+x <- matrix(1:6, nrow = 3, ncol = 2) # Mismo número de columnas
+y <- matrix(10:15, nrow = 2, ncol = 3) # Con un mismo número de filas
+z <- x %*% y # Usando el operador %*%, podremos multiplicar 2 matrices
+print(z)
+```
+
+```R
+x <- matrix(1:6, nrow = 3, ncol = 2) # Diferente número de columnas
+y <- matrix(10:15, nrow = 3, ncol = 2) # Con un diferente número de filas
+z <- x %*% y
+print(z)
+```
+
+```
+Error in x %*% y : non-conformable arguments
+```
+
+Otra opción que tenemos, en cuanto a operaciones con matrices, está en la posibilidad de realizar operaciones con escalares. Estas operaciones son, principalmente, multiplicaciones.
+
+##### `Ejemplo 7: Operaciones Con Escalares`
+
+```{R}
+x <- matrix(1:9, nrow = 3)
+y <- x * 3 # Usando el operador * podemos realizar operaciones de multiplicación con escalares
+print(y)
+```
+
+Estas mismas operación de multiplicación escalar puede realizarse entre matrices del mismo tamaño. En esta operación se multiplica cada elemento de la matriz A con el en la misma posición de la matriz B.
+
+```{R}
+x <- matrix(1:4, nrow = 2)
+y <- matrix(5:8, nrow = 2)
+z <- x * y # Aquí estamos multiplicando cada elemento de x con el elemento en y con su misma posición
+print(z)
+```
+
+Ahora, existen una gran cantidad de otras operaciones matriciales las cuales podemos aplicar a las diferentes matrices que tengamos que manejar. Veamos algunas de ellas.
+
+##### `Ejemplo 8: Otras Operaciones`
+
+Una de las operaciones que podemos realizar con las matrices está el sacar la matriz transpuesta. Esto puede ser hecho a partir del uso de la función `t()` la cual retornará la transpuesta de la matriz que pasemos como parametro.
+
+```{R}
+x <- matrix(1:9, nrow = 3)
+print(x)
+y <- t(x) # Aplicamos la función t() lo que nos dará la transpuesta de la matriz x
+print(y)
+```
+
+Así mismo, podemos calcular el determinate de una matriz usando la función `det()`. Esta retornará el valor del determinante de la matriz que pasemos como parametro.
+
+```{R}
+x <- cbind(c(1, 5), c(10, 8)) # Creamos una matriz cuadrada
+y <- det(x) # Aplicamos la función determinante
+print(y)
+```
+
+Otra operación que podemos realizar con las matrices es calcular la matriz inversa. Esto puede realizarse a partir de la función `solve()` la cual retorna la matriz inversa.
+
+```{R}
+x <- cbind(c(1, 5), c(10, 8)) # Creamos una matriz cuadrada
+y <- solve(x) # Usamos la función solve()
+print(y)
+z <- x %*% y # Multiplicando las matrices, podemos comprobar que efectivamente nos da la matriz inversa si el
+print(z) # Resultado es la matriz identidad
+```
+
+Aunque estas solo son algunas de todas las operaciones matriciales que se pueden realizar en R, estas son algunas de las más comunes de todas.
+
+## 7. Ejemplos De Visualización De Datos: Dispersión De Puntos, Histogramas, Diagrama De Cajas, Violinplots, Etc.

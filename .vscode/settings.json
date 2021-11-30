@@ -1,13 +1,19 @@
 {
     "cSpell.words": [
         "brutedns",
+        "cbind",
+        "colnames",
         "conceptualizar",
         "cuestionamiento",
+        "destacable",
         "determinísticos",
+        "dimnames",
         "Docs",
         "epigénesis",
         "EPYC",
+        "faltantes",
         "hosteando",
+        "indexación",
         "Kioptrix",
         "Lachaise",
         "lenguajear",
@@ -19,15 +25,21 @@
         "modeling",
         "motosa",
         "mr",
+        "ncol",
         "nesis",
         "nikto",
         "nmap",
+        "nrow",
         "OSINT",
         "Pads",
         "papers",
         "Phones",
         "planogramas",
+        "rbind",
         "rcpbind",
+        "redimensionarlo",
+        "rownames",
+        "setdiff",
         "Sharepoint",
         "Sobrevivencia",
         "theharvester",
@@ -38,5 +50,6 @@
     ],
     "cSpell.ignoreWords": [
         "Metasploitable"
-    ]
+    ],
+    "cSpell.language": "es,en,es-ES"
 }

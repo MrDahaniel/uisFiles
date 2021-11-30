@@ -1,0 +1,156 @@
+## 2. Vectores en R: Creación, indexación, edición.
+
+Una de las estructuras de datos básicas en el lenguaje `R` son los **vectores**. Esta estructura, en esencia, es una especie de _lista_ la cual contiene elementos de un único tipo. Estas son particularmente útiles para la agrupación de elementos.
+
+### 2.1 Interacciones básicas
+
+La manera más simple de crear un vector es usando el constructor `c()`.
+
+#### `Ejemplo 1: Creando un vector básico`
+
+```{R}
+x <- c(1, 2, 3) # Creando un vector con los elementos 1, 2 y 3.
+print(x)
+```
+
+Una de las cosas a considerar, y resaltar, en el momento de usar vectores; está en el hecho de que esta estructura de datos solamente puede agrupar elementos de un mismo tipo. Es decir, un vector sólo podrá contener datos de tipo `int` o `float` pero no ambos. En caso de tratar de crear un vector con diferentes tipos de datos, `R` tratará de alterar el tipo de dato de un vector para que estos sean todos iguales.
+
+#### `Ejemplo 2: Tratando de crear vectores con distintos tipos`
+
+```{R}
+x <- c(1, 1.5, 3, 4) # Tratamos de crear un vector con 3 int y un float
+print(x)
+```
+
+Como podemos ver, el vector resultante, al intentar añadir un elemento de un tipo distinto; tiene como resultado la afectación de todos los elementos del vector con el fin de que este contenga un único tipo. Otro ejemplo más agresivo de esto puede verse a continuación:
+
+```{R}
+x <- c(1, 2.5, TRUE, "Fizz") # Tratamos de crear un vector con un int, un float, un bool y un string
+print(x)
+```
+
+Como podemos ver, al tratar de crear el vector con un tipo `str`, `R` busca unificar los datos convirtiendo todos los datos en el vector en `str`.
+
+#### `Ejemplo 3: Agregando elementos y uniendo vectores`
+
+El constructor `c()` se refiere a la combinación (_combine_) de elementos que genera un vector. Esto puede ser usado para unir vectores, y así mismo, agregar elementos a un vector. De esta manera, podemos agregar o combinar vectores con el fin de realizar diferentes tratamientos de datos.
+
+```{R}
+y <- c(c(1, 2, 3), 4) # agregamos el elemento 4 al vector (1,2,3)
+print(y)
+x <- c(c(1, 2), c(3, 4)) # Unimos los vectores (1,2) y (3,4)
+print(x)
+```
+
+Retomando del punto anterior, esto también afecta a los vectores que combinemos o les agregamos elementos. Es decir, el agregar datos de otro tipo, afectará a todos los datos del vector resultante. Esto pude ser peligroso en el caso de que algún valor erroneo sea agregado a un vector cuando no debía serlo, dañando así los datos registrados.
+
+```{R}
+y <- c(c(1, 2, 3), TRUE) # Agregamos un booleano, y se convierte en un entero
+print(y)
+z <- c(c(1.1, 2.2, 3.3), "Fizz") # Agregamos un str y ahora todos son str
+print(z)
+x <- c(c(TRUE, FALSE, TRUE, TRUE), c(1, 2)) # Agregamos un vector de enteros y se perdieron los booleanos
+print(x)
+```
+
+### 2.2 Modificando Y Accesando A Los Datos
+
+Una de las cosas más importantes de los vectores está en el como vemos los datos y modificamos los mismos. La manera más simple de hacer ambas cosas está en el usar indices. Todo vector tiene un número el cual representa uno de sus elementos empezando desde 1. A partir de esto, podemos ver cada uno de los elementos del vector de manera individual o un rango.
+
+#### `Ejemplo 4: Usando indices`
+
+```{R}
+x <- c(1, 2, 3, 4, 5) # Creamos un vector con 5 elementos
+print(x[3]) # Podemos acceder al tercer elemento del vector usando [3]
+print(x[1:3]) # O podemos acceder desde el primero al tercer elemento usando [1:3]
+```
+
+De esta misma manera podemos modificar los valores de un vector con sus indices. Esto puede hacerse usando tanto rangos como indices individuales.
+
+```{R}
+x <- c(1, 2, 3, 4, 5) # Creamos un vector con 5 elementos
+x[1] <- 5 # Podemos cambiar el valor del primer elemento asignando con su índice
+print(x)
+x[4:5] <- 2 # De igual manera podemos cambiar los valores de los elementos 4 y 5
+print(x)
+```
+
+Estos mismos indices pueden usarse para realizar tratamientos de datos para cada uno de los elementos de los vectores.
+
+```{R}
+x <- c(1, 2, 3, 4, 5, 6, 7, 8) # Creamos un vector con 8 elementos
+y <- x[1:4] / 2 # Dividimos los elementos del 1 al 4 entre 2
+print(y)
+z <- x[5:8]**2 # Elevamos los elementos del 5 al 8 al cuadrado
+print(z)
+```
+
+Otra manera en la que se puede modificar un vector está en la eliminación de datos del mismo. Aunque existen varias maneras de hacerlo, las 2 maneras principales está usando indices y filtrando. En el caso de asignar, pasando el índice negativo del elemento a eliminar. Esto también funciona con rangos de indices.
+
+#### `Ejemplo 5: Eliminando datos`
+
+```{R}
+x <- c(1, 2, 3, 4, 5, 6, 7, 8)
+y <- x[-4] # Eliminamos cuarto elemento
+print(y)
+z <- x[-(4:8)] # Eliminamos del cuarto al octavo elemento
+print(z)
+```
+
+En el caso de querer eliminar algunos elementos específicos, podemos usar la función `setdiff` para poder eliminar los elementos.
+
+```{R}
+x <- c(1, 2, 3, 4, 5, 6, 7, 8) # Nuestro vector original
+y <- c(1, 3, 5) # El vector que contiene los elementos a eliminar
+z <- setdiff(x, y) # Los pasamos la función lo que eliminaría los elementos del vector
+print(z)
+```
+
+### 2.3 Más vectores
+
+En `R` existen otras maneras de crear vectores. Una de estas está en usar los mismos rangos para crear vectores de elementos enteros con un inicio y un fin. Es decir, crear un elemento de 5 a 10 con todos los números enteros entre ellos.
+
+#### `Ejemplo 6: Usando rangos`
+
+```{R}
+x <- 5:10 # Usando : podemos crear un vector con elementos entre un inicio y un fin
+print(x)
+y <- 1:6
+print(y)
+z <- 1:50
+print(z)
+```
+
+Aplicando este misma idea, podemos secuencias usando un paso determinado entre número y número. Esto es especialmente útil para la creación de espacios lineales usados en simulaciones y gráficas.
+
+#### `Ejemplo 7: Espacios lineales`
+
+```{R}
+x <- seq(1, 5, 0.5) # Creamos un vector del 1 al 5 con un paso de 0.5
+print(x)
+y <- seq(3, 7, 2) # Un vector del 3 al 7 con un paso de 2
+print(y)
+z <- seq(0, 0.3, 0.03) # Creamos un vector del 0 al 0.3 con un paso de 0.03
+print(z)
+```
+
+### 2.4 Vectores Aplicados
+
+Una de las maneras que podemos aprovechar los vectores es creado un **Generador Lineal Congruencial** para generar números _pseudoaletorios_.
+
+#### `Ejemplo 8: Generador Lineal Congruencial`
+
+```{R}
+x <- c() # Lo primero es crear un vector vacío
+seed <- 41 # Y establecemos las variables y constantes del generador
+a <- 7**5
+m <- 2**16 - 1
+k <- 10
+for (i in 1:10) { # Vamos a iterar sobre un vector de 10 elementos
+    seed <- (a * seed + k) %% m
+    x <- c(x, seed)
+}
+print(x)
+```
+
+De esta manera, podemos generar número aleatorios y guardarlos en un vector para luego usarlos en alguna otra operación o función.
