@@ -464,6 +464,83 @@ z <- x %*% y # Multiplicando las matrices, podemos comprobar que efectivamente n
 print(z) # Resultado es la matriz identidad
 ```
 
-Aunque estas solo son algunas de todas las operaciones matriciales que se pueden realizar en R, estas son algunas de las más comunes de todas.
+Aunque estas sólo son algunas de todas las operaciones matriciales que se pueden realizar en R, son algunas de las más comunes.
 
 ## 7. Ejemplos De Visualización De Datos: Dispersión De Puntos, Histogramas, Diagrama De Cajas, Violinplots, Etc.
+
+Una de las cosas más importantes en cuanto al manejo de datos, especialmente en grandes cantidades, está en las diferentes maneras en las que podemos visualizar los datos. En `R`, las principales maneras de realizar estas está en la graficación. 
+
+### 7.1 Conceptos Básicos
+
+La primera función para graficación es la función `plot()`. Esta toma como entrada un vector con puntos para x y otro para y. Pasando cada una de estos como parámetros, podremos graficar los puntos que le indiquemos.
+
+```{R}
+x <- (1:10)
+# Usando la función plot y pasando "l" como tipo, R graficará los puntos que le indiquemos.
+plot(x = x, y = x**2)
+# Esta gráfica puede ser usada para la creación de gráficos de puntos.
+x <- sample(1:50, 100, replace = TRUE)
+plot(x = 1:100, y = x)
+```
+
+De igual manera, podemos cambiar el estilo de la gráfica, el nombre de los ejes, el título y subtítulo e incluso el color de la gráfica pasando los parametros correspondientes a la función `plot()`. Todas estas opciones nos permiten generar diferentes tipos de gráficas para visualizar datos.
+
+```{R}
+x <- seq(0, 10, 0.5)
+plot(
+    x = x,
+    y = (x + 3) / x,
+    type = "b", # El tipo de gráfica
+    xlab = "Días", # El nombre del eje X
+    ylab = "Porcentaje", # El nombre del eje Y
+    col = "maroon", # El color de la columna
+    lwd = 5 # El grosor de la línea
+)
+```
+
+A partir de esto, podremos estilizar las diferntes gráficas con las que se trabaja. Esto nos permite tener un mejor control de la manera en la que se realiza la visualización de los datos que tenemos a nuestra disposición.
+
+### 7.2 Gráficas De visualización
+
+De igual manera, tenemos diferentes tipos de gráficas las cuales podemos usar para poder presentar los datos de diversas maneras. La primera de estas, y de las más comunes, son los histogramas.
+
+#### 7.2.1 Histogramas
+
+```{R}
+x <- runif(500, 0.0, 1.0)
+hist(x, col = "blue")
+```
+
+Con estos mismos histogramas podemos alterar la cantidad de barras, el color entre otros pasando el parametro correspondiente. También podemos graficar la densidad de probabilidad usando la función `lines` y `density`.
+
+```{R}
+x <- rnorm(5000)
+hist(x,
+    col = "#026471", # El color del histograma
+    breaks = 25, # Así podemos aumentar la cantidad de barras del histograma
+    prob = TRUE # Pasando este parametro, nos mostrará la probabilidad en el eje Y y no la frecuencia
+)
+lines(density(x))
+```
+
+#### 7.2.2 Diagramas de Cajas
+
+Otra de las maneras en las que podemos presentar diferentes datos está en el uso de diagramas de caja. Estos son especialmente útiles en la búsqueda de valores atítpicos durante un análisis estadístico.
+
+```{R}
+x <- rchisq(50, 15)
+boxplot(x)
+```
+
+De esta manera podemos graficar diagramas de caja los cuales nos permiten una mejor compresión de los datos que estamos trabajando. Ahora, al igual que las gráficas anteriores, podemos cambiar el estilo de la gráfica con el fin de facilitar la interpretación del diagrama.
+
+```{R}
+boxplot(x,
+    notch = TRUE, # Esto nos permite resaltar mejor el promedio de la muestra
+    horizontal = TRUE, # Altera la orienteación de la gráfica para que se vea de manera horizontal
+    col = "#753939"
+)
+```
+
+#### 7.2.3 Diagramas de Violín
+

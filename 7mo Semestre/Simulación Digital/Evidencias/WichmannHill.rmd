@@ -1,0 +1,33 @@
+```{R}
+library(reticulate)
+```
+
+```{python}
+def whGen(s1, s2, s3):
+    s1 = 171*s1 % 30269
+    s2 = 172*s2 % 30307 
+    s3 = 170*s3 % 30323
+
+    r = (s1/30269 + s2/30307 + s3/30323) % 1
+
+    return s1, s2, s3, r
+```
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+s1 = 9123
+s2 = 14994
+s3 = 1034
+r = 0
+
+numerosGenerados = []
+
+for _i in range(1000):
+    s1, s2, s3, r = whGen(s1,s2,s3)
+    numerosGenerados.append(r)
+
+plt.hist(numerosGenerados)
+plt.
+plt.show()
+```
