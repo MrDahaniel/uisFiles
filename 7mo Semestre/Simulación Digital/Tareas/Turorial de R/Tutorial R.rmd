@@ -528,7 +528,7 @@ lines(density(x))
 Otra de las maneras en las que podemos presentar diferentes datos está en el uso de diagramas de caja. Estos son especialmente útiles en la búsqueda de valores atítpicos durante un análisis estadístico.
 
 ```{R}
-x <- rchisq(50, 15)
+x <- rnorm(50)
 boxplot(x)
 ```
 
@@ -543,4 +543,29 @@ boxplot(x,
 ```
 
 #### 7.2.3 Diagramas de Violín
+
+Otra manera de visualizar los datos está en el uso de diagramas tipo violín. Estos diagramas son especialmente útiles en cuanto permiten la visualización de la densidad de probabilidad al igual que la graficación de diagramas de caja en un único diagrama. Sin embargo, para crear diagramas de violín, necesitaremos instalar `vioplot` ejecutando el comando `install.packages("vioplot")` en una terminal interactiva de `R`
+
+```{R, include=FALSE}
+library(vioplot)
+```
+```{R}
+x <- rnorm(100)
+vioplot(x)
+```
+
+Por último, al igual que con el resto de las gráficas, podemos alterar las propiedades de el diagrama tipo violín pasando los parametros respectivos a la función.
+
+```{R}
+vioplot(x,
+    horizontal = TRUE,
+    col = "#53ffa0", # Color del area
+    rectCol = "#523d7b", # Color del rectangulo
+    lineCol = "#000000ff", # Color de la línea central
+    colMed = "#ffffff", # Color del punto central
+    border = "black", # Color del borde exterior
+    pchMed = "*", # El símbolo a usar en el punto central
+    plotCentre = "points"
+)
+```
 
