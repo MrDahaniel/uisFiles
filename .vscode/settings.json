@@ -22,6 +22,7 @@
         "Lotus",
         "metapache",
         "Metasploit",
+        "mfrow",
         "modeling",
         "motosa",
         "mr",
@@ -48,8 +49,7 @@
         "whois",
         "Xeon"
     ],
-    "cSpell.ignoreWords": [
-        "Metasploitable"
-    ],
-    "cSpell.language": "es,en,es-ES"
+    "cSpell.ignoreWords": ["Metasploitable"],
+    "cSpell.language": "es,en,es-ES",
+    "cSpell.enableFiletypes": ["rmd"]
 }

@@ -1,0 +1,559 @@
+---
+title: "TutoRial: Un tutoRial de R"
+author: 
+- "Daniel David Delgado Cervantes - 2182066"
+- "Juan José Bayona Sepúlveda - 2183200"
+output: html_document
+---
+
+## 1. Funciones en R
+
+Describa como se pueden construir funciones en R y como se pueden utilizar. Realice una implementación de una función que extraiga el rango intercuartílico de un conjunto de datos. La función debe recibir un vector con los datos numéricos y retornar 1) los valores limite del rango intercuartílico y 2) la extensión del rango intercuartílico.
+
+
+#### En una función tenemos 3 tipos de elementos:
+
+1. Argumentos (o valores de entrada).  
+
+2. Cuerpo: operaciones que han de realizarse. Se deben localizar entre corchetes "{}”.  
+
+3. Resultado (o valores de salida): la última expresión que se ejecuta.  
+
+```{r}
+mifuncion <- function() {
+    # cuerpo - resultado
+    cat("Hola mundo")
+}
+# llamando la funcion f
+mifuncion()
+```
+
+Las funciones también son objetos y por tanto se les puede dar un nombre, en este caso se llamará “mifuncion”. Se debe evitar utilizar nombres que ya estén en uso en R, por ejemplo “mean”. Los argumentos se separan por una coma dentro de "función()”. Puede ser cualquier tipo y cantidad de argumentos. Los argumentos son los ingredientes que necesitas para que se ejecute la función. Los argumentos pueden tener un valor predeterminado, por ejemplo si se escribe argumento2=10:
+
+```{r}
+mifuncion <- function(argumento1, argumento2 = 10) {
+    print(argumento1 + argumento2)
+}
+```
+
+El cuerpo de la función contiene las operaciones que se desea que se ejecuten sobre cada uno de los argumentos detallados anteriormente. Vienen dados entre corchetes "{}” y se ejecutan cada vez que se llama a la función. El resultado es el valor devuelto por la función que se genera en las operaciones que se han ejecutado en el cuerpo de la función. Puede ser cualquier tipo de datos.La última línea del código será el valor que devolverá la función.
+
+
+#### 1.1. Implementación
+
+La siguiente función extrae el rango intercuartílico de un conjunto de datos. La función recibe un vector con los datos numéricos y retorna los valores limite del rango intercuartílico y la extensión del rango intercuartílico.
+```{r con}
+# se crea la función
+mi_funcion <- function(data) {
+    # se ordenan los datos
+    data <- sort(data)
+    # se halla el cuartil 1
+    q1 <- quantile(data, 0.25)
+    # se halla el cuartil 3
+    q3 <- quantile(data, 0.75)
+    # se obtiene el rango intercuartil
+    IQR <- (q3 - q1)
+    print(data)
+    # se retornan los datos
+    return(paste("cuartil 1:", q1, " cuartil 3:", q3, " Rango intercuartil:", IQR))
+}
+data <- c(18, 11, 12, 10, 7, 6, 17, 21, 20, 5, 19, 2)
+mi_funcion(data)
+```
+
+De esta forma es posible hallar el rango intercuartil para un conjunto de datos que se le pasan como parametro a la función creada
+
+## 2. Distribuciones de probabilidad en _R_
+
+Una de las grandes necesidades en cuanto al desarrollo de problemas estadísticos, esté en el uso de las distribuciones de probabilidad. En este sentido, y al ser `R` un lenguaje de programación orientado al análisis estadístico, tenemos diversas funciones que nos permiten usar muchas de estas. Veamos los cuatro tipos de funciones que podemos encontrar.
+
+### 2.1. Tipos de funciones de probabilidad.
+
+En `R` tenemos 4 tipos de funciones de probabilidad. Estas nos permiten realizar diversas cosas dependiendo de lo que necesitemos en cada momento. 
+
+#### 2.1.1. Función De Probabilidad Acumulada
+
+La primera de estas es la función de probabilidad acumulada (_cumulative probability distribution function_). Esta, en esencia, nos retorna el valor de probabilidad acumulada para una distribución dada. Estas funciones tienen como prefijo la letra `p` y luego el nombre de la distribución.  
+
+```{R}
+# En el caso de las distribuciones normales, estas son `norm`
+# Gracias a esto podemos llamar la acumulada usando `pnorm(valorAEvaluar)`
+pnorm(-0.67)
+```
+
+Aquí podemos ver el que, usando nuestra función con prefijo `p`, nos regresa el valor de la frecuencia acumulada hasta el punto crítico que le pasemos como parámetro. Esto, visto de manera gráfica, se vería de la siguiente manera: 
+
+```{R, fig.align='center', echo=FALSE}
+x <- seq(-3, 3, 0.025)
+y <- dnorm(x)
+plot(
+    x = x,
+    y = y,
+    type = "l",
+    main = "Distribución de Probabilidad Normal Acumulada",
+    xlab = "Puntuación Z",
+    ylab = "Densidad"
+)
+polygon(c(x[x <= -0.67], -0.67), c(y[x <= -0.67], 0), col = "#5fffa7")
+points(-0.67, dnorm(-0.67), col = "#000000", pch = 4)
+```
+
+#### 2.1.2. Función De Distribución Acumulada Inversa
+
+Otra de las funciones de distribución de probabilidad con las que podemos trabajar es `quantile`, en el caso de estas funciones, nos referimos a la inversa de la función de de probabilidad acumulada. Es decir que, a partir de un valor de probabilidad, podemos calcular la puntuación Z correspondiente. Estas funciones tienen como prefijo la letra `q` y luego el nombre de la distribución.
+
+```{R}
+# Siguiendo con las funciones de probabilidad acumulada,
+# tendriamos al función `qnorm(valorAEvaluar)`
+z <- pnorm(-0.67)
+qnorm(z)
+```
+
+Como podemos ver, al evaluar el valor arrojado por nuestra función `pnorm(-0.67)` en nuestra función `qnorm`, tenemos como resultado la puntuación Z inicial. 
+
+#### 2.1.3. Funcion De Densidad De Probabilidad 
+
+En algunos casos, es necesario el conocer la probabilidad de un evento específicos de una distribución. Para estas situaciones, tenemos la opción de usar la función de densidad de probabilidad. El prefijo de estas funciones es `d` y el nombre de la distribución de probabilidad.
+
+```{R}
+# Pasando el valor de la puntuación Z que queremos calcular
+# tendremos como resultado la probabilidad respectiva
+dnorm(-0.67)
+```
+
+Gráficamente hablando, esta función se vería como una línea vertical bajo el valor de probabilidad.
+
+```{R, fig.align='center', echo=FALSE}
+x <- seq(-3, 3, 0.025)
+y <- dnorm(x)
+plot(
+    x = x,
+    y = y,
+    type = "l",
+    main = "Distribución de Probabilidad normal",
+    xlab = "Puntuación Z",
+    ylab = "Densidad"
+)
+lines(c(-0.67, -0.67), c(0, dnorm(-0.67)), col = "#0000ff")
+points(-0.67, dnorm(-0.67), pch = 20)
+```
+
+#### 2.1.4. Número aleatorio de la distribución
+
+La última función de distribución de probabilidad es la función aleatoria. Esta básicamente general valores aleatorios que se encuentren en la distribución respectiva. Esto es especialmente útil en áreas de la simulación puesto que nos permite la generación de valores que sigan una distribución específica. Esta función tiene como prefijo la letra `r`.
+
+```{R}
+# Podemos generar valores alreatorios que sigan una distribución normal
+# usando `rnorm()`
+rnorm(6)
+```
+
+De manera gráfica, esto puede apreciarse de manera relativamente sencilla usando histogramas y nuestra función que genera valores aleatorios. En este caso, usando 5000 valores para nuestra distribución normal, podemos ver que esta se ajusta de manera bastante cercana a nuestra distribución.
+
+```{R, echo = FALSE, fig.align="center"}
+x <- seq(-3, 3, 0.025)
+y <- dnorm(x)
+randNum <- rnorm(5000)
+hist(randNum,
+    prob = TRUE,
+    xlim = c(-3, 3),
+    ylim = c(0, 0.5),
+    col = "#5fffa7",
+    xlab = "Puntuación Z",
+    ylab = "Densidad"
+)
+lines(
+    x = x,
+    y = y,
+    type = "l",
+    main = "Distribución de Probabilidad Normal Acumulada",
+    xlab = "Puntuación Z",
+    ylab = "Densidad"
+)
+```
+
+### 2.2. Distribuciones De Probabilidad
+
+Ya viendo las diferencias entre las funciones de probabilidad, podemos observar algunas de las distribuciones de probabilidad que tenemos en `R`.
+
+#### 2.2.1. Distribución Normal
+
+De las primeras distribuciones de probabilidad que tenemos en `R`, y como hemos visto ya anteriormente, tenemos la distribución normal. Esta distribución puede ser trabajada usando alguno de los prefijos de funciones de probabilidad seguido de la palabra `norm`. De esta manera, podemos usar la distribución de probabilidad normal. Veamos de manera gráfica:
+
+```{R, fig.align='center'}
+x <- seq(-3, 3, 0.025) # Definimos el rango de la función
+yd <- dnorm(x) # Usamos nuestra función dnorm para calcular los valores de densidad
+yc <- pnorm(x) # Y usamos pnorm para la probabilidad de densidad acumulada
+par(mfrow = c(1, 2))
+plot(
+    x = x,
+    y = yd,
+    type = "l",
+    main = "Distribución de Probabilidad \nNormal",
+    xlab = "Puntuación Z",
+    ylab = "Densidad"
+)
+plot(
+    x = x,
+    y = yc,
+    type = "l",
+    main = "Distribución de Probabilidad \nNormal Acumulada",
+    xlab = "Puntuación Z",
+    ylab = "Densidad"
+)
+```
+
+#### 2.2.2. Distribución Uniforme
+
+Otra de las distribuciones de probabilidad continuas que se tienen en `R`, es la distribución uniforme. Esta distribución usa alguno de los prefijos de las funciones y la palabra clave `unif`. De esta manera, podemos trabajar con la distribución.
+
+```{R, fig.align='center'}
+x <- seq(0, 1, 0.001) # Definimos el rango de la función
+yd <- dunif(x) # Usamos nuestra función dunif para calcular los valores de densidad
+yc <- punif(x) # Y usamos punif para la probabilidad de densidad acumulada
+par(mfrow = c(1, 2))
+plot(
+    x = x,
+    y = yd,
+    type = "l",
+    main = "Distribución de Probabilidad \nUniforme",
+    xlab = "Puntuación Z",
+    ylab = "Densidad"
+)
+plot(
+    x = x,
+    y = yc,
+    type = "l",
+    main = "Distribución de Probabilidad \nUniforme Acumulada",
+    xlab = "Puntuación Z",
+    ylab = "Densidad"
+)
+```
+
+#### 2.2.3. Distribución Binomial
+
+En el caso de las distribución discretas, de las primeras de vienen a la mente es la distribución binomial. Siendo así, esta distribución usa uno de los prefijos de función seguido de la palabra clave `binom`. La implementación gráfica de esta distribución puede verse a continuación.
+
+```{R, fig.align='center'}
+x <- 0:10 # Definimos el rango de la función
+yd <- dbinom(x, 10, 0.4) # Usamos nuestra función dbinom para calcular los valores de densidad
+yc <- pbinom(x, 10, 0.4) # Y usamos pbinom para la probabilidad de densidad acumulada
+par(mfrow = c(1, 2))
+plot(
+    yd,
+    type = "h",
+    main = "Distribución de Probabilidad \nBinomial",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+    lwd = 2
+)
+plot(
+    x = x,
+    y = yc,
+    type = "s",
+    main = "Distribución de Probabilidad \nBinomial Acumulada",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+    lwd = 2
+)
+```
+
+#### 2.2.4. Distribución Chi Cuadrado
+
+Dentro de las distribuciones con sesgos continuas, tenemos la distribución Chi Cuadrado. Simplemente usando uno de los prefijos y palabra clave `chisq` podemos trabajar con esta distribución. La implementación gráfica puede verse a continuación:
+
+```{R, fig.align='center'}
+x <- seq(0, 20, 0.1) # Definimos el rango de la función
+yd <- dchisq(x, 5) # Usamos nuestra función dchisq para calcular los valores de densidad
+yc <- pchisq(x, 5) # Y usamos pchisq para la probabilidad de densidad acumulada
+par(mfrow = c(1, 2))
+plot(
+    x = x,
+    y = yd,
+    type = "l",
+    main = "Distribución de Probabilidad \nChi Cuadrado",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+)
+plot(
+    x = x,
+    y = yc,
+    type = "l",
+    main = "Distribución de Probabilidad \nChi Cuadrado Acumulada",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+)
+```
+
+#### 2.2.5. Distribución Cauchy
+
+Una de las distribuciones que se aproximan a la distribución normal es la distribución Cauchy. En el caso de `R`, podemos trabajar, al igual que todas las distribuciones, uno de los prefijos y la palabra clave `cauchy`. Veamos la implementación gráfica de esta distribución.
+
+```{R, fig.align='center'}
+x <- seq(-3, 3, 0.1) # Definimos el rango de la función
+yd <- dcauchy(x, 0) # Usamos nuestra función dcauchy para calcular los valores de densidad
+yc <- pcauchy(x, 0) # Y usamos pcauchy para la probabilidad de densidad acumulada
+par(mfrow = c(1, 2))
+plot(
+    x = x,
+    y = yd,
+    type = "l",
+    main = "Distribución de Probabilidad \nCauchy",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+)
+plot(
+    x = x,
+    y = yc,
+    type = "l",
+    main = "Distribución de Probabilidad \nCauchy Acumulada",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+)
+```
+
+#### 2.2.6. Distribución T Student
+
+De igual manera, otra de las distribuciones que se aproximan a la distribución normal, es la distribución T Student. Usando la misma estructura de las funciones de distribuciones de probabilidad y la letra `t`, podremos trabajar con esta distribución. La implementación gráfica de esta se puede ver a continuación.
+
+```{R, fig.align='center'}
+x <- seq(-3, 3, 0.1) # Definimos el rango de la función
+yd <- dt(x, 1) # Usamos nuestra función dt para calcular los valores de densidad
+yc <- pt(x, 1) # Y usamos pt para la probabilidad de densidad acumulada
+par(mfrow = c(1, 2))
+plot(
+    x = x,
+    y = yd,
+    type = "l",
+    main = "Distribución de Probabilidad \nT-Student",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+)
+plot(
+    x = x,
+    y = yc,
+    type = "l",
+    main = "Distribución de Probabilidad \nT-Student Acumulada",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+)
+```
+
+#### 2.2.7. Distribución Poisson
+
+Finalmente, usando otra de las distribuciones discretas, la distribución de Poisson puede ser trabajada usando uno de los prefijos y  la palabra `pois`. A continuación se puede ver la implementación gráfica de esta distribución.
+
+```{R, fig.align='center'}
+x <- seq(0, 15, 1) # Definimos el rango de la función
+yd <- dpois(x, 5) # Usamos nuestra función dpois para calcular los valores de densidad
+yc <- ppois(x, 5) # Y usamos ppois para la probabilidad de densidad acumulada
+par(mfrow = c(1, 2))
+plot(
+    yd,
+    type = "h",
+    main = "Distribución de Probabilidad \nPoisson",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+    lwd = 2
+)
+plot(
+    x = x,
+    y = yc,
+    type = "s",
+    main = "Distribución de Probabilidad \nPoisson Acumulada",
+    xlab = "Valor A Evaluar",
+    ylab = "Densidad",
+)
+```
+
+
+## 3. Investigando la construcción de los intervalos de confianza con el lenguaje de programación R
+
+#### A. Extraiga 10000 muestras, cada una de 20 registros (observaciones) de forma aleatoria con reemplazo. Use cada muestra para calcular un intervalo de confianza del 90% para estimar la media poblacional. 
+
+Lo primero a hacer con el fin de realizar el ejercio es traer nuestro dataset. Esto puede realizase sin problema alguno simplemente usando la función `read.csv()`.
+
+```{R}
+# Traemos el dataset a trabajar
+dt <- read.csv("https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data", header = F)
+# Usamos View(dt) en el caso de querer visualizar los datos
+```
+
+Ya con esto podemos trabajar sin problema alguno con los datos que se nos han proporcionado.
+
+```{R}
+# Para nuestros propósitos, al solo trabajar con la columna de _length_, o la segunda columna, extraeremos esta.
+dtlen <- dt$V2 # Abalone Length
+
+# Lo primero entonces, será calcular la media muestral. Esto se puede realizar con la funcion `mean()`
+sampleMean <- mean(dtlen)
+
+# Ahora, usando la función `replicate`, podemos extraer las muestras necesarias para el desarrollo del problema
+
+samples <- replicate(10000, sample(dtlen, size = 20, replace = TRUE))
+
+# muestras en las que la media esta en el intervalo
+med_inter <- 0
+
+for (i in 1:10000) {
+    # intervalo
+    intervalo <- t.test(x = samples[, i], conf.level = 0.90)$conf.int
+    # saber si la media esta en el intervalo
+    if (intervalo[1] <= sampleMean && sampleMean <= intervalo[2]) {
+        med_inter <- med_inter + 1
+    }
+}
+
+fraccion <- med_inter / 10000
+
+print(paste("Fracción: ", fraccion))
+```
+
+#### B. Extraiga 10000 muestras, cada una de 10 registros (observaciones) de forma aleatoria con reemplazo. Use cada muestra para calcular un intervalo de confianza del 90% para estimar la media poblacional. 
+
+```{R}
+# Para nuestros propósitos, al solo trabajar con la columna de _length_, o la segunda columna, extraeremos esta.
+dtlen <- dt$V2 # Abalone Length
+
+# Lo primero entonces, será calcular la media muestral. Esto se puede realizar con la funcion `mean()`
+sampleMean <- mean(dtlen)
+
+# Ahora, usando la función `replicate`, podemos extraer las muestras necesarias para el desarrollo del problema
+
+samples <- replicate(10000, sample(dtlen, size = 10, replace = TRUE))
+
+# cantidad de muestras en las que la media esta en el intervalo
+med_inter <- 0
+
+for (i in 1:10000) {
+    # intervalo
+    intervalo <- t.test(x = samples[, i], conf.level = 0.90)$conf.int
+    # saber si la media esta en el intervalo
+    if (intervalo[1] <= sampleMean && sampleMean <= intervalo[2]) {
+        med_inter <- med_inter + 1
+    }
+}
+
+fraccion <- med_inter / 10000
+
+print(paste("Fracción: ", fraccion))
+```
+
+
+#### C.  Extraiga 10000 muestras, cada una de 10 registros (observaciones) de forma aleatoria con reemplazo. Use cada muestra para calcular un intervalo de confianza del 90% para estimar la media poblacional. 
+
+```{R}
+
+# instalar TeachingDemos
+# install.packages("TeachingDemos")
+library(TeachingDemos)
+
+# datos traidos de git hub
+enlace <- "https://raw.githubusercontent.com/georsan/taller/master/abalone.txt"
+# datos
+datos <- read.table(file = enlace, header = TRUE, sep = ",")
+
+# logitud
+sample <- datos$Longitud
+
+# media poblacional
+media <- mean(sample)
+
+# 10000 muestras
+muestra <- replicate(10000, sample(sample, size = 10, replace = TRUE))
+
+# muestras en las que la media esta en el intervalo
+med_inter <- 0
+
+for (i in 1:10000) {
+
+    # intervalo
+    intervalo <- z.test(x = muestra[, i], y = NULL, alternative = "two.sided", mu = 0, sigma.x = NULL, sigma.y = NULL, sd = 1, conf.level = 0.9)$conf.int
+
+    # saber si la media esta en el intervalo
+    if (intervalo[1] <= media && media <= intervalo[2]) {
+        med_inter <- med_inter + 1
+    }
+}
+# fraccion
+fraccion <- med_inter / 10000
+print(paste("Fracción: ", fraccion))
+```
+
+#### D. Repita los últimos dos ejercicios (numerales b y c) pero con muestras de 3 registros (observaciones). Qué conclusiones puede extraer de estos ejercicios
+
+
+#### D.1.
+
+```{r}
+# cambiar tamaño de ver
+options(max.print = 99999)
+
+# media muestral
+media <- mean(dtlen)
+
+# 10000 muestras
+set.seed(9)
+muestra <- replicate(10000, sample(dtlen, size = 3, replace = TRUE))
+
+# muestras en las que la media esta en el intervalo
+med_inter <- 0
+
+for (i in 1:10000) {
+
+    # intervalo
+
+    intervalo <- t.test(x = muestra[, i], conf.level = 0.90)$conf.int
+    # saber si la media esta en el intervalo
+    if (intervalo[1] <= media && media <= intervalo[2]) {
+        med_inter <- med_inter + 1
+    }
+}
+# fraccion
+fraccion <- med_inter / 10000
+
+print(paste("Fracción: ", fraccion))
+```
+
+
+#### D.2.
+
+```{r}
+
+# cambiar tamaño de ver
+options(max.print = 99999)
+
+# datos traidos de git hub
+enlace <- "https://raw.githubusercontent.com/georsan/taller/master/abalone.txt"
+
+# datos
+datos <- read.table(file = enlace, header = TRUE, sep = ",")
+
+# logitud
+longitud <- datos[[2]]
+
+# media poblacional
+media <- mean(longitud)
+
+# 10000 muestras
+muestra <- replicate(10000, sample(longitud, size = 3, replace = TRUE))
+
+# muestras en las que la media esta en el intervalo
+med_inter <- 0
+
+for (i in 1:10000) {
+
+    # intervalo
+    intervalo <- z.test(x = muestra[, i], y = NULL, Alternative = "two.sided", mu = 0, sigma.x = NULL, sigma.y = NULL, sd = 1, conf.level = 0.90)$conf.int
+
+    # saber si la media esta en el intervalo
+    if (intervalo[1] <= media && media <= intervalo[2]) {
+        med_inter <- med_inter + 1
+    }
+}
+# fraccion
+fraccion <- med_inter / 10000
+print(paste("Fracción: ", fraccion))
+```
+
+De estos ejercicios se puede concluir que cuando se trabaja con muestras pequeñas es posible que no represente a la población adecuadamente. Teniendo en cuenta el volumen de datos que se están manejando en este caso y la poca dispersión de los mismos, los valores obtenidos como intervalo de confianza contienen en gran medida el valor de la media poblacional y más si se usa una distribución normal para hallar dicho intervalo.
