@@ -1,3 +1,63 @@
+---
+title: "R Tutorial"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+## 1. ESTRUCTURAS DE CONTROL
+
+• CONDICIONALES
+ 
+```{r}
+#Edad de la persona
+x = 18
+```
+FORMA IFELSE
+```{r}
+ifelse(x>18, "Es mayor de edad", "Es menor de edad")
+```
+FORMA IF ELSEIF
+```{r}
+if (x>18) {
+  print("La persona es mayor de edad")
+} else if (x==18){
+  print("La persona recién cumplió 18")
+} else {
+  print("La persona es menor de edad")
+}
+```
+
+• SWITCH (Select-Case)
+
+```{r}
+x = "lugar"
+switch(x, edad = 5, lugar="montaña", altura="1.75 cm")
+```
+
+• WHILE
+
+```{r}
+y = 12
+contador=0
+while (y < 20) {
+  y = y + 1
+  contador = contador + 1
+}
+print(contador)
+```
+• FOR
+
+```{r}
+lugares= c("Floridablanca 16", "Piedecuesta 14", "Bucaramanga 14", "Girón 7")
+nodelugar = 0
+for (x in lugares) {
+  t=nchar(x)
+  nodelugar = nodelugar + 1
+  print(paste("El lugar numero ", nodelugar, " tiene ", t, "caracteres"))
+}
+```
+
 ## 2. Vectores en R: Creación, indexación, edición.
 
 Una de las estructuras de datos básicas en el lenguaje `R` son los **vectores**. Esta estructura, en esencia, es una especie de _lista_ la cual contiene elementos de un único tipo. Estas son particularmente útiles para la agrupación de elementos.
@@ -466,6 +526,213 @@ print(z) # Resultado es la matriz identidad
 
 Aunque estas sólo son algunas de todas las operaciones matriciales que se pueden realizar en R, son algunas de las más comunes.
 
+## 4. Creación 'manual' de data frames
+
+```{r}
+#Creando un dataframe vacío
+
+vacio = data.frame()
+View(vacio)
+
+nombres = paste("persona ", letters[1:10])
+edades = 11:20
+dfprueba = data.frame(col1 = nombres, col2=edades)
+View(dfprueba)
+
+```
+
+• Lecturas de dataframes
+
+```{r}
+df <- read.csv('flavors.csv', header = T)
+```
+
+•DEMÁS OPERACIONES
+
+1.Para ver las primeras filas
+
+```{r}
+head(df)
+
+```
+
+2. Para ver las últimas filas
+
+```{r}
+tail(df)
+```
+
+3. Para ver la estructura de los datos guardados
+
+```{r}
+str(df)
+```
+
+4. Valores estadísticos de cada variable
+Summary - media, dev., percentil..., cuartiles, tipos de datos.
+
+```{r}
+summary(df)
+```
+5. Obtener una visualización de un Dataframe
+
+```{r}
+View(df)
+```
+
+6. Seleccionar primeras 10 filas y todas las columnas del dataframe 
+
+```{r}
+prueba1 <- df[1:10, ]
+View(prueba1)
+```
+
+7. Seleccionar últimas 10 filas y todas las columnas del dataframe 
+
+```{r}
+prueba2 <- df[(nrow(df)-10):nrow(df),]
+View(prueba2)
+```
+
+8. Seleccionar las filas 9-16 de la columna 'vegetable' del dataframe 'df'
+
+```{r}
+prueba3 <- df[9:16,"vegetable"]
+View(prueba3)
+
+
+#Otra opción sería
+prueba4 <- df$vegetable[9:16]
+View(prueba4)
+
+```
+
+## 5. Funciones en R.
+
+Las funciones en R como en cualquier otro lenguaje son de suma importancia para evitar la redundancia en el código y fomentar la reutilización de este. En R las funciones se definen de la siguiente forma:  
+
+```{r}
+suma <- function(x, y){
+  
+}
+
+```
+
+Presentamos una función llamada suma, la cual recibirá dos parámetros “x” y “y”, como se puede observar, las funciones se declaran por medio de la palabra reservada function.
+
+Tomando en cuenta lo anterior, se realizará el estudio de una función recursiva, en este caso se estudiará el algoritmo de ordenamiento Quicksort. Una función recursiva son funciones que realizan llamados así mismas durante su propia ejecución, funcionan de una forma similar a las iteraciones pero se debe tener cuidado ya que puede ejecutarse de forma casi infinita ya que implementan una subdivisión de tareas para abordar el problema de forma mas simple.
+
+```{r}
+quicksort <- function (V, izq, der){ 
+  #La funcion presenta los parametros V:vector, izq: posicion inicial, der: posicion final
+  pivote <- V[izq] #pivote: es el elemento ubicado en la posicion inicial
+  i <- izq
+  j <- der
+  aux <- 0
+  
+  while (i < j) { 
+    #se comprueba que las posiciones de inicio y final sean coherentes
+    while (V[i] <= pivote & i < j){ 
+      #Verifica que el numero leido en posicion i sea menor que el pivote, se realiza hasta que encuentra un numero mayor
+      i <- i + 1 #Se mueve un espacio de la posicion i
+    }
+    while (V[j] > pivote) { 
+      #Verifica que los numeros de la posicion j sean mayores que el pivote, si es asi, se mueve a la izquierda
+      j <- j - 1
+    }
+    if (i < j) { 
+      #Verifica que la posicion i se encuentre a la izquierda y la posicion j a la derecha para intercambiar valores
+      aux <- V[i]
+      V[i] <- V[j]
+      V[j] <- aux
+    }
+  }
+  
+  V[izq]<-V[j]
+  V[j]<-pivote #Se realiza un cambio de pivote
+  
+  #El vector se divide en dos parte y se vuelve a repetir el proceso
+  if (izq < j-1) {
+    return(quicksort(V, izq, j-1))
+  }
+  if(j+1 < der){
+    return(quicksort(V, j+1, der))
+  }
+  
+  return(V)
+}
+
+#Se hace una prueba con un vecotr desordendo
+V <- c(6,3,8,4,8,2)
+
+#Se realiza el llamado de la funcion
+V <- quicksort(V, 1, length(V))
+
+```
+
+
+## 6. Manejo de archivos en R.
+
+Para el manejo de archivos en R se requiere primero que todo la descarga de librerías que permitan la lectura de los datos de un archivo:
+
+```{r}
+install.packages("readr")
+
+install.packages("readxl")
+```
+
+El paquete `install.packages("readr")` nos permite la lectura de archivos .csv y el `install.packages("readxl")`permite obtener los datos de archivos .xlsx.
+
+Para implementar estos paquete se hace uso de la función `library()` la cual selecciona las librerías con las cuales se va a trabajar
+
+```{r}
+library(readr)
+
+library(readxl)
+```
+
+Estas librerias dependen de la ruta en la cual se encuentre el archivo para su lectura, para esto se utiliza la función `file.choose()` para obtener la ubicación exacta del archivo en un formato el cual R puede entender, esta ubicación es impresa en consola, la cual se debe asignar a una variable para su uso.
+
+```{r}
+file.choose()
+
+ruta_excel <- "c:\\[Ruta]\\archivo.xlsx"
+
+ruta_archivo_csv <- "c:\\[Ruta]\\archivo.csv"
+```
+
+En la lectura de archivos CSV pueden ocurrir ciertos casos, como, por ejemplo, los datos no tienen una cabecera definida o puede que si la tengan o simplemente los datos se encuentran separados por punto y coma; para estos casos la librería `library(readr)` presenta las siguientes lecturas:
+
+```{r}
+#Lee el archivo con cabecera
+doc <- read_csv(ruta_archivo_csv)
+
+#Asigna una cabecera por defecto o simplemente se personaliza la cabecera con ayuda de la funcion c()
+doc2 <- read_csv(ruta_archivo_csv, col_names = FALSE)
+doc2 <- read_csv(ruta_archivo_csv, col_names = c("col1", "col2", "col3", "col4"))
+
+#Lectura de archivos con punto y coma
+doc3 <- read_csv2(ruta_archivo_csv)
+```
+
+Para la lectura de archivos de Excel tambien se presentan algunos casos: 
+1-	La lectura de datos se presenta en la hoja por defecto y los datos inician desde la celda A1.
+2-	La lectura de datos se presente en una hoja diferente y los datos inician desde la celda A1.
+3-	La lectura de datos se presente en una hoja diferente y los datos inician en una celda distinta.
+
+Para cada uno de estos casos se realiza lo siguiente:
+
+```{r}
+doc_excel1 <- read_excel(ruta_excel) #Lee el caso 1
+
+#El parametro sheet permite elegir la hoja donde se encuentran los datos
+doc_excel2 <- read_excel(ruta_excel, sheet = "Hoja2") 
+
+#El parametro range permite saber desde cual celda se desean leer los datos hasta el destino de los mismo
+doc_excel3 <- read_excel(ruta_excel, sheet = "Hoja3", range = "C7:F17")
+```
+
+
 ## 7. Ejemplos De Visualización De Datos: Dispersión De Puntos, Histogramas, Diagrama De Cajas, Violinplots, Etc.
 
 Una de las cosas más importantes en cuanto al manejo de datos, especialmente en grandes cantidades, está en las diferentes maneras en las que podemos visualizar los datos. En `R`, las principales maneras de realizar estas está en la graficación. 
@@ -528,7 +795,7 @@ lines(density(x))
 Otra de las maneras en las que podemos presentar diferentes datos está en el uso de diagramas de caja. Estos son especialmente útiles en la búsqueda de valores atítpicos durante un análisis estadístico.
 
 ```{R}
-x <- rchisq(50, 15)
+x <- rnorm(50)
 boxplot(x)
 ```
 
@@ -544,3 +811,31 @@ boxplot(x,
 
 #### 7.2.3 Diagramas de Violín
 
+Otra manera de visualizar los datos está en el uso de diagramas tipo violín. Estos diagramas son especialmente útiles en cuanto permiten la visualización de la densidad de probabilidad al igual que la graficación de diagramas de caja en un único diagrama. Sin embargo, para crear diagramas de violín, necesitaremos instalar `vioplot` ejecutando el comando `install.packages("vioplot")` en una terminal interactiva de `R`
+
+```{R, include=FALSE}
+library(vioplot)
+```
+```{R}
+x <- rnorm(100)
+vioplot(x)
+```
+
+Por último, al igual que con el resto de las gráficas, podemos alterar las propiedades de el diagrama tipo violín pasando los parametros respectivos a la función.
+
+```{R}
+vioplot(x,
+    horizontal = TRUE,
+    col = "#53ffa0", # Color del area
+    rectCol = "#523d7b", # Color del rectangulo
+    lineCol = "#000000ff", # Color de la línea central
+    colMed = "#ffffff", # Color del punto central
+    border = "black", # Color del borde exterior
+    pchMed = "*", # El símbolo a usar en el punto central
+    plotCentre = "points"
+)
+```
+
+
+
+    

@@ -1,0 +1,20 @@
+```{R}
+funcionMontecarlo <- function(y) {
+    return(4 * exp(1)**(2 - 12 * y + 16 * y**2))
+}
+```
+
+
+```{R}
+k <- 1000000
+u <- runif(k)
+x <- sum(funcionMontecarlo(u))
+
+print(x / k)
+```
+
+```{R}
+dom <- seq(0, 1, 0.01)
+
+plot(x = dom, y = funcionMontecarlo(dom), type = "l")
+```     
