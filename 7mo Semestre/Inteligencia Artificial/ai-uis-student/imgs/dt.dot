@@ -1,0 +1,16 @@
+digraph Tree {
+node [shape=box] ;
+0 [label="col2 <= 0.064\n400\n[200, 200]\nblue"] ;
+1 [label="col1 <= -0.355\n153\n[7, 146]\nred"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="4\n[4, 0]\nblue"] ;
+1 -> 2 ;
+3 [label="149\n[3, 146]\nred"] ;
+1 -> 3 ;
+4 [label="col1 <= 1.442\n247\n[193, 54]\nblue"] ;
+0 -> 4 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+5 [label="220\n[193, 27]\nblue"] ;
+4 -> 5 ;
+6 [label="27\n[0, 27]\nred"] ;
+4 -> 6 ;
+}
