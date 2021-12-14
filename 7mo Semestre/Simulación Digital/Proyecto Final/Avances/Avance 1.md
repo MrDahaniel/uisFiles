@@ -32,8 +32,11 @@ El presente proyecto busca entonces la determinación de la efectividad de difer
 
 -   ¿Por qué la simulación es la más apropiada para la solución del problema?
 
+Una de las ventajas de emplear la simulación digital en el desarrollo de esta problemática recae en la escala con la cual estamos trabajando. Al ser un parque de diversiones nuestro enfoque principal, el tratar de realizar pruebas directamente sobre el parque puede traer consecuencias negativas en la experiencia de los visitantes, así mismo, la implementación de la infraestructura necesaria para algunas de las estrategias puede llegar a ser de alta complejidad. Siendo así, estos problemas no se presentan en el caso de la simulación digital, por lo que el desarrollo de las pruebas de las diferentes estrategias, puede hacerse sin mayor dificultad.
+
 -   ¿Qué alternativas existen?
     -   Metodologías alternas a la simulación
+        -
     -   Método de evaluación
 
 ### Cronograma

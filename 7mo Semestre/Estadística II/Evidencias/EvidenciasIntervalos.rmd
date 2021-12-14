@@ -1,0 +1,91 @@
+### Evidencias Intervalos de Confianza
+
+> Daniel David Delgado Cervantes - 2182066
+
+#### 9.3.
+
+Tomamos toda la información que se nos presenta en el problema.
+
+```{R}
+std <- 0.0015 # Pulgadas
+intConf <- 0.95
+alpha <- 1 - intConf
+n <- 75
+nMean <- 0.310
+```
+
+Partiendo de que tenemos más de 50 elementos, podemos asumir una distribución `normal. De esto, calculamos el valor de $Z_{\frac{\alpha}{2}}$.
+
+```{R}
+lowerQHalfAlpha <- qnorm(alpha / 2)
+upperQHalfAlpha <- qnorm(alpha / 2, lower.tail = FALSE)
+```
+
+Y ahora realizamos el cálculo del intervalo de confianza.
+
+```{R}
+lowerBound <- nMean + lowerQHalfAlpha * std / sqrt(n)
+upperBound <- nMean + upperQHalfAlpha * std / sqrt(n)
+```
+
+```{R, echo = FALSE}
+print("El intervalo de confianza para el problema es:")
+sprintf("%s < mean < %s", lowerBound, upperBound)
+```
+
+#### 9.7.
+
+Para determinar el tamaño muestral necesario para obtener un intervalo de confianza del 95% y un error de 0.0005, tenemos que aplicar la fórmula respectiva. (Recordando los valores del punto anterior)
+
+```{R}
+error <- 0.0005
+nNeeded <- ceiling((std * lowerQHalfAlpha / error)**2)
+```
+
+```{R, echo = FALSE}
+cat(sprintf("El tamaño muestral necesario para un error de %s y \nun intervalo del 95 %s es de: %s", error, "%", nNeeded))
+```
+
+#### 9.39
+
+Lo primero está en recolectar todos los datos que nos presenta el problema. 
+
+```{R}
+# Datos de los estudiantes con laboratorio
+nLab <- 12
+meanLab <- 84
+stdLab <- 4
+
+# Datos estudiantes sin laboratorio
+nLabnt <- 18
+meanLabnt <- 77
+stdLabnt <- 6
+
+tAlpha <- 1 - 0.99
+```
+
+En este caso, tenemos que usar la distribución `normal`. Calculamos los valores Z.
+
+```{R}
+lowerQTHA <- qnorm(tAlpha / 2)
+upperQTHA <- qnorm(tAlpha / 2, lower.tail = FALSE)
+```
+
+Y calculamos la constante de la comparación.
+
+```{R}
+constComp <- sqrt(((stdLab**2) / nLab) + ((stdLabnt**2) / nLabnt))
+
+```
+
+Y finalmente calculamos el intervalo de confianza
+
+```{R}
+tLowerBound <- (meanLab - meanLabnt) + lowerQTHA * constComp
+tUpperBound <- (meanLab - meanLabnt) + upperQTHA * constComp
+```
+
+```{R, echo = FALSE}
+print("El intervalo de confianza para el problema es:")
+sprintf("%s < mean < %s", tLowerBound, tUpperBound)
+```
