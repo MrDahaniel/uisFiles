@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Primer Parcial.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="ingenier%C3%ADa-de-software-parcial">Ingeniería de Software: Parcial</h1>
+<pre><code>Edward Javier Parada Silva - 2182070
+Daniel David Delgado Cervantes - 2182066
+</code></pre>
+<h2 id="1-aseguramiento-de-la-salud">1. Aseguramiento De La Salud</h2>
+<h3 id="11---14-ver-anexos">1.1. - 1.4. [Ver anexos]</h3>
+<h3 id="12-documentaci%C3%B3n-de-historias-de-usuario">1.2. Documentación de historias de usuario</h3>
+<ul>
+<li>Como afiliado, debo poder solicitar un servicio mediante una remisión válida y autorizada por la EPS para así continuar con el proceso médico.</li>
+<li>Como auditor de la EPS debo poder asignar una glosa a una factura con items individuales que correspondan con lo definido en la factura, así mismo, debo poder realizar los ajustes necesarios dependiendo de las negociaciones entre la IPS y la EPS.</li>
+</ul>
+<h3 id="15-proponga-3-requerimientos-no-funcionales-que-pueden-ser-aplicados-al-caso-de-estudio">1.5. Proponga 3 requerimientos no funcionales que pueden ser aplicados al caso de estudio</h3>
+<ul>
+<li>El sistema debe ser accesible desde el navegador web Google Chrome versión 96</li>
+<li>El sistema no puede caerse por más de 3 minutos al día</li>
+<li>El sistema debe implementarse con OracleSQL para las bases de datos, Springboot para backend y Angular para frontend</li>
+</ul>
+<h3 id="16-plantee-por-lo-menos-5-preguntas-que-le-ayudar%C3%ADan-a-entender-mejor-la-situaci%C3%B3n-descrita-en-el-enunciado">1.6. Plantee por lo menos 5 preguntas que le ayudarían a entender mejor la situación descrita en el enunciado</h3>
+<ol>
+<li>¿Existe un máximo tiempo de regateo de una glosa?</li>
+<li>Si no existe IPS capaz de cubrir todos los servicios solicitados, ¿Es posible dividir los procedimientos realizados entre varias?</li>
+<li>¿Qué administrativos son los encargados realizar la autorización de la remisión?</li>
+<li>¿Qué procedimiento debe seguir un paciente en el caso de que una remisión no sea autorizada?</li>
+<li>¿Puede un paciente tener más de una remisión activa al mismo tiempo?</li>
+</ol>
+<h2 id="2-compartamos-el-veh%C3%ADculo">2. Compartamos El Vehículo</h2>
+<h3 id="21---24-ver-anexos">2.1. - 2.4. [Ver anexos]</h3>
+<h3 id="22-documentaci%C3%B3n-de-historias-de-usuario">2.2. Documentación de historias de usuario</h3>
+<ul>
+<li>Como conductor de la aplicación, requiero poder publicar mis rutas a la aplicación para que así los demás usuarios puedan solicitar un cupo dentro de la ruta acordada.</li>
+<li>Como administrador de la aplicación, requiero poder ver las quejas que los usuarios reciban para así poder suspender a los malos conductores y pasajeros.</li>
+</ul>
+<h4 id=""></h4>
+<h3 id="25-proponga-3-requerimientos-no-funcionales-que-pueden-ser-aplicados-al-caso-de-estudio">2.5. Proponga 3 requerimientos no funcionales que pueden ser aplicados al caso de estudio</h3>
+<ul>
+<li>El sistema debe estar disponible para Android e IOS</li>
+<li>El sistema debe correr en celulares de bajo rendimiento</li>
+<li>El sistema no puede tener un costo base menor a 20 millones de pesos</li>
+</ul>
+<h3 id="26-plantee-por-lo-menos-5-preguntas-que-le-ayudar%C3%ADan-a-entender-mejor-la-situaci%C3%B3n-descrita-en-el-enunciado">2.6. Plantee por lo menos 5 preguntas que le ayudarían a entender mejor la situación descrita en el enunciado</h3>
+<ol>
+<li>¿Qué pasa si un conductor, durante un trayecto, se accidenta?</li>
+<li>¿Qué puede llevar a la suspensión de un pasajero?</li>
+<li>¿Qué información deberían poder ver los conductores sobre los pasajeros?</li>
+<li>¿Tras cuantos incumplimientos se debería suspender a un usuario?</li>
+<li>¿Qué herramientas de seguridad deben estar disponibles para el pasajero?</li>
+</ol>
+<h2 id="3-modelos-de-procesos-software">3. Modelos de procesos software</h2>
+<h3 id="31-%C2%BFcu%C3%A1l-es-el-objetivo-central-de-un-modelo-de-procesos-de-desarrollo-de-software">3.1. ¿Cuál es el objetivo central de un modelo de procesos de desarrollo de software?</h3>
+<p>Los modelos de procesos de desarrollo de software tienen como objetivo principal el organizar las diferentes etapas del desarrollo. Este orden, propuesto por cada una de las metodologías, tiene la intención de reducir los casos de re-proceso o futuros cambios dentro del desarrollo del proyecto.</p>
+<h3 id="32-%C2%BFcuales-modelos-de-proceso-de-desarrollo-software-conoce-y-que-caracter%C3%ADsticas-tienen-realice-un-cuadro-comparativo-de-los-modelos">3.2. ¿Cuales modelos de proceso de desarrollo software conoce y que características tienen? Realice un cuadro comparativo de los modelos.</h3>
+<h4 id="321-modelos-conocidos">3.2.1. Modelos conocidos</h4>
+<h5 id="modelo-cascada">Modelo Cascada</h5>
+<p>El modelo de cascada, o el modelo clásico, es una manera de organizar las etapas de desarrollo a manera de línea, una tras la otra. Así mismo, y debido a esta composición, se obtiene un modelo poco flexible en el cual en el caso de realizar cambios en términos de diseño o estructura, se torna problemático debido a la misma metodología que no lo permite.</p>
+<h5 id="modelo-espiral-o-c%C3%ADclico">Modelo Espiral o Cíclico</h5>
+<p>El modelo de espiral puede verse como una extensión de la metología de cascada. Esta, en esencia, realiza de manera cíclica el modelo de cascada. De esta manera, permite la realización de las diferentes etapas múltiples veces durante el cíclo de desarrollo, facilitando así un poco el manejo de los cambios y errores. Aún así, sigue siendo rígida puesto que no permite realizar dichos cambios sino hasta el inicio de un nuevo cíclo.</p>
+<h5 id="modelo-de-prototipos">Modelo De Prototipos</h5>
+<p>El modelo de prototipos es una metodología basada en la retroalimentación recibida a partir del desarrollo de prototipos de bajo costo. Es a partir de estos prototipos, realizados idealmente en un corto tiempo, y la retroalimentación recibida tras la presentación y evalución al cliente, se realiza el levantamiento de requerimientos con los cuales se realizaría la versión final del software.</p>
+<h5 id="scrum">SCRUM</h5>
+<p>La metodolgía SCRUM, que hace parte de las metodologías de desarrollo ágiles, se basa en diferentes técnicas en las cuales impulsan el trabajo en equipo y de manera colaborativa. Así mismo, la metodología SCRUM, trabaja a partir de entregas parciales y regulares del producto. De esta manera, se busca mantener una alta flexibilidad ante los entornos constantemente cambiantes y de alta complejidad.</p>
+<h4 id="322-cuadro-comparativo">3.2.2. Cuadro comparativo</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Modelo Cascada</th>
+<th>Modelo Espiral o Cíclico</th>
+<th>Modelo De Prototipos</th>
+<th>SCRUM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flexibilidad</td>
+<td>Baja</td>
+<td>Media</td>
+<td>Media</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Velocidad De Desarrollo</td>
+<td>Alta</td>
+<td>Media</td>
+<td>Alta</td>
+<td>Media</td>
+</tr>
+<tr>
+<td>Casos de uso</td>
+<td>Proyectos con requerimientos claros y bien definidos</td>
+<td>Proyectos con requisitos poco claros o complejos</td>
+<td>Proyectos con requisitos poco claros y complejos</td>
+<td>Proyectos de gran complejidad y con requisitos poco claros</td>
+</tr>
+<tr>
+<td>Limitaciones</td>
+<td>Se organiza de manera que no se puede regresar a fases anteriores, muy rigida</td>
+<td>No es facil de implementar, pues es costoso y depende del análisis de riesgos realizado</td>
+<td>Media escala</td>
+<td>Gran Escala</td>
+</tr>
+<tr>
+<td>Escala</td>
+<td>Baja escala</td>
+<td>Media/Gran escala</td>
+<td>Media escala</td>
+<td>Gran Escala</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-%C2%BFcu%C3%A1les-son-las-actividades-que-est%C3%A1n-involucradas-en-el-proceso-de-desarrollo-software-con-cu%C3%A1l-de-ellos-se-siente-m%C3%A1s-af%C3%ADn-y-por-qu%C3%A9">3.3. ¿Cuáles son las actividades que están involucradas en el proceso de desarrollo software, con cuál de ellos se siente más afín y por qué?</h3>
+<p>Las actividades involucradas dentro del desarrollo de software pueden definirse como:</p>
+<ul>
+<li>
+<p><strong>Fase de Determinación de requerimientos:</strong>
+En esta fase es donde se determinan las necesidades del cliente en cuanto al software que desea adquirir. Es en esta parte en donde se define qué partes son necesarias desarrollar y cuales no son importantes para las necesidades del cliente. Es de gran importancia que esta se realice de la mejor manera posible puesto que es en esta fase en la cual se siembran las semillas para el desarrollo completo del proyecto.</p>
+</li>
+<li>
+<p><strong>Fase de Diseño:</strong>
+En la fase de diseño, es donde se realiza, a partir de lo establecido en la determinación de los requerimientos, se define el como será el funcionamiento de cada una de las partes las cuales compondrán la solución a desarrollar. Así mismo, es en esta fase que se definen el como se verá la solución, al igual que el como esta estará compuesta.</p>
+</li>
+<li>
+<p><strong>Fase de Implementación:</strong>
+La fase de implementación consta de como tal el desarrollo del software, siendo así, es en esta fase en la cual se trabaja en pro de la realización del proyecto. Esta fase compete la mayor parte del desarrollo y es en la cual se realiza la creaión del producto final.</p>
+</li>
+<li>
+<p><strong>Fase de Verificación</strong>
+La fase de verificación consta de la verificación de lo desarrollado con el cliente. Es aquí donde se espera el presentar el producto desarrollado que de solución a la problemática a la cual el cliente se estaba enfrentando.</p>
+</li>
+<li>
+<p><strong>Fase de Mantenimiento</strong>
+La fase de mantenimiento es la fase en la cual la solución se encuentra ya como tal funcionando. Es en esta fase en la cual se realiza la correción de errores básicos al igual que ajustes al software desarrollado con el fin de que este aún sea útil para el cliente.</p>
+</li>
+</ul>
+<p>En cuanto a que actividad es la cual es más a fin a nosotros, nos identificamos con la fase de implementación. Esto se debe principalmente a que, de manera general y por experiencia, esta es la fase en la cual como estudiantes nos hemos desenvolvido mayoritariamente. Así mismo, puede considerarse que esta fase es la más activa en cuanto es donde se plantea una gran cantidad de resolución de problemas.</p>
+<h3 id="34-identifique-y-describa-un-ejemplo-donde-utilizar%C3%ADa-un-modelo-de-proceso-%C3%A1gil-indique-cual-y-otro-donde-utilizar%C3%ADa-un-m%C3%A9todo-tradicional-indique-cual">3.4. Identifique y describa un ejemplo donde utilizaría un modelo de proceso ágil (indique cual) y otro donde utilizaría un método tradicional (indique cual)</h3>
+<p>Un caso en el cual se utilizaría una metodología ágil, en este caso SCRUM, sería en el desarrollo de un proyecto en el cual se esté realizando la restructuración de los sistemas de información de una universidad. En este caso, debido a la gran escala y gran cantidad de partes que implican la solución, el emplear una metodología ágil es lo más racional en términos de costo y tiempo.</p>
+<p>Así mismo, el caso en el cual se emplearía una método tradicional, en este caso de cascada, sería en un proyecto personal de baja escala como puede ser el desarrollo de una aplicación web que retorne la información de los resultados de las últimos partidos de los equipos de la Universidad. Esto se debe a que el alcance es relativamente bajo y es posible realizarla con esta metodología.</p>
+<h2 id="4-ingeniero-de-software">4. Ingeniero de Software</h2>
+<h3 id="41-%C2%BFcu%C3%A1l-cree-que-es-el-rol-que-juega-un-ingeniero-de-software-en-la-industria-de-tecnolog%C3%ADas-de-la-informaci%C3%B3n">4.1. ¿Cuál cree que es el rol que juega un ingeniero de software en la industria de tecnologías de la información?</h3>
+<p>El principal rol del ingeniero de software está en la parte del diseño y el análisis. Es decir, el enfoque principal de ellos está en realizar el análisis, especialmente a un nivel conceptual, de los proyectos con el fin de definir las bases con las que se realizarán el resto de las actividades del desarrollo.</p>
+<h3 id="42-%C2%BFcu%C3%A1les-considera-que-deben-ser-las-habilidades-requeridas-por-un-ingeniero-de-software-para-desempe%C3%B1arse-actualmente-y-como-cree-que-pueden-ser-fortalecidas-en-el-curso-de-ingenier%C3%ADa-de-software">4.2. ¿Cuáles considera que deben ser las habilidades requeridas por un ingeniero de software para desempeñarse actualmente y como cree que pueden ser fortalecidas en el curso de ingeniería de software?</h3>
+<p>Las principal habilidad de un ingeniero de software está en la abstracción. Es a partir de esta abstracción de las necesidades del cliente son llevadas hacia el campo de trabajo de los desarrolladores. Siendo así, el tener una gran capacidad abstraer los diferentes conceptos que se trabajan en la vida real, es de gran importancia. Así mismo, se espera que el ingeniero de software tenga la habilidad de tomar decisiones de diseño las cuales faciliten el trabajo de los desarrolladores sin despegarse de las necesidades y requerimientos del cliente.</p>
+<p>Ya en cuanto a los efectos que puede tener el curso de ingeniería de software, se espera que estas puedan fortalecerse en un nivel técnico-práctico el cual permita sus estudiantes el mejorar sus capacidades de abstracción, facilitando la traducción de la realidad a nivel de software; y su capacidad de tomar inteligentes decisiones de diseño que les permitan sacar adelante los diferentes retos y proyectos a los cuales puedan enfrentarse.</p>
+
+</body>
+</html>

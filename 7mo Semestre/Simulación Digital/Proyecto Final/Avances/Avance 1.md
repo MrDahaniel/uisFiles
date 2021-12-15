@@ -1,7 +1,5 @@
 # Simulación Digital: Avance Proyecto Final
 
----
-
 ## Formulación Del Problema
 
 Uno de los principales problemas que se presentan en cualquier tipo de cola, o fila, está en el tiempo de espera que implica estar en estas. Este tiempo de espera depende de 2 variables: la tasa de servicio, o el tiempo en el cual sale gente de la fila; y la tasa de llegada, que se refiere a la velocidad con la que ingresan personas a la fila. Es a partir de esto que funcionan todas las colas.
@@ -35,8 +33,14 @@ El presente proyecto busca entonces la determinación de la efectividad de difer
 Una de las ventajas de emplear la simulación digital en el desarrollo de esta problemática recae en la escala con la cual estamos trabajando. Al ser un parque de diversiones nuestro enfoque principal, el tratar de realizar pruebas directamente sobre el parque puede traer consecuencias negativas en la experiencia de los visitantes, así mismo, la implementación de la infraestructura necesaria para algunas de las estrategias puede llegar a ser de alta complejidad. Siendo así, estos problemas no se presentan en el caso de la simulación digital, por lo que el desarrollo de las pruebas de las diferentes estrategias, puede hacerse sin mayor dificultad.
 
 -   ¿Qué alternativas existen?
-    -   Metodologías alternas a la simulación
-        -
+    -   Experimentar con el sistema real
+        -   Como se estableció anteriormente, el principal problema de trabajar con el modelo real, está en las diferentes afectaciones negativas que el aplicar las diferentes estrategias dentro del parque real puede tener en la experiencia general de los visitantes del parque. Así mimos, las limitaciones dentro de la infraestructura necesaria limitan la verdadera capacidad de ejecutar las diferentes estrategias a su máxima capacidad.
+    -   Modelo Mental
+        -   La principal limitante del modelos mental está relacionado con la escala con la que estamos trabajando. Al tratarse de miles de personas dentro del parque, el pensar en la gran cantidad de interacciones que estas tendrían con las colas, se hace ya demasiado complicado debido a las limitaciones que las personas presentan
+    -   Modelo Físico
+        -   Al igual que con el sistema mental, el problema sigue estando en la escala del problema. El tratar de recrear el parque completo, pero a escala, no necesariamente reflejará la realidad de los tiempos de espera reales en el parque.
+    -   Modelo Matemático: Analítico
+        -   El principal problema de una solución matemática-analítica está en la gran complejidad que implica el parque entero. El tratar de modelar a partir de ecuaciones los comportamientos de las personas, aunque quizás posible, a la escala que se está trabajando, se ve como una imposibilidad.
     -   Método de evaluación
 
 ### Cronograma
