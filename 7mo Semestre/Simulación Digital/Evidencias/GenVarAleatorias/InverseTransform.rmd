@@ -1,0 +1,124 @@
+# Método de Transformada Inversa 
+
+> Integrantes:
+>
+> Paula Catalina Hernández Ramírez - 2180048
+>
+> Juan Pablo Claro Perez - 2181707
+>
+> Daniel David Delgado Cervantes - 2182066
+
+## ¿Qué es el método de la transformada inversa?
+
+El método de la transformada inversa es una manera de realizar la transformación de la distribución uniforme hacia diferentes tipos de distribuciones discretas. 
+
+### Ejemplo 4D. Distribución Geométrica
+
+Para la implementación de la Transformada Inversa (TI) para el caso de la distribución geométrica partimos de la especialización de la TI hacia esta.
+
+Definimos una distribución uniforme la cual se discretizará, esto se puede usar a partir de la generación de valores aleatorios usando la función `runif`
+
+```{R}
+U <- runif(100)
+```
+
+Ahora, tomando `q`, que sería la probabilidad de falla dentro de nuestra distribución geométrica, podemos usar la definición de la Transformada Inversa para distribuciones geométricas. En este caso, usaremos un `q = 0.85`
+
+```{R}
+q <- 0.9
+X <- as.integer(log(U)/log(q)) + 1
+```
+
+Ahora, con esto, tenemos como resultado una serie de valores aleatorios pertenecientes a una distribución geométrica.
+
+```{R, echo=FALSE}
+X
+```
+
+Esto puede confirmarse de manera relativamente simple observando una distribución geométrica y comparándola con la serie de valores que hemos generado usando la Transformada Inversa.
+
+```{R, echo=FALSE, fig.show="hold"}
+hist(X, # histogram
+ col="peachpuff", # column color
+ border="black",
+ freq = FALSE, # show densities instead of frequencies
+ xlab = "temp",
+ main = "Transformada Inversa de la Distribución Geométrica")
+lines(density(rgeom(1000, 0.1)), # density plot
+ lwd = 2, # thickness of line
+ col = "chocolate3")
+```
+
+### Ejemplo 4E. Secuencia de variables aleatorias independiente de Bernoulli
+
+En el caso de querer generar secuencias de variables aleatorias independientes de Bernoulli, es posible realizar optimizaciones a nivel computacional empleando esta implementación de la transformada inversa para distribuciones geométricas. 
+
+Esto puede verse si pensamos en los números generados por la transformada como la cantidad de veces que se tuvo que realizar un experimento antes de que se cumpla una condición. 
+
+El ejemplo más básico de esto se puede ver en el lanzamiento de una moneda. Aunque es posible realizar la simulación del lanzamiento de una moneda antes de que salga caras por primera vez, es más eficiente emplear la transformada para generar una secuencia de pruebas de Bernoulli.
+
+#### a. Simulando cada lanzamiento
+
+En este caso, podemos usar `sample` para "lanzar una moneda". 
+
+```{R}
+result = c()
+
+for (i in 1:100) {
+    try = 1
+    repeat {
+        if (sample(0:1, 1)) {
+            result = c(result, try) 
+            break
+        } else {
+            try = try + 1
+        }
+    }
+}
+```
+
+```{R, echo=FALSE}
+result
+```
+
+#### b. Usando la Transformada Inversa
+
+```{R}
+U = runif(100)
+q = 0.5
+X = as.integer(log(U)/log(q)) + 1
+```
+
+```{R, echo=FALSE}
+X
+```
+
+#### Comparando los resultados
+
+Como podemos ver, a primera vista, las 2 simulaciones están relativamente cerca una de la otra en cuanto a los valores generados. Sin embargo, podemos emplear algunas gráficas, específicamente histogramas para poder ver esto de manera más cercana.
+
+Veamos los resultados de nuestra simulación del lanzamiento de la moneda y con la transformada inversa.
+
+```{R, echo=FALSE, fig.show="hold", out.width="50%"}
+library(cowplot)
+library(ggplot2)
+
+h1 = hist(
+    result,
+    main = "Histograma 1: Simulación",
+    xlab = "Intentos antes de 'caras'",
+    ylab = "Frecuencia",
+    ylim = c(0,100),
+)
+
+h2 = hist(
+    X,
+    main = "Histograma 2: Transformada Inversa",
+    xlab = "Intentos antes de 'caras'",
+    ylab = "Frecuencia",
+    ylim = c(0,100),
+)
+
+```
+
+Como podemos ver los histogramas resultantes se ven bastante similares el uno al otro. A partir de esto, y con el fin de ahorrar en recursos computacionales, es posible emplear la transformada inversa para poder realizar la generación de secuencias de variables aleatorias de Bernoulli.

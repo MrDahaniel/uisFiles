@@ -1,5 +1,44 @@
 # Simulación Digital: Avance Proyecto Final
 
+-   Paula Catalina Hernández Ramírez 2180048 - Moderador
+-   Juan Pablo Claro Pérez – 2181707 - Relator
+-   Daniel David Delgado Cervantes - 2182066 - Expositor
+
+## Resumen
+
+El propósito del siguiente documento es presentar una problemática que se encuentra en
+cualquier lugar donde se presente una cantidad excesiva de personas. La teoría de colas es un
+estudio matemático que busca entender el comportamiento de las líneas de espera dentro de un
+sistema, donde el cliente presenta una solicitud para que se le presten un servicio y este a su vez
+dependerá de una variante, la demanda, ya que con esta se determina el tiempo de espera que
+debe tener la persona hasta obtener lo que requiere. El ecosistema a estudiar se presenta dentro
+de los parques de diversiones en los cuales se presenta problemas a la hora de ingresar a
+diferentes atracciones, donde las personas pueden durar mucho mas tiempo realizando las colas
+que divirtiéndose en los juegos ¿Existirá alguna forma para que las personas puedan divertirse
+más y así disminuir el tiempo de espera en las diferentes atracciones?
+
+## Introducción
+
+La teoría de líneas de espera inicia con el trabajo de Agner Krarup Erlang matemático Danés, el
+cual en el estudio de líneas telefónicas obtuvo la fórmula para la distribución del número de líneas
+de espera, a partir de aquí la teoría de colas se aplica en un sinfín de estudios encargados del
+comportamiento de sistemas como el tráfico automovilístico, las filas de un banco o el flujo de
+mensaje.
+
+El objetivo principal de la teoría de colar es modelar el sistema que presenta estas líneas de
+espera, con el fin de observar el comportamiento y posibles alternativas de solución para obtener
+el resultado más optimo según el estudio que se realice. Teniendo esto presente, la teoría de colas
+será fundamental para el desarrollo del estudio, este se centrará en el sistema que conforma un
+parque de diversiones, donde se concentra una población grande de personas las cuales desean
+probar cada atracción presente.
+
+Este sistema a estudiar presenta múltiples variables ya que no se van a presentar los mismos
+escenarios, puede influir ya sea la hora del día, un día especial en el año, el clima, los precios de
+cada una de las atracciones, la fama de cada juego, entre otras. Las ferias encargadas de los
+parques de diversiones han aplicado una transformación al sistema donde se usa el Fast Pass, este
+es un método para agilizar las colas, pero ¿Es efectivo? ¿Las personas invierten menos tiempo en
+esperas y más en divertirse?
+
 ## Formulación Del Problema
 
 Uno de los principales problemas que se presentan en cualquier tipo de cola, o fila, está en el tiempo de espera que implica estar en estas. Este tiempo de espera depende de 2 variables: la tasa de servicio, o el tiempo en el cual sale gente de la fila; y la tasa de llegada, que se refiere a la velocidad con la que ingresan personas a la fila. Es a partir de esto que funcionan todas las colas.
@@ -41,10 +80,17 @@ Una de las ventajas de emplear la simulación digital en el desarrollo de esta p
         -   Al igual que con el sistema mental, el problema sigue estando en la escala del problema. El tratar de recrear el parque completo, pero a escala, no necesariamente reflejará la realidad de los tiempos de espera reales en el parque.
     -   Modelo Matemático: Analítico
         -   El principal problema de una solución matemática-analítica está en la gran complejidad que implica el parque entero. El tratar de modelar a partir de ecuaciones los comportamientos de las personas, aunque quizás posible, a la escala que se está trabajando, se ve como una imposibilidad.
-    -   Método de evaluación
 
 ### Cronograma
 
 -   ¿Qué actividades se van a realizar y en qué fechas van a ser realizadas?
 
+![Img](./Cronograma.png)
+
 ## Bibliografía
+
+-   Predecir los tiempos de espera de Disneyland a través de simulaciones de población. (s.f.). Ichi Pro. Disponible [aquí](https://ichi.pro/es/predecir-los-tiempos-de-espera-de-disneyland-a-traves-de-simulaciones-de-poblacion-36233626878710).
+-   Datos sobre tiempos de espera en parque de diversiones. (s.f.). Minitab. Disponible [aquí](https://support.minitab.com/es-mx/datasets/quality-tools-data-sets/amusement-park-wait-times/).
+-   Disney World Wait Times Available for Data Science and Machine Learning. (s.f.). touringplans. Disponible [aquí](https://touringplans.com/blog/disney-world-wait-times-available-for-data-science-and-machine-learning/).
+-   Análisis De Líneas De Espera A Través De Teoría De Colas Y Simulación. (2010). Portilla, L. et al.
+-   Managing Capacity And Flow At Theme Parks. (1996). Reza H. Ahmadi.
