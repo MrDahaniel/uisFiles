@@ -10,18 +10,18 @@ output:
 • CONDICIONALES
  
 ```{r}
-#Edad de la persona
-x = 18
+# Edad de la persona
+x <- 18
 ```
 FORMA IFELSE
 ```{r}
-ifelse(x>18, "Es mayor de edad", "Es menor de edad")
+ifelse(x > 18, "Es mayor de edad", "Es menor de edad")
 ```
 FORMA IF ELSEIF
 ```{r}
-if (x>18) {
+if (x > 18) {
   print("La persona es mayor de edad")
-} else if (x==18){
+} else if (x == 18) {
   print("La persona recién cumplió 18")
 } else {
   print("La persona es menor de edad")
@@ -31,29 +31,33 @@ if (x>18) {
 • SWITCH (Select-Case)
 
 ```{r}
-x = "lugar"
-switch(x, edad = 5, lugar="montaña", altura="1.75 cm")
+x <- "lugar"
+switch(x,
+  edad = 5,
+  lugar = "montaña",
+  altura = "1.75 cm"
+)
 ```
 
 • WHILE
 
 ```{r}
-y = 12
-contador=0
+y <- 12
+contador <- 0
 while (y < 20) {
-  y = y + 1
-  contador = contador + 1
+  y <- y + 1
+  contador <- contador + 1
 }
 print(contador)
 ```
 • FOR
 
 ```{r}
-lugares= c("Floridablanca 16", "Piedecuesta 14", "Bucaramanga 14", "Girón 7")
-nodelugar = 0
+lugares <- c("Floridablanca 16", "Piedecuesta 14", "Bucaramanga 14", "Girón 7")
+nodelugar <- 0
 for (x in lugares) {
-  t=nchar(x)
-  nodelugar = nodelugar + 1
+  t <- nchar(x)
+  nodelugar <- nodelugar + 1
   print(paste("El lugar numero ", nodelugar, " tiene ", t, "caracteres"))
 }
 ```
@@ -207,8 +211,8 @@ a <- 7**5
 m <- 2**16 - 1
 k <- 10
 for (i in 1:10) { # Vamos a iterar sobre un vector de 10 elementos
-    seed <- (a * seed + k) %% m
-    x <- c(x, seed)
+  seed <- (a * seed + k) %% m
+  x <- c(x, seed)
 }
 print(x)
 ```
@@ -529,22 +533,16 @@ Aunque estas sólo son algunas de todas las operaciones matriciales que se puede
 ## 4. Creación 'manual' de data frames
 
 ```{r}
-#Creando un dataframe vacío
-
-vacio = data.frame()
-View(vacio)
-
-nombres = paste("persona ", letters[1:10])
-edades = 11:20
-dfprueba = data.frame(col1 = nombres, col2=edades)
-View(dfprueba)
-
+nombres <- paste("persona ", letters[1:10])
+edades <- 11:20
+dfprueba <- data.frame(col1 = nombres, col2 = edades)
+dfprueba
 ```
 
 • Lecturas de dataframes
 
 ```{r}
-df <- read.csv('flavors.csv', header = T)
+df <- read.csv("https://query.data.world/s/w2jbrpl3yiiaybfsrvtra3lninumg7", header = TRUE)
 ```
 
 •DEMÁS OPERACIONES
@@ -553,7 +551,6 @@ df <- read.csv('flavors.csv', header = T)
 
 ```{r}
 head(df)
-
 ```
 
 2. Para ver las últimas filas
@@ -576,7 +573,7 @@ summary(df)
 ```
 5. Obtener una visualización de un Dataframe
 
-```{r}
+```
 View(df)
 ```
 
@@ -584,27 +581,28 @@ View(df)
 
 ```{r}
 prueba1 <- df[1:10, ]
-View(prueba1)
+prueba1
 ```
 
 7. Seleccionar últimas 10 filas y todas las columnas del dataframe 
 
 ```{r}
-prueba2 <- df[(nrow(df)-10):nrow(df),]
-View(prueba2)
+prueba2 <- df[(nrow(df) - 10):nrow(df), ]
+prueba2
 ```
 
 8. Seleccionar las filas 9-16 de la columna 'vegetable' del dataframe 'df'
 
 ```{r}
-prueba3 <- df[9:16,"vegetable"]
-View(prueba3)
+prueba3 <- df[9:16, "FOOD.NAME"]
+prueba3
+```
 
 
-#Otra opción sería
-prueba4 <- df$vegetable[9:16]
-View(prueba4)
-
+```{r}
+# Otra opción sería
+prueba4 <- df$FOOD.NAME[9:16]
+prueba4
 ```
 
 ## 5. Funciones en R.
@@ -612,10 +610,9 @@ View(prueba4)
 Las funciones en R como en cualquier otro lenguaje son de suma importancia para evitar la redundancia en el código y fomentar la reutilización de este. En R las funciones se definen de la siguiente forma:  
 
 ```{r}
-suma <- function(x, y){
-  
-}
+suma <- function(x, y) {
 
+}
 ```
 
 Presentamos una función llamada suma, la cual recibirá dos parámetros “x” y “y”, como se puede observar, las funciones se declaran por medio de la palabra reservada function.
@@ -623,51 +620,50 @@ Presentamos una función llamada suma, la cual recibirá dos parámetros “x”
 Tomando en cuenta lo anterior, se realizará el estudio de una función recursiva, en este caso se estudiará el algoritmo de ordenamiento Quicksort. Una función recursiva son funciones que realizan llamados así mismas durante su propia ejecución, funcionan de una forma similar a las iteraciones pero se debe tener cuidado ya que puede ejecutarse de forma casi infinita ya que implementan una subdivisión de tareas para abordar el problema de forma mas simple.
 
 ```{r}
-quicksort <- function (V, izq, der){ 
-  #La funcion presenta los parametros V:vector, izq: posicion inicial, der: posicion final
-  pivote <- V[izq] #pivote: es el elemento ubicado en la posicion inicial
+quicksort <- function(V, izq, der) {
+  # La funcion presenta los parametros V:vector, izq: posicion inicial, der: posicion final
+  pivote <- V[izq] # pivote: es el elemento ubicado en la posicion inicial
   i <- izq
   j <- der
   aux <- 0
-  
-  while (i < j) { 
-    #se comprueba que las posiciones de inicio y final sean coherentes
-    while (V[i] <= pivote & i < j){ 
-      #Verifica que el numero leido en posicion i sea menor que el pivote, se realiza hasta que encuentra un numero mayor
-      i <- i + 1 #Se mueve un espacio de la posicion i
+
+  while (i < j) {
+    # se comprueba que las posiciones de inicio y final sean coherentes
+    while (V[i] <= pivote & i < j) {
+      # Verifica que el numero leido en posicion i sea menor que el pivote, se realiza hasta que encuentra un numero mayor
+      i <- i + 1 # Se mueve un espacio de la posicion i
     }
-    while (V[j] > pivote) { 
-      #Verifica que los numeros de la posicion j sean mayores que el pivote, si es asi, se mueve a la izquierda
+    while (V[j] > pivote) {
+      # Verifica que los numeros de la posicion j sean mayores que el pivote, si es asi, se mueve a la izquierda
       j <- j - 1
     }
-    if (i < j) { 
-      #Verifica que la posicion i se encuentre a la izquierda y la posicion j a la derecha para intercambiar valores
+    if (i < j) {
+      # Verifica que la posicion i se encuentre a la izquierda y la posicion j a la derecha para intercambiar valores
       aux <- V[i]
       V[i] <- V[j]
       V[j] <- aux
     }
   }
-  
-  V[izq]<-V[j]
-  V[j]<-pivote #Se realiza un cambio de pivote
-  
-  #El vector se divide en dos parte y se vuelve a repetir el proceso
-  if (izq < j-1) {
-    return(quicksort(V, izq, j-1))
+
+  V[izq] <- V[j]
+  V[j] <- pivote # Se realiza un cambio de pivote
+
+  # El vector se divide en dos parte y se vuelve a repetir el proceso
+  if (izq < j - 1) {
+    return(quicksort(V, izq, j - 1))
   }
-  if(j+1 < der){
-    return(quicksort(V, j+1, der))
+  if (j + 1 < der) {
+    return(quicksort(V, j + 1, der))
   }
-  
+
   return(V)
 }
 
-#Se hace una prueba con un vecotr desordendo
-V <- c(6,3,8,4,8,2)
+# Se hace una prueba con un vecotr desordendo
+V <- c(6, 3, 8, 4, 8, 2)
 
-#Se realiza el llamado de la funcion
+# Se realiza el llamado de la funcion
 V <- quicksort(V, 1, length(V))
-
 ```
 
 
@@ -675,7 +671,7 @@ V <- quicksort(V, 1, length(V))
 
 Para el manejo de archivos en R se requiere primero que todo la descarga de librerías que permitan la lectura de los datos de un archivo:
 
-```{r}
+```
 install.packages("readr")
 
 install.packages("readxl")
@@ -685,7 +681,7 @@ El paquete `install.packages("readr")` nos permite la lectura de archivos .csv y
 
 Para implementar estos paquete se hace uso de la función `library()` la cual selecciona las librerías con las cuales se va a trabajar
 
-```{r}
+```
 library(readr)
 
 library(readxl)
@@ -693,7 +689,7 @@ library(readxl)
 
 Estas librerias dependen de la ruta en la cual se encuentre el archivo para su lectura, para esto se utiliza la función `file.choose()` para obtener la ubicación exacta del archivo en un formato el cual R puede entender, esta ubicación es impresa en consola, la cual se debe asignar a una variable para su uso.
 
-```{r}
+```
 file.choose()
 
 ruta_excel <- "c:\\[Ruta]\\archivo.xlsx"
@@ -703,15 +699,15 @@ ruta_archivo_csv <- "c:\\[Ruta]\\archivo.csv"
 
 En la lectura de archivos CSV pueden ocurrir ciertos casos, como, por ejemplo, los datos no tienen una cabecera definida o puede que si la tengan o simplemente los datos se encuentran separados por punto y coma; para estos casos la librería `library(readr)` presenta las siguientes lecturas:
 
-```{r}
-#Lee el archivo con cabecera
+```
+# Lee el archivo con cabecera
 doc <- read_csv(ruta_archivo_csv)
 
-#Asigna una cabecera por defecto o simplemente se personaliza la cabecera con ayuda de la funcion c()
+# Asigna una cabecera por defecto o simplemente se personaliza la cabecera con ayuda de la funcion c()
 doc2 <- read_csv(ruta_archivo_csv, col_names = FALSE)
 doc2 <- read_csv(ruta_archivo_csv, col_names = c("col1", "col2", "col3", "col4"))
 
-#Lectura de archivos con punto y coma
+# Lectura de archivos con punto y coma
 doc3 <- read_csv2(ruta_archivo_csv)
 ```
 
@@ -722,13 +718,13 @@ Para la lectura de archivos de Excel tambien se presentan algunos casos:
 
 Para cada uno de estos casos se realiza lo siguiente:
 
-```{r}
-doc_excel1 <- read_excel(ruta_excel) #Lee el caso 1
+```
+doc_excel1 <- read_excel(ruta_excel) # Lee el caso 1
 
-#El parametro sheet permite elegir la hoja donde se encuentran los datos
-doc_excel2 <- read_excel(ruta_excel, sheet = "Hoja2") 
+# El parametro sheet permite elegir la hoja donde se encuentran los datos
+doc_excel2 <- read_excel(ruta_excel, sheet = "Hoja2")
 
-#El parametro range permite saber desde cual celda se desean leer los datos hasta el destino de los mismo
+# El parametro range permite saber desde cual celda se desean leer los datos hasta el destino de los mismo
 doc_excel3 <- read_excel(ruta_excel, sheet = "Hoja3", range = "C7:F17")
 ```
 
@@ -755,13 +751,13 @@ De igual manera, podemos cambiar el estilo de la gráfica, el nombre de los ejes
 ```{R}
 x <- seq(0, 10, 0.5)
 plot(
-    x = x,
-    y = (x + 3) / x,
-    type = "b", # El tipo de gráfica
-    xlab = "Días", # El nombre del eje X
-    ylab = "Porcentaje", # El nombre del eje Y
-    col = "maroon", # El color de la columna
-    lwd = 5 # El grosor de la línea
+  x = x,
+  y = (x + 3) / x,
+  type = "b", # El tipo de gráfica
+  xlab = "Días", # El nombre del eje X
+  ylab = "Porcentaje", # El nombre del eje Y
+  col = "maroon", # El color de la columna
+  lwd = 5 # El grosor de la línea
 )
 ```
 
@@ -783,9 +779,9 @@ Con estos mismos histogramas podemos alterar la cantidad de barras, el color ent
 ```{R}
 x <- rnorm(5000)
 hist(x,
-    col = "#026471", # El color del histograma
-    breaks = 25, # Así podemos aumentar la cantidad de barras del histograma
-    prob = TRUE # Pasando este parametro, nos mostrará la probabilidad en el eje Y y no la frecuencia
+  col = "#026471", # El color del histograma
+  breaks = 25, # Así podemos aumentar la cantidad de barras del histograma
+  prob = TRUE # Pasando este parametro, nos mostrará la probabilidad en el eje Y y no la frecuencia
 )
 lines(density(x))
 ```
@@ -803,9 +799,9 @@ De esta manera podemos graficar diagramas de caja los cuales nos permiten una me
 
 ```{R}
 boxplot(x,
-    notch = TRUE, # Esto nos permite resaltar mejor el promedio de la muestra
-    horizontal = TRUE, # Altera la orienteación de la gráfica para que se vea de manera horizontal
-    col = "#753939"
+  notch = TRUE, # Esto nos permite resaltar mejor el promedio de la muestra
+  horizontal = TRUE, # Altera la orienteación de la gráfica para que se vea de manera horizontal
+  col = "#753939"
 )
 ```
 
@@ -825,14 +821,14 @@ Por último, al igual que con el resto de las gráficas, podemos alterar las pro
 
 ```{R}
 vioplot(x,
-    horizontal = TRUE,
-    col = "#53ffa0", # Color del area
-    rectCol = "#523d7b", # Color del rectangulo
-    lineCol = "#000000ff", # Color de la línea central
-    colMed = "#ffffff", # Color del punto central
-    border = "black", # Color del borde exterior
-    pchMed = "*", # El símbolo a usar en el punto central
-    plotCentre = "points"
+  horizontal = TRUE,
+  col = "#53ffa0", # Color del area
+  rectCol = "#523d7b", # Color del rectangulo
+  lineCol = "#000000ff", # Color de la línea central
+  colMed = "#ffffff", # Color del punto central
+  border = "black", # Color del borde exterior
+  pchMed = "*", # El símbolo a usar en el punto central
+  plotCentre = "points"
 )
 ```
 

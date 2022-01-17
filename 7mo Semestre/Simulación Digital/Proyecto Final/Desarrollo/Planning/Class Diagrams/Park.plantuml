@@ -1,0 +1,66 @@
+@startuml
+
+     ' skinparam style strictuml
+     skinparam defaultTextAlignment center
+
+     ' Class Declaration
+     class Person {
+          ' Variables
+          -id: int
+          +name: str
+          +currentLocation: Location
+          -attractionsExperienced: int
+          -totalWaitTime: int
+          -arrivalTime: int
+          -departureTime: int
+          +archetype: Archetype
+          -attractionList: list
+          -activitiesList: list
+
+          ' Methods
+          +flipCoin(): Location
+          +spinRoulette(): Location
+          +joinQueue(): None
+          +leavePark(): None
+     }
+
+     class Archetype {
+          ' Variables
+          +name: str
+          +maxWaitTime: int
+          +minWaitTime: int
+          +maxStay: int
+          +minStay: int
+          +attractionChance: float
+
+          ' Methods
+
+     }
+
+     class Location {
+          ' Variables
+          +name: str
+          +hourlyServiceRate: int
+          +waitTime: int
+          +fakeWaitTime: int
+          +duration: int
+          +queue: list
+          +type: str
+
+          ' Methods
+
+     }
+
+     class Park {
+          ' Variables
+          +name: str
+          +time: int
+          +attractions: list
+          +activities: list
+
+          ' Methods
+     }
+
+     ' Relationships
+
+@enduml
