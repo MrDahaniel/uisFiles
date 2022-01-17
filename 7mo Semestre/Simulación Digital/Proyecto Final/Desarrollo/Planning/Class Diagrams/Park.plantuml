@@ -14,8 +14,7 @@
           -arrivalTime: int
           -departureTime: int
           +archetype: Archetype
-          -attractionList: list
-          -activitiesList: list
+          -thingsDone: list
 
           ' Methods
           +flipCoin(): Location

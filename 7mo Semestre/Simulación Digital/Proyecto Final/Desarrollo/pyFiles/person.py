@@ -3,8 +3,21 @@ from park import Location
 
 
 class Archetype:
-    def __init__(self) -> None:
-        pass
+    def __init__(
+        self,
+        name: str,
+        maxWaitTime: int,
+        minWaitTime: int,
+        maxStay: int,
+        minStay: int,
+        attractionChance: float,
+    ) -> None:
+        self.name: str = name
+        self.maxWaitTime: int = maxWaitTime
+        self.minWaitTime: int = minWaitTime
+        self.maxStay: int = maxStay
+        self.minStay: int = minStay
+        self.attractionChance: float = attractionChance
 
 
 class Person:
@@ -16,7 +29,7 @@ class Person:
         self.arrivalTime: int = None
         self.departureTime: int = None
         self.archetype: dict = archetype
-        self.activities: list(tuple) = []
+        self.thingsDone: list(str) = []
 
     def flipCoin():
         pass
