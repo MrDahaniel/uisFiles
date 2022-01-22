@@ -1,0 +1,9 @@
+@startuml remoteDeviceInteraction
+
+    skinparam style strictuml
+    skinparam defaultTextAlignment center
+
+    title Diagrama de Flujo: \n
+
+
+@enduml

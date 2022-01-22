@@ -1,0 +1,38 @@
+@startuml classDiagram
+
+    title Diagrama de Clases: MQTT House
+
+    ' Definición de clases
+    class House {
+        +name: str
+        +rooms: dict[str, Room]
+        +users: list[str]
+        +devices: list[Device]
+
+        +loadConfig(self)
+        +createRoom(self)
+        +createDevice(self)
+        +createUser(self, name: str)
+        +editRoom(self, roomName: str, roomId: str)
+    }
+
+    class Room {
+        +name: str
+        +id: str
+        +devices: list[Device]
+    }
+
+    class Device {
+        +name: str
+        +state: dict
+    }
+
+    class Remote {
+        +name: str
+        +user: str
+        +channels: list[str]
+
+
+    }
+
+@enduml

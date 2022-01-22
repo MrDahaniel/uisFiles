@@ -10,66 +10,79 @@ b. $k(x,y) = x^2+y^2 = 1$
 Despejemos con el fin de poder realizar la integración.
 
 a. $(x-1)^2 + (y-1)^2 = 1$
-i. $1 - (x-1)^2 = (y-1)^2$
-ii. $\sqrt{1 - (x-1)^2} + 1 = y$
+    i. $1 - (x-1)^2 = (y-1)^2$
+    ii. $-\sqrt{1 - (x-1)^2} + 1 = y$
 b. $x^2+y^2 = 1$
-i. $1-x^2 = y^2$
-i. $\sqrt{1-x^2} = y$
+    i. $1-x^2 = y^2$
+    ii. $\sqrt{1-x^2} = y$
 
 Pasamos a los diferenciales y aplicamos integrales.
 
 a. $\sqrt{1 - (x-1)^2} + 1 = y$
-i. $\int_{0}^{1} \sqrt{1-(x-1)^2} dx = F(x)$
+    i. $\int_{0}^{1} -\sqrt{1-(x-1)^2} dx = F(x)$
 b. $\sqrt{1-x^2} = y$
-i. $\int_{0}^{1} \sqrt{1-x^2} dx = K(x)$
+    i. $\int_{0}^{1} \sqrt{1-x^2} dx = K(x)$
+
+Lo primero que haremos será generar la distribución uniforme que será usada para realizar la aproximación de la integral correspondiente. 
 
 ```{r}
+n <- 1000
+u <- runif(n, min = 0, max = 1)
+```
 
+Ahora, se pasará la distribución `u` a nuestras funciones con el fin de realizar la aproximación de cada una de las áreas debajo de las curvas.
+
+```{r}
+a_curve_area <- sum(-sqrt(1 - ((u - 1)**2)) + 1) / n
+```
+```{r, echo = FALSE}
+a_curve_area
+```
+```{r}
+b_curve_area <- sum(sqrt(1 - u**2)) / n
+```
+```{r, echo = FALSE}
+b_curve_area
+```
+
+Ya teniendo el área de cada una de las curvas, sólo queda el realizar la resta para poder realizar la aproximación del área entre las curvas.
+
+```{r}
+b_curve_area - a_curve_area
 ```
 
 ## 2. Craps: Los dados
 
 ```{r}
-    win = c(7, 11)
-    lose = c(2,3,12)
+win <- c(7, 11)
+lose <- c(2, 3, 12)
 
-    runs = 10000
-    won = 0
+runs <- 10000
+won <- 0
 
-    for (i in 1:runs) {
-       dice = sum(sample(1:26, 2, replace = TRUE))
+for (i in 1:runs) {
+    dice <- sum(sample(1:26, 2, replace = TRUE))
 
-       if (dice %in% win) {
-            won = won + 1
-       } else if (dice %in% lose) {
-            next
-       } else {
-           repeat {
-               throw = sum(sample(1:6, 2, replace = TRUE))
-               if (dice == throw) {
-                   won = won + 1
-                   break
-               } else if (throw == 7) {
-                   break
-               }
-           }
-       }
+    if (dice %in% win) {
+        won <- won + 1
+    } else if (dice %in% lose) {
+        next
+    } else {
+        repeat {
+            throw <- sum(sample(1:6, 2, replace = TRUE))
+            if (dice == throw) {
+                won <- won + 1
+                break
+            } else if (throw == 7) {
+                break
+            }
+        }
     }
-
+}
 ```
 
 ```{r, echo= FALSE}
-    sprintf("Won %s out of %s", won, runs)
-    sprintf("Winning Chance %s", won/runs)
-
+sprintf("Won %s out of %s", won, runs)
+sprintf("Winning Chance %s", won / runs)
 ```
 
-## 3. Método de rechazo
-
-```{r}
-
-U = floor(runif(100)*10)+1
-P = dnorm(rnorm(10))
-
-
-```
