@@ -19,7 +19,7 @@
     class Room {
         +name: str
         +id: str
-        +devices: list[Device]
+        +devices: dict[str, Device]
     }
 
     class Device {
