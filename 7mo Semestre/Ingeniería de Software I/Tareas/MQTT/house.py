@@ -20,11 +20,7 @@ class House:
             return False
         return True
 
-    def createDevice(
-        self,
-        name: str,
-        roomName: str = None,
-    ) -> bool:
+    def createDevice(self, name: str, roomName: str = None) -> bool:
         if roomName in self.rooms.keys() and not name in self.devices:
             newDevice: Device = Device(name)
             self.devices.append(name)
