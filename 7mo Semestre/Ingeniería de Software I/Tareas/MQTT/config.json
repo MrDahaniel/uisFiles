@@ -1,0 +1,10 @@
+{
+    "host": "test.mosquitto.org",
+    "name": "Termostat",
+    "room": "LivingRoom",
+    "state": {
+        "Temperature": 0,
+        "GoalTemperature": 0,
+        "lastUser": ""
+    }
+}

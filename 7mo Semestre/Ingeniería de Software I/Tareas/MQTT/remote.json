@@ -1,0 +1,25 @@
+{
+    "user": "dnl",
+    "host": "test.mosquitto.org",
+    "rooms": {
+        "LivingRoom": {
+            "Devices": {
+                "Termostat": {
+                    "Temperature": 0,
+                    "GoalTemperature": 0
+                },
+                "AlarmClock": {
+                    "AlarmActive": 1,
+                    "NextAlarm": 390
+                }
+            }
+        },
+        "Bedroom": {
+            "Devices": {
+                "SaltLamp": {
+                    "On": 0
+                }
+            }
+        }
+    }
+}
