@@ -62,8 +62,7 @@
     ],
     "cSpell.ignoreWords": ["Metasploitable"],
     "cSpell.language": "es,en,es-ES",
-    "cSpell.enableFiletypes": ["rmd"],
-    "markdown.styles": [
-        "hackmd-theme-dark.css"
+    "cSpell.enableFiletypes": [
+        "rmd"
     ]
 }
