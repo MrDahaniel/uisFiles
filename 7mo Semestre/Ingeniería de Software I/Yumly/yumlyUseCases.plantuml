@@ -1,0 +1,30 @@
+@startuml yumlyUseCases
+
+    title Yumly: Use Case Diagram
+
+    skinparam Style strictuml 
+    skinparam SequenceMessageAlignment center
+
+    ' Definitions
+        ' Actors
+        package Staff {
+            Actor :Moderator: 
+            Actor :Chef:
+        }
+
+        package Users {
+            Actor :User: as U
+            Actor :User Chef: as UC
+        }
+
+        ' Use Cases
+        rectangle MainOperation {
+            usecase (Add Recipe) as (AddR)
+            usecase 
+        }
+
+        ' Relationships
+            ' Users
+            U <|-left- UC
+
+@enduml
