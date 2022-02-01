@@ -47,7 +47,10 @@
           +type: str
 
           ' Methods
-
+          +joinQueue(self, Person)
+          +serve(self)
+          +updateWaitTime(self)
+          +updateFakeWaitTime(self)
      }
 
      class Park {

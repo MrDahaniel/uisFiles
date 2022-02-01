@@ -4,8 +4,8 @@ from person import Person
 class Park:
     def __init__(self) -> None:
         self.currentTime: int = 800
-        self.attractions: list(Location) = []
-        self.activities: list(Location) = []
+        self.attractions: list[Location] = []
+        self.activities: list[Location] = []
         self.time: int = 0
 
 
@@ -17,4 +17,7 @@ class Location:
         self.waitTime: int = 0
         self.fakeWaitTime: int = 0
         self.duration: int = duration
-        self.queue: list(Person) = []
+        self.queue: list[Person] = []
+
+    def addQueue(self, Person: Person):
+        self.queue.append(Person)
