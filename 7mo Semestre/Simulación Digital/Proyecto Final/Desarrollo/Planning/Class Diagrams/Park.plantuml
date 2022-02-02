@@ -6,21 +6,22 @@
      ' Class Declaration
      class Person {
           ' Variables
-          -id: int
+          +id: int
           +name: str
-          +currentLocation: Location
-          -attractionsExperienced: int
-          -totalWaitTime: int
-          -arrivalTime: int
-          -departureTime: int
+          +attractionsExperienced: int
+          +totalWaitTime: int
+          +arrivalTime: int
+          +departureTime: int
           +archetype: Archetype
-          -thingsDone: list
+          +timeLeftInActivity: int
+          +thingsDone: list[str]
 
           ' Methods
-          +flipCoin(): Location
-          +spinRoulette(): Location
-          +joinQueue(): None
-          +leavePark(): None
+          +flipCoin(self, Park: Park): list[Location]
+          +spinRoulette(self, locations: list[Location]): Location
+          +checkAttraction(self, Location): None
+          +joinQueue(self, Location): None
+          +leavePark(self): None
      }
 
      class Archetype {
@@ -36,18 +37,21 @@
 
      }
 
-     class Location {
+     class Activity {
           ' Variables
           +name: str
+          +duration: int
+          +queue: list[Person]
+
+     }
+
+     class Attraction {
+          ' Variables
           +hourlyServiceRate: int
           +waitTime: int
           +fakeWaitTime: int
-          +duration: int
-          +queue: list
-          +type: str
-
           ' Methods
-          +joinQueue(self, Person)
+          
           +serve(self)
           +updateWaitTime(self)
           +updateFakeWaitTime(self)
@@ -57,12 +61,17 @@
           ' Variables
           +name: str
           +time: int
-          +attractions: list
-          +activities: list
+          +closingTime: int
+          +attractions: list[Location]
+          +activities: list[Location]
 
           ' Methods
      }
 
      ' Relationships
+     Park *.. Activity : Park has \nmany Activities
+     Activity <|-- Attraction : Attractions are \nactivities with a queue
+     Person -left-  Activity : A Person \ndoes activities
+     Person *-- Archetype : Person has \nan Archetype
 
 @enduml
