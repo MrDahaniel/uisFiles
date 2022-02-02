@@ -1,0 +1,60 @@
+# Implementación de la transformada inversa en diferentes distribuciones de probabilidad
+
+```{r, echo=FALSE}
+library("MASS")
+```
+
+## 1. $F(x) = x^n$
+
+```{r}
+
+Fun <- function(x, n = 2) {
+    return(n * (x**(n - 1)))
+}
+
+invFun <- function(x, n = 2) {
+    return(x**(1 / n))
+}
+```
+
+```{r}
+nVals <- c(2, 4, 6, 8)
+U <- runif(10000)
+
+par(mar = c(3, 3, 3, 0), mfrow = c(2, 2))
+for (n in nVals) {
+    sample <- invFun(U, n)
+    truehist(sample,
+        nbins = 20, col = "cyan",
+        main = paste("n =", n), xlab = ""
+    )
+    curve(Fun(x, n), from = 1e-10, add = TRUE)
+}
+```
+
+## 2. $F(x) = 1-e^{-x^2}$
+
+```{r}
+Fun2 <- function(x) {
+    return(2 * x * exp(-x**2))
+}
+
+invFun2 <- function(x) {
+    return(sqrt(-log(1 - x)))
+}
+```
+
+```{r}
+par(mar = c(3, 3, 3, 0), mfrow = c(2, 2))
+for (n in 1:4) {
+    sample <- invFun2(runif(10000))
+    truehist(sample,
+        nbins = 20, col = "cyan",
+        main = paste("Test ", n), xlab = ""
+    )
+    curve(Fun2(x), from = 1e-10, add = TRUE)
+}
+```
+
+## 3. La otra que no sé hacer en latex
+

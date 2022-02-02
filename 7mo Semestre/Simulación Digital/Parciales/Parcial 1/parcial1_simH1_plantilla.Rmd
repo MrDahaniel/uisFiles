@@ -171,7 +171,7 @@ simular_torneo <- function() {
 Corremos la simulación 10000 veces.
 
 ```{r}
-n <- 0
+n <- 10000
 
 pasaDirecto <- 0
 pasaRepechaje <- 0
