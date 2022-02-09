@@ -9,15 +9,32 @@ class Park:
         self.time: int = 0
 
 
-class Location:
-    def __init__(self, name: str, type: str, serviceRate: int, duration: int) -> None:
+class Activity:
+    def __init__(self, name: str, popularity: int, duration: int) -> None:
         self.name: str = name
-        self.type: str = type
+        self.duration: int = duration
+        self.queue: list[Person] = []
+        self.popularity: int = popularity
+
+
+class Attraction(Activity):
+    def __init__(
+        self,
+        name: str,
+        popularity: int,
+        duration: int,
+        serviceRate: int,
+    ) -> None:
+        super().__init__(name, popularity, duration)
         self.serviceRate: int = serviceRate
         self.waitTime: int = 0
         self.fakeWaitTime: int = 0
-        self.duration: int = duration
-        self.queue: list[Person] = []
 
-    def addQueue(self, Person: Person):
-        self.queue.append(Person)
+    def serve(self):
+        pass
+
+    def updateWaitTime(self):
+        pass
+
+    def updateFakeWaitTime(self):
+        pass

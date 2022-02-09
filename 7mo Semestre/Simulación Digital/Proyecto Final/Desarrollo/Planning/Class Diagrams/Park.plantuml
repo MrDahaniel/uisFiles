@@ -6,21 +6,23 @@
      ' Class Declaration
      class Person {
           ' Variables
-          -id: int
+          +id: int
           +name: str
-          +currentLocation: Location
-          -attractionsExperienced: int
-          -totalWaitTime: int
-          -arrivalTime: int
-          -departureTime: int
+          +attractionsExperienced: int
+          +totalWaitTime: int
+          +arrivalTime: int
+          +departureTime: int
           +archetype: Archetype
-          -thingsDone: list
+          +timeLeftInActivity: int
+          +currentActivity: str
+          +thingsDone: list[str]
 
           ' Methods
-          +flipCoin(): Location
-          +spinRoulette(): Location
-          +joinQueue(): None
-          +leavePark(): None
+          +flipCoin(self, Park: Park): list[Activity]
+          +spinRoulette(self, locations: list[Activity]): Activity
+          +checkAttraction(self, Activity): None
+          +joinQueue(self, Activity): None
+          +leavePark(self): None
      }
 
      class Archetype {
@@ -36,18 +38,22 @@
 
      }
 
-     class Location {
+     class Activity {
           ' Variables
           +name: str
+          +duration: int
+          +queue: list[Person]
+
+     }
+
+     class Attraction {
+          ' Variables
+          +popularity: int
           +hourlyServiceRate: int
           +waitTime: int
           +fakeWaitTime: int
-          +duration: int
-          +queue: list
-          +type: str
-
           ' Methods
-          +joinQueue(self, Person)
+          
           +serve(self)
           +updateWaitTime(self)
           +updateFakeWaitTime(self)
@@ -57,12 +63,17 @@
           ' Variables
           +name: str
           +time: int
-          +attractions: list
-          +activities: list
+          +closingTime: int
+          +attractions: list[Attraction]
+          +activities: list[Activity]
 
           ' Methods
      }
 
      ' Relationships
+     Park *.. Activity : Park has \nmany Activities
+     Activity <|-- Attraction : Attractions are \nactivities with a queue
+     Person -left-  Activity : A Person \ndoes activities
+     Person *-- Archetype : Person has \nan Archetype
 
 @enduml

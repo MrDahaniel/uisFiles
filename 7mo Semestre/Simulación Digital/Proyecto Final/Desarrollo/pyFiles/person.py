@@ -1,6 +1,7 @@
-from random import uniform
+from random import uniform, randint, choices
+from typing import Tuple
 from numpy import random
-from park import Location
+from park import Activity, Attraction, Location
 
 
 class Archetype:
@@ -22,24 +23,33 @@ class Archetype:
 
 
 class Person:
-    def __init__(self, id: int, name: str, archetype: Archetype) -> None:
+    def __init__(self, id: int, arrivalTime: int, archetype: Archetype) -> None:
         self.id: str = id
-        self.name: str = name
         self.attractionsExperienced: int = 0
         self.totalWaitTime: int = 0
-        self.arrivalTime: int = None
-        self.departureTime: int = None
-        self.archetype: dict = archetype
-        self.thingsDone: list(str) = []
+        self.arrivalTime: int = arrivalTime
+        self.departureTime: int = arrivalTime + randint(
+            archetype.minStay, archetype.maxStay
+        )
+        self.archetype: Archetype = archetype
+        self.timeLeftInActivity: int = 0
+        self.currentActivity: str = ""
+        self.thingsDone: list[str] = []
 
     def flipCoin(self):
         if random.uniform(low=0, high=1) < self.archetype.attractionChance:
+            # Person chooses to do queue for an attraction
             pass
         else:
+            # Person chooses to do an activity
             pass
 
-    def spinRoulette():
-        pass
+    def spinRoulette(self, activities: list[Activity]) -> Activity:
+        totalPopularity: int = sum([activity.popularity for activity in activities])
+        weighedPopularity: list[float] = [
+            activity.popularity / totalPopularity for activity in activities
+        ]
+        return choices(population=activities, weights=totalPopularity, k=1)[0]
 
-    def joinQueue():
+    def joinQueue(self, attraction: Attraction):
         pass
