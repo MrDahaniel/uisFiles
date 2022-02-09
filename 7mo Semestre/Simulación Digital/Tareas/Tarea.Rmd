@@ -1,0 +1,216 @@
+# Taller: Generación de variables aleatorias continuas
+
+> Integrantes:
+>
+> Paula Catalina Hernández Ramírez - 2180048
+>
+> Juan Pablo Claro Perez - 2181707
+>
+> Daniel David Delgado Cervantes - 2182066
+
+## 1) Función de probabilidad acumulada 
+
+
+La función de probabilidad acumulada se define como:
+
+\begin{equation}
+F(x) = \frac{x + x^{2}}{2}
+\end{equation}
+
+Partiendo de la anterior función de probabilidad, la cual es continua y con caracteristica polinomicas, se partirá con el proceso de generación de números aleatorios uniformes.
+
+\begin{equation}
+u = \frac{x + x^{2}}{2}
+\end{equation}
+
+\begin{equation}
+2 \cdot u = x + x^{2}
+\end{equation}
+
+\begin{equation}
+2 \cdot u + \frac{1}{4} = x + x^{2} + \frac{1}{4}
+\end{equation}
+
+\begin{equation}
+2 \cdot u + \frac{1}{4} = (x + \frac{1}{2})^{2}
+\end{equation}
+
+\begin{equation}
+\sqrt{2 \cdot u + \frac{1}{4}} = x + \frac{1}{2}
+\end{equation}
+
+Siguiendo el proceso es posible generar números que sigan la distribución planteada a continuación:
+
+\begin{equation}
+\sqrt{2 \cdot u + \frac{1}{4}} - \frac{1}{2}= x 
+\end{equation}
+
+Con la este resultado obtenido se realiza la construcción de la simulación.
+
+```{r, fig.align='center'}
+library("MASS")
+invExp <- function(n, lambda = 1) {
+    u <- runif(n)
+    x <- sqrt(2 * u + (1 / 4)) - (1 / 2)
+    return(x)
+}
+lambda <- c(0.5, 1, 2, 10)
+par(mar = c(3, 3, 3, 0), mfrow = c(2, 2))
+for (l in lambda) {
+    sample <- invExp(10000, l)
+    truehist(sample,
+        nbins = 50, col = "cyan",
+        main = paste("lambda =", l), xlab = ""
+    )
+    curve((1 + 2 * x) / 2, from = 1e-10, add = TRUE)
+}
+```
+
+
+## 2) Función de probabilidad acumulada 
+
+Implementando la distribución de Cauchy que viene caracterizada por la siguiente función de desnidad de probabilidad:
+
+\begin{equation}
+f(x) = \frac{1}{\pi(1+x^{2})}
+\end{equation}
+
+Con la correspondiente función acumulativa:
+
+\begin{equation}
+F(x) = \int_{-inf}^{x} \frac{1}{\pi(1+x^{2})} \cdot dx = \frac{arctan(x)}{\pi} + \frac{1}{2}
+\end{equation}
+
+Se implementa el método de transformada inversa para la resolución del ejercicio, partiendo de la función acumulativa:
+
+\begin{equation}
+F(x) = \frac{arctan(x)}{\pi} + \frac{1}{2}
+\end{equation}
+
+\begin{equation}
+u = \frac{arctan(x)}{\pi} + \frac{1}{2}
+\end{equation}
+
+\begin{equation}
+\tan(\pi \cdot (u - \frac{1}{2})) = x
+\end{equation}
+
+Produciendo la siguiente simulación:
+
+```{r, fig.align='center'}
+library("MASS")
+y <- seq(-5, 5, length = 200)
+invExp <- function(n, lambda = 1) {
+    pi <- 3.1415
+    u <- runif(n)
+    x <- tan(pi * (u - 1 / 2))
+    return(x)
+}
+lambda <- c(0.5, 1, 2, 10)
+par(mar = c(3, 3, 3, 0), mfrow = c(2, 2))
+for (l in lambda) {
+    sample <- invExp(100, l)
+    truehist(sample,
+        nbins = 50, col = "cyan",
+        main = paste("lambda =", l), xlab = ""
+    )
+    lines(y, 1 / (pi * (1 + y)^2), col = "black", lty = 2)
+}
+```
+
+# 3) Generando Variables Aleatorias
+
+Partimos de la siguiente ecuación
+
+\begin{equation}
+    f(x)=\frac{1}{2}x^{2}e^{−x},x>0
+\end{equation}
+
+Teniendo en cuenta que se busca realizar la aproximación de esta función empleando el método de rechazo con el uso de una distribución exponencial.
+
+\begin{equation}
+    f(x; \lambda)=\lambda e^{-\lambda x}, x \geq 0
+\end{equation}
+
+```{r, echo = FALSE, fig.align='center'}
+se <- seq(from = 0.1, to = 5, by = 0.1)
+curve(exp(-0.5 * x), 0, 5,
+    main = "Distribución Exponencial (Lambda = 1)",
+    ylab = "Densidad"
+)
+```
+
+Partiendo de esto, a partir de prueba y error, podremos determinar un $\lambda$ el cual se encuentre por encima de nuestra distribución. A partir de este lambda, podremos realizar la implementación del método del rechazo.
+
+```{r, echo=FALSE, fig.align='center'}
+v <- seq(from = 0.1, to = 5, by = 0.1)
+o_fn <- ((1 / 2) * (v**2)) * exp(-v)
+
+par(mar = c(3, 3, 3, 3), mfrow = c(2, 2))
+plot(v, o_fn, ylim = c(0, 1), main = "Lambda = 0.2")
+lines(v, 0.2 * exp(-0.2 * v))
+plot(v, o_fn, ylim = c(0, 1), main = "Lambda = 0.4")
+lines(v, 0.4 * exp(-0.4 * v))
+plot(v, o_fn, ylim = c(0, 1), main = "Lambda = 1")
+lines(v, exp(-1 * v))
+plot(v, o_fn, ylim = c(0, 1), main = "Lambda = 2")
+lines(v, 2 * exp(-2 * v))
+```
+
+
+
+```{r}
+rechExp <- function(n) {
+    z <- runif(n)
+    u <- runif(n)
+
+    return(z[u <= ((1 / 2) * (z**2)) * exp(-z)] / exp(-z))
+}
+
+hist(rechExp(1000), freq = FALSE)
+curve(((1 / 2) * x**2) * exp(-x), add = TRUE)
+```
+
+
+# 4) Proceso de Poisson
+
+```{r}
+# Event rate = 5
+lmbd <- 5
+# Se establecen las variables iniciales
+t <- 0
+T <- 1
+I <- 0
+s <- c()
+while (t < T) {
+    t <- t - (1 / lmbd) * log(runif(1))
+    if (t > T) {
+        break
+    }
+    I <- I + 1
+    s <- c(s, t)
+}
+```
+```{r, echo = FALSE}
+sprintf("En esta ocasión, llegaron %s buses.", I)
+```
+
+```{r}
+totalAficionados <- 0
+msg <- c()
+for (time in s) {
+    if (runif(1) < 0.5) { # caso bus A
+        tBus <- "A"
+        nAfic <- as.integer(runif(1) * 20) + 10 # Cantro  idad de aficionados en el bus
+    } else { # caso bus B
+        tBus <- "B"
+        nAfic <- as.integer(log(runif(1)) / log(1 - 0.2)) + 1
+    }
+    totalAficionados <- totalAficionados + nAfic
+    msg <- c(msg, sprintf("A los %s minutos, llegó un bus %s con %s aficionados", floor(time * 60), tBus, nAfic))
+}
+```
+```{r, echo = FALSE}
+print(msg)
+sprintf("Tras una hora, habían llegado %s aficionados", totalAficionados)
+```

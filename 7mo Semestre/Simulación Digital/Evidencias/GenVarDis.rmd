@@ -1,0 +1,33 @@
+# Generación De Variables Aleatorias Discretas
+
+## Box Müller
+
+Implementación dentro del libro:
+
+```{r}
+# Primero se generan 2 distribuciones uniformes U1 y U2
+U1 <- runif(10000)
+U2 <- runif(10000)
+
+# Aplicamos V1 = 2*U1-1 y V2 = 2*U2-1
+V1 <- 2 * U1 - 1
+V2 <- 2 * U2 - 1
+
+# Calculamos S = V1**2 + V2**2
+S <- V1**2 + V2**2
+
+# Y comparamos S > 1, si es verdadero, rechazamos el valor; de lo contrario, lo aceptamos
+
+X <- V1[S < 1] * sqrt((-2 * log(S[S < 1])) / S[S < 1])
+Y <- V2[S < 1] * sqrt((-2 * log(S[S < 1])) / S[S < 1])
+```
+
+```{r, echo = FALSE}
+plot(X, Y)
+```
+
+## Proceso de Poisson No Homogeneo
+
+```{r}
+# xd
+```
