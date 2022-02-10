@@ -52,6 +52,7 @@
         "rownames",
         "setdiff",
         "Sharepoint",
+        "simu",
         "Sobrevivencia",
         "theharvester",
         "THINKMATE",
@@ -62,7 +63,5 @@
     ],
     "cSpell.ignoreWords": ["Metasploitable"],
     "cSpell.language": "es,en,es-ES",
-    "cSpell.enableFiletypes": [
-        "rmd"
-    ]
+    "cSpell.enableFiletypes": ["rmd"]
 }

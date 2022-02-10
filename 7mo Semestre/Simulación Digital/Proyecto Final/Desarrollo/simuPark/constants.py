@@ -8,7 +8,3 @@ ARCHETYPES = {
         "MinWaitTime": 30,
     }
 }
-
-ATTRACTIONS = {}
-
-ACTIVITIES = {}
