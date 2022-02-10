@@ -1,7 +1,9 @@
 from random import uniform, randint, choices
-from typing import Tuple
 from numpy import random
-from park import Activity, Attraction, Location
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from simuPark.park import Activity, Attraction
 
 
 class Archetype:
@@ -24,18 +26,26 @@ class Archetype:
 
 class Person:
     def __init__(self, id: int, arrivalTime: int, archetype: Archetype) -> None:
+        # General info
         self.id: str = id
+        self.timeLeftInActivity: int = 0
+        self.currentActivity: str = ""
+
+        # Used for statistics
         self.attractionsExperienced: int = 0
         self.totalWaitTime: int = 0
         self.arrivalTime: int = arrivalTime
-        self.departureTime: int = arrivalTime + randint(
-            archetype.minStay, archetype.maxStay
-        )
-        self.archetype: Archetype = archetype
-        self.timeLeftInActivity: int = 0
-        self.currentActivity: str = ""
         self.thingsDone: list[str] = []
 
+        # Archetype defined
+        self.archetype: str = archetype.name
+        self.departureTime: int = (
+            randint(archetype.minStay, archetype.maxStay) + arrivalTime
+        )
+        self.bulkTime: int = randint(archetype.minWaitTime, archetype.maxWaitTime)
+        self.attractionChance: float = archetype.attractionChance
+
+    # General functions, used in all scenarios
     def flipCoin(self):
         if random.uniform(low=0, high=1) < self.archetype.attractionChance:
             # Person chooses to do queue for an attraction
@@ -51,5 +61,12 @@ class Person:
         ]
         return choices(population=activities, weights=totalPopularity, k=1)[0]
 
-    def joinQueue(self, attraction: Attraction):
+    def joinQueue(self, attraction: Attraction, queue: str = "NORMAL"):
+        pass
+
+    def leavePark(self):
+        pass
+
+    # Disney FastPass specific
+    def checkAttraction(self, attraction: Attraction):
         pass

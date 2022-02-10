@@ -12,10 +12,13 @@
           +totalWaitTime: int
           +arrivalTime: int
           +departureTime: int
-          +archetype: Archetype
           +timeLeftInActivity: int
           +currentActivity: str
+          +archetype: str
+          +bulkTime: int
+          +attractionChance: float
           +thingsDone: list[str]
+
 
           ' Methods
           +flipCoin(self, Park: Park): list[Activity]
@@ -42,7 +45,6 @@
           ' Variables
           +name: str
           +duration: int
-          +queue: list[Person]
 
      }
 
@@ -54,7 +56,6 @@
           +fakeWaitTime: int
           ' Methods
           
-          +serve(self)
           +updateWaitTime(self)
           +updateFakeWaitTime(self)
      }
@@ -68,12 +69,25 @@
           +activities: list[Activity]
 
           ' Methods
+          +startDay(self, totalVisitors: int)
+          +receiveVisitors(self)
+     }
+
+     class Queue {
+          ' Variables
+          +type: str
+          +inQueue: list[Person]
+
+          ' Methods
+          +serve(self, nPeople: int)
+          +addToQueue(self, person: Person)
      }
 
      ' Relationships
-     Park *.. Activity : Park has \nmany Activities
+     Park *.right. Activity : Park has \nmany Activities
      Activity <|-- Attraction : Attractions are \nactivities with a queue
      Person -left-  Activity : A Person \ndoes activities
-     Person *-- Archetype : Person has \nan Archetype
+     Person -- Archetype : Person is defined by \nan Archetype
+     Attraction *-left- Queue : An attraction\n has queues
 
 @enduml
