@@ -46,10 +46,13 @@ class Person:
         self.maxWait: int = randint(archetype.minWaitTime, archetype.maxWaitTime)
         self.attractionChance: float = archetype.attractionChance
 
+        # !!! DELETE LATER !!!
+        self.choicesMade: int = 0
+
     # General functions, used in all scenarios
 
     def report(self):
-        return f"{self.id}:  arvTime: {self.arrivalTime} thingsDone: {self.thingsDone} attrExp: {self.attractionsExperienced} "
+        return f"id: {self.id}  arvTime: {self.arrivalTime} thingsDone: {self.thingsDone} attrExp: {self.attractionsExperienced} "
 
     # Person does an activity, it gets set to idle while doing so
     def doActivity(self, name: str, duration: int):
@@ -111,7 +114,7 @@ class Person:
         # This sets the timeLeftInActivity to -2
         # this scenario implies the guest left the park, they are ignored during the
         # check when time passes
-        if self.departureTime >= time and self.timeLeftInActivity != 0:
+        if self.departureTime <= time and self.timeLeftInActivity != 0:
             self.timeLeftInActivity = -2
 
     # Disney FastPass specific

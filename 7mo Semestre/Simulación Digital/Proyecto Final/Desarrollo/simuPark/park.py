@@ -96,22 +96,24 @@ class Park:
         for minute in range(self.closingTime):
             self._receiveGuests(totalGuests=totalGuests, time=minute)
             for guest in self.guests:
+                # print(f"Guest id : {guest.id}")
                 guest.checkLeavePark(minute)
                 # This case is the 'left the park' state, they're skipped
                 if guest.timeLeftInActivity == -2:
+                    # print("left park")
                     continue
 
                 # In this case, the guest is in a queue, they're are skipped
                 # as they're not able to change selections. TotalWaitTime increases.
                 elif guest.timeLeftInActivity == -1:
+                    # print("On queue")
                     guest.totalWaitTime += 1
-                    continue
 
                 # On this case, the guest is currently doing an activity
                 # or riding an attraction. Time passes.
                 elif guest.timeLeftInActivity > 0:
+                    # print("Doing activity")
                     guest.timeLeftInActivity -= 1
-                    continue
 
                 # In this scenario, they're looking for something to do
                 # They're free to choose based on their archetype
@@ -120,9 +122,14 @@ class Park:
                     if isinstance(selection, Attraction):
                         # guest.checkAttraction(selection)
                         guest.timeLeftInActivity = -1
-                        pass
+                        # print("Chose attraction")
                     elif isinstance(selection, Activity):
+                        # print("Chose activity")
                         guest.doActivity(selection.name, selection.duration)
+
+                    guest.choicesMade += 1
+                # print(f"Choices made: {guest.choicesMade}")
+                # print("")
 
     def _handleArchetypes(self, archetypeDict: dict[str, dict]) -> list[Archetype]:
         # setArchetypes handles the creation of the archetypes
