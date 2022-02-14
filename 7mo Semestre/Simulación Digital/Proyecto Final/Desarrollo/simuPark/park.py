@@ -54,7 +54,7 @@ class Attraction(Activity):
 
     def serve(self):
         # We calculate the amount of people the attraction can serve each minute
-        nPeopleToServe = np.floor(self.serviceRate / 60)
+        nPeopleToServe = int(np.floor(self.serviceRate / 60))
         # We tell out Queue to serve the amount of people given
         # And the duration of the ride
         self.queue.serve(name=self.name, nPeople=nPeopleToServe, duration=self.duration)
@@ -124,9 +124,6 @@ class Park:
                     # print("Doing activity")
                     guest.timeLeftInActivity -= 1
 
-                    # !!!!!!!! DELETE LATER !!!!!!!!
-                    guest.timeInActivity += 1
-
                 # In this scenario, they're looking for something to do
                 # They're free to choose based on their archetype
                 elif guest.timeLeftInActivity == 0:
@@ -142,6 +139,8 @@ class Park:
                     guest.choicesMade += 1
                 # print(f"Choices made: {guest.choicesMade}")
                 # print("")
+
+            self._serveGuests()
 
     def _handleArchetypes(self, archetypeDict: dict[str, dict]) -> list[Archetype]:
         # setArchetypes handles the creation of the archetypes
@@ -216,3 +215,7 @@ class Park:
     def _updateWaitTimes(self):
         for attraction in self.attractions:
             attraction.queue._updateWaitTime(serviceRate=attraction.serviceRate)
+
+    def _serveGuests(self):
+        for attraction in self.attractions:
+            attraction.serve()

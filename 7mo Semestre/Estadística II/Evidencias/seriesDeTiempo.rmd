@@ -1,0 +1,60 @@
+
+# Evidencias: Series De Tiempo
+
+Antes de empezar, cargamos nuestro paquete `astsa`.
+
+```{r}
+library("astsa")
+```
+
+Ahora cargamos el dataset `chicken` a una variable `data`. Es a partir de este que se realizará el desarrollo de los ejercicios.
+
+```{r}
+data <- chicken
+data[c(0:10)]
+```
+
+## Filtro de Media Móvil
+
+Ya con los datos listos, podemos realizar el cálculo de los valores correspondientes a la media móvil.
+
+Definamos nuestra propia función para realizar la suavización por medias móviles.
+
+```{r}
+movingAverage <- function(data, k) {
+    dataPoints <- c()
+    position <- 1
+    lwrIndex <- -k
+    uprIndex <- k
+    while (position != length(data)) {
+        sm <- 0
+        if (lwrIndex < 1) {
+            sm <- sm + abs(data[1] * (lwrIndex - 1))
+            lwrIndex <- 1
+        }
+        if (uprIndex > length(data)) {
+            sm <- sm + abs(data[length(data)] * (uprIndex - position))
+            uprIndex <- length(data)
+        }
+
+        sm <- (sum(data[c(lwrIndex:uprIndex)]) + sm) / (2 * k + 1)
+
+        dataPoints <- c(dataPoints, sm)
+        lwrIndex <- lwrIndex + 1
+        uprIndex <- uprIndex + 1
+        position <- position + 1
+    }
+    return(dataPoints)
+}
+```
+
+Y aplicamos nuestra función a nuestros datos.
+
+```{r}
+mvAg <- movingAverage(data, 7)
+x <- c(1:length(mvAg))
+
+plot(x, mvAg)
+lines(data)
+```
+
