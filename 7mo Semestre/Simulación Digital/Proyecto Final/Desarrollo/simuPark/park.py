@@ -25,6 +25,9 @@ class Queue:
     def addToQueue(self, person: Person):
         self.inQueue.append(person)
 
+    def _updateWaitTime(self, serviceRate: int):
+        self.waitTime = 5 * round((len(self.inQueue) / (serviceRate / 60)) / 5)
+
 
 class Activity:
     def __init__(self, name: str, popularity: int, duration: int) -> None:
@@ -94,7 +97,13 @@ class Park:
         # Day starts, time starts running minute pero minute depending in the
         # hours open
         for minute in range(self.closingTime):
+            # ✌Every minute, the park receives guests
             self._receiveGuests(totalGuests=totalGuests, time=minute)
+
+            # Every 5 minutes, all queue times update for the guests to check
+            if minute % 5 == 0:
+                self._updateWaitTimes()
+
             for guest in self.guests:
                 # print(f"Guest id : {guest.id}")
                 guest.checkLeavePark(minute)
@@ -115,13 +124,16 @@ class Park:
                     # print("Doing activity")
                     guest.timeLeftInActivity -= 1
 
+                    # !!!!!!!! DELETE LATER !!!!!!!!
+                    guest.timeInActivity += 1
+
                 # In this scenario, they're looking for something to do
                 # They're free to choose based on their archetype
                 elif guest.timeLeftInActivity == 0:
                     selection = guest.chooseWhatToDo(self.activities, self.attractions)
                     if isinstance(selection, Attraction):
-                        # guest.checkAttraction(selection)
-                        guest.timeLeftInActivity = -1
+                        guest.checkAttraction(selection)
+                        # guest.doActivity(selection.name, selection.duration)
                         # print("Chose attraction")
                     elif isinstance(selection, Activity):
                         # print("Chose activity")
@@ -201,5 +213,6 @@ class Park:
                 newGuest: Person = Person(len(self.guests), time, archetype)
                 self.guests.append(newGuest)
 
-    def passTime(self):
-        pass
+    def _updateWaitTimes(self):
+        for attraction in self.attractions:
+            attraction.queue._updateWaitTime(serviceRate=attraction.serviceRate)

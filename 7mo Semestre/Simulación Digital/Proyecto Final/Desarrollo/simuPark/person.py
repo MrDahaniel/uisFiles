@@ -48,6 +48,7 @@ class Person:
 
         # !!! DELETE LATER !!!
         self.choicesMade: int = 0
+        self.timeInActivity: int = 0
 
     # General functions, used in all scenarios
 
@@ -114,8 +115,11 @@ class Person:
         # This sets the timeLeftInActivity to -2
         # this scenario implies the guest left the park, they are ignored during the
         # check when time passes
-        if self.departureTime <= time and self.timeLeftInActivity != 0:
+        if self.timeLeftInActivity == -2:
+            pass
+        elif self.departureTime <= time and self.timeLeftInActivity != 0:
             self.timeLeftInActivity = -2
+            self.departureTime = time
 
     # Disney FastPass specific
     def checkAttractionFP(self, attraction: Attraction):
