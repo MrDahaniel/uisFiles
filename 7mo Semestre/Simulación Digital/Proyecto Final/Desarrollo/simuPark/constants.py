@@ -14,7 +14,7 @@ ACTIVITIES = {
     "ShopGifts": {"Duration": 30, "Popularity": 5},
     "EatRestaurant": {"Duration": 50, "Popularity": 5},
     "BathroomBreak": {"Duration": 5, "Popularity": 5},
-    "TakePictures": {"Duration": 1, "Popularity": 5},
+    "TakePictures": {"Duration": 15, "Popularity": 5},
 }
 
 ATTRACTIONS = {
