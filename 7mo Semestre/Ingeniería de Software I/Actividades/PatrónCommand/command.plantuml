@@ -1,0 +1,6 @@
+@startuml command
+
+    Invoker -> Command : execute()
+    Command -> Reciver : action()
+
+@enduml
