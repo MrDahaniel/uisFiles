@@ -1,0 +1,49 @@
+# Taller: Regresión Lineal
+
+## 2. Masa Corporal y Varios Diámetros
+
+Lo primero a realizar está en cargar el dataset a trabajar. Este dataset está disponible [paquí](http//www.stpatsci.org/data/oz/physical.txt).
+
+```{r}
+pdata <- read.table("http://www.statsci.org/data/oz/physical.txt", sep = "\t", header = TRUE)
+knitr::kable(pdata[c(1:5), ])
+```
+
+Ya con los datos cargados, debemos crear el modelo de la regresión multiple. Como se busca realizar predicciones sobre el parámetro de masa a partir de las medidas tomadas, emplearemos la función `lm` para poder realizar planteamiento del modelo.
+
+
+```{r}
+fml <- pdata$Mass ~ pdata$Fore + pdata$Bicep + pdata$Chest + pdata$Neck + pdata$Shoulder + pdata$Waist + pdata$Height + pdata$Calf + pdata$Thigh + pdata$Head
+
+flm <- lm(formula = fml)
+```
+
+Ya tras pasar nuestra formula a los la función lm, podremos extraer cada uno de los coeficientes para cada uno de los parámetros correspondientes.
+
+```{r}
+vecCoef <- summary(flm)$coefficients[c(1:11)]
+```
+
+```{r, echo = FALSE}
+vecCoef
+```
+
+Ya teniendo estos valores creados, es cuestión de pasar estos a una función la cual podamos usar para predecir los valores de la masa corporal.
+
+```{r}
+massReg <- function(diamData) {
+    predVal <- vecCoef[1]
+
+    for (i in c(1:length(diamData))) {
+        predVal <- predVal + vecCoef[1 + i] * diamData[i]
+    }
+
+    return(predVal)
+}
+```
+
+Podemos 
+
+### a. 
+
+
