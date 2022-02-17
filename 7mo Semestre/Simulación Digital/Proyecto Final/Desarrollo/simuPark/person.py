@@ -48,7 +48,6 @@ class Person:
 
         # !!! DELETE LATER !!!
         self.choicesMade: int = 0
-        self.timeInActivity: int = 0
 
     # General functions, used in all scenarios
 

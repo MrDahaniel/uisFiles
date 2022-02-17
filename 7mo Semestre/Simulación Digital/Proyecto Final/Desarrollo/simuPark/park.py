@@ -10,6 +10,7 @@ class Queue:
     def __init__(self, type: str = "NORMAL") -> None:
         self.type: str = type
         self.waitTime: int = 0
+        self.topWaitTime: int = 0
         self.inQueue: list[Person] = []
 
     def serve(self, name: str, nPeople: int, duration: int):
@@ -26,7 +27,9 @@ class Queue:
         self.inQueue.append(person)
 
     def _updateWaitTime(self, serviceRate: int):
-        self.waitTime = 5 * round((len(self.inQueue) / (serviceRate / 60)) / 5)
+        newWaitTime = 5 * round((len(self.inQueue) / (serviceRate / 60)) / 5)
+        self.topWaitTime = max(newWaitTime, self.waitTime)
+        self.waitTime = newWaitTime
 
 
 class Activity:

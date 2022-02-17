@@ -1,6 +1,11 @@
 
 # Evidencias: Series De Tiempo
 
+- Daniel David Delgado Cervantes - 2182066
+- Juan José Bayona sepúlveda - 2183200
+- Kevin Morales - 2162141
+
+
 Antes de empezar, cargamos nuestro paquete `astsa`.
 
 ```{r}
@@ -13,6 +18,20 @@ Ahora cargamos el dataset `chicken` a una variable `data`. Es a partir de este q
 data <- chicken
 data[c(0:10)]
 ```
+
+## Regresión
+
+```{r}
+y <- as.numeric(data)
+
+x <- seq(0, length(y) - 1, by = 1)
+model <- lm(y ~ x)
+
+plot(x, y, xlab = "Tiempo", ylab = "Precio")
+abline(model, col = "blue")
+```
+
+Como se observa, La pendiente positiva indica que, a lo largo de los años se presenta una tendencia de crecimiento promedio desestacionalizado en los precios.
 
 ## Filtro de Media Móvil
 
@@ -53,8 +72,13 @@ Y aplicamos nuestra función a nuestros datos.
 ```{r}
 mvAg <- movingAverage(data, 7)
 x <- c(1:length(mvAg))
-
-plot(x, mvAg)
-lines(data)
 ```
 
+Como podemos ver, la función nos muestra la tendencia de los valores promedios de los datos recolectados para esta situación. 
+
+```{r, echo = FALSE, fig.align='center'}
+plot(x, mvAg)
+plot(data)
+```
+
+En cuanto a las gráficas, podemos apreciar que esta no aparenta una periodicidad.
