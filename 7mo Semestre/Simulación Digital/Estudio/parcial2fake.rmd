@@ -1,0 +1,139 @@
+# Ejercicios divertidos raros
+
+## 1. Cosa esa
+
+$f(x) = x e^{-x}$
+
+```{r}
+fDens <- function(x) {
+    return(x * exp(-x))
+}
+
+genVal <- function(n) {
+    z <- runif(n)
+    u <- runif(n)
+
+    if (length(z[u <= fDens(z)]) == 0) {
+        return(0)
+    }
+
+    return(z[u <= fDens(z)])
+}
+
+rate <- 1 # Choques por hora
+cLimite <- 5
+a <- 0.5
+k <- 1000
+tiempoFalla <- c()
+
+for (ite in 1:k) {
+    dmgCount <- c()
+    tMomentos <- c()
+    t <- 0
+    C <- 0
+
+    repeat {
+        U <- runif(1)
+        t <- t - log(U) / rate
+        tMomentos <- c(tMomentos, t)
+
+        dmgCount <- c(dmgCount, genVal(1))
+
+        for (idx in 1:length(dmgCount)) {
+            C <- C + (dmgCount[idx] * exp(-a * (t - tMomentos[idx])))
+        }
+
+        if (C > cLimite) {
+            break
+        }
+    }
+
+    tiempoFalla <- c(tiempoFalla, t)
+}
+
+mean(tiempoFalla)
+```
+
+```{r, echo=FALSE, fig.align='center'}
+hist(tiempoFalla, freq = FALSE)
+```
+
+# 2. La otra cosa esa
+
+```{r}
+
+windmillPower <- function(v) {
+    if (v <= 4) {
+        return(0)
+    } else if (v <= 14) {
+        return((25.12 - 39.05 * v + 7.21 * v**2) * 1.5)
+    } else if (v <= 20) {
+        return(1500)
+    } else {
+        return(0)
+    }
+}
+
+windFunction <- function(n) {
+    U <- runif(n)
+    return(sqrt(-64 * log(1 - U)))
+}
+
+dmgFunction <- function(n) {
+    z <- runif(n)
+    u <- runif(n)
+    lambda <- 1 / 72
+
+    eventList <- z[u <= lambda * exp(-lambda * z)]
+
+    if (length(eventList) == 0) {
+        return(FALSE)
+    }
+
+    return(TRUE)
+}
+
+totalEnergyVector <- c()
+numberOfFailures <- c()
+
+for (ite in 1:5000) {
+    t <- 0
+    totalEnergy <- 0
+    failures <- 0
+    repeat {
+        if (dmgFunction(1)) {
+            t <- t + 8
+            failures <- failures + 1
+            next
+        }
+
+        if (t > 24 * 7) {
+            break
+        }
+
+        t <- t + 1
+
+        totalEnergy <- totalEnergy + windmillPower(windFunction(1))
+    }
+    totalEnergyVector <- c(totalEnergyVector, totalEnergy)
+    numberOfFailures <- c(numberOfFailures, failures)
+}
+```
+
+```{r}
+energyMean <- mean(totalEnergyVector)
+energyMean
+```
+
+```{r}
+failureMean <- mean(numberOfFailures)
+failureMean
+```
+
+```{r}
+z <- qnorm(0.025, lower.tail = FALSE)
+lowerBound <- energyMean - (z * sd(totalEnergyVector) / sqrt(5000))
+upperBound <- energyMean + (z * sd(totalEnergyVector) / sqrt(5000))
+
+print(paste("lwr:", lowerBound, "; upr:", upperBound))
+```

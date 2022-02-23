@@ -1,0 +1,157 @@
+# Series de Tiempo 2: Electric Boogaloo
+
+## 1. Ruido Blanco Gaussiano
+
+Lo primero a hacer es generar una serie de tiempo sin filtrar.
+
+```{r}
+unfilteredTimeSeries <- ts(rnorm(500, 0, 1))
+```
+```{r, echo=FALSE, fig.align='center'}
+plot(unfilteredTimeSeries)
+```
+
+Y ahora, podemos usar la función `ma` (robada de [aquí](https://stackoverflow.com/questions/743812/calculating-moving-average)) para aplicar el filtro de medias móviles.
+
+```{r}
+ma <- function(x, n) {
+    filter(x, rep(1 / n, n), sides = 2)
+}
+
+filteredTimeSeries <- ma(unfilteredTimeSeries, 3)
+```
+```{r, echo=FALSE, fig.align='center'}
+plot(filteredTimeSeries)
+```
+
+Usando la función `acf` de `R`, podemos calcular la autocorrelación dentro de la serie.
+
+```{r, fig.align='center'}
+acf(x = filteredTimeSeries, lag.max = 20, na.action = na.pass)
+```
+
+Como puede verse, la autocorrelación se vuelve cada vez menor, e incluso negativa, en cuanto el `lag` va aumentando. Esto es de esperarse. Ahora, repitamos con 50 muestras.
+
+```{r}
+ufOtherTimeSeries <- ts(rnorm(50, 0, 1))
+otherTimeSeries <- ma(ufOtherTimeSeries, 3)
+```
+
+```{r, echo=FALSE, fig.align='center'}
+par(mfrow = c(2, 1))
+plot(ufOtherTimeSeries, main = "Unfiltered Sample")
+plot(otherTimeSeries, main = "Filtered Sample")
+```
+
+```{r, fig.align='center'}
+acf(x = otherTimeSeries, lag.max = 20, na.action = na.pass)
+```
+
+Ahora, como puede verse, la autocorrelación en el caso de 50 muestras, es más _abierta_ que la que contiene 500 muestras. Esto se debe al simple hecho de que no se tienen la misma cantidad de datos, en este sentido, es más complicado realizar conclusiones de la serie de tiempo n = 50.
+
+## 2. Autoregresión
+
+Primero generamos nuestra serie de tiempo al igual que se hace en el notebook de guía.
+
+```{r}
+autoreg <- filter(ts(rnorm(150, 0, 1))[-(1:50)], filter = c(1, -0.9), method = "recursive")
+```
+
+```{r, echo= FALSE, fig.align='center'}
+plot(autoreg)
+```
+
+Ahora aplicamos el filtro $v_t = (x_t + x_{t-1} + x_{t-2} + x_{t-3}) / 4$.
+
+```{r}
+filteredAutoreg <- c()
+
+for (i in (1:(length(autoreg) - 3))) {
+    nVal <- (autoreg[i] + autoreg[i + 1] + autoreg[i + 2] + autoreg[i + 3]) / 4
+    filteredAutoreg <- c(filteredAutoreg, nVal)
+}
+```
+
+```{r, echo = FALSE, fig.align='center'}
+plot(ts(filteredAutoreg), ylab = "Autoregresión", lty = 2, ylim = c(-7, 7))
+lines(autoreg)
+```
+
+Ahora para el literal B, generamos otra serie de tiempo.
+
+```{r}
+autoregCos <- cos(filter(ts(rnorm(150, 0, 1))[-(1:50)], filter = c(pi / 2), method = "recursive"))
+```
+```{r, echo= FALSE, fig.align='center'}
+plot(autoregCos)
+```
+
+Aplicamos el mismo filtro.
+
+```{r}
+filteredAutoregCos <- c()
+
+for (i in (1:(length(autoregCos) - 3))) {
+    nVal <- (autoregCos[i] + autoregCos[i + 1] + autoregCos[i + 2] + autoregCos[i + 3]) / 4
+    filteredAutoregCos <- c(filteredAutoregCos, nVal)
+}
+```
+
+Y graficamos.
+
+```{r, echo = FALSE, fig.align='center'}
+plot(ts(filteredAutoregCos), ylab = "Autoregresión", lty = 2, ylim = c(-1, 1))
+lines(autoregCos)
+```
+
+Y para el literal C, repetimos pero con ruido gaussiano.
+
+```{r}
+autoregCosGS <- cos(filter(ts(rnorm(150, 0, 1))[-(1:50)], filter = c(pi / 2), method = "recursive")) + ts(rnorm(100, 0, 1))
+```
+```{r, echo= FALSE, fig.align='center'}
+plot(autoregCosGS)
+```
+
+Aplicamos el mismo filtro.
+
+```{r}
+filteredAutoregCosGS <- c()
+
+for (i in (1:(length(autoregCosGS) - 3))) {
+    nVal <- (autoregCosGS[i] + autoregCosGS[i + 1] + autoregCosGS[i + 2] + autoregCosGS[i + 3]) / 4
+    filteredAutoregCosGS <- c(filteredAutoregCosGS, nVal)
+}
+```
+
+Y graficamos.
+
+```{r, echo = FALSE, fig.align='center'}
+plot(ts(filteredAutoregCosGS), ylab = "Autoregresión", lty = 2, ylim = c(-3, 3))
+lines(autoregCosGS)
+```
+
+Ahora, finalmente, podemos contestar la pregunta: ¿Cómo la media móvil cambia las series?
+
+En términos generales, como era de esperarse, la media móvil genera cambios en las series en términos de suavidad, en este sentido, el filtro elimina los picos que se generan en algunos casos y los "normaliza" en cierto sentido. De esta manera, los filtros permiten el facilitar la interpretación de los datos a las personas a cambio de reducir las especificidad de los datos. 
+
+## 3. Señales y Ruidos
+
+Generamos nuestros valores a partir del modelo dado.
+
+```{r}
+
+signal <- 2 * cos(filter(ts(rnorm(550, 0, 1))[-(1:50)], filter = c(15 / 50, 2 * pi / 50), method = "recursive")) + ts(rnorm(500, 0, 1))
+```
+
+```{r, echo= FALSE, fig.align='center'}
+plot(signal)
+```
+
+Y calculamos el acf.
+
+```{r, fig.align='center'}
+acf(x = signal, lag.max = 100, na.action = na.pass)
+```
+
+Como primera medida, puede verse que, en el caso de la autocorrelación del modelo, este cae increíblemente rápido con tan solo un `lag = 1`. De esto, podemos concluir que no existe realmente un componente cíclico o estacional en este modelo.
