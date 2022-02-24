@@ -1,0 +1,76 @@
+# Tratando de estudiar Prueba de hipótesis
+
+### Cosa que me robé de internet
+
+Partimos de la hipótesis nula $H_0:$ $\bar{\mu} = 10$. Para este caso, la hipótesis alternativa sería $H_1:$ $\bar{\mu} \not = 10$.
+
+```{r}
+# Pasamos los datos de la muestra a un vector
+liters <- c(10.2, 9.7, 10.1, 10.3, 10.1, 9.8, 9.9, 10.4, 10.3, 9.8)
+
+# Tenemos un nivel de significancia a = 0.01
+# Al ser una hipótesis nula de 2 colas, tendremos que partirla en 2
+a <- 0.01
+
+# Sacamos los valores críticos para `a`
+zl <- qt(a / 2, df = 9, lower.tail = TRUE)
+zs <- qt(a / 2, df = 9, lower.tail = FALSE)
+
+# Definimos nuestro intervalo de aceptación.
+lwr <- 10 + zl * sd(liters) / sqrt(10)
+upr <- 10 + zs * sd(liters) / sqrt(10)
+
+if (lwr <= mean(liters) && mean(liters) <= upr) {
+    print(paste("No rechazamos la hipótesis nula [", lwr, upr, "]"))
+} else {
+    print(paste("Rechazamos la hipótesis nula [", lwr, upr, "]"))
+}
+```
+
+###  Cosa de internet parte 2 
+
+$$H_0: \bar{x} = 180, H_1: \bar{x} \not= 180 $$
+
+```{r}
+a <- 0.05
+std <- 4
+n <- 15
+alturas <- c(
+    167, 167, 168, 168, 168, 169, 171, 172, 173, 175, 175, 175, 177, 182, 195
+)
+
+zL <- qnorm(a / 2, lower.tail = TRUE)
+zU <- qnorm(a / 2, lower.tail = FALSE)
+
+mu <- (mean(alturas) - 180) / (std / sqrt(n))
+print(mu)
+if (zL <= mu && mu <= zU) {
+    print(paste("No rechazamos la hipótesis nula [", zL, zU, "]"))
+} else {
+    print(paste("Rechazamos la hipótesis nula [", zL, zU, "]"))
+}
+```
+
+### Parte 3 del cosas de internet
+
+$$H_0: \bar{x} \geq 175, H_1: \bar{x} < 175$$
+
+```{r}
+a <- 0.05
+std <- 4
+n <- 15
+alturas <- c(
+    167, 167, 168, 168, 168, 169, 171, 172, 173, 175, 175, 175, 177, 182, 195
+)
+
+z <- qnorm(a, lower.tail = TRUE)
+
+mu <- (mean(alturas) - 175) / (std / sqrt(n))
+print(mu)
+
+if (z < mu) {
+    print(paste("No rechazamos la hipótesis nula", z))
+} else {
+    print(paste("Rechazamos la hipótesis nula", z))
+}
+```

@@ -1,0 +1,203 @@
+# Evidencia: RLS - Inferencia
+
+## Punto 11.17
+```{r}
+x <- c(1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2)
+y <- c(8.1, 7.8, 8.5, 9.8, 9.5, 8.9, 8.6, 10.2, 9.3, 9.2, 10.5)
+
+# Se calcula el promedio de cada una de las variables
+xbarra <- mean(x)
+ybarra <- mean(y)
+
+# Se estima el valor de la pendiente y del intercepto para la recta de regresión:
+estimado_b1 <- sum((x - xbarra) * (y - ybarra)) / sum((x - xbarra)**2)
+estimado_b0 <- ybarra - estimado_b1 * xbarra
+```
+
+Se estima el valor de la varianza residual
+```{r}
+n <- 10
+S2x <- var(x)
+# Se calcula errores y varianza residual
+errores <- y - (estimado_b1 * x + estimado_b0)
+# La varianza tiene n-2 grados de libertad
+varianza_residual <- sum(errores**2) / (n - 2)
+
+print(varianza_residual)
+```
+
+```{r}
+n <- 10
+S2x <- var(x)
+# Se encuentra valor crítico para nivel de confianza del 95%
+kt <- qt(0.025, df = n - 2, lower.tail = FALSE)
+
+# Calculo de intervalo inferior y superior de la pendiente
+l_sup_a <- estimado_b1 + kt * sqrt(varianza_residual / ((n - 1) * S2x))
+l_inf_a <- estimado_b1 - kt * sqrt(varianza_residual / ((n - 1) * S2x))
+
+print(l_inf_a)
+print(l_sup_a)
+```
+
+```{r}
+# Calculo de intervalo inferior y superior del intercepto
+l_sup_b <- estimado_b0 + kt * sqrt(varianza_residual / ((n - 1) * S2x))
+l_inf_b <- estimado_b0 - kt * sqrt(varianza_residual / ((n - 1) * S2x))
+
+print(l_inf_b)
+print(l_sup_b)
+```
+
+
+## punto 11.18
+
+```{r}
+x <- c(26.8, 25.4, 28.9, 23.6, 27.7, 23.9, 24.7, 28.1, 26.9, 27.4, 22.6, 25.6)
+y <- c(26.5, 27.3, 24.2, 27.1, 23.6, 25.9, 26.3, 22.5, 21.7, 21.4, 25.8, 24.9)
+
+# Se calcula el promedio de cada una de las variables
+xbarra <- mean(x)
+ybarra <- mean(y)
+
+# Se estima el valor de la pendiente y del intercepto para la recta de regresión:
+estimado_b1 <- sum((x - xbarra) * (y - ybarra)) / sum((x - xbarra)**2)
+estimado_b0 <- ybarra - estimado_b1 * xbarra
+```
+
+Se estima el valor de la varianza residual
+```{r}
+n <- 12
+S2x <- var(x)
+# Se calcula errores y varianza residual
+errores <- y - (estimado_b1 * x + estimado_b0)
+# La varianza tiene n-2 grados de libertad
+varianza_residual <- sum(errores**2) / (n - 2)
+
+print(varianza_residual)
+```
+
+
+```{r}
+# Se encuentra valor crítico para nivel de confianza del 99%
+kt <- qt(0.05, df = n - 2, lower.tail = FALSE)
+
+# Calculo de intervalo inferior y superior de la pendiente
+l_sup_a <- estimado_b1 + kt * sqrt(varianza_residual / ((n - 1) * S2x))
+l_inf_a <- estimado_b1 - kt * sqrt(varianza_residual / ((n - 1) * S2x))
+print(l_inf_a)
+print(l_sup_a)
+```
+
+
+
+```{r}
+# Calculo de intervalo inferior y superior del intercepto
+l_sup_b <- estimado_b0 + kt * sqrt(varianza_residual / ((n - 1) * S2x))
+l_inf_b <- estimado_b0 - kt * sqrt(varianza_residual / ((n - 1) * S2x))
+print(l_inf_b)
+print(l_sup_b)
+```
+
+## 11.5: Estudio sobre la cantidad de azúcar convertida
+
+Se nos presenta una tabla la cual nos relaciona la temperatura con la cantidad de azúcar convertida.
+
+| Temperatura, x | Azúcar Convertida, y |
+|----------------|----------------------|
+| 1.0            | 8.1                  |
+| 1.1            | 7.8                  |
+| 1.2            | 8.5                  |
+| 1.3            | 9.8                  |
+| 1.4            | 9.5                  |
+| 1.5            | 8.9                  |
+| 1.6            | 8.6                  |
+| 1.7            | 10.2                 |
+| 1.8            | 9.3                  |
+| 1.9            | 9.2                  |
+| 2.0            | 10.5                 |
+
+Siendo así, ponemos los datos dentro de sus vectores correspondientes
+
+```{r}
+x <- seq(1, 2, by = 0.1)
+y <- c(8.1, 7.8, 8.5, 9.8, 9.5, 8.9, 8.6, 10.2, 9.3, 9.2, 10.5)
+```
+
+### a. Estime la recta de regresión lineal
+
+Ahora, ya con los datos, podemos realizar el cálculo de la recta de regresión lineal usando sus respectivas ecuaciones.
+
+\begin{equation}
+    b_1 = \frac{\sum XY - \bar{y}\sum X}{\sum X^2 - \bar{x} \sum X}
+\end{equation}
+
+\begin{equation}
+    b_0 = \bar{y} - b_1 \bar{x}
+\end{equation}
+
+```{r}
+b1 <- (sum(x * y) - mean(y) * sum(x)) / (sum(x**2) - mean(x) * sum(x))
+b0 <- mean(y) - b1 * mean(x)
+```
+
+Ya con estos valores, tenemos que la recta de regresión es:
+
+```{r, echo = FALSE, fig.align='center'}
+plot(x, y,
+    main = sprintf("Recta de regresión lineal: %.3f+%.3f*x", b0, b1),
+    xlab = "Temperatura",
+    ylab = "Azúcar Convertida"
+)
+curve(b0 + b1 * x, from = 1, to = 2, add = TRUE)
+```
+
+Como podemos ver, esta recta se ajusta relativamente bien hacia los valores dados. Existen casos en los que la recta está especialmente alejada pero sigue el comportamiento general de estos como es de esperar.
+
+### b. Cantidad media de azúcar
+
+Seguidamente, se nos presenta la necesidad de realizar la aproximación de la cantidad de azúcar para la temperatura 1.75, esto puede realizarse de manera sencilla remplazando en nuestra recta de regresión lineal anteriormente calculada.
+
+```{r}
+temp <- 1.75
+b0 + b1 * temp
+```
+
+Siendo así, se esperaría que la cantidad de azúcar convertida con una temperatura de 1.75, sea aproximadamente 9.579545.
+
+### c. Error residual
+
+Ahora, para poder realizar la gráfica de cada uno de los errores residuales, debemos primero realizar el cálculo de los mismos. Partiendo de que los errores residuales para cada valor están definidos como.
+
+\begin{equation}
+e_r = y_{real} - y_{est}
+\end{equation}
+
+De manera inicial, realizaremos el cálculo de las estimaciones para nuestra ecuación
+
+```{r}
+yEst <- b0 + b1 * x
+yEst
+```
+
+Ya con estos valores calculados, podemos realizar el cálculo de cada uno de los valores de error residual.
+
+```{r}
+errRes <- y - yEst
+errRes
+```
+
+A partir de esto, podemos realizar la gráfica correspondiente.
+
+```{r, echo=FALSE, fig.align='center'}
+plot(x, errRes,
+    main = "Gráfica de error residual",
+    xlab = "Temperatura",
+    ylab = "Error Residual"
+)
+curve(0 * x, add = TRUE)
+```
+
+Como podemos observar, y se resaltó en el literal 'a', aunque la recta sigue la tendencia de los datos registrados, existen valores relativamente alejados de esta. Esto es especialmente evidente en los casos de temperatura = 1.3 o temperatura = 1.6.
+
+## 11.6
