@@ -1,0 +1,33 @@
+# Taller: Series De Tiempo 
+
+Desarrollado Por: Daniel David Delgado Cervantes - 2182066
+
+## 1. Oil And Gas
+
+[Antes de empezar](https://open.spotify.com/track/0q9Cii3cEsTnH6bYBUo3b1?si=4e077415ecdd426d), lo primero que tenemos que hacer para poder llevar acabo el desarrollo del ejercicio, debemos cargar cada una de las series de tiempo que necesitaremos. Esto puede realizarse de manera simple usando la librería `astsa`.
+
+```{r}
+oilTS <- astsa::oil
+gasTS <- astsa::gas
+```
+
+Las gráficas de las series de tiempo se pueden ver a continuación.
+
+```{r, echo=FALSE, fig.align='center', fig.width=10, fig.height=6.5}
+par(mfrow = c(2, 1))
+plot(oilTS, main = "Serie de tiempo: Oil", ylab = "Price (USD/Barrel)")
+plot(gasTS, main = "Serie de tiempo: Gas", ylab = "Price (Cents/Galon)")
+```
+
+Ya con las series de tiempo listas, podemos empezar el desarrollo de cada uno de los incisos.
+
+### a. ¿Las series son estacionarias? Comente su resultado. ¿Cómo puede probar que lo son? Realice una prueba.
+
+Lo primero que podemos observar en las gráficas de los precios del petroleo y la gasolina durante el tiempo, es que, como tal, parece no presentar una estacionalidad evidente. Esto puede deberse a varios factores de los cuales el principal está en la aparente tendencia al alza del precio desde el año 2004. Así mismo, tenemos que considerar que como tal, al tener un dominio de 10 años en cada uno de las series de tiempo, es posible que algunas de las características típicas de una serie estacionaria no se puedan percibir a simple vista.
+
+Entonces, con el fin de poder determinar de manera relativamente certera de la existencia de estacionalidad, tendremos que aplicar un test estadístico el cual nos permita determinar si las series de tiempo tienen estacionalidad. La primera de estas pruebas consta de ver el valor de autocorrelación para diferentes valores de lag. En este caso, empelaremos un lag entre 0 y 50.
+
+
+```{r}
+acf(x = gasTS, lag = 545)
+```
