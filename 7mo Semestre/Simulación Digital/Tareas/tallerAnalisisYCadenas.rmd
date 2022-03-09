@@ -1,0 +1,72 @@
+# Taller: Análisis de Datos Simulados y Cadenas de Markov Montecarlo
+
+## 1. El enfoque de Bootstrap
+
+
+
+## 2. Algoritmo ~~Metrocidad~~ Metrópolis
+
+Lo primero a realizar, está en definir la función $f(x)$ pues es a partir de esta que definiremos los valores de nuestra distribución de probabilidad $p(x) = \frac{f(x)}{k}$. En este caso, esta sería nuestra distribución objetivo o distribución $\pi$.
+
+```{r}
+f <- function(x) {
+    return(
+        ifelse(
+            x < 1,
+            (exp((x - 1) / 3) + exp((x - 1)**3)),
+            (exp(-((x - 1) / 2)) + exp(-((x - 1)**2)))
+        )
+    )
+}
+```
+
+De igual manera, tendremos que definir nuestra función de proposición. En este caso, esta está definida como $g(x_t | x_{t-1}) = \mathcal{N}(x_{t-1}, \sigma = 4)$.
+
+```{r}
+prop_f <- function(x, n = 1, sd = 4) {
+    return(rnorm(n, x, sd))
+}
+```
+
+Ya con nuestras funciones definida, podremos como tal realizar la implementación del algoritmo metrópolis con el fin de generar valores de la distribución de probabilidad $p(x) = \frac{f(x)}{k}$.
+
+```{r}
+# Definimos samples como un vector vacío
+samples <- c()
+
+# Y definimos nuestro valor inicial x, como no se nos indica el valor usaremos 2
+# Por que el 2 se un número muy lindo
+x <- 0
+
+# Iniciamos 10000 iteraciones
+for (i in c(1:10000)) {
+    # Generamos la muestra y (x_t) a partir de nuestra función de proposición.
+    y <- prop_f(x)
+
+    # Calculamos la probabilidad de aceptación a
+    # Técnicamente hay que aplicar min(1, a),
+    # pero si a es mayor que 1, igual será aceptada al ser los
+    # valores generados por runif entre 0 y 1
+    a <- f(y) / f(x)
+
+    if (runif(1) < a) {
+        # En este caso se acepta la muestra. Añadimos y al vector de samples
+        samples <- c(samples, y)
+        # Y ahora y sería nuestro nuevo x
+        x <- y
+    } else {
+        # En este caso se rechaza la muestra, x no cambia y añadimos x a samples
+        samples <- c(samples, x)
+    }
+}
+```
+
+Tras las 10000 iteraciones, podemos ver el resultado de nuestra distribución. Con el fin de verificar la implementación, se presenta la gráfica generada por la función `f`.
+
+```{r, echo = FALSE, fig.align='center', fig.width=10}
+par(mfrow = c(1, 2))
+hist(samples, freq = FALSE, breaks = 20)
+curve(f(x), from = -20, to = 20)
+```
+
+Como podemos ver, tal parece que la implementación del algoritmo de metrópolis efectivamente generó valores los cuales se asemejan a la función objetivo $\pi$. 
