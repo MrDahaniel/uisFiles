@@ -1,0 +1,31 @@
+# Tratando de estudiar: Parte 2
+
+## Taller: Series de Tiempo
+
+### Oil and Gas
+
+```{r}
+library("tseries")
+
+oil_df <- astsa::oil
+gas_df <- astsa::gas
+```
+
+
+#### Estacionalidad
+
+```{r}
+par(mfrow = c(1, 2))
+plot(oil_df)
+plot(gas_df)
+```
+
+A primera vista, las series no presentan estacionalidad. Esto se debe a que, como tal, la presencia de una tendencia en estas, no permiten la fácil identificación de esta estacionalidad. Para poder determinar de manera segura si es, o no es, estacional, es a partir de una prueba que nos permita determinarlo.
+
+Dentro de las pruebas que podemos aplicar para poder determinar la estacionalidad de una serie de tiempo, tenemos las pruebas de Dickey-Fuller Aumentado. Siendo así:
+
+```{r}
+tseries::adf.test(oil_df, alternative = "stationary", k = 0)
+```
+
+De manera inicial, no se presenta un valor P

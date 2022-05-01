@@ -1,0 +1,29 @@
+@startuml yumlyUseCases
+
+    title Casos de Uso - Ejercicio Software II
+
+    skinparam Style strictuml 
+    skinparam SequenceMessageAlignment center
+
+    ' Definitions
+        ' Actors
+        package Staff {
+            Actor :Moderator: 
+            Actor :Chef:
+        }
+
+        package Users {
+            Actor :User: as U
+            Actor :User Chef: as UC
+        }
+
+        ' Use Cases
+        rectangle MainOperation {
+            usecase (Add Recipe) as (AddR)
+        } 
+
+        ' Relationships
+            ' Users
+            U <|-left- UC
+
+@enduml

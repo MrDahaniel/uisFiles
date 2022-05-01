@@ -1,7 +1,52 @@
 # Taller: Análisis de Datos Simulados y Cadenas de Markov Montecarlo
 
+> Integrantes:
+>
+> Paula Catalina Hernández Ramírez - 2180048
+>
+> Juan Pablo Claro Perez - 2181707
+>
+> Daniel David Delgado Cervantes - 2182066
+
+
 ## 1. El enfoque de Bootstrap
 
+Partiendo de las condiciones planteadas en el ejercicio propuesto donde se encuentra que para la obtención del parámetro $p$
+
+$p= P \{a < \sum_{i=1}^{n}\frac{X_{i}}{n} - \mu < b \} $
+
+Implementando el enfoque del Bootstraping podemos encontrar el valor promedio desconocido $\mu$, tomando las diferentes muestras de una población, esto con el fin de realizar varias réplicas para que por medio de la razón de probabilidad se pueda aproximar su resultado.
+
+```{r}
+# Declaramos los datos otorgados del ejercicio
+# X son nuestras muestras de prueba y n es el tamaño de la misma
+x <- c(56, 101, 78, 67, 93, 87, 64, 72, 80, 69)
+n <- 10
+
+# Ingresamos el intervalo de aceptación del ejercicio
+a <- -5
+b <- 5
+
+# Promediamos la muestra para obtener nuestro valor desconocido
+u <- mean(x)
+
+# Variable contadora la cual nos permite conocer la probabildiad de parametro p
+cont_p <- 0
+
+for (i in 1:1000) {
+    # Se implementan 1000 iteraciones con el fin de obtener una lectura contundente de los datos realizando el Boostraping
+    rep <- sample(x, replace = TRUE)
+    rep_medias <- mean(rep)
+    theta <- rep_medias - u
+    # Se ingresa la condición de aceptación para cada una de las iteraciones
+    if (theta > a && theta < b) {
+        cont_p <- cont_p + 1
+    }
+}
+
+p <- cont_p / 1000
+p
+```
 
 
 ## 2. Algoritmo ~~Metrocidad~~ Metrópolis
