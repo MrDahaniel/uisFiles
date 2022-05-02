@@ -5,25 +5,80 @@
     skinparam Style strictuml 
     skinparam SequenceMessageAlignment center
 
+    left to right direction
+    skinparam monochrome true
+    skinparam roundcorner 20
+
     ' Definitions
         ' Actors
-        package Staff {
-            Actor :Moderator: 
-            Actor :Chef:
-        }
-
-        package Users {
-            Actor :User: as U
-            Actor :User Chef: as UC
-        }
+        Actor :Usuario: as U
+        Actor :Moderador: as M
+        Actor :Técnico: as T
+        Actor :Auditor: as A
+        Actor :Administrativo: as Adm
 
         ' Use Cases
         rectangle MainOperation {
-            usecase (Add Recipe) as (AddR)
+            usecase (Reportar Falla) as (RF)
+            usecase (Revisar Fallas Reportadas) as (RFR)
+            usecase (Asignar Mantenimiento) as (AM)
+            usecase (Reportar Avance en Arreglo de la Infraestructura) as (RAAI)
+            usecase (Cerrar Reporte de Falla) as (CRF)
         } 
 
-        ' Relationships
-            ' Users
-            U <|-left- UC
+        rectangle AuxiliaryOperations {
+            usecase (Agrupar Fallas Reportadas) as (AFR)
+            usecase (Revisar Estado Del Reporte) as (REdR)
+        }
+
+        rectangle TechnicianOperations {
+            usecase (Consultar Manuales) as (CM)
+            usecase (Consultar Ordenes de Servicio) as (COS)
+            usecase (Generar Orden de Compra) as (GOC)
+        }
+
+        rectangle AuditorOperations {
+            usecase (Ver Tiempos de Servicio) as (VTS)
+            usecase (Generar Reporte)  as (GR)
+        }
+        
+        rectangle AdminOperations {
+            usecase (Aprovar Orden de Compra) as (AOC)
+        }
+
+    ' Relationships
+        ' Actor Relationships
+
+        ' Main Operaion Relationships
+            ' Actors
+            U --> RF
+            M --> RFR
+            M --> AM
+            T -left-> RAAI
+            M --> CRF
+
+            ' Flow
+            RF .left.> RFR
+            RFR .left.> AM
+            AM ..> RAAI
+            RAAI .left.> CRF
+
+        ' Auxiliary Operations
+        M -up-> AFR
+        U -up-> REdR
+
+        ' Auditor Operations
+        A --> VTS 
+        A --> GR
+
+        ' Technician Operations
+        T -up-> CM
+        T -up-> GOC
+        T -up-> COS
+
+        ' Admin Operations
+        Adm --> AOC
+
+
 
 @enduml
