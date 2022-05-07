@@ -43,7 +43,7 @@
         }
         
         rectangle AdminOperations {
-            usecase (Aprovar Orden de Compra) as (AOC)
+            usecase (Aprobar Orden de Compra) as (AOC)
         }
 
     ' Relationships
