@@ -1,0 +1,35 @@
+@startuml PlanlyUseCaseDiagram
+
+    title Use Case Diagram - Planly\n
+
+
+    skinparam Style strictuml 
+    skinparam SequenceMessageAlignment center
+
+    left to right direction
+    skinparam monochrome true
+    skinparam roundcorner 20
+
+    ' Definitions
+        ' Actors
+        Actor :Usuario: as U
+        Actor :Miebro de\n   Equipo: as ME
+        Actor :Lider de\n   Equipo: as LE
+        Actor :Cliente: as C
+        Actor :Auditor: as A
+        Actor :Administrativo: as Adm
+
+    ' Use Cases
+        usecase (Crear Evento) as (CE)
+        usecase (Crear Actividad) as (CA)
+        usecase (Crear Tarea) as (CT)
+        usecase (Añadir Descripción) as (AddDes)
+        usecase (Adjuntar Documeto) as (AddDoc)
+        usecase (Añadir Intervalo\nde Tiempo) as (AIT)
+        usecase (Editar Descripción) as (EdDes)
+        usecase (Eliminar Documeto) as (ElimDoc)
+        usecase (Editar Intervalo\nde Tiempo) as (EIT)
+        usecase (Crear Equipo de Trabaja) as (CET)
+        usecase (Añadir Miembro a \nEquipo de Trabajo) as (AMET)
+
+@enduml
