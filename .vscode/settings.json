@@ -33,6 +33,7 @@
         "lenguajeo",
         "localnet",
         "Lotus",
+        "Maxon",
         "Mbit",
         "metapache",
         "Metasploit",
@@ -52,6 +53,7 @@
         "OSINT",
         "Pads",
         "papers",
+        "perfiladores",
         "Phones",
         "planogramas",
         "rbind",
@@ -68,12 +70,17 @@
         "THINKMATE",
         "touringplans",
         "twiki",
+        "Uniengine",
         "whois",
         "wlan",
         "WLANS",
         "Xeon"
     ],
-    "cSpell.ignoreWords": ["Metasploitable"],
+    "cSpell.ignoreWords": [
+        "Bizneo",
+        "Geelnard",
+        "Metasploitable"
+    ],
     "cSpell.language": "es,en,es-ES",
     "cSpell.enableFiletypes": [
         "rmd"
@@ -152,5 +159,6 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp"
-    }
+    },
+    "cSpell.enabled": true
 }
