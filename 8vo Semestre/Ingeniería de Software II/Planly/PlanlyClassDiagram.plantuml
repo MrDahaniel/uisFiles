@@ -1,0 +1,71 @@
+@startuml yumlyClassDiagram
+
+    title \n Yumly: Class Diagram \n
+
+    left to right direction
+    skinparam monochrome true
+    skinparam roundcorner 20
+
+        class Organización  {
+         
+        }
+
+        class Proyecto {
+          
+        }
+
+
+        class División {
+           
+        }
+
+        class GrupoDeTrabajo {
+
+        }
+
+        class Usuario {
+            + id: int
+            + username: str
+            + email: str
+            + password_hash: str
+            + join_date: Date
+            + last_active: Date
+        }
+
+        class Rol {
+            + name: str
+            + description: str
+            + color: str
+            + creator: Usuario
+        }
+
+        class Permiso {
+            + name: str
+            + description: str
+        }
+
+        class Evento {
+            + name: str 
+            + description: str
+            + start_date: timedate
+            + end_date: timedate
+            + 
+        }
+
+        class Actividad {
+            + 
+        }
+
+
+        ' Relaciones
+        Organización "1" o-- "n" Proyecto
+        Proyecto "1" o-- "n" División
+        División "1" o-- "n" GrupoDeTrabajo
+        GrupoDeTrabajo "n" o-- "n" Usuario
+
+        Rol "1" o-- "n" Permiso
+        Usuario "1" o-- "n" Rol
+
+        
+
+@enduml

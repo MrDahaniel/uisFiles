@@ -92,16 +92,16 @@ Partiendo de las diferentes aplicaciones que presenta esta tecnología, al igual
 
     1.  Lo primero es crear un nuevo disco virtual, esto se puede hacer de la siguiente manera:
 
-            ```rust
-            foo@bar:~# cd /var/lib/libvirt/images/
-            foo@bor:../images/# qemu-img create -f raw new-disk-5G 5G
-            ```
+        ```rust
+        foo@bar:~# cd /var/lib/libvirt/images/
+        foo@bor:../images/# qemu-img create -f raw new-disk-5G 5G
+        ```
 
     2.  Ahora, ya con el disco virtual creado, es cuestión de agregarlo:
 
-            ```rust
-            foo@bar:~# virsh attach-disk [nombre del guest] /var/lib/libvirt/images/new-disk-5G vd[letra] --cache none
-            ```
+        ```rust
+        foo@bar:~# virsh attach-disk [nombre del guest] /var/lib/libvirt/images/new-disk-5G vd[letra] --cache none
+        ```
 
     Ya con esto, es cuestión de realizar la configuración del disco desde el guest para poder usarlo.
 
