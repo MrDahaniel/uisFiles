@@ -81,7 +81,7 @@
         "Geelnard",
         "Metasploitable"
     ],
-    "cSpell.language": "es,en,es-ES",
+    "cSpell.language": "es,en",
     "cSpell.enableFiletypes": [
         "rmd"
     ],
@@ -159,6 +159,5 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp"
-    },
-    "cSpell.enabled": true
+    }
 }

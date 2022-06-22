@@ -1,0 +1,24 @@
+1. Si dispone de una memoria de 4Gb, y páginas de 4Kb, ¿Cuántas páginas hay?
+
+	Partiendo de:
+
+		1KB = 2¹⁰ B
+		1MB = (2¹⁰)² B = 2²⁰ B
+		1GB = (2¹⁰)³ B = 2³⁰ = 2³⁰ B
+	
+	Entonces, asuminedo las condiciones dadas, la cantidad de páginas sería:
+	
+		4 * 2³⁰ b / 4 * 21¹⁰ b = 2²⁰ páginas
+		2²⁰ = 1024²  páginas 
+
+2. Si yo tengo un software que pesa 50Mb, ¿Cuantas páginas tiene es software?
+
+	50MB = 50 * 2²⁰ B
+	4KB = 4 * 2¹⁰ B
+	
+	50MB/4KB = 50 * 2²⁰ / 4 *  2¹⁰ = (25/2) * 2¹⁰ Páginas
+	
+
+3. Calcule el tamaño del mapa de bits de esa memoria ram partiendo de una granularidad es a nivel de páginas.
+
+	

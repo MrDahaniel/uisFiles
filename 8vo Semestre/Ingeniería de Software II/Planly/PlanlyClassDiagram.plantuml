@@ -95,7 +95,11 @@
         }
 
         class Comentario {
-
+            + id: int
+            + name: name
+            + owner: Usuario
+            + date: date
+            + comment: String
         }
 
         class TipoEvento {
