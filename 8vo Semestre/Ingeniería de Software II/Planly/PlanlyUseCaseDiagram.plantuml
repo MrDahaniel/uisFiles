@@ -28,7 +28,7 @@
             usecase (Crear Actividad) as (CA)
             usecase (Crear Tarea) as (CT)
             usecase (Eliminar Evento) as (ElimEv)
-            usecase (Eliminar Actividad) as (ElimAct) pamac install graphviz
+            usecase (Eliminar Actividad) as (ElimAct) 
             usecase (Eliminar Tarea) as (ElimTar)
          }   
 

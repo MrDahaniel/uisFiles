@@ -1,0 +1,102 @@
+# Introducción a la computación en paralelo - Primera evaluación
+
+## 1. Implementación
+A continuación se presenta la implementación del problema de los n cuerpos (para n = 5) en el lenguaje de programación
+C++. Cabe destacar que el código fue recuperado y adaptado de la siguiente
+[fuente](https://en.wikipedia.org/wiki/N-body_simulation#Example_Simulations).
+```cpp
+#include <iostream>
+	#include <cmath>
+
+		using namespace std;
+
+		int N_BODY = 5;
+
+		struct Vector3D
+		{
+		double x, y, z;
+
+		Vector3D() {}
+		~Vector3D() {}
+
+		inline Vector3D(double x, double y, double z)
+		{
+		this->x = x;
+		this->y = y;
+		this->y = z;
+		}
+		};
+
+		struct Body
+		{
+		double x, y, z, vx, vy, vz, m;
+
+		Body() {}
+		~Body() {}
+
+		inline Body(double x, double y, double z, double vx, double vy, double vz, double m)
+		{
+		this->x = x;
+		this->y = y;
+		this->z = z;
+		this->vx = vx;
+		this->vy = vy;
+		this->vz = vz;
+		this->m = m;
+		}
+		};
+
+
+		int main(int argc, char* argv[]) {
+		Body* orbital_entities;
+
+		orbital_entities = (Body*)malloc(sizeof(Body) * (N_BODY));
+
+		orbital_entities[0] = { 0.0,0.0,0.0, 0.0,0.0,0.0, 1.989e30 }; // a star similar to the sun
+		orbital_entities[1] = { 57.909e9,0.0,0.0, 0.0,47.36e3,0.0, 0.33011e24 }; // a planet similar to mercury
+		orbital_entities[2] = { 108.209e9,0.0,0.0, 0.0,35.02e3,0.0, 4.8675e24 }; // a planet similar to venus
+		orbital_entities[3] = { 149.596e9,0.0,0.0, 0.0,29.78e3,0.0, 5.9724e24 }; // a planet similar to earth
+		orbital_entities[4] = { 227.923e9,0.0,0.0, 0.0,24.07e3,0.0, 0.64171e24 }; // a planet similar to mars
+
+		double t_0 = 0;
+		double t = t_0;
+		double dt = 86400;
+		double t_end = 86400 * 365 * 10; // approximately a decade in seconds
+		double BIG_G = 6.67e-11; // gravitational constant
+
+		cout << "Estado inicial" << endl; for (int i=0; i < N_BODY; i++) { cout << "Cuerpo " << i + 1 << endl; cout
+			<< "p = (" <<orbital_entities[i].x << ", " <<orbital_entities[i].y<<", "<<orbital_entities[i].z<<" )"<<endl;
+			cout << "v = (" <<orbital_entities[i].vx << ", " <<orbital_entities[i].vy<<", "<<orbital_entities[i].vz<<"
+			)"<<endl; cout << "m = " << orbital_entities[i].m <<endl; } while (t < t_end) { for (size_t m1_idx=0; m1_idx
+			< N_BODY; m1_idx++) { Vector3D a_g={ 0,0,0 }; for (size_t m2_idx=0; m2_idx < N_BODY; m2_idx++) { if (m2_idx
+			!=m1_idx) { Vector3D r_vector; r_vector.x=orbital_entities[m1_idx].x - orbital_entities[m2_idx].x;
+			r_vector.y=orbital_entities[m1_idx].y - orbital_entities[m2_idx].y; r_vector.z=orbital_entities[m1_idx].z -
+			orbital_entities[m2_idx].z; double r_mag=sqrt(r_vector.x * r_vector.x + r_vector.y * r_vector.y + r_vector.z
+			* r_vector.z); double acceleration=-1.0 * BIG_G * (orbital_entities[m2_idx].m) / pow(r_mag, 2.0); Vector3D
+			r_unit_vector={ r_vector.x / r_mag,r_vector.y / r_mag,r_vector.z / r_mag }; a_g.x +=acceleration *
+			r_unit_vector.x; a_g.y +=acceleration * r_unit_vector.y; a_g.z +=acceleration * r_unit_vector.z; } }
+			orbital_entities[m1_idx].vx +=a_g.x * dt; orbital_entities[m1_idx].vy +=a_g.y * dt;
+			orbital_entities[m1_idx].vz +=a_g.z * dt; } for (size_t entity_idx=0; entity_idx < N_BODY; entity_idx++) {
+			orbital_entities[entity_idx].x +=orbital_entities[entity_idx].vx * dt; orbital_entities[entity_idx].y
+			+=orbital_entities[entity_idx].vy * dt; orbital_entities[entity_idx].z +=orbital_entities[entity_idx].vz *
+			dt; } if (t==t_end - dt) { cout << "Estado final" << endl; for (int i=0; i < N_BODY; i++) { cout
+			<< "Cuerpo " << i + 1 << endl; cout << "p = (" <<orbital_entities[i].x << ", "
+			<<orbital_entities[i].y<<", "<<orbital_entities[i].z<<" )"<<endl; cout << "v = (" <<orbital_entities[i].vx
+			<< ", " <<orbital_entities[i].vy<<", "<<orbital_entities[i].vz<<" )"<<endl; cout << "m = " <<
+			orbital_entities[i].m <<endl; } } t +=dt; } } ``` ## Análisis de paralelización El algoritmo tiene un orden
+			de complejidad $O(n^2)$, y funciona de manera iterativa. Se tienen dos `for` anidados, en el externo se
+			iteran cada uno de los cuerpos, y en el interno se calculan la aceleración y fuerza que ejerce cada uno de
+			los otros cuerpos sobre el i-ésimo cuerpo. Es en este `for` interno en donde se presenta una oportunidad de
+			paralelización, puesto que el orden en el que se calculen dichas aceleraciones y fuerzas no debe que ser
+			procedural necesariamente. Por un lado, el particionamiento se puede abordar de dos maneras, uno es hacerlo
+			de manera uniforme, en donde si se tienen $R$ ranks, y $N$ cuerpos, entonces la cantidad de particiones $P$
+			va a estar dada por: $$P=\left \lfloor \frac{N}{R-1} \right \rfloor + 1 $$ Cada uno de estos ranks se va a
+			encargar de calcular las aceleraciones y fuerzas de un sub-grupo de cuerpos. Posteriormente, la comunicación
+			se realiza de manera tal, que el rank raíz (de ahí el $+1$), se encargue de tomar los resultados obtenidos
+			por los demás ranks y los sume para obtener la influencia total de los demás cuerpos sobre el i-ésimo
+			cuerpo. Por otro lado, otro posible particionamiento es a partir de dos factores: masa del cuerpo, y
+			distancia al i-ésimo cuerpo. Estos factores son relevantes a la hora de particionar las tareas debido a que
+			entre más alto son sus valores, más influencia tienen. En este orden de ideas, la partición se haría de
+			manera tal, que se repartan equitativamente los cuerpos que más influencía tienen, y los que menos. Así, los
+			ranks podrían llegar a tener cantidades distintas de cuerpos, pero repartidos a partir de su influencia para
+			que la intensidad computacional quede balanceada.

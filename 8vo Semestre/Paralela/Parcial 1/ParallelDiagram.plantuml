@@ -1,0 +1,28 @@
+@startuml ArchitecturalDiagram
+
+    title \n Diagrama Explicativo: Paralelización \n
+
+    skinparam style strictuml
+    skinparam defaultTextAlignment center
+
+    skinparam monochrome true
+    skinparam roundcorner 20
+
+    
+    start 
+        :Inicializar cuerpos a simular;
+        repeat :Avanza el tiempo;
+            if (Paralelizamos el cálculo de\nla cinemática de los cuerpos) then (Cuerpo 1)
+                :Calculamos las influencias de los demás\nsobre para el cuerpo 1;
+                :Calculamos las nuevas velocidades para el cuerpo 1;
+                :Calculamos las nuevas posiciones para el cuerpo 1;
+            else (Cuerpo 2)
+                :Calculamos las influencias de los demás\nsobre para el cuerpo 2;
+                :Calculamos las nuevas velocidades para el cuerpo 2;
+                :Calculamos las nuevas posiciones para el cuerpo 2;
+            endif
+        repeat while (t < t_fin) 
+    stop
+
+
+@enduml
