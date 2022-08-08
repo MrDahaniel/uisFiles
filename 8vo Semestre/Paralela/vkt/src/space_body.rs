@@ -36,9 +36,7 @@ impl SpaceBody {
                 continue;
             };
 
-            self.acceleration.x = 0.0;
-            self.acceleration.y = 0.0;
-            self.acceleration.z = 0.0;
+            self.acceleration = Vector3d::zero();
 
             let force = space_body.mass
                 / Vector3d::get_magnitude(&space_body.position, &self.position).powi(2);
