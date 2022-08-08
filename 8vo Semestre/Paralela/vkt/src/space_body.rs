@@ -32,26 +32,26 @@ impl SpaceBody {
 
     pub fn update_acceleration(&mut self, space_bodies: &Vec<SpaceBody>) {
         for space_body in space_bodies {
-            self.acceleration = Vector3d::zero();
-
             if self.name == space_body.name {
                 continue;
             };
 
-            println!("Updated {}", self.name);
+            self.acceleration.x = 0.0;
+            self.acceleration.y = 0.0;
+            self.acceleration.z = 0.0;
 
             let force = space_body.mass
                 / Vector3d::get_magnitude(&space_body.position, &self.position).powi(2);
             let unit_vector = Vector3d::get_unit_vector(&space_body.position, &self.position);
 
-            println!("Force: {}", force);
-            println!("U. Vector: {}", unit_vector);
-
             self.acceleration.x += -G * force * unit_vector.x;
             self.acceleration.y += -G * force * unit_vector.y;
             self.acceleration.z += -G * force * unit_vector.z;
 
-            println!("New Acceleration: {}\n", self.acceleration);
+            // println!("Updated {}", self.name);
+            // println!("Force: {}", force);
+            // println!("U. Vector: {}", unit_vector);
+            // println!("New Acceleration: {}\n", self.acceleration);
         }
     }
 
