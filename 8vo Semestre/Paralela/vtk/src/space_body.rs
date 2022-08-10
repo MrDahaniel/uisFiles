@@ -5,6 +5,7 @@ use super::vector3d::Vector3d;
 const G: f64 = 6.67e-11;
 
 #[derive(Clone)]
+#[non_exhaustive]
 pub struct SpaceBody {
     pub name: String,
     pub position: Vector3d,
@@ -45,11 +46,6 @@ impl SpaceBody {
             self.acceleration.x += -G * force * unit_vector.x;
             self.acceleration.y += -G * force * unit_vector.y;
             self.acceleration.z += -G * force * unit_vector.z;
-
-            // println!("Updated {}", self.name);
-            // println!("Force: {}", force);
-            // println!("U. Vector: {}", unit_vector);
-            // println!("New Acceleration: {}\n", self.acceleration);
         }
     }
 

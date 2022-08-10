@@ -6,7 +6,7 @@
 double const G = 6.67e-11;
 int const DELTA_T = 86400;
 int const N_STEPS = (365 * 10) - 1;
-int const TOTAL_BODIES = 2;
+int const TOTAL_BODIES = 5;
 
 struct vector3d {
     double x;
@@ -156,29 +156,29 @@ int main(int argc, char** argsv) {
         0.33011e24,                // Mass
     };
 
-    // bodies[2] = space_body{
-    //     "venus",                    // Name
-    //     vector3d{108.209e9, 0, 0},  // Position
-    //     vector3d{0, 35.02e3, 0},    // Speed
-    //     vector3d{0, 0, 0},          // Acceleration
-    //     4.8675e24                   // Mass
-    // };
+    bodies[2] = space_body{
+        "venus",                    // Name
+        vector3d{108.209e9, 0, 0},  // Position
+        vector3d{0, 35.02e3, 0},    // Speed
+        vector3d{0, 0, 0},          // Acceleration
+        4.8675e24                   // Mass
+    };
 
-    // bodies[3] = space_body{
-    //     "earth",                    // Name
-    //     vector3d{149.596e9, 0, 0},  // Position
-    //     vector3d{0, 29.78e3, 0},    // Speed
-    //     vector3d{0, 0, 0},          // Acceleration
-    //     5.9724e24                   // Mass
-    // };
+    bodies[3] = space_body{
+        "earth",                    // Name
+        vector3d{149.596e9, 0, 0},  // Position
+        vector3d{0, 29.78e3, 0},    // Speed
+        vector3d{0, 0, 0},          // Acceleration
+        5.9724e24                   // Mass
+    };
 
-    // bodies[4] = space_body{
-    //     "mars",                     // Name
-    //     vector3d{227.923e9, 0, 0},  // Position
-    //     vector3d{0, 24.07e3, 0},    // Speed
-    //     vector3d{0, 0, 0},          // Acceleration
-    //     0.64171e24                  // Mass
-    // };
+    bodies[4] = space_body{
+        "mars",                     // Name
+        vector3d{227.923e9, 0, 0},  // Position
+        vector3d{0, 24.07e3, 0},    // Speed
+        vector3d{0, 0, 0},          // Acceleration
+        0.64171e24                  // Mass
+    };
 
     printf("\nCondiciones Iniciales:\n");
     n_body_system solar_system{

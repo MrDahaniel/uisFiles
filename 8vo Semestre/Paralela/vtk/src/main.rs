@@ -6,6 +6,9 @@ mod vector3d;
 use space_body::SpaceBody;
 use vector3d::Vector3d;
 
+use vtkio::model::*;
+use vtkio::parser::*;
+
 const TOTAL_BODIES: usize = 2;
 const DELTA_T: usize = 86400;
 const N_STEPS: usize = (365 * 10) - 1;
@@ -29,6 +32,7 @@ fn initialize_bodies() -> Vec<SpaceBody> {
         0.33011e24,
     ));
 
+    
     space_bodies
 }
 

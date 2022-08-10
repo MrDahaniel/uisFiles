@@ -61,17 +61,16 @@ vector3d calculate_unitary_vector(vector3d vec_A, vector3d vec_B) {
 }
 
 space_body calculate_body_prop(space_body* bodies, int body_id) {
-    printf("Here!");
     vector3d new_acceleration = (vector3d){0, 0, 0};
 
     for (int j = 0; j < TOTAL_BODIES; j++) {
         if (body_id == j) continue;
 
-        double F = (bodies[j].mass /
-                    pow(calculate_magnitude(
-                            bodies[body_id].position,
-                            bodies[j].position),
-                        2));
+        double F = bodies[j].mass /
+                   pow(calculate_magnitude(
+                           bodies[body_id].position,
+                           bodies[j].position),
+                       2);
         vector3d unit_vector = calculate_unitary_vector(
             bodies[body_id].position,
             bodies[j].position);
@@ -84,12 +83,14 @@ space_body calculate_body_prop(space_body* bodies, int body_id) {
     vector3d new_speed = (vector3d){
         new_acceleration.x * DELTA_T + bodies[body_id].speed.x,
         new_acceleration.y * DELTA_T + bodies[body_id].speed.y,
-        new_acceleration.z * DELTA_T + bodies[body_id].speed.z};
+        new_acceleration.z * DELTA_T + bodies[body_id].speed.z,
+    };
 
     vector3d new_position = (vector3d){
         new_speed.x * DELTA_T + bodies[body_id].position.x,
         new_speed.y * DELTA_T + bodies[body_id].position.y,
-        new_speed.z * DELTA_T + bodies[body_id].position.z};
+        new_speed.z * DELTA_T + bodies[body_id].position.z,
+    };
 
     return (space_body){
         bodies[body_id].id,
@@ -174,7 +175,7 @@ int main(int argc, char** argsv) {
     space_body* bodies = (space_body*)malloc(sizeof(space_body) * TOTAL_BODIES);
     space_body body;
 
-    printf("rank %d is active!\n", rank);
+    // printf("rank %d is active!\n", rank);
 
     if (rank == 0) {
         bodies[0] = (space_body){
@@ -217,21 +218,21 @@ int main(int argc, char** argsv) {
             0.64171e24                    // Mass
         };
 
-        printf("\nCondiciones Iniciales:\n");
+        // printf("\nCondiciones Iniciales:\n");
 
         // print_bodies(bodies);
 
         int current_rank = 1;
 
         for (int time = 1; time < N_STEPS; time++) {
-            printf("Sending stage...\n");
+            // printf("Sending stage...\n");
 
             for (body_id = 0; body_id < TOTAL_BODIES; body_id++) {
                 MPI_Send(&body_id, 1, MPI_INT, current_rank, 10, MPI_COMM_WORLD);
 
                 // printf("\n\nRank %d sent Rank %d body_id %d\n\n", rank, current_rank, body_id);
 
-                MPI_Send(bodies, TOTAL_BODIES + 1, MPI_space_body, current_rank, 10, MPI_COMM_WORLD);
+                MPI_Send(bodies, TOTAL_BODIES, MPI_space_body, current_rank, 10, MPI_COMM_WORLD);
 
                 current_rank++;
 
@@ -240,7 +241,7 @@ int main(int argc, char** argsv) {
                 }
             }
 
-            printf("Reciving stage...\n");
+            // printf("Reciving stage...\n");
             for (body_id = 1; body_id < TOTAL_BODIES; body_id++) {
                 MPI_Recv(&body, 1, MPI_space_body, MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
@@ -261,18 +262,17 @@ int main(int argc, char** argsv) {
             MPI_Recv(&body_id, 1, MPI_INT, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
             if (body_id == -1) {
-                printf("Rank #%d is out.\n", rank);
+                // printf("Rank #%d is out.\n", rank);
                 break;
             }
 
-            MPI_Recv(bodies, TOTAL_BODIES + 1, MPI_space_body, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
+            MPI_Recv(bodies, TOTAL_BODIES, MPI_space_body, 0, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
-            printf("\n\nRank %d recv body_id = %d\n\n", rank, bodies[body_id].id);
+            // printf("\n\nRank %d recv body_id = %d\n\n", rank, bodies[body_id].id);
 
             body = calculate_body_prop(bodies, body_id);
-            MPI_Send(&body, 1, MPI_space_body, 0, 10, MPI_COMM_WORLD);
-        } while (1);
-    }
+
+            MPI_Send(&body, 1, MPI_space_body, 0, 10, MPI_COMM_WORLD); } while (1); }
 
     // Chado MPI
     MPI_Finalize();
