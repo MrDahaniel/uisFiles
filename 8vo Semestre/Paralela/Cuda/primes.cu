@@ -27,51 +27,52 @@ int get_flag_value(int argc, char** argsv, std::string flag) {
 
 // __global__ void test
 
-__global__ void testIfPrimeKernel(int number, bool** result_matrix) {
-    // int div = 1;
-    // int i = 1;
-    bool is_prime = true;
-    int i = threadIdx.y + 1;
-    int j = threadIdx.x + 1;
+__global__ void testIfPrimeKernel(int number, bool* result_matrix) {
+    int x_idx = BLOCK_SIZE * blockIdx.x + threadIdx.x;
+    int y_idx = BLOCK_SIZE * blockIdx.y + threadIdx.y;
 
-    if (j < i && i % j == 0) {
-        is_prime = false;
+    int i = x_idx + 2;
+    int j = y_idx + 2;
+
+    result_matrix[x_idx * number + y_idx] = true;
+
+    if (i > j && i % j == 0) {
+        result_matrix[i * number + j] = false;
+    } else {
+        return;
     }
-
-    printf("darn");
-
-    result_matrix[threadIdx.x][threadIdx.y] = is_prime;
 }
 
 void test_numbers(int number) {
-    int new_number = ceil(number % BLOCK_SIZE) * BLOCK_SIZE;
-    int grid_size = ceil(number / BLOCK_SIZE);
+    int new_number = (double)(ceil((double)number / BLOCK_SIZE)) * 32;
+    int grid_size = (double)(ceil((double)number / BLOCK_SIZE));
 
     dim3 threadsPerBlock(BLOCK_SIZE, BLOCK_SIZE);
     dim3 blocksPerGrid(grid_size, grid_size);
 
-    size_t result_matrix_size = sizeof(bool) * pow(number, 2);
-    bool** d_result_matrix;
+    size_t result_matrix_size = sizeof(bool) * pow(new_number, 2);
+    bool* d_result_matrix;
 
     cudaMalloc(&d_result_matrix, result_matrix_size);
 
     testIfPrimeKernel<<<blocksPerGrid, threadsPerBlock>>>(new_number, d_result_matrix);
 
-    bool** result_matrix = (bool**)malloc(result_matrix_size);
+    bool* result_matrix = (bool*)malloc(result_matrix_size);
+
     cudaMemcpy(result_matrix, d_result_matrix, result_matrix_size, cudaMemcpyDeviceToHost);
 
-    for (int i = 0; i < new_number; i++) {
+    for (int i = 2; i <= new_number; i++) {
         bool is_prime = true;
 
-        for (int j = 0; j <= i; j++) {
-            if (!result_matrix[j][i]) {
+        for (int j = 2; j <= i; j++) {
+            if (!result_matrix[i * new_number + j]) {
                 is_prime = false;
                 break;
             }
         }
 
         if (is_prime) {
-            printf("%d is prime", i + 1);
+            printf("%d is prime\n", i);
         }
     }
 }
