@@ -1,0 +1,28 @@
+@startuml ArchitecturalDiagram
+
+    title \n Diagrama Explicativo: Paralelización \n
+
+    skinparam style strictuml
+    skinparam defaultTextAlignment center
+
+    skinparam monochrome true
+    skinparam roundcorner 20
+
+    
+    start 
+        :Traer los parámetros;
+        :Definimos el rango de términos a calcular para cada rank;
+            if (Paralelizamos el cálculo la serie) then (Rank 0)
+                :Envía los rangos a los ranks;
+                :Calcula el valor de la serie desde 0 hasta Lim1;
+                :Recupera los valores calculados por los otros ranks;
+            else (Rank n)
+                :Recibe los ranks a calcular;
+                :Calcula el valor de la serie desde Lim1 hasta Lim2;
+                :Envía los valores calculados al rank 0;
+            endif
+        :Suma para obtener el valor de la serie;
+    stop
+
+
+@enduml

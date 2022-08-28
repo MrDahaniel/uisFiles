@@ -23,4 +23,4 @@ __device__ void printd3(double3 a) {
     printf("x %e y %e z %e\n", a.x, a.y, a.z);
 }
 
-}  // namespace aux
+}
