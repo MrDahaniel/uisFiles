@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <cmath>
 #include <string>
+#include <tuple>
 
 // Definimos las constantes globales de CUDA
 
@@ -25,32 +27,52 @@ int get_flag_value(int argc, char** argsv, std::string flag) {
     return n;
 }
 
-// __global__ void test
+__device__ std::tuple<int, int> linear_to_coordinates(int linear_index) {
+}
 
 __global__ void testIfPrimeKernel(int number, bool* result_matrix) {
-    int x_idx = BLOCK_SIZE * blockIdx.x + threadIdx.x;
-    int y_idx = BLOCK_SIZE * blockIdx.y + threadIdx.y;
+    int x_idx, y_idx;
+    int position = threadIdx.x + blockIdx.x * BLOCK_SIZE + 1;
 
-    int i = x_idx + 2;
-    int j = y_idx + 2;
+    float p = (sqrtf(1 + 8 * position) - 1) / 2;
+    double i0 = floor(p);
 
-    result_matrix[x_idx * number + y_idx] = true;
-
-    if (i > j && i % j == 0) {
-        result_matrix[i * number + j] = false;
+    if (i0 == p) {
+        x_idx = i0;
+        y_idx = i0;
     } else {
-        return;
+        x_idx = i0 + 1;
+        y_idx = position - i0 * (i0 + 1) / 2;
+    }
+
+    x_idx -= 1;
+    y_idx -= 1;
+
+    // int kp = (BLOCK_SIZE * (BLOCK_SIZE + 1) / 2) - position;
+    // int p = floor((sqrtf(1 + 8 * kp) - 1) / 2);
+    // x_idx = BLOCK_SIZE - (kp - p * (p + 1) / 2);
+    // y_idx = x_idx + 1 - (BLOCK_SIZE - p);
+
+    printf("%d - (%d, %d)\n", position, x_idx, y_idx);
+
+    result_matrix[x_idx * BLOCK_SIZE + y_idx] = true;
+
+    if (x_idx > y_idx && y_idx != 1 && y_idx != 0 && x_idx % y_idx == 0) {
+        result_matrix[x_idx * number + y_idx] = false;
     }
 }
 
 void test_numbers(int number) {
-    int new_number = (double)(ceil((double)number / BLOCK_SIZE)) * 32;
-    int grid_size = (double)(ceil((double)number / BLOCK_SIZE));
+    int new_number = (int)(ceil((double)number / BLOCK_SIZE)) * BLOCK_SIZE;
+    int tringular_size = (new_number * (new_number + 1) / 2);
+    int grid_size = (int)(ceil((double)tringular_size / BLOCK_SIZE));
 
-    dim3 threadsPerBlock(BLOCK_SIZE, BLOCK_SIZE);
-    dim3 blocksPerGrid(grid_size, grid_size);
+    printf("num: %d, t size: %d, grid: %d\n", new_number, tringular_size, grid_size);
 
-    size_t result_matrix_size = sizeof(bool) * pow(new_number, 2);
+    dim3 threadsPerBlock(BLOCK_SIZE);
+    dim3 blocksPerGrid(grid_size);
+
+    size_t result_matrix_size = sizeof(bool) * (tringular_size);
     bool* d_result_matrix;
 
     cudaMalloc(&d_result_matrix, result_matrix_size);
@@ -61,10 +83,17 @@ void test_numbers(int number) {
 
     cudaMemcpy(result_matrix, d_result_matrix, result_matrix_size, cudaMemcpyDeviceToHost);
 
-    for (int i = 2; i <= new_number; i++) {
+    for (int i = 0; i < new_number; i++) {
+        for (int j = 0; j < i; j++) {
+            printf("%d ", result_matrix[i * new_number + j]);
+        }
+        printf(" - %d \n", i);
+    }
+
+    for (int i = 0; i <= number; i++) {
         bool is_prime = true;
 
-        for (int j = 2; j <= i; j++) {
+        for (int j = 0; j <= i; j++) {
             if (!result_matrix[i * new_number + j]) {
                 is_prime = false;
                 break;

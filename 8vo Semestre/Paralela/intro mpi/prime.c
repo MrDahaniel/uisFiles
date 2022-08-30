@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 int get_flag_value(int argc, char** argsv, char* flag) {
     int n;
@@ -33,11 +34,18 @@ int main(int argc, char** argsv) {
     // int test_num = 17;
     // int is_prime;
 
+    // clock_t begin = clock();
+
     for (int curr_num = 2; curr_num <= test_num; curr_num++) {
         if (is_prime(curr_num)) {
             printf("Prime found: %d\n", curr_num);
         }
     }
+
+    // clock_t end = clock();
+    // double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
+    // printf("Time elapsed: %f ms\n", time_spent);
 
     return 0;
 }
