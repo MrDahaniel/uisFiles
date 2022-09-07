@@ -27,9 +27,6 @@ int get_flag_value(int argc, char** argsv, std::string flag) {
     return n;
 }
 
-__device__ std::tuple<int, int> linear_to_coordinates(int linear_index) {
-}
-
 __global__ void testIfPrimeKernel(int number, bool* result_matrix) {
     int x_idx, y_idx;
     int position = threadIdx.x + blockIdx.x * BLOCK_SIZE + 1;

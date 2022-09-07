@@ -58,13 +58,6 @@ void test_numbers(int number) {
 
     cudaMemcpy(result_matrix, d_result_matrix, result_matrix_size, cudaMemcpyDeviceToHost);
 
-    // for (int i = 0; i < number; i++) {
-    //     for (int j = 0; j < i; j++) {
-    //         printf("%d ", result_matrix[i * new_number + j]);
-    //     }
-    //     printf(" - %d \n", i);
-    // }
-
     for (int i = 2; i <= number; i++) {
         bool is_prime = true;
 
