@@ -45,5 +45,10 @@ int main(int argc, char** argsv) {
     double lower_bound = get_flag_value(argc, argsv, LOWER_BOUND_FLAG);
     double upper_bound = get_flag_value(argc, argsv, UPPER_BOUND_FLAG);
 
-    printf("Monte Carlo: %f\n", monte_carlo(&fn, n_samples, lower_bound, upper_bound));
+    double aproxMonte = monte_carlo(&fn, n_samples, lower_bound, upper_bound);
+
+    double theoric = (powf(upper_bound, 3) / 3) - (powf(lower_bound, 3) / 3);
+    double error = fabsf(theoric - aproxMonte) / theoric;
+
+    printf("Monte Carlo: %.20f\nError: %.20f\n", aproxMonte, error);
 }
