@@ -1,0 +1,29 @@
+Ideas para el proyecto de HCI: Pain
+
+1. Dyslexia Helper
+
+Una de las cosas que se me ocurrió era algo para ayudar con la dislexia. Puede ser desde el presentarle al usuario diferentes ejecicios con los cuales podría 'tratar' su condición al igual que diferentes guías que le puedan servir al usuario para poder ayudarse con su situación. Tocaría mirar qué cosas pueden servir para eso, pero pues eso sería ya como tal dentro de la parte de la investigación que tocaría hacer. 
+
+Datos: 
+- Según la British Dyslexia Association, un 10% de la población es dislexica. Existe un nicho que podríamos explotar.
+- Existen investigaciones y diferentes asociaciones que investigan esto. Podrían tener interés en ello.   
+- Podriamos explorar las ramas de un diagnóstico cualitativo y tratar de recomendar ejercicios al usuario. Quizás por ese lado nos tocaría mirar con gente de Bienestar por el lado de terapia ocupacional o algo.
+
+2. PAFinder
+
+Esta es una idea que surgió de hablar con el profe. De cierta manera no sé que tan viable sea o cómo sería la cosa pero pues idea es idea. Básicamente es una plataforma la cual se encarga de conectar personas con Asistentes Personales (AP). Las personas búscan algún tipo de servicio que requieran y los AP, que es gente registrada dentro de la plataforma, ofrece un precio por el servicio requerido. Ya de ahí queda que las personas se pongan deacuerdo en lo que es, cómo y cuando pero pues ya queda más a la relación entre usuarios.
+
+Datos: 
+- Sería, quizás, una especie de alternativa a aplicaciones como Fiver pero a un nivel más local. 
+- De cierta manera es como una especie de plataforma de empleo pero para cosas un poco menos generales y más orientados a servicios generales. 
+
+3. QAir
+
+Una de las cosas que me he preguntado, de las veces que me he pasado por los talleres de diseño, es: ¿Qué tanto aserrín y metal estaré respirando sólo por estar aquí? Bueno, la idea que tenía era montar algo que permita el monitorear el estado del aire en talleres. No sé que tan viable sea pero como projecto que involucre IoT es interesante.
+
+Datos:
+- Sé que este tipo de controles no se está haciendo para nada en talleres así que plantearlo podría funcionar.
+- Puede escalar en el caso de que querramos monitorear más cosas como el estado de las máquinas o cosas de control de temperatura. Incluso saliendo de talleres, podríamos mirar cosas dentro de la U o por al ciudad.
+- El interés estaría por el lado de la universidad, especificamente por el lado de la escuela de diseño. La salud de los pulmones es importante y el polvo de aluminio es tóxico.
+
+

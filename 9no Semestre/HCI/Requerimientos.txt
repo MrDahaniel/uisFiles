@@ -1,0 +1,21 @@
+Requerimientos: QAir
+
+Técnicos:
+
+1.  Interoperabilidad entre los dispositivos de monitoreo.
+    Una de las partes importantes de este proyecto es no encasillarse en el uso de un único tipo de dispositivo de monitoreo para la realización del seguimiento del estado del aire. Debe poder integrarse cualquier tipo de sensor para cualquier tipo de requerimiento de usuario. Siendo así, una API flexible en cuanto a los datos que se transmitan, es importante.  
+
+2.  Disponibiidad del servicio.
+    Debido a la importancia de la información para los diferetenes usuarios, directos e indirectos, debe tenerse en consideración la alta disponibiidad del servicio. En lo ideal, en especial en los picos de uso de los espacios, este debería tener una disponibiidad lo más cercana al 100% posible.
+
+3.  Persistencia de los datos.
+    Como parte del proceso de identificación de los problemas, dentro del espacio a trabajar, se debe tener un registro histórico de los diferentes datos recolectados para su posterior procesamiento y respectivo análisis de la situación. 
+
+4.  Extensibilidad del monitoreo.
+    Una de de las características a resaltar dentro de la solución a plantear, está la necesidad de tener la posibilidad de extender la capacidad de dispositivos en el caso de que sea necesario para cubrir una mayor área o realizar diferentes mediciones.
+
+5.  Autonomía de despliegue.
+    La rapidez del inicio del servicio depende de qué tan complicado sea el poder inciar el servicio. Esto, en el caso más ideal, debería poder hacerse sin la necesidad de conocimientos técnicos de ningún tipo con el fin de evitar errores durante el montaje. Este debe ser lo más "plug-and-play" posible. 
+
+6.  Portabilidad del servicio.
+    Hay que considerar lo fácil que debe ser poder migrar el servicio en el caso de que se presenten problemas dentro y hayan que cambiar partes del mismo. Debe ser posible el redesplegar el servicio completo hacia un nuevo ambiente sin mucho problema.

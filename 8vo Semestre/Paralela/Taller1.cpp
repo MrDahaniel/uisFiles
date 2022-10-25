@@ -182,14 +182,10 @@ void print_matrix(std::vector<std::vector<int>> matrix, int size) {
 }
 
 int main(int argc, char *argsv[]) {
-    std::srand((unsigned int)time(NULL));
-
-    auto t1 = std::chrono::high_resolution_clock::now();
+    std::srand((unsigned int)time(NULL)); auto t1 = std::chrono::high_resolution_clock::now();
     /* Getting number of milliseconds as an integer. */
 
-    if (argc <= 1) {
-        throw std::invalid_argument("Missing flags on call");
-    }
+    if (argc <= 1) { throw std::invalid_argument("missing flags on call"); }
 
     int matrix_size = get_matrix_size(argc, argsv);
     std::string impl_str = get_implementation(argc, argsv);
