@@ -1,0 +1,23 @@
+Usuario:
+    Nombre: Alberto Polo  (?)
+    Edad: 45
+    Horario Laboral: 7 am - 5 pm
+
+    Explicación del proceso:
+        El usuario nos cuenta sobre la existencia de un sistema dentro de la universidad llamado SIMAT (Sistema de Información de Mantenimiento tecnológico). Es mediante este sistema de información por el cual se hacen todos los reportes de los fallos hacia la división de mantenimiento tecnológico.
+
+        El usuario realizando el reporte llena un fórmulario en el cual se les pide indicar el número de inventario del equipo, el problema que está presentando el mismo y la localización del mismo. Este reporte, entonces, llega a la persona encargada de realizar la asignación de las órdenes de trabajo a las personas dependiendo del problema.
+
+        Cuando ya la persona encargada de resolver el problema reportado revisa la plataforma, se le presenta únicamente el qué presenta un problema, la localización del mismo y en dónde se encuentra lo que presenta el problema.
+
+        Después de realizar la reparación, la persona que realizó la reparación hace el reporte de lo realizado y términa el proceso con el recibimiento del visto bueno del usuario que hizo el reporte en primera instancia.
+    
+    ¿Qué le gustaría mejorar?
+        Se resaltó estaba en la falta de especificidad en cuanto a la localización del los equipos que requerían de intervención. Es por esto que se presentan problemas en el caso de que no saber exáctamente dónde se encuentra el equipo que requiere de revisión.
+
+    Problemas identificados:
+        Una de las cosas que están presentes dentro del sistema actual, a diferencia de lo que se pensaba, sí es posible el ver el historial de las anteriores órdenes de servicio. El problema se encuentra en el hecho de que esta información de se encuentra directamente dentro de la órden de servicio pero está presente en otra parte completamente diferente dentro de la plataforma. La falta de este fácil acceso complica un poco las cosas.
+
+        Otra de las cosas que se identificaron es en cuanto al seguimiento de las órdenes de servicio. En algunos casos, después de una reparación, se presentan problemas secundarios. Aunque el conducto regular requiere que se genere otro tíquet de servicio, los usuarios prefieren no realizar esto debido a que implica un reproceso importante dentro de toda la cadena de mando. Siendo así, y debido que después del visto bueno el tíquet no puede editarse, existe la tendencia a no cerrar el tíquet hasta un par de días después de realizada la reparación. Aunque existe un workaround al problema, no es lo ideal en términos de auditorías y demás y sería cuestión de generar "subtickets" para así tener seguimiento de todo.
+
+        Otro de los problemas tiene que ver con el como están montandos los sistemas. Interventoría, en los casos donde algo no aún número, es el sistema de información que toca usar. Sin embargo, el problema recae que los reportes de mantenimiento que provienen de este lado, no términan quedando registrados como trabajo realizado. Es decir, no queda evidencia del trabajo realizado.
