@@ -1,0 +1,7 @@
+Storytelling - RDP:
+
+Durante una mañana normal, José Tapias, se disponía a iniciar su jornada laboral dentro de la universidad. Tras terminar algunas de sus actividades rutinarias en el taller de la división de mantenimiento tecnológico, se dispuso a revisar las órdenes de trabajo que se le habían asignado recientemente dentro del sistema de información. Decidió ordenar sus pendientes por antigüedad para ponerse al día con todo el trabajo.
+
+Después de elegir uno, se le presentó a través de la interfaz toda la información relacionada con la órden de trabajo que había escogido. Una de las unidades de aire del edificio Federico Mamitza, específicamente la unidad de la sala de cómputo del tercer piso se encontraba goteando al poco tiempo de uso. José, aunque no sabía en dónde quedaba exáctamente debido a que normalmente trabajaba en los edificios de mecánica y ciencias humanas, con ayuda del mapa no le costó mucho ubicarse.
+
+Ya en el lugar correspondiente, desde su teléfono, decidió revisar el historial de trabajo de la unidad para ver qué cambios se le habían hecho de manera reciente. De esta manera tendría más claridad de que cambios se le habían hecho recientemente para asegurarse de no hacer reprocesos innecesarios. Tras ver que recientemente se había hecho un ajuste al ventilador del aire acondicionado, realizó un ajuste extra relacionado con el mismo. Al rato, asegurándose que el problema estaba resuelto, llenó su reporte correspondiente desde el mismo teléfono para su eventual visto bueno.
